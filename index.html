@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Học Tiếng Hàn TOPIK 2300 - 마인드맵으로 배우는 토픽 어휘</title>
+	<meta name="description" content="Ứng dụng học từ vựng tiếng Hàn TOPIK 2300 theo sơ đồ tư duy Mind Map: phát âm chuẩn bản xứ, luyện đặt câu chấm ngữ pháp thông minh và bài kiểm tra ghi âm phát âm sau mỗi 5 từ.">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<div class="app-container">
+		<header class="app-header">
+			<div class="brand" id="brand-home" title="Về trang chủ">
+				<div class="brand-icon">한</div>
+				<div class="brand-text">
+					<h1>TOPIK 어휘 2300</h1>
+					<p>Học Tiếng Hàn Mind Map</p>
+				</div>
+			</div>
+			<nav class="header-nav" aria-label="Menu chính">
+				<button class="nav-tab active" id="tab-study">Học từ vựng</button>
+				<button class="nav-tab" id="tab-exam">Làm đề thi</button>
+			</nav>
+			<div class="header-stats">
+				<div class="stat-pill" title="Tổng số từ vựng bạn đã học">
+					<span>📚</span>
+					<span class="stat-val" id="stat-learned-count">0</span>
+					<span style="font-size:11px;color:var(--text-muted);">từ</span>
+				</div>
+				<div class="stat-pill" title="Số Unit đã hoàn thành">
+					<span>🏆</span>
+					<span class="stat-val" id="stat-completed-units">0/75</span>
+				</div>
+			</div>
+		</header>
+		<main>
+			<section class="view-panel active" id="view-home">
+				<div class="hero-card">
+					<span class="hero-badge">Giáo trình chính thức</span>
+					<h2>마인드맵으로 배우는 토픽 어휘 2300</h2>
+					<p>Học 2,300 từ vựng TOPIK trung cấp theo sơ đồ tư duy liên kết ngữ nghĩa, luyện phát âm chuẩn giọng Seoul, đặt câu kèm phản hồi ngữ pháp chi tiết và kiểm tra phát âm định kỳ.</p>
+				</div>
+				<div class="home-modes-grid">
+					<div class="mode-card study" id="btn-start-study">
+						<div>
+							<div class="mode-header">
+								<div class="mode-icon">📖</div>
+								<div class="mode-info">
+									<h3>Học từ vựng theo sách</h3>
+									<p>Danh sách các Unit chủ đề từ vựng trong sách. Học từng từ kèm phát âm mẫu, luyện đặt câu kiểm tra ngữ pháp và bài kiểm tra nhỏ sau mỗi 5 từ.</p>
+								</div>
+							</div>
+						</div>
+						<div class="mode-footer">
+							<span class="mode-tag">75 Chủ đề • 2,300 từ</span>
+							<button class="mode-btn">Bắt đầu học →</button>
+						</div>
+					</div>
+					<div class="mode-card exam" id="btn-start-exam">
+						<div>
+							<div class="mode-header">
+								<div class="mode-icon">📝</div>
+								<div class="mode-info">
+									<h3>Làm đề thi thử TOPIK</h3>
+									<p>Phòng luyện thi thử mô phỏng các kỳ thi TOPIK chính thức với thời gian làm bài, đáp án và giải thích chi tiết.</p>
+								</div>
+							</div>
+						</div>
+						<div class="mode-footer">
+							<span class="mode-tag">Đang cập nhật</span>
+							<button class="mode-btn" style="background:#475569;">Xem đề thi →</button>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="view-panel" id="view-exam">
+				<div class="empty-exam-card">
+					<div class="empty-exam-icon">📋</div>
+					<h3>Hiện tại chưa có đề nào</h3>
+					<p>Hệ thống ngân hàng đề thi thử TOPIK đang trong quá trình chuẩn bị và cập nhật nội dung. Bạn vui lòng quay lại sau khi có đề mới!</p>
+					<div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap;justify-content:center;">
+						<button class="btn-back" id="btn-exam-back">← Quay lại trang chủ</button>
+						<button class="mode-btn" id="btn-exam-to-study">Chuyển sang học từ vựng ngay →</button>
+					</div>
+				</div>
+			</section>
+			<section class="view-panel" id="view-units">
+				<div class="unit-filters">
+					<div class="filter-row">
+						<div class="search-box">
+							<span class="search-icon">🔍</span>
+							<input type="text" id="search-units" placeholder="Tìm kiếm bài học (ví dụ: 가족, gia đình, Day 1)...">
+						</div>
+						<div class="filter-pills" id="status-pills">
+							<button class="filter-pill active" data-status="all">Tất cả</button>
+							<button class="filter-pill" data-status="completed">Đã học xong</button>
+							<button class="filter-pill" data-status="in_progress">Đang học dở</button>
+							<button class="filter-pill" data-status="not_started">Chưa học</button>
+						</div>
+					</div>
+					<div class="filter-pills" id="category-pills">
+						<button class="filter-pill active" data-cat="all">Tất cả danh mục</button>
+						<button class="filter-pill" data-cat="Đời sống & Gia đình">Gia đình & Đời sống</button>
+						<button class="filter-pill" data-cat="Đời sống & Con người">Con người & Ngoại hình</button>
+						<button class="filter-pill" data-cat="Cảm xúc & Tâm lý">Cảm xúc</button>
+						<button class="filter-pill" data-cat="Nghề nghiệp & Việc làm">Công sở & Nghề nghiệp</button>
+						<button class="filter-pill" data-cat="Ẩm thực & Đời sống">Ẩm thực</button>
+						<button class="filter-pill" data-cat="Du lịch & Giải trí">Du lịch</button>
+						<button class="filter-pill" data-cat="Giao tiếp & Ứng xử">Giao tiếp</button>
+					</div>
+				</div>
+				<div class="units-grid" id="units-grid"></div>
+			</section>
+			<section class="view-panel" id="view-study">
+				<div class="study-top-bar">
+					<button class="btn-back" id="btn-study-back">← Danh sách Unit</button>
+					<div class="study-progress-wrap">
+						<div class="study-progress-bar">
+							<div class="study-progress-fill" id="study-progress-fill" style="width:0%"></div>
+						</div>
+						<span id="study-word-progress-text" style="font-size:12px;font-weight:700;color:var(--text-muted);min-width:70px;">Từ 1/1</span>
+					</div>
+					<span id="study-unit-title" style="font-size:13px;font-weight:700;color:var(--text-secondary);max-width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Unit Title</span>
+				</div>
+				<div class="flashcard-wrap">
+					<div class="flashcard-header">
+						<span class="pos-tag" id="study-pos-badge">DANH TỪ</span>
+						<span class="hanja-tag" id="study-hanja-badge">Hán tự: 家族</span>
+					</div>
+					<div class="flashcard-word-row">
+						<h2 class="korean-big-word" id="study-korean-word">단어</h2>
+						<div class="audio-controls">
+							<button class="btn-audio" id="btn-study-audio" title="Nghe phát âm mẫu chuẩn">🔊</button>
+							<button class="btn-speed" id="btn-study-speed" title="Tốc độ đọc">1.0x</button>
+						</div>
+					</div>
+					<div class="vietnamese-def-box">
+						<div class="vietnamese-def-label">Nghĩa tiếng Việt</div>
+						<div class="vietnamese-def-text" id="study-vietnamese-text">Nghĩa của từ</div>
+					</div>
+					<div class="collocations-box" id="study-collocations-wrap">
+						<span class="colloc-label">Cụm từ hay gặp:</span>
+						<div id="study-collocations-list" style="display:flex;gap:6px;flex-wrap:wrap;"></div>
+					</div>
+					<div class="sentence-builder-card">
+						<div class="sentence-builder-header">
+							<h5>✍️ Luyện đặt câu với từ mới</h5>
+							<span class="hint-badge">Không bắt buộc</span>
+						</div>
+						<div class="hint-words-bar">
+							<strong>Gợi ý đặt câu:</strong> <span id="study-hint-words">Gợi ý</span>
+						</div>
+						<div class="sentence-input-wrap">
+							<textarea class="sentence-textarea" id="study-sentence-input" placeholder="Nhập câu tiếng Hàn bạn tự đặt với từ trên..."></textarea>
+						</div>
+						<button class="btn-check-grammar" id="btn-check-grammar">Kiểm tra ngữ pháp & Xem câu mẫu</button>
+						<div class="grammar-feedback-box" id="study-grammar-feedback"></div>
+					</div>
+					<div class="nav-action-bar">
+						<button class="btn-nav" id="btn-prev-word">← Từ trước đó</button>
+						<button class="btn-nav primary" id="btn-next-word">
+							<span>Tiếp tục (Đã học)</span> <span>→</span>
+						</button>
+					</div>
+				</div>
+			</section>
+		</main>
+	</div>
+	<div class="modal-overlay" id="quiz-modal">
+		<div class="modal-card">
+			<div id="quiz-question-card">
+				<div class="quiz-header">
+					<div style="display:flex;align-items:center;gap:8px;">
+						<span class="quiz-badge">Kiểm tra 5 từ</span>
+						<span id="quiz-progress-text" style="font-size:13px;font-weight:700;color:var(--text-muted);">Câu 1/5</span>
+					</div>
+					<span style="font-size:12px;color:var(--text-secondary);">Gõ & Phát âm</span>
+				</div>
+				<div class="quiz-q-box">
+					<div class="quiz-vi-word" id="quiz-vi-word">Con dâu</div>
+					<div class="quiz-vi-sub" id="quiz-pos-hint">[Danh từ]</div>
+				</div>
+				<div>
+					<label for="quiz-korean-input" style="font-size:12px;font-weight:700;color:var(--text-secondary);display:block;margin-bottom:6px;">Nhập từ tiếng Hàn tương ứng:</label>
+					<input type="text" class="quiz-input-field" id="quiz-korean-input" placeholder="Gõ tiếng Hàn vào đây..." autocomplete="off">
+				</div>
+				<div class="quiz-recording-bar">
+					<button class="btn-mic" id="btn-quiz-mic" title="Bắt đầu / Dừng ghi âm phát âm">🎤</button>
+					<span class="rec-status-text" id="quiz-rec-status">Bấm nút mic để phát âm</span>
+					<div class="quiz-playback-controls" id="quiz-playback-area">
+						<button class="btn-quiz-audio" id="btn-play-user-voice">▶ Nghe lại</button>
+					</div>
+				</div>
+				<div class="quiz-feedback-box" id="quiz-feedback-box"></div>
+				<button class="mode-btn" id="btn-quiz-check" style="width:100%;padding:12px;font-size:15px;">Kiểm tra đáp án</button>
+				<button class="mode-btn" id="btn-quiz-next-q" style="width:100%;padding:12px;font-size:15px;display:none;background:var(--accent);">Câu tiếp theo →</button>
+			</div>
+			<div id="quiz-summary-card" class="celebrate-card" style="display:none;">
+				<div class="celebrate-icon">🎯</div>
+				<h3>Hoàn thành bài kiểm tra nhỏ!</h3>
+				<p id="quiz-summary-score" style="font-size:18px;font-weight:700;color:var(--accent);">Kết quả: 5/5 từ chính xác</p>
+				<button class="mode-btn" id="btn-finish-quiz" style="padding:12px 28px;margin-top:10px;">Tiếp tục bài học →</button>
+			</div>
+		</div>
+	</div>
+	<div class="modal-overlay" id="complete-modal">
+		<div class="modal-card celebrate-card">
+			<div class="celebrate-icon">🎉</div>
+			<h3 style="font-size:24px;">Chúc mừng bạn đã hoàn thành Unit!</h3>
+			<p id="complete-unit-title" style="font-size:16px;color:#93c5fd;font-weight:700;">DAY 1: 가족 (Gia đình)</p>
+			<p style="color:var(--text-secondary);font-size:14px;max-width:380px;">Bạn đã học xong toàn bộ từ vựng và xuất sắc vượt qua các bài kiểm tra của bài học này.</p>
+			<div id="complete-countdown" style="font-size:13px;color:var(--text-muted);font-weight:600;margin-top:6px;">Tự động quay lại danh sách sau 3 giây...</div>
+			<button class="btn-back" id="btn-complete-back" style="margin-top:8px;">Về danh sách bài học ngay</button>
+		</div>
+	</div>
+	<script src="js/data.js"></script>
+	<script src="js/storage.js"></script>
+	<script src="js/grammar.js"></script>
+	<script src="js/audio.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
