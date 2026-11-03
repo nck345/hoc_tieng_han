@@ -33,9 +33,10 @@ class AudioManager{
 		}
 		this.synth.speak(utter);
 	}
-	playAudioFile(url,speed=1.0,onStart,onEnd){
+	playAudioFile(url,speed=1.0,onStart,onEnd,fallbackText){
 		this.stopAll();
 		if(!url){
+			if(fallbackText)return this.speakKorean(fallbackText,speed,onStart,onEnd);
 			if(onEnd)onEnd();
 			return null;
 		}
@@ -47,20 +48,22 @@ class AudioManager{
 			this.currentAudioEl=null;
 			if(onEnd)onEnd();
 		};
-		audio.onerror=(e)=>{
+		audio.onerror=()=>{
 			this.currentAudioEl=null;
-			if(onEnd)onEnd(e);
+			if(fallbackText)this.speakKorean(fallbackText,speed,onStart,onEnd);
+			else if(onEnd)onEnd();
 		};
-		audio.play().catch(err=>{
+		audio.play().catch(()=>{
 			this.currentAudioEl=null;
-			if(onEnd)onEnd(err);
+			if(fallbackText)this.speakKorean(fallbackText,speed,onStart,onEnd);
+			else if(onEnd)onEnd();
 		});
 		return audio;
 	}
 	playLine(audioUrl,koreanText,speed=1.0,onStart,onEnd){
 		if(audioUrl){
-			this.playAudioFile(audioUrl,speed,onStart,onEnd);
-		}else{
+			this.playAudioFile(audioUrl,speed,onStart,onEnd,koreanText);
+		}else if(koreanText){
 			this.speakKorean(koreanText,speed,onStart,onEnd);
 		}
 	}

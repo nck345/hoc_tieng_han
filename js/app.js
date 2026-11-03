@@ -934,20 +934,21 @@ class TopikApp{
 			return;
 		}
 		this.examEls.btnAudioPlay.classList.add("playing");
+		let scriptText="";
+		if(q.transcript&&q.transcript.length>0){
+			scriptText=q.transcript.map(t=>t.text).join(". ");
+		}else{
+			scriptText=q.passage||q.instruction;
+		}
 		if(q.audioUrl){
 			this.audio.playAudioFile(
 				q.audioUrl,
 				this.examAudioSpeed,
 				()=>this.examEls.btnAudioPlay.classList.add("playing"),
-				()=>this.examEls.btnAudioPlay.classList.remove("playing")
+				()=>this.examEls.btnAudioPlay.classList.remove("playing"),
+				scriptText
 			);
 		}else{
-			let scriptText="";
-			if(q.transcript&&q.transcript.length>0){
-				scriptText=q.transcript.map(t=>t.text).join(". ");
-			}else{
-				scriptText=q.passage||q.instruction;
-			}
 			this.audio.speakKorean(
 				scriptText,
 				this.examAudioSpeed,
