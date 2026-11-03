@@ -5,12 +5,18 @@ scratch/
 __pycache__/
 *.pyc
 
-# Heavy documents and media files
-de/
-giao_tiep/
-luyen_viet/
-sach/
+# Ignored document and non-mp3 media formats
 *.pdf
-*.mp3
 *.zip
 *.docx
+*.doc
+*.rar
+*.7z
+*.jpg
+*.jpeg
+*.png
+*.wma
+
+# Ignored document directories
+luyen_viet/
+sach/
