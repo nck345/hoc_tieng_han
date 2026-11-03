@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Học Tiếng Hàn TOPIK 2300 - 마인드맵으로 배우는 토픽 어휘</title>
-	<meta name="description" content="Ứng dụng học từ vựng tiếng Hàn TOPIK 2300 theo sơ đồ tư duy Mind Map: phát âm chuẩn bản xứ, luyện đặt câu chấm ngữ pháp thông minh và bài kiểm tra ghi âm phát âm sau mỗi 5 từ.">
+	<title>Học Tiếng Hàn TOPIK 2300 & Luyện Thi, Giao Tiếp Shadowing</title>
+	<meta name="description" content="Ứng dụng học tiếng Hàn toàn diện: Từ vựng TOPIK 2300 Mind Map, Luyện đề thi Nghe & Đọc có giải thích chi tiết, Luyện giao tiếp Shadowing theo giáo trình Talk To Me In Korean và Sổ note từ vựng.">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -17,76 +17,93 @@
 				<div class="brand-icon">한</div>
 				<div class="brand-text">
 					<h1>TOPIK 어휘 2300</h1>
-					<p>Học Tiếng Hàn Mind Map</p>
+					<p>Học Tiếng Hàn • Đề Thi • Giao Tiếp</p>
 				</div>
 			</div>
 			<nav class="header-nav" aria-label="Menu chính">
-				<button class="nav-tab active" id="tab-study">Học từ vựng</button>
-				<button class="nav-tab" id="tab-exam">Làm đề thi</button>
+				<button class="nav-tab active" id="tab-vocab">📚 Học từ vựng</button>
+				<button class="nav-tab" id="tab-exam">📝 Luyện đề thi</button>
+				<button class="nav-tab" id="tab-communication">🎙️ Giao tiếp Shadowing</button>
+				<button class="nav-tab" id="tab-notebook">⭐ Sổ note (<span id="stat-nav-nb-count">0</span>)</button>
+				<button class="nav-tab" id="tab-birds">🐦 Bộ sưu tập chim</button>
 			</nav>
 			<div class="header-stats">
-				<div class="stat-pill" title="Tổng số từ vựng bạn đã học">
+				<div class="stat-pill" id="pill-vocab" title="Tổng số từ vựng đã học">
 					<span>📚</span>
 					<span class="stat-val" id="stat-learned-count">0</span>
 					<span style="font-size:11px;color:var(--text-muted);">từ</span>
 				</div>
-				<div class="stat-pill" title="Số Unit đã hoàn thành">
-					<span>🏆</span>
-					<span class="stat-val" id="stat-completed-units">0/75</span>
+				<div class="stat-pill" id="pill-birds" title="Số lượng chim đã sưu tập">
+					<span>🐦</span>
+					<span class="stat-val" id="stat-bird-count">1</span>
 				</div>
 			</div>
 		</header>
 		<main>
+			<!-- VIEW HOME -->
 			<section class="view-panel active" id="view-home">
 				<div class="hero-card">
-					<span class="hero-badge">Giáo trình chính thức</span>
+					<span class="hero-badge">Hệ thống học tiếng Hàn thông minh</span>
 					<h2>마인드맵으로 배우는 토픽 어휘 2300</h2>
-					<p>Học 2,300 từ vựng TOPIK trung cấp theo sơ đồ tư duy liên kết ngữ nghĩa, luyện phát âm chuẩn giọng Seoul, đặt câu kèm phản hồi ngữ pháp chi tiết và kiểm tra phát âm định kỳ.</p>
+					<p>Tích hợp đầy đủ 4 phân hệ cốt lõi: Học 2,300 từ vựng theo sơ đồ tư duy; Luyện đề thi TOPIK Nghe & Đọc giải thích chi tiết có thưởng/phạt ảnh chim; Luyện nói Shadowing chuẩn giọng bản xứ; và Sổ note tra cứu cá nhân.</p>
 				</div>
 				<div class="home-modes-grid">
-					<div class="mode-card study" id="btn-start-study">
-						<div>
-							<div class="mode-header">
-								<div class="mode-icon">📖</div>
-								<div class="mode-info">
-									<h3>Học từ vựng theo sách</h3>
-									<p>Danh sách các Unit chủ đề từ vựng trong sách. Học từng từ kèm phát âm mẫu, luyện đặt câu kiểm tra ngữ pháp và bài kiểm tra nhỏ sau mỗi 5 từ.</p>
-								</div>
+					<div class="mode-card" id="btn-home-vocab">
+						<div class="mode-header">
+							<div class="mode-icon" style="background:rgba(99,102,241,0.15);color:#818cf8;">📖</div>
+							<div class="mode-info">
+								<h3>Học từ vựng theo sách</h3>
+								<p>75 Unit theo giáo trình TOPIK 2300. Cụm từ hay gặp 4 từ, bài tập hoàn thiện câu theo thứ tự, đặt câu kiểm tra ngữ pháp và bài test nhỏ sau mỗi 5 từ.</p>
 							</div>
 						</div>
 						<div class="mode-footer">
-							<span class="mode-tag">75 Chủ đề • 2,300 từ</span>
-							<button class="mode-btn">Bắt đầu học →</button>
+							<span class="mode-tag">75 Unit • 420 từ chọn lọc</span>
+							<button class="mode-btn">Vào học →</button>
 						</div>
 					</div>
-					<div class="mode-card exam" id="btn-start-exam">
-						<div>
-							<div class="mode-header">
-								<div class="mode-icon">📝</div>
-								<div class="mode-info">
-									<h3>Làm đề thi thử TOPIK</h3>
-									<p>Phòng luyện thi thử mô phỏng các kỳ thi TOPIK chính thức với thời gian làm bài, đáp án và giải thích chi tiết.</p>
-								</div>
+					<div class="mode-card" id="btn-home-exam">
+						<div class="mode-header">
+							<div class="mode-icon" style="background:rgba(245,158,11,0.15);color:#fbbf24;">📝</div>
+							<div class="mode-info">
+								<h3>Luyện đề thi (Nghe & Đọc)</h3>
+								<p>Làm theo loại đề (Hot Topik, TOPIK Master, Đề thi thật, 합격의 신) hoặc theo dạng câu hỏi (gói 10 câu). Làm câu nào giải luôn câu đó, thưởng/phạt ảnh chim.</p>
 							</div>
 						</div>
 						<div class="mode-footer">
-							<span class="mode-tag">Đang cập nhật</span>
-							<button class="mode-btn" style="background:#475569;">Xem đề thi →</button>
+							<span class="mode-tag">Đề thi thật & 실전</span>
+							<button class="mode-btn" style="background:#f59e0b;">Làm đề ngay →</button>
+						</div>
+					</div>
+					<div class="mode-card" id="btn-home-communication">
+						<div class="mode-header">
+							<div class="mode-icon" style="background:rgba(236,72,153,0.15);color:#f472b6;">🎙️</div>
+							<div class="mode-info">
+								<h3>Luyện nói Shadowing</h3>
+								<p>Phát triển kỹ năng nói thực tế theo sách Talk To Me In Korean (Beginner & Intermediate). Nghe audio chuẩn bản xứ, thu âm chấm điểm phát âm AI, tra nghĩa tooltip và đánh dấu sao từ.</p>
+							</div>
+						</div>
+						<div class="mode-footer">
+							<span class="mode-tag">Beginner & Intermediate</span>
+							<button class="mode-btn" style="background:#ec4899;">Luyện nói →</button>
+						</div>
+					</div>
+					<div class="mode-card" id="btn-home-notebook">
+						<div class="mode-header">
+							<div class="mode-icon" style="background:rgba(16,185,129,0.15);color:#34d399;">⭐</div>
+							<div class="mode-info">
+								<h3>Sổ note học từ & Ngữ pháp</h3>
+								<p>Lưu trữ toàn bộ các từ vựng và cấu trúc ngữ pháp được đánh dấu sao từ Đề thi, Bài giao tiếp và Bài học để ôn tập chuyên sâu.</p>
+							</div>
+						</div>
+						<div class="mode-footer">
+							<span class="mode-tag">Ôn tập cá nhân hóa</span>
+							<button class="mode-btn" style="background:#10b981;">Xem sổ note →</button>
 						</div>
 					</div>
 				</div>
 			</section>
-			<section class="view-panel" id="view-exam">
-				<div class="empty-exam-card">
-					<div class="empty-exam-icon">📋</div>
-					<h3>Hiện tại chưa có đề nào</h3>
-					<p>Hệ thống ngân hàng đề thi thử TOPIK đang trong quá trình chuẩn bị và cập nhật nội dung. Bạn vui lòng quay lại sau khi có đề mới!</p>
-					<div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap;justify-content:center;">
-						<button class="btn-back" id="btn-exam-back">← Quay lại trang chủ</button>
-						<button class="mode-btn" id="btn-exam-to-study">Chuyển sang học từ vựng ngay →</button>
-					</div>
-				</div>
-			</section>
+
+			<!-- VIEW UNITS LIST (VOCAB) -->
 			<section class="view-panel" id="view-units">
 				<div class="unit-filters">
 					<div class="filter-row">
@@ -114,6 +131,8 @@
 				</div>
 				<div class="units-grid" id="units-grid"></div>
 			</section>
+
+			<!-- VIEW STUDY (VOCAB FLASHCARD & EXERCISES) -->
 			<section class="view-panel" id="view-study">
 				<div class="study-top-bar">
 					<button class="btn-back" id="btn-study-back">← Danh sách Unit</button>
@@ -127,13 +146,16 @@
 				</div>
 				<div class="flashcard-wrap">
 					<div class="flashcard-header">
-						<span class="pos-tag" id="study-pos-badge">DANH TỪ</span>
-						<span class="hanja-tag" id="study-hanja-badge">Hán tự: 家族</span>
+						<div style="display:flex;align-items:center;gap:8px;">
+							<span class="pos-tag" id="study-pos-badge">DANH TỪ</span>
+							<span class="hanja-tag" id="study-hanja-badge">Hán tự: 家族</span>
+						</div>
+						<button class="btn-star" id="btn-study-star" title="Đánh dấu sao lưu vào sổ note">⭐</button>
 					</div>
 					<div class="flashcard-word-row">
 						<h2 class="korean-big-word" id="study-korean-word">단어</h2>
 						<div class="audio-controls">
-							<button class="btn-audio" id="btn-study-audio" title="Nghe phát âm mẫu chuẩn">🔊</button>
+							<button class="btn-audio" id="btn-study-audio" title="Nghe phát âm chuẩn">🔊</button>
 							<button class="btn-speed" id="btn-study-speed" title="Tốc độ đọc">1.0x</button>
 						</div>
 					</div>
@@ -141,20 +163,43 @@
 						<div class="vietnamese-def-label">Nghĩa tiếng Việt</div>
 						<div class="vietnamese-def-text" id="study-vietnamese-text">Nghĩa của từ</div>
 					</div>
-					<div class="collocations-box" id="study-collocations-wrap">
-						<span class="colloc-label">Cụm từ hay gặp:</span>
-						<div id="study-collocations-list" style="display:flex;gap:6px;flex-wrap:wrap;"></div>
+					<div class="collocations-box">
+						<span class="colloc-label">Cụm từ hay gặp (4 cụm từ):</span>
+						<div class="colloc-grid" id="study-collocations-grid"></div>
 					</div>
-					<div class="sentence-builder-card">
+					<!-- BÀI TẬP 1: HOÀN THIỆN CÂU THEO THỨ TỰ (YÊU CẦU MỚI) -->
+					<div class="sentence-builder-card" style="border-left:4px solid var(--secondary);">
 						<div class="sentence-builder-header">
-							<h5>✍️ Luyện đặt câu với từ mới</h5>
-							<span class="hint-badge">Không bắt buộc</span>
+							<h5>🧩 Bài tập: Hoàn thiện câu từ các từ gợi ý theo thứ tự</h5>
+							<span class="hint-badge" style="background:rgba(14,165,233,0.15);color:#7dd3fc;border-color:rgba(14,165,233,0.3);">Yêu cầu mới</span>
 						</div>
-						<div class="hint-words-bar">
-							<strong>Gợi ý đặt câu:</strong> <span id="study-hint-words">Gợi ý</span>
+						<div class="ordered-words-container">
+							<span style="font-size:12px;color:#94a3b8;font-weight:700;">CÁC TỪ THEO THỨ TỰ:</span>
+							<div class="ordered-tokens-row" id="study-ordered-tokens-row"></div>
+							<div style="font-size:13px;color:#e2e8f0;margin-top:4px;">
+								<strong>Nghĩa tiếng Việt:</strong> <span id="study-scramble-translation" style="color:#93c5fd;">...</span>
+							</div>
 						</div>
 						<div class="sentence-input-wrap">
-							<textarea class="sentence-textarea" id="study-sentence-input" placeholder="Nhập câu tiếng Hàn bạn tự đặt với từ trên..."></textarea>
+							<input type="text" class="sentence-textarea" style="min-height:auto;padding:12px;" id="study-scramble-input" placeholder="Gõ hoàn thiện cả câu tiếng Hàn vào đây...">
+						</div>
+						<div style="display:flex;gap:10px;">
+							<button class="mode-btn" id="btn-check-scramble" style="background:var(--secondary);">Kiểm tra câu hoàn thiện</button>
+							<button class="btn-back" id="btn-fill-scramble" style="font-size:12px;">Điền tự động các từ</button>
+						</div>
+						<div class="grammar-feedback-box" id="study-scramble-feedback"></div>
+					</div>
+					<!-- BÀI TẬP 2: TỰ DO ĐẶT CÂU KIỂM TRA NGỮ PHÁP -->
+					<div class="sentence-builder-card">
+						<div class="sentence-builder-header">
+							<h5>✍️ Luyện tự đặt câu với từ mới</h5>
+							<span class="hint-badge">Không bắt buộc</span>
+						</div>
+						<div class="ordered-words-container" style="border-left-color:var(--warning);">
+							<strong>Từ gợi ý đặt câu:</strong> <span id="study-hint-words">Gợi ý</span>
+						</div>
+						<div class="sentence-input-wrap">
+							<textarea class="sentence-textarea" id="study-sentence-input" placeholder="Nhập câu tiếng Hàn bạn tự đặt..."></textarea>
 						</div>
 						<button class="btn-check-grammar" id="btn-check-grammar">Kiểm tra ngữ pháp & Xem câu mẫu</button>
 						<div class="grammar-feedback-box" id="study-grammar-feedback"></div>
@@ -167,8 +212,194 @@
 					</div>
 				</div>
 			</section>
+
+			<!-- VIEW EXAM (CHỨC NĂNG ĐỀ THI) -->
+			<section class="view-panel" id="view-exam">
+				<div class="hero-card" style="background:linear-gradient(135deg,#1f2937,#111827);border-color:rgba(245,158,11,0.3);">
+					<span class="hero-badge" style="background:rgba(245,158,11,0.2);color:#fcd34d;border-color:rgba(245,158,11,0.4);">Luyện thi TOPIK II</span>
+					<h2>Kho Đề Thi Nghe & Đọc Toàn Diện</h2>
+					<p>Làm xong câu nào giải luôn câu đó: Hiện đáp án, giải thích chi tiết, thưởng/phạt ảnh chim, phân tích ngữ pháp + từ vựng theo danh/động/tính/trạng từ và transcript tương tác nghe theo từng câu.</p>
+				</div>
+				<div class="exam-subnav">
+					<button class="exam-tab-btn active" id="btn-exam-subnav-folders">📁 Làm theo từng loại đề (Folder)</button>
+					<button class="exam-tab-btn" id="btn-exam-subnav-packs">🧩 Làm theo từng dạng câu hỏi (Gói 10 câu • Nhận chim)</button>
+				</div>
+				<!-- EXAM FOLDERS VIEW -->
+				<div class="exam-folders-grid" id="exam-folders-container"></div>
+				<!-- EXAM LIST WITHIN FOLDER -->
+				<div class="exam-list-wrap" id="exam-folder-detail-wrap">
+					<div style="display:flex;align-items:center;justify-content:space-between;background:var(--surface);padding:14px 20px;border-radius:var(--radius-md);border:1px solid var(--border);">
+						<button class="btn-back" id="btn-exam-folder-back">← Quay lại danh sách loại đề</button>
+						<h3 id="exam-folder-detail-title" style="font-size:18px;">Tên Folder Đề Thi</h3>
+					</div>
+					<div class="exam-items-grid" id="exam-folder-items-grid"></div>
+				</div>
+				<!-- EXAM PACKS (DẠNG CÂU HỎI) VIEW -->
+				<div class="exam-folders-grid" id="exam-packs-container" style="display:none;"></div>
+				<!-- EXAM QUESTION ACTIVE PLAYER -->
+				<div class="question-active-box" id="exam-active-player" style="display:none;">
+					<div class="question-header">
+						<div style="display:flex;align-items:center;gap:10px;">
+							<button class="btn-back" id="btn-exam-player-back">← Thoát đề thi</button>
+							<span class="day-tag" id="exam-player-type-badge">Dạng câu hỏi</span>
+							<span id="exam-player-progress-badge" style="font-size:13px;font-weight:700;color:var(--text-secondary);">Câu 1/10</span>
+						</div>
+						<div style="display:flex;align-items:center;gap:8px;">
+							<span id="exam-player-timer" style="font-size:13px;font-weight:700;color:var(--warning);">⏱️ 00:00</span>
+						</div>
+					</div>
+					<div class="question-instruction" id="exam-q-instruction">Hướng dẫn câu hỏi</div>
+					<!-- AUDIO PLAYER FOR LISTENING -->
+					<div id="exam-q-audio-box" style="display:none;background:var(--surface-card);padding:14px;border-radius:var(--radius-md);border:1px solid var(--border);align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+						<div style="display:flex;align-items:center;gap:10px;">
+							<button class="btn-audio" id="btn-exam-audio-play" title="Phát audio câu hỏi">🔊</button>
+							<div>
+								<div style="font-size:13px;font-weight:700;" id="exam-audio-status">Audio câu hỏi (Bản tách riêng)</div>
+								<div style="font-size:11px;color:var(--text-muted);">Nghe để chọn phương án chính xác</div>
+							</div>
+						</div>
+						<div style="display:flex;align-items:center;gap:8px;">
+							<button class="btn-speed active" id="btn-exam-speed-1">1.0x</button>
+							<button class="btn-speed" id="btn-exam-speed-slow">0.8x Chậm</button>
+						</div>
+					</div>
+					<div class="question-passage" id="exam-q-passage">Nội dung câu hỏi / Ngữ cảnh</div>
+					<div class="options-list" id="exam-q-options-list"></div>
+					<div style="display:flex;justify-content:flex-end;">
+						<button class="mode-btn" id="btn-exam-submit-ans" style="padding:12px 28px;font-size:15px;">Nộp câu trả lời & Xem giải thích</button>
+					</div>
+					<!-- SOLUTION PANEL (HIỆN NGAY SAU KHI LÀM XONG CÂU ĐÓ) -->
+					<div class="solution-panel" id="exam-solution-panel">
+						<div class="bird-feedback-card" id="exam-bird-feedback">
+							<img src="assets/birds/bird-happy.svg" class="bird-feedback-img" id="exam-bird-img" alt="Ảnh chim">
+							<div class="bird-feedback-text">
+								<h4 id="exam-bird-title">Chính xác! Thưởng chú chim vui vẻ</h4>
+								<p id="exam-bird-desc">Bạn đã trả lời đúng câu hỏi này.</p>
+							</div>
+						</div>
+						<div class="analysis-section">
+							<div class="analysis-title">
+								<span>💡</span>
+								<span>Đáp án & Giải thích chi tiết:</span>
+								<span id="exam-answer-type-note" style="font-size:11px;font-weight:700;color:var(--warning);margin-left:auto;"></span>
+							</div>
+							<div class="analysis-content" id="exam-explanation-text">Lời giải thích chi tiết</div>
+						</div>
+						<!-- TRANSCRIPT (FOR LISTENING) -->
+						<div class="analysis-section" id="exam-transcript-section" style="display:none;">
+							<div class="analysis-title">
+								<span>📜</span>
+								<span>Kịch bản nghe (Transcript) • Bấm vào câu để nghe riêng:</span>
+							</div>
+							<div class="transcript-box" id="exam-transcript-box"></div>
+						</div>
+						<!-- GRAMMAR BREAKDOWN -->
+						<div class="analysis-section" id="exam-grammar-section">
+							<div class="analysis-title">
+								<span>📘</span>
+								<span>Ngữ pháp trọng tâm xuất hiện trong câu:</span>
+							</div>
+							<div id="exam-grammar-list" style="display:flex;flex-direction:column;gap:8px;"></div>
+						</div>
+						<!-- VOCABULARY BREAKDOWN (DANH/ĐỘNG/TÍNH/TRẠNG TỪ) -->
+						<div class="analysis-section" id="exam-vocab-section">
+							<div class="analysis-title">
+								<span>🔤</span>
+								<span>Từ vựng trọng tâm phân loại theo loại từ (Bấm ⭐ để lưu):</span>
+							</div>
+							<div class="vocab-breakdown-grid" id="exam-vocab-grid"></div>
+						</div>
+						<div style="display:flex;justify-content:space-between;margin-top:10px;">
+							<button class="btn-back" id="btn-exam-prev-q">← Câu trước</button>
+							<button class="mode-btn" id="btn-exam-next-q" style="background:var(--accent);padding:10px 24px;">Câu tiếp theo →</button>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- VIEW COMMUNICATION (SHADOWING GIAO TIẾP) -->
+			<section class="view-panel" id="view-communication">
+				<div class="hero-card" style="background:linear-gradient(135deg,#371b3e,#1a1027);border-color:rgba(236,72,153,0.3);">
+					<span class="hero-badge" style="background:rgba(236,72,153,0.2);color:#f472b6;border-color:rgba(236,72,153,0.4);">Talk To Me In Korean</span>
+					<h2>Luyện Nói Shadowing Thực Tế</h2>
+					<p>Nguồn câu chuẩn từ giáo trình Real-Life Korean Conversations (Beginner & Intermediate). Nghe audio người bản xứ, ghi âm chấm điểm phát âm AI, tra cứu nghĩa từ vựng bằng tooltip và lưu vào sổ note.</p>
+				</div>
+				<div class="exam-subnav">
+					<button class="exam-tab-btn active" id="btn-comm-beginner">🌱 Sơ cấp (Beginner)</button>
+					<button class="exam-tab-btn" id="btn-comm-intermediate">🌿 Trung cấp (Intermediate)</button>
+				</div>
+				<div class="filter-pills" id="comm-topic-pills" style="margin-bottom:16px;"></div>
+				<!-- SHADOWING CARD -->
+				<div class="shadowing-card" id="shadowing-main-card">
+					<div class="shadowing-header">
+						<span class="shadowing-tag" id="comm-card-topic-tag">CHỦ ĐỀ: TỰ GIỚI THIỆU</span>
+						<span id="comm-card-sentence-idx" style="font-size:13px;font-weight:700;color:var(--text-muted);">Câu 1/6</span>
+					</div>
+					<div class="shadowing-sentence-box">
+						<div style="font-size:13px;font-weight:700;color:var(--secondary);margin-bottom:4px;" id="comm-speaker-tag">Người nói: 성찬</div>
+						<div class="interactive-korean-line" id="comm-interactive-korean">
+							<!-- Word spans with tooltips are dynamically injected here -->
+						</div>
+						<div class="romaja-line" id="comm-romaja-text">Romaja</div>
+						<div class="vi-line" id="comm-vietnamese-text">Dịch nghĩa tiếng Việt</div>
+					</div>
+					<div class="shadowing-action-bar">
+						<button class="mode-btn" id="btn-comm-audio-normal" style="display:flex;align-items:center;gap:6px;">
+							<span>🔊</span> <span>Nghe (1.0x)</span>
+						</button>
+						<button class="btn-back" id="btn-comm-audio-slow" style="display:flex;align-items:center;gap:6px;">
+							<span>🐢</span> <span>Nghe chậm (0.75x)</span>
+						</button>
+						<button class="btn-mic-large" id="btn-comm-mic" title="Bấm rồi nói để luyện phát âm">🎤</button>
+						<div class="quiz-playback-controls" id="comm-user-audio-wrap" style="display:none;">
+							<button class="btn-quiz-audio" id="btn-comm-play-user">▶ Nghe lại giọng mình</button>
+						</div>
+					</div>
+					<div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+						<span id="comm-rec-status" style="font-size:13px;color:var(--text-secondary);font-weight:600;">Bấm nút mic tròn đỏ rồi phát âm câu trên</span>
+						<div id="comm-accuracy-badge-wrap" style="display:none;">
+							<div class="accuracy-badge high" id="comm-accuracy-badge">
+								<span>🎯</span> <span id="comm-accuracy-val">Độ chính xác: 95%</span>
+							</div>
+						</div>
+					</div>
+					<div style="display:flex;justify-content:space-between;margin-top:10px;">
+						<button class="btn-back" id="btn-comm-prev">← Câu trước</button>
+						<button class="mode-btn" id="btn-comm-next">Câu tiếp theo →</button>
+					</div>
+				</div>
+			</section>
+
+			<!-- VIEW NOTEBOOK (SỔ NOTE TỪ VỰNG & NGỮ PHÁP) -->
+			<section class="view-panel" id="view-notebook">
+				<div class="hero-card" style="background:linear-gradient(135deg,#064e3b,#022c22);border-color:rgba(16,185,129,0.3);">
+					<span class="hero-badge" style="background:rgba(16,185,129,0.2);color:#6ee7b7;border-color:rgba(16,185,129,0.4);">Sổ tay cá nhân</span>
+					<h2>Sổ Note Từ Vựng & Ngữ Pháp Đã Lưu</h2>
+					<p>Tập hợp tất cả các mục bạn đã đánh dấu sao (⭐) từ đề thi, bài giao tiếp và từ vựng TOPIK 2300 để tiện ôn luyện mọi lúc mọi nơi.</p>
+				</div>
+				<div class="filter-pills" id="nb-filter-pills">
+					<button class="filter-pill active" data-filter="all">Tất cả mục (<span id="nb-count-all">0</span>)</button>
+					<button class="filter-pill" data-filter="vocab">Từ vựng</button>
+					<button class="filter-pill" data-filter="grammar">Ngữ pháp</button>
+					<button class="filter-pill" data-filter="Đề thi">Từ Đề thi</button>
+					<button class="filter-pill" data-filter="Giao tiếp">Từ Giao tiếp</button>
+				</div>
+				<div class="notebook-grid" id="notebook-items-grid"></div>
+			</section>
+
+			<!-- VIEW BIRDS (BỘ SƯU TẬP ẢNH CHIM) -->
+			<section class="view-panel" id="view-birds">
+				<div class="hero-card" style="background:linear-gradient(135deg,#78350f,#451a03);border-color:rgba(245,158,11,0.3);">
+					<span class="hero-badge" style="background:rgba(245,158,11,0.2);color:#fcd34d;border-color:rgba(245,158,11,0.4);">Bộ sưu tập huy hiệu</span>
+					<h2>Vương Quốc Chim Cánh Cụt & Phượng Hoàng</h2>
+					<p>Trả lời đúng trong đề thi để nhận chim thưởng vui vẻ, trả lời sai để nhận chim phạt rèn luyện và hoàn thành mỗi gói 10 câu dạng câu hỏi để mở khóa thẻ bài chim quý hiếm!</p>
+				</div>
+				<div class="birds-grid" id="birds-gallery-grid"></div>
+			</section>
 		</main>
 	</div>
+
+	<!-- MODAL QUIZ NHỎ (TỪ VỰNG TOPIK 2300) -->
 	<div class="modal-overlay" id="quiz-modal">
 		<div class="modal-card">
 			<div id="quiz-question-card">
@@ -206,6 +437,8 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- MODAL HOÀN THÀNH UNIT -->
 	<div class="modal-overlay" id="complete-modal">
 		<div class="modal-card celebrate-card">
 			<div class="celebrate-icon">🎉</div>
@@ -216,7 +449,27 @@
 			<button class="btn-back" id="btn-complete-back" style="margin-top:8px;">Về danh sách bài học ngay</button>
 		</div>
 	</div>
+
+	<!-- MODAL THƯỞNG ẢNH CHIM ĐẶC BIỆT KHI HOÀN THÀNH GÓI 10 CÂU -->
+	<div class="modal-overlay" id="bird-reward-modal">
+		<div class="modal-card celebrate-card">
+			<div style="width:120px;height:120px;" id="modal-reward-bird-icon-wrap">
+				<img src="assets/birds/bird-phoenix.svg" style="width:100%;height:100%;" alt="Chim Phượng Hoàng">
+			</div>
+			<h3 style="font-size:22px;color:#fbbf24;">Thưởng Thẻ Bài Chim Đặc Biệt!</h3>
+			<h4 id="modal-reward-bird-name" style="font-size:18px;color:#fff;">Chim Phượng Hoàng Vàng</h4>
+			<p id="modal-reward-bird-desc" style="color:var(--text-secondary);font-size:14px;max-width:400px;">Bạn vừa xuất sắc hoàn thành trọn vẹn gói 10 câu hỏi dạng đề thi TOPIK!</p>
+			<div style="display:flex;gap:12px;margin-top:10px;">
+				<button class="btn-back" id="btn-close-bird-modal">Tiếp tục luyện tập</button>
+				<button class="mode-btn" id="btn-view-bird-collection" style="background:#f59e0b;">Xem bộ sưu tập chim →</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- SCRIPTS -->
 	<script src="js/data.js"></script>
+	<script src="js/exam_data.js"></script>
+	<script src="js/communication_data.js"></script>
 	<script src="js/storage.js"></script>
 	<script src="js/grammar.js"></script>
 	<script src="js/audio.js"></script>

@@ -6,6 +6,7 @@ class AudioManager{
 		this.recordedChunks=[];
 		this.currentAudioUrl=null;
 		this.isRecording=false;
+		this.currentAudioEl=null;
 		this.initVoices();
 	}
 	initVoices(){
@@ -19,7 +20,7 @@ class AudioManager{
 	}
 	speakKorean(text,speed=1.0,onStart,onEnd){
 		if(!this.synth)return;
-		this.synth.cancel();
+		this.stopAll();
 		const utter=new SpeechSynthesisUtterance(text);
 		utter.lang='ko-KR';
 		utter.rate=speed;
@@ -32,8 +33,46 @@ class AudioManager{
 		}
 		this.synth.speak(utter);
 	}
-	stopSpeech(){
+	playAudioFile(url,speed=1.0,onStart,onEnd){
+		this.stopAll();
+		if(!url){
+			if(onEnd)onEnd();
+			return null;
+		}
+		const audio=new Audio(url);
+		this.currentAudioEl=audio;
+		audio.playbackRate=speed;
+		if(onStart)audio.onplay=onStart;
+		audio.onended=()=>{
+			this.currentAudioEl=null;
+			if(onEnd)onEnd();
+		};
+		audio.onerror=(e)=>{
+			this.currentAudioEl=null;
+			if(onEnd)onEnd(e);
+		};
+		audio.play().catch(err=>{
+			this.currentAudioEl=null;
+			if(onEnd)onEnd(err);
+		});
+		return audio;
+	}
+	playLine(audioUrl,koreanText,speed=1.0,onStart,onEnd){
+		if(audioUrl){
+			this.playAudioFile(audioUrl,speed,onStart,onEnd);
+		}else{
+			this.speakKorean(koreanText,speed,onStart,onEnd);
+		}
+	}
+	stopAll(){
 		if(this.synth)this.synth.cancel();
+		if(this.currentAudioEl){
+			try{
+				this.currentAudioEl.pause();
+				this.currentAudioEl.currentTime=0;
+			}catch(e){}
+			this.currentAudioEl=null;
+		}
 	}
 	async startRecording(onSuccess,onError){
 		try{
@@ -56,7 +95,7 @@ class AudioManager{
 		}
 	}
 	stopRecording(){
-		return new Promise((resolve)=>{
+		return new Promise(resolve=>{
 			if(!this.mediaRecorder||this.mediaRecorder.state==='inactive'){
 				this.isRecording=false;
 				resolve({audioUrl:null,blob:null});
@@ -65,7 +104,7 @@ class AudioManager{
 			this.mediaRecorder.onstop=()=>{
 				const blob=new Blob(this.recordedChunks,{type:'audio/webm'});
 				if(this.mediaRecorder.stream){
-					this.mediaRecorder.stream.getTracks().forEach(track=>track.stop());
+					this.mediaRecorder.stream.getTracks().forEach(t=>t.stop());
 				}
 				this.currentAudioUrl=URL.createObjectURL(blob);
 				this.isRecording=false;
@@ -74,24 +113,39 @@ class AudioManager{
 			this.mediaRecorder.stop();
 		});
 	}
+	playAudioUrl(url,onEnd){
+		if(!url)return;
+		const a=new Audio(url);
+		if(onEnd){
+			a.onended=onEnd;
+			a.onerror=onEnd;
+		}
+		a.play().catch(e=>{if(onEnd)onEnd();});
+		return a;
+	}
 	startSpeechRecognition(targetKorean,onResult,onError){
 		const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;
 		if(!SpeechRecognition){
-			if(onError)onError(new Error("Trình duyệt không hỗ trợ Web Speech Recognition. Bạn có thể nghe lại đoạn ghi âm vừa thu."));
+			if(onError)onError(new Error("Trình duyệt không hỗ trợ Web Speech API. Bạn vẫn có thể nghe lại giọng ghi âm."));
 			return null;
 		}
 		const recognizer=new SpeechRecognition();
 		recognizer.lang='ko-KR';
 		recognizer.interimResults=false;
 		recognizer.maxAlternatives=3;
-		recognizer.onresult=(event)=>{
+		recognizer.onresult=event=>{
 			const transcript=event.results[0][0].transcript.trim();
-			const cleanTranscript=transcript.replace(/[.,!?\s]/g,"");
-			const cleanTarget=targetKorean.replace(/[.,!?\s]/g,"");
-			const isMatch=cleanTranscript.includes(cleanTarget)||cleanTarget.includes(cleanTranscript);
-			if(onResult)onResult({transcript,isMatch,confidence:event.results[0][0].confidence});
+			const accuracy=this.calcAccuracy(transcript,targetKorean);
+			const isMatch=accuracy>=60;
+			if(onResult)onResult({
+				transcript,
+				target:targetKorean,
+				accuracy,
+				isMatch,
+				confidence:event.results[0][0].confidence
+			});
 		};
-		recognizer.onerror=(event)=>{
+		recognizer.onerror=event=>{
 			if(onError)onError(event);
 		};
 		try{
@@ -102,15 +156,27 @@ class AudioManager{
 			return null;
 		}
 	}
-	playAudioUrl(url,onEnd){
-		if(!url)return;
-		const audio=new Audio(url);
-		if(onEnd){
-			audio.onended=onEnd;
-			audio.onerror=onEnd;
+	calcAccuracy(recognized,target){
+		const c1=recognized.replace(/[.,!?~\s]/g,"").toLowerCase();
+		const c2=target.replace(/[.,!?~\s]/g,"").toLowerCase();
+		if(!c1||!c2)return 0;
+		if(c1===c2)return 100;
+		const d=this.levenshtein(c1,c2);
+		const maxLen=Math.max(c1.length,c2.length);
+		const score=Math.max(0,Math.round(((maxLen-d)/maxLen)*100));
+		return score;
+	}
+	levenshtein(a,b){
+		const dp=Array(a.length+1).fill(null).map(()=>Array(b.length+1).fill(0));
+		for(let i=0;i<=a.length;++i)dp[i][0]=i;
+		for(let j=0;j<=b.length;++j)dp[0][j]=j;
+		for(let i=1;i<=a.length;++i){
+			for(let j=1;j<=b.length;++j){
+				const cost=a[i-1]===b[j-1]?0:1;
+				dp[i][j]=Math.min(dp[i-1][j]+1,dp[i][j-1]+1,dp[i-1][j-1]+cost);
+			}
 		}
-		audio.play().catch(e=>{if(onEnd)onEnd();});
-		return audio;
+		return dp[a.length][b.length];
 	}
 }
 window.audioManager=new AudioManager();

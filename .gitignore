@@ -4,3 +4,13 @@ node_modules/
 scratch/
 __pycache__/
 *.pyc
+
+# Heavy documents and media files
+de/
+giao_tiep/
+luyen_viet/
+sach/
+*.pdf
+*.mp3
+*.zip
+*.docx

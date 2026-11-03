@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <defs>
+    <radialGradient id="bg-owl" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#818cf8" stop-opacity="0.4"/><stop offset="100%" stop-color="#818cf8" stop-opacity="0"/></radialGradient>
+    <linearGradient id="owl-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#4338ca"/></linearGradient>
+  </defs>
+  <circle cx="80" cy="80" r="70" fill="url(#bg-owl)"/>
+  <ellipse cx="68" cy="136" rx="10" ry="5" fill="#f59e0b"/>
+  <ellipse cx="92" cy="136" rx="10" ry="5" fill="#f59e0b"/>
+  <ellipse cx="80" cy="90" rx="44" ry="42" fill="url(#owl-grad)"/>
+  <ellipse cx="80" cy="102" rx="28" ry="26" fill="#ede9fe"/>
+  <path d="M40,90 Q30,110 50,115" fill="none" stroke="#4f46e5" stroke-width="12" stroke-linecap="round"/>
+  <path d="M120,90 Q135,100 120,115" fill="none" stroke="#4f46e5" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="66" cy="78" r="14" fill="#ffffff" stroke="#f59e0b" stroke-width="4"/>
+  <circle cx="94" cy="78" r="14" fill="#ffffff" stroke="#f59e0b" stroke-width="4"/>
+  <line x1="78" y1="78" x2="82" y2="78" stroke="#f59e0b" stroke-width="4"/>
+  <circle cx="66" cy="78" r="5" fill="#1e1b4b"/>
+  <circle cx="94" cy="78" r="5" fill="#1e1b4b"/>
+  <polygon points="76,86 84,86 80,95" fill="#f59e0b"/>
+  <polygon points="80,30 35,50 80,62 125,50" fill="#0f172a"/>
+  <rect x="65" y="55" width="30" height="12" fill="#1e293b" rx="3"/>
+  <line x1="115" y1="52" x2="125" y2="75" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="125" cy="77" r="4" fill="#fbbf24"/>
+</svg>

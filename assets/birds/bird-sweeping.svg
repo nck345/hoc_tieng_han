@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <defs>
+    <radialGradient id="bg-sweep" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#fed7aa" stop-opacity="0.4"/><stop offset="100%" stop-color="#fed7aa" stop-opacity="0"/></radialGradient>
+    <linearGradient id="sw-body" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f97316"/><stop offset="100%" stop-color="#c2410c"/></linearGradient>
+  </defs>
+  <circle cx="80" cy="80" r="70" fill="url(#bg-sweep)"/>
+  <ellipse cx="62" cy="138" rx="8" ry="4" fill="#b45309"/>
+  <ellipse cx="84" cy="138" rx="8" ry="4" fill="#b45309"/>
+  <ellipse cx="72" cy="92" rx="38" ry="36" fill="url(#sw-body)"/>
+  <ellipse cx="68" cy="100" rx="22" ry="22" fill="#ffedd5"/>
+  <circle cx="62" cy="78" r="5" fill="#1e293b"/>
+  <circle cx="80" cy="78" r="5" fill="#1e293b"/>
+  <path d="M92,68 C90,72 88,78 92,80 C95,80 97,76 92,68 Z" fill="#0284c7"/>
+  <polygon points="68,84 76,84 72,92" fill="#fbbf24"/>
+  <line x1="100" y1="60" x2="130" y2="135" stroke="#78350f" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="126,125 142,138 120,146" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
+  <ellipse cx="138" cy="142" rx="6" ry="3" fill="#e2e8f0" opacity="0.7"/>
+  <ellipse cx="146" cy="138" rx="4" ry="2" fill="#e2e8f0" opacity="0.7"/>
+  <rect x="50" y="46" width="46" height="12" fill="#ef4444" rx="3"/>
+  <text x="73" y="56" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle" font-family="sans-serif">PHẠT</text>
+</svg>

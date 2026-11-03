@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <defs>
+    <radialGradient id="bg-cyber" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#06b6d4" stop-opacity="0.5"/><stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/></radialGradient>
+    <linearGradient id="cy-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#06b6d4"/><stop offset="100%" stop-color="#3b82f6"/></linearGradient>
+  </defs>
+  <circle cx="80" cy="80" r="75" fill="url(#bg-cyber)"/>
+  <polygon points="40,80 15,45 50,60" fill="#3b82f6"/>
+  <polygon points="120,80 145,45 110,60" fill="#3b82f6"/>
+  <polygon points="80,45 115,85 80,135 45,85" fill="url(#cy-grad)"/>
+  <polygon points="80,60 100,85 80,118 60,85" fill="#0f172a"/>
+  <line x1="60" y1="78" x2="100" y2="78" stroke="#22d3ee" stroke-width="4"/>
+  <circle cx="70" cy="78" r="4" fill="#a5f3fc"/>
+  <circle cx="90" cy="78" r="4" fill="#a5f3fc"/>
+  <polygon points="76,86 84,86 80,95" fill="#f59e0b"/>
+  <circle cx="80" cy="105" r="5" fill="#22d3ee"/>
+</svg>
