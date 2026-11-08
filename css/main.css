@@ -207,7 +207,8 @@ header.app-header{display:flex;align-items:center;justify-content:space-between;
 /* TOOLTIP STYLES */
 .word-tooltip{position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#1e1b4b;border:1px solid #6366f1;color:#fff;padding:8px 12px;border-radius:8px;font-size:12px;font-weight:600;white-space:nowrap;box-shadow:var(--shadow);z-index:999;display:none;pointer-events:auto;line-height:1.4;}
 .word-tooltip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:#6366f1;}
-.word-span:hover .word-tooltip{display:flex;align-items:center;gap:6px;}
+.word-span:hover .word-tooltip,
+.word-span.tooltip-active .word-tooltip{display:flex;align-items:center;gap:6px;}
 /* NOTEBOOK & BIRDS */
 .notebook-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;}
 .notebook-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:16px;display:flex;flex-direction:column;justify-content:space-between;gap:10px;}

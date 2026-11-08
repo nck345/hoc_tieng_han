@@ -796,7 +796,7 @@ class TopikApp{
 					<button class="mode-btn" style="flex:1;font-size:13px;padding:8px 12px;background:#f59e0b;">Làm đề ngay</button>
 				</div>
 			`;
-			card.querySelector("button").addEventListener("click",()=>this.startExamFromItem(cat,ex));
+			card.addEventListener("click",()=>this.startExamFromItem(cat,ex));
 			this.examEls.folderItemsGrid.appendChild(card);
 		}
 	}
@@ -833,11 +833,25 @@ class TopikApp{
 	}
 	startExamFromItem(cat,ex){
 		let qList=[];
-		if(this.examData.packs&&this.examData.packs.length>0){
+		if(this.examData.packs){
 			for(let i=0;i<this.examData.packs.length;++i){
-				qList=qList.concat(this.examData.packs[i].questions||[]);
-				if(qList.length>=10)break;
+				const pkQuestions=this.examData.packs[i].questions||[];
+				for(let j=0;j<pkQuestions.length;++j){
+					const q=pkQuestions[j];
+					if(q.examCategory===cat.id||q.examId===ex.id){
+						qList.push(q);
+					}
+				}
 			}
+		}
+		if(qList.length===0&&this.examData.packs){
+			for(let i=0;i<this.examData.packs.length&&qList.length<10;++i){
+				const pkQuestions=this.examData.packs[i].questions||[];
+				if(pkQuestions.length>0)qList.push(pkQuestions[i%pkQuestions.length]);
+			}
+		}
+		if(qList.length===0&&this.examData.questions){
+			qList=this.examData.questions;
 		}
 		this.currentExamPack=null;
 		this.activeExamQuestions=qList.slice(0,10);
@@ -846,6 +860,7 @@ class TopikApp{
 		this.openExamPlayer(`${cat.name} - ${ex.name}`);
 	}
 	openExamPlayer(title){
+		this.activeExamTitle=title;
 		this.examEls.foldersContainer.style.display="none";
 		this.examEls.folderDetailWrap.style.display="none";
 		this.examEls.packsContainer.style.display="none";
@@ -876,12 +891,12 @@ class TopikApp{
 		this.audio.stopAll();
 		const q=this.activeExamQuestions[this.activeExamQuestionIndex];
 		const total=this.activeExamQuestions.length;
-		this.examEls.playerTypeBadge.textContent=q.typeName||"Dạng đề";
+		this.examEls.playerTypeBadge.textContent=this.activeExamTitle||q.typeName||"Dạng đề";
 		this.examEls.playerProgressBadge.textContent=`Câu ${this.activeExamQuestionIndex+1}/${total}`;
-		this.examEls.qInstruction.textContent=`[${q.section==="listening"?"Kỹ năng Nghe":"Kỹ năng Đọc"}] ${q.instruction}`;
+		this.examEls.qInstruction.textContent=`[${q.section==="listening"?"Kỹ năng Nghe":"Kỹ năng Đọc"}] ${q.instruction||""}`;
 		if(q.section==="listening"){
 			this.examEls.qAudioBox.style.display="flex";
-			this.examEls.audioStatus.textContent=q.audioUrl?`Audio câu hỏi #${q.questionNumber}`:"Audio câu hỏi";
+			this.examEls.audioStatus.textContent=q.audioUrl?`Audio câu hỏi #${q.questionNumber||(this.activeExamQuestionIndex+1)}`:"Audio câu hỏi";
 			this.examEls.btnAudioPlay.classList.remove("playing");
 		}else{
 			this.examEls.qAudioBox.style.display="none";
@@ -897,15 +912,17 @@ class TopikApp{
 		const options=q.options||[];
 		for(let i=0;i<options.length;++i){
 			const opt=options[i];
+			const optIndex=(typeof opt==="object"&&opt&&opt.index!==undefined)?opt.index:(i+1);
+			const optText=(typeof opt==="object"&&opt&&opt.text!==undefined)?opt.text:(typeof opt==="string"?opt:String(opt||""));
 			const btn=document.createElement("button");
 			btn.className="option-btn";
-			btn.dataset.index=opt.index;
-			btn.innerHTML=`<span class="option-num">${opt.index}</span> <span>${opt.text}</span>`;
+			btn.dataset.index=optIndex;
+			btn.innerHTML=`<span class="option-num">${optIndex}</span> <span>${optText}</span>`;
 			btn.addEventListener("click",()=>{
 				if(this.examEls.solutionPanel.style.display==="flex")return;
 				this.examEls.qOptionsList.querySelectorAll(".option-btn").forEach(b=>b.classList.remove("selected"));
 				btn.classList.add("selected");
-				this.selectedExamOption=opt.index;
+				this.selectedExamOption=optIndex;
 			});
 			this.examEls.qOptionsList.appendChild(btn);
 		}
@@ -913,13 +930,13 @@ class TopikApp{
 		this.examEls.btnPrevQ.style.opacity=this.activeExamQuestionIndex===0?"0.4":"1";
 		this.examEls.btnNextQ.textContent=this.activeExamQuestionIndex===total-1?"Hoàn thành gói đề":"Câu tiếp theo →";
 		const savedAns=this.storage.getExamAnswer(q.id);
-		if(savedAns){
-			this.selectedExamOption=savedAns.userAnswer;
+		if(savedAns&&savedAns.userAnswer!==undefined&&savedAns.userAnswer!==null&&!isNaN(savedAns.userAnswer)){
+			this.selectedExamOption=Number(savedAns.userAnswer);
 			const btns=this.examEls.qOptionsList.querySelectorAll(".option-btn");
 			btns.forEach(b=>{
-				if(parseInt(b.dataset.index,10)===savedAns.userAnswer)b.classList.add("selected");
+				if(parseInt(b.dataset.index,10)===Number(savedAns.userAnswer))b.classList.add("selected");
 			});
-			this.showExamSolution(q,savedAns.userAnswer,savedAns.isCorrect);
+			this.showExamSolution(q,Number(savedAns.userAnswer),savedAns.isCorrect);
 		}else{
 			this.examEls.solutionPanel.style.display="none";
 			this.examEls.btnSubmitAns.style.display="inline-block";
@@ -938,7 +955,7 @@ class TopikApp{
 		if(q.transcript&&q.transcript.length>0){
 			scriptText=q.transcript.map(t=>t.text).join(". ");
 		}else{
-			scriptText=q.passage||q.instruction;
+			scriptText=q.passage||q.instruction||"";
 		}
 		if(q.audioUrl){
 			this.audio.playAudioFile(
@@ -958,20 +975,20 @@ class TopikApp{
 		}
 	}
 	submitExamAnswer(){
-		if(this.selectedExamOption===null){
+		if(this.selectedExamOption===null||this.selectedExamOption===undefined||isNaN(this.selectedExamOption)){
 			if(typeof alert!=="undefined")alert("Vui lòng chọn 1 trong 4 phương án trước khi nộp câu trả lời.");
 			return;
 		}
 		const q=this.activeExamQuestions[this.activeExamQuestionIndex];
-		const isCorrect=this.selectedExamOption===q.correctAnswer;
-		this.storage.recordExamAnswer(q.id,this.selectedExamOption,isCorrect);
+		const isCorrect=Number(this.selectedExamOption)===Number(q.correctAnswer);
+		this.storage.recordExamAnswer(q.id,Number(this.selectedExamOption),isCorrect);
 		if(isCorrect){
 			this.storage.unlockBird("bird-happy","Chim Sẻ Vui Vẻ","Trả lời chính xác câu hỏi trong đề thi.","assets/birds/bird-happy.svg","Trả lời đúng đề thi");
 		}else{
 			this.storage.unlockBird("bird-cry","Cánh Cụt Mít Ướt","Cần rèn luyện ôn tập thêm khi làm bài.","assets/birds/bird-cry.svg","Rèn luyện qua lỗi sai");
 		}
 		this.renderStats();
-		this.showExamSolution(q,this.selectedExamOption,isCorrect);
+		this.showExamSolution(q,Number(this.selectedExamOption),isCorrect);
 	}
 	showExamSolution(q,userAns,isCorrect){
 		this.examEls.btnSubmitAns.style.display="none";
@@ -981,8 +998,8 @@ class TopikApp{
 		const optBtns=this.examEls.qOptionsList.querySelectorAll(".option-btn");
 		optBtns.forEach(b=>{
 			const idx=parseInt(b.dataset.index,10);
-			if(idx===q.correctAnswer)b.classList.add("correct-ans");
-			if(idx===userAns&&!isCorrect)b.classList.add("wrong-ans");
+			if(idx===Number(q.correctAnswer))b.classList.add("correct-ans");
+			if(idx===Number(userAns)&&!isCorrect)b.classList.add("wrong-ans");
 		});
 		if(isCorrect){
 			this.examEls.birdFeedback.className="bird-feedback-card correct";
