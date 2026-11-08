@@ -506,3 +506,4 @@ with open("js/exam_data.js", "w", encoding="utf-8") as f:
     f.write(js_content)
 
 print(f"Successfully generated clean exam_data.js with {len(question_packs)} distinct 10-question packs!")
+
