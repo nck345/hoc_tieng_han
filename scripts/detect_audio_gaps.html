@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"></head>
+<body>
+<div id="status">Starting...</div>
+<script>
+async function run() {
+    try {
+        const params = new URLSearchParams(window.location.search);
+        const fileName = params.get("file") || "tm02.mp3";
+        console.error("LOG: Fetching " + fileName + "...");
+        const resp = await fetch(fileName);
+        const arrayBuf = await resp.arrayBuffer();
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        const audioBuf = await ctx.decodeAudioData(arrayBuf);
+        
+        console.error("LOG: Decoded! Duration=" + audioBuf.duration + ", SampleRate=" + audioBuf.sampleRate);
+        
+        const pcm = audioBuf.getChannelData(0);
+        const sr = audioBuf.sampleRate;
+        const winSize = Math.floor(sr * 0.1);
+        const numWins = Math.floor(pcm.length / winSize);
+        
+        // Find silences >= 3.5 seconds
+        const longSilences = [];
+        let inSil = false;
+        let sStart = 0;
+        for (let i = 0; i < numWins; i++) {
+            let s = 0;
+            const start = i * winSize;
+            for (let j = 0; j < winSize; j++) {
+                const v = pcm[start + j];
+                s += v * v;
+            }
+            const rms = Math.sqrt(s / winSize);
+            if (rms < 0.0035) {
+                if (!inSil) {
+                    inSil = true;
+                    sStart = i * 0.1;
+                }
+            } else {
+                if (inSil) {
+                    const dur = (i * 0.1) - sStart;
+                    if (dur >= 3.5) {
+                        longSilences.push({ start: +sStart.toFixed(1), end: +(i * 0.1).toFixed(1), dur: +dur.toFixed(1) });
+                    }
+                    inSil = false;
+                }
+            }
+        }
+        console.error("FOUND_GAPS_COUNT: " + longSilences.length);
+        console.error("GAPS_JSON_START" + JSON.stringify(longSilences) + "GAPS_JSON_END");
+        document.getElementById("status").textContent = "DONE: " + longSilences.length;
+    } catch(e) {
+        console.error("LOG_ERR: " + e.message);
+        document.getElementById("status").textContent = "ERR: " + e.message;
+    }
+}
+run();
+</script>
+</body>
+</html>

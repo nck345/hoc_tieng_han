@@ -1,0 +1,892 @@
+[
+	{
+		"id": "q_l_96_26",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "listening",
+		"questionNumber": 26,
+		"typeId": "L_TYPE_4",
+		"typeName": "Nghe: Chọn nội dung giống với bài nghe",
+		"instruction": "※ [25～26] 다음을 듣고 물음에 답하십시오. (각 2점)\n26. 들은 내용과 같은 것을 고르십시오.",
+		"passage": "여자: 서장님, 인주경찰서가 작년에 이어 올해도 전국에서 범인 검거율이 가장 높은 곳으로 선정되었던데 어떻게 이런 성과를 낼 수 있었나요?\n남자: 무엇보다 현장 대응력을 높이기 위한 훈련 덕분이라고 생각합니다. 이 지역은 번화한 곳이라서 사건, 사고가 많지요. 그래서 다른 곳에 비해 인력도 많은데 대부분 젊은 경찰관들입니다. 젊은 경찰관들은 아무래도 현장 경험이 부족하기 때문에 다양한 모의 상황을 만들어 현장 대응력을 강화하는 훈련을 반복해서 했습니다. 그렇게 하니까 실제 상황에서도 효과가 있었던 것 같습니다.",
+		"audioUrl": "de/Đề thi thật/Kỳ thi số 96/제96회 TOPIK II 듣기파일/2-25.mp3",
+		"options": [
+			"이 경찰서가 있는 지역은 사건이 자주 발생한다.",
+			"이 경찰서에는 경험이 많은 경찰들이 대부분이다.",
+			"이 경찰서는 다른 곳에 비해 범인 검거율이 낮다.",
+			"이 경찰서에서 실시한 훈련은 효과를 보지 못했다."
+		],
+		"correctAnswer": 1,
+		"isAiAnswer": false,
+		"explanation": "Trong bài, cảnh sát trưởng cho biết: '이 지역은 번화한 곳이라서 사건, 사고가 많지요' (Khu vực này sầm uất nên xảy ra nhiều sự vụ, tai nạn). Do đó thông tin trong đáp án ① 'Khu vực có đồn cảnh sát này thường xuyên phát sinh các sự vụ' (이 경찰서가 있는 지역은 사건이 자주 발생한다) là hoàn toàn chính xác. Các đáp án khác sai: phần lớn là cảnh sát trẻ thiếu kinh nghiệm (không phải có nhiều kinh nghiệm); tỷ lệ bắt giữ cao nhất cả nước (không phải thấp); các đợt huấn luyện đạt hiệu quả cao.",
+		"transcript": [
+			{"speaker": "여자", "text": "서장님, 인주경찰서가 작년에 이어 올해도 전국에서 범인 검거율이 가장 높은 곳으로 선정되었던데 어떻게 이런 성과를 낼 수 있었나요?", "translation": "Thưa Trưởng đồn, Đồn cảnh sát Inju tiếp nối năm ngoái, năm nay lại được bình chọn là nơi có tỷ lệ bắt giữ tội phạm cao nhất cả nước. Nhờ đâu mà đồn đạt được thành tích như vậy ạ?"},
+			{"speaker": "남자", "text": "무엇보다 현장 대응력을 높이기 위한 훈련 덕분이라고 생각합니다. 이 지역은 번화한 곳이라서 사건, 사고가 많지요. 그래서 다른 곳에 비해 인력도 많은데 대부분 젊은 경찰관들입니다. 젊은 경찰관들은 아무래도 현장 경험이 부족하기 때문에 다양한 모의 상황을 만들어 현장 대응력을 강화하는 훈련을 반복해서 했습니다. 그렇게 하니까 실제 상황에서도 효과가 있었던 것 같습니다.", "translation": "Trước hết, tôi nghĩ thành quả này là nhờ những đợt huấn luyện nâng cao năng lực ứng phó tại hiện trường. Khu vực này sầm uất nên có nhiều sự việc, tai nạn. Cảnh sát đa số là người trẻ thiếu kinh nghiệm, nên chúng tôi đã liên tục huấn luyện mô phỏng, và việc đó đã mang lại hiệu quả rõ rệt khi đối mặt tình huống thật."}
+		],
+		"grammar": [
+			{"point": "-에 비해(서)", "meaning": "So với...", "example": "다른 곳에 비해 인력이 많다."},
+			{"point": "-은/는 것 같다", "meaning": "Dường như, có vẻ như...", "example": "효과가 있었던 것 같다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "사건, 사고", "vietnamese": "Sự vụ, sự cố tai nạn"}, {"korean": "인력", "vietnamese": "Nhân lực, lực lượng"}],
+			"verbs": [{"korean": "발생하다", "vietnamese": "Phát sinh, xảy ra"}],
+			"adjectives": [{"korean": "부족하다", "vietnamese": "Thiếu thốn"}],
+			"adverbs": [{"korean": "자주", "vietnamese": "Thường xuyên"}, {"korean": "대부분", "vietnamese": "Hầu hết, phần lớn"}]
+		}
+	},
+	{
+		"id": "q_l_96_27",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "listening",
+		"questionNumber": 27,
+		"typeId": "L_TYPE_5",
+		"typeName": "Nghe: Ý đồ / Mục đích của người nói",
+		"instruction": "※ [27～28] 다음을 듣고 물음에 답하십시오. (각 2점)\n27. 남자가 말하는 의도로 알맞은 것을 고르십시오.",
+		"passage": "남자: 올해 우리 대학 축제에 가수 김민수 씨가 온대. 언제부턴가 대학 축제가 가수 콘서트처럼 변해 가는 거 같아.\n여자: 난 좋은데. 김민수 씨 팬인데 표가 비싸서 콘서트에 못 갔거든.\n남자: 작년 축제 때 학과에서 하는 행사엔 참여하지 않고 공연만 보러 오는 학생들이 많았잖아. 관심이 공연에만 집중되는 거 같아서 좀 씁쓸해.\n여자: 그래도 유명 가수가 오면 학교 홍보도 되고 좋은 면도 있을 거야.\n남자: 올해는 작년보다 학생이 직접 참여하고 교류하는 행사가 더 줄어들었어. 그건 좀 잘못된 것 같아.",
+		"audioUrl": "de/Đề thi thật/Kỳ thi số 96/제96회 TOPIK II 듣기파일/2-27.mp3",
+		"options": [
+			"대학 축제의 필요성을 설명하려고",
+			"대학 축제의 문제점에 대해 지적하려고",
+			"대학 축제에 대한 반응을 알려 주려고",
+			"대학 축제에 출연하는 가수를 홍보하려고"
+		],
+		"correctAnswer": 2,
+		"isAiAnswer": false,
+		"explanation": "Người nam liên tục chỉ ra những điểm bất cập: lễ hội đại học biến thành buổi hòa nhạc ca sĩ, sinh viên chỉ đến xem biểu diễn mà không tham gia hoạt động của khoa, các sự kiện để sinh viên giao lưu và trực tiếp tham gia bị cắt giảm (그건 좀 잘못된 것 같아). Ý đồ của người nam khi nói là muốn chỉ ra mặt hạn chế, vấn đề bất cập của lễ hội trường hiện nay (대학 축제의 문제점에 대해 지적하려고) -> Đáp án ②.",
+		"transcript": [
+			{"speaker": "남자", "text": "올해 우리 대학 축제에 가수 김민수 씨가 온대. 언제부턴가 대학 축제가 가수 콘서트처럼 변해 가는 거 같아.", "translation": "Năm nay nghe bảo ca sĩ Kim Min-soo sẽ đến lễ hội trường mình đấy. Chẳng biết từ bao giờ mà lễ hội trường đại học cứ biến thành concert ca sĩ thế này."},
+			{"speaker": "여자", "text": "난 좋은데. 김민수 씨 팬인데 표가 비싸서 콘서트에 못 갔거든.", "translation": "Mình thì thấy thích mà. Mình là fan Kim Min-soo nhưng vé đắt quá nên chưa đi xem được."},
+			{"speaker": "남자", "text": "작년 축제 때 학과에서 하는 행사엔 참여하지 않고 공연만 보러 오는 학생들이 많았잖아. 관심이 공연에만 집중되는 거 같아서 좀 씁쓸해.", "translation": "Năm ngoái có bao nhiêu sinh viên chẳng thèm tham gia hoạt động của khoa mà chỉ chực đến xem biểu diễn rồi về. Sự chú ý dồn hết cả vào ca sĩ biểu diễn nên mình thấy hơi buồn."},
+			{"speaker": "여자", "text": "그래도 유명 가수가 오면 학교 홍보도 되고 좋은 면도 있을 거야.", "translation": "Dù sao ca sĩ nổi tiếng đến thì trường cũng được quảng bá, cũng có mặt tích cực chứ."},
+			{"speaker": "남자", "text": "올해는 작년보다 학생이 직접 참여하고 교류하는 행사가 더 줄어들었어. 그건 좀 잘못된 것 같아.", "translation": "Năm nay các hoạt động để sinh viên tự mình tham gia và giao lưu lại càng giảm hơn năm ngoái. Mình thấy thế là có phần sai lệch rồi."}
+		],
+		"grammar": [
+			{"point": "-아/어 가다", "meaning": "Trạng thái đang dần dần biến chuyển...", "example": "축제가 변해 가고 있다."},
+			{"point": "-(으)려고", "meaning": "Để làm gì (mục đích/ý đồ)", "example": "문제점을 지적하려고 한다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "대학 축제", "vietnamese": "Lễ hội trường đại học"}, {"korean": "교류", "vietnamese": "Giao lưu"}],
+			"verbs": [{"korean": "지적하다", "vietnamese": "Chỉ trích, vạch ra, chỉ rõ"}, {"korean": "참여하다", "vietnamese": "Tham gia"}],
+			"adjectives": [{"korean": "씁쓸하다", "vietnamese": "Cay đắng, chạnh lòng, buồn bã"}],
+			"adverbs": [{"korean": "언제부턴가", "vietnamese": "Từ lúc nào chẳng rõ"}]
+		}
+	},
+	{
+		"id": "q_l_96_28",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "listening",
+		"questionNumber": 28,
+		"typeId": "L_TYPE_4",
+		"typeName": "Nghe: Chọn nội dung giống với bài nghe",
+		"instruction": "※ [27～28] 다음을 듣고 물음에 답하십시오. (각 2점)\n28. 들은 내용과 같은 것을 고르십시오.",
+		"passage": "남자: 올해 우리 대학 축제에 가수 김민수 씨가 온대. 언제부턴가 대학 축제가 가수 콘서트처럼 변해 가는 거 같아.\n여자: 난 좋은데. 김민수 씨 팬인데 표가 비싸서 콘서트에 못 갔거든.\n남자: 작년 축제 때 학과에서 하는 행사엔 참여하지 않고 공연만 보러 오는 학생들이 많았잖아. 관심이 공연에만 집중되는 거 같아서 좀 씁쓸해.\n여자: 그래도 유명 가수가 오면 학교 홍보도 되고 좋은 면도 있을 거야.\n남자: 올해는 작년보다 학생이 직접 참여하고 교류하는 행사가 더 줄어들었어. 그건 좀 잘못된 것 같아.",
+		"audioUrl": "de/Đề thi thật/Kỳ thi số 96/제96회 TOPIK II 듣기파일/2-27.mp3",
+		"options": [
+			"여자는 김민수 씨의 콘서트에 간 적이 있다.",
+			"남자가 다니는 대학은 올해 축제를 열지 않는다.",
+			"여자는 축제에 유명 가수를 섭외하는 것에 찬성한다.",
+			"작년 축제 때 학과 행사에 학생들이 많이 참여했다."
+		],
+		"correctAnswer": 3,
+		"isAiAnswer": false,
+		"explanation": "Người nữ nêu quan điểm ủng hộ việc mời ca sĩ nổi tiếng: '난 좋은데... 그래도 유명 가수가 오면 학교 홍보도 되고 좋은 면도 있을 거야' (Mình thì thấy tốt mà... Ca sĩ nổi tiếng đến thì vừa quảng bá trường vừa có nhiều mặt tốt). Điều này thể hiện người nữ tán thành việc mời ca sĩ nổi tiếng về biểu diễn ở lễ hội (여자는 축제에 유명 가수를 섭외하는 것에 찬성한다) -> Đáp án ③.",
+		"transcript": [
+			{"speaker": "남자", "text": "올해 우리 대학 축제에 가수 김민수 씨가 온대. 언제부턴가 대학 축제가 가수 콘서트처럼 변해 가는 거 같아.", "translation": "Năm nay nghe bảo ca sĩ Kim Min-soo sẽ đến lễ hội trường mình đấy. Chẳng biết từ bao giờ mà lễ hội trường đại học cứ biến thành concert ca sĩ thế này."},
+			{"speaker": "여자", "text": "난 좋은데. 김민수 씨 팬인데 표가 비싸서 콘서트에 못 갔거든.", "translation": "Mình thì thấy thích mà. Mình là fan Kim Min-soo nhưng vé đắt quá nên chưa đi xem được."},
+			{"speaker": "남자", "text": "작년 축제 때 학과에서 하는 행사엔 참여하지 않고 공연만 보러 오는 학생들이 많았잖아. 관심이 공연에만 집중되는 거 같아서 좀 씁쓸해.", "translation": "Năm ngoái có bao nhiêu sinh viên chẳng thèm tham gia hoạt động của khoa mà chỉ chực đến xem biểu diễn rồi về. Sự chú ý dồn hết cả vào ca sĩ biểu diễn nên mình thấy hơi buồn."},
+			{"speaker": "여자", "text": "그래도 유명 가수가 오면 학교 홍보도 되고 좋은 면도 있을 거야.", "translation": "Dù sao ca sĩ nổi tiếng đến thì trường cũng được quảng bá, cũng có mặt tích cực chứ."},
+			{"speaker": "남자", "text": "올해는 작년보다 학생이 직접 참여하고 교류하는 행사가 더 줄어들었어. 그건 좀 잘못된 것 같아.", "translation": "Năm nay các hoạt động để sinh viên tự mình tham gia và giao lưu lại càng giảm hơn năm ngoái. Mình thấy thế là có phần sai lệch rồi."}
+		],
+		"grammar": [
+			{"point": "-거든(요)", "meaning": "Bởi vì... (giải thích lý do đối thoại thân mật)", "example": "표가 비싸서 못 갔거든."},
+			{"point": "-는 것에 찬성하다", "meaning": "Tán thành/đồng ý với việc gì", "example": "섭외하는 것에 찬성한다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "가수 섭외", "vietnamese": "Mời gọi ca sĩ biểu diễn"}, {"korean": "홍보", "vietnamese": "Quảng bá, tuyên truyền"}],
+			"verbs": [{"korean": "찬성하다", "vietnamese": "Tán thành"}],
+			"adjectives": [{"korean": "유명하다", "vietnamese": "Nổi tiếng"}],
+			"adverbs": [{"korean": "그래도", "vietnamese": "Dù vậy, dẫu sao thì"}]
+		}
+	},
+	{
+		"id": "q_l_96_29",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "listening",
+		"questionNumber": 29,
+		"typeId": "L_TYPE_5",
+		"typeName": "Nghe: Xác định nghề nghiệp / Chức danh nhân vật",
+		"instruction": "※ [29～30] 다음을 듣고 물음에 답하십시오. (각 2점)\n29. 남자가 누구인지 고르십시오.",
+		"passage": "여자: 박사님께서는 지난 20년 동안 제주 바다와 함께해 오셨는데요. 현재 제주 바다의 해양 상태는 어떤가요?\n남자: 해조류가 줄어들고 아열대 생물들이 늘어나고 있습니다. 기후 변화 때문이죠. 해조류를 먹이로 하는 생물들도 영향을 받고 있고요.\n여자: 그동안은 제주 바다의 수온 변화와 생태계의 관계에 대한 논문을 많이 발표해 오셨는데요. 최근에는 어떤 연구를 수행하고 계신지요?\n남자: 작년부터 다른 국가와 공동으로 팀을 꾸려서 태평양의 어종 분포에 대해 조사하고 있습니다.",
+		"audioUrl": "de/Đề thi thật/Kỳ thi số 96/제96회 TOPIK II 듣기파일/2-29.mp3",
+		"options": [
+			"해양 생태계를 연구하는 사람",
+			"해양 구조물을 설치하는 사람",
+			"해양 스포츠를 홍보하는 사람",
+			"해양 에너지를 개발하는 사람"
+		],
+		"correctAnswer": 1,
+		"isAiAnswer": false,
+		"explanation": "Người nữ gọi người nam là Tiến sĩ (박사님), nhắc tới việc ông đã nghiên cứu mối quan hệ giữa biến đổi nhiệt độ nước biển và hệ sinh thái biển Jeju trong 20 năm, công bố nhiều luận văn. Người nam cũng cho biết hiện đang khảo sát sự phân bố các loài cá ở Thái Bình Dương. Do đó, người nam là nhà khoa học chuyên nghiên cứu hệ sinh thái biển (해양 생태계를 연구하는 사람) -> Đáp án ①.",
+		"transcript": [
+			{"speaker": "여자", "text": "박사님께서는 지난 20년 동안 제주 바다와 함께해 오셨는데요. 현재 제주 바다의 해양 상태는 어떤가요?", "translation": "Thưa Tiến sĩ, ông đã gắn bó với biển Jeju suốt 20 năm qua. Hiện nay tình trạng biển Jeju đang như thế nào ạ?"},
+			{"speaker": "남자", "text": "해조류가 줄어들고 아열대 생물들이 늘어나고 있습니다. 기후 변화 때문이죠. 해조류를 먹이로 하는 생물들도 영향을 받고 있고요.", "translation": "Rong tảo biển đang sụt giảm trong khi các sinh vật cận nhiệt đới lại ngày càng gia tăng. Đó là do biến đổi khí hậu. Các loài sinh vật lấy rong tảo làm thức ăn cũng đang bị ảnh hưởng nghiêm trọng."},
+			{"speaker": "여자", "text": "그동안은 제주 바다의 수온 변화와 생태계의 관계에 대한 논문을 많이 발표해 오셨는데요. 최근에는 어떤 연구를 수행하고 계신지요?", "translation": "Thời gian qua ông đã công bố rất nhiều bài báo khoa học về mối liên hệ giữa sự thay đổi nhiệt độ nước biển và hệ sinh thái biển Jeju. Gần đây ông đang thực hiện công trình nghiên cứu nào ạ?"},
+			{"speaker": "남자", "text": "작년부터 다른 국가와 공동으로 팀을 꾸려서 태평양의 어종 분포에 대해 조사하고 있습니다.", "translation": "Từ năm ngoái, chúng tôi đã thành lập đội ngũ hợp tác chung với các quốc gia khác để khảo sát về sự phân bố các loài cá ở vùng biển Thái Bình Dương."}
+		],
+		"grammar": [
+			{"point": "-아/어 오다", "meaning": "Đã và đang làm gì liên tục từ quá khứ đến nay", "example": "연구해 왔습니다."},
+			{"point": "-을/를 먹이로 하다", "meaning": "Lấy cái gì làm thức ăn", "example": "해조류를 먹이로 하는 생물."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "해양 생태계", "vietnamese": "Hệ sinh thái biển"}, {"korean": "해조류", "vietnamese": "Rong tảo biển"}, {"korean": "어종 분포", "vietnamese": "Sự phân bố các loài cá"}],
+			"verbs": [{"korean": "발표하다", "vietnamese": "Công bố, phát biểu"}, {"korean": "수행하다", "vietnamese": "Thực thi, tiến hành"}],
+			"adjectives": [{"korean": "아열대", "vietnamese": "Cận nhiệt đới"}],
+			"adverbs": [{"korean": "공동으로", "vietnamese": "Cùng nhau, mang tính hợp tác chung"}]
+		}
+	},
+	{
+		"id": "q_l_96_30",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "listening",
+		"questionNumber": 30,
+		"typeId": "L_TYPE_4",
+		"typeName": "Nghe: Chọn nội dung giống với bài nghe",
+		"instruction": "※ [29～30] 다음을 듣고 물음에 답하십시오. (각 2점)\n30. 들은 내용과 같은 것을 고르십시오.",
+		"passage": "여자: 박사님께서는 지난 20년 동안 제주 바다와 함께해 오셨는데요. 현재 제주 바다의 해양 상태는 어떤가요?\n남자: 해조류가 줄어들고 아열대 생물들이 늘어나고 있습니다. 기후 변화 때문이죠. 해조류를 먹이로 하는 생물들도 영향을 받고 있고요.\n여자: 그동안은 제주 바다의 수온 변화와 생태계의 관계에 대한 논문을 많이 발표해 오셨는데요. 최근에는 어떤 연구를 수행하고 계신지요?\n남자: 작년부터 다른 국가와 공동으로 팀을 꾸려서 태평양의 어종 분포에 대해 조사하고 있습니다.",
+		"audioUrl": "de/Đề thi thật/Kỳ thi số 96/제96회 TOPIK II 듣기파일/2-29.mp3",
+		"options": [
+			"제주 바다에는 아열대 생물이 감소하고 있다.",
+			"남자는 다른 나라와 팀을 만들어 일하고 있다.",
+			"남자는 바다와 관련된 일을 작년부터 시작했다.",
+			"제주 바다의 해조류가 줄어든 원인이 밝혀지지 않았다."
+		],
+		"correctAnswer": 2,
+		"isAiAnswer": false,
+		"explanation": "Ở câu nói cuối, người nam xác nhận: '작년부터 다른 국가와 공동으로 팀을 꾸려서 태평양의 어종 분포에 대해 조사하고 있습니다' (Từ năm ngoái tôi đã lập đội ngũ cùng với các quốc gia khác để điều tra...). Thông tin này hoàn toàn trùng khớp với đáp án ② 'Người nam đang lập đội ngũ cùng các quốc gia khác để làm việc' (남자는 다른 나라와 팀을 만들어 일하고 있다).",
+		"transcript": [
+			{"speaker": "여자", "text": "박사님께서는 지난 20년 동안 제주 바다와 함께해 오셨는데요. 현재 제주 바다의 해양 상태는 어떤가요?", "translation": "Thưa Tiến sĩ, ông đã gắn bó với biển Jeju suốt 20 năm qua. Hiện nay tình trạng biển Jeju đang như thế nào ạ?"},
+			{"speaker": "남자", "text": "해조류가 줄어들고 아열대 생물들이 늘어나고 있습니다. 기후 변화 때문이죠. 해조류를 먹이로 하는 생물들도 영향을 받고 있고요.", "translation": "Rong tảo biển đang sụt giảm trong khi các sinh vật cận nhiệt đới lại ngày càng gia tăng. Đó là do biến đổi khí hậu. Các loài sinh vật lấy rong tảo làm thức ăn cũng đang bị ảnh hưởng nghiêm trọng."},
+			{"speaker": "여자", "text": "그동안은 제주 바다의 수온 변화와 생태계의 관계에 대한 논문을 많이 발표해 오셨는데요. 최근에는 어떤 연구를 수행하고 계신지요?", "translation": "Thời gian qua ông đã công bố rất nhiều bài báo khoa học về mối liên hệ giữa sự thay đổi nhiệt độ nước biển và hệ sinh thái biển Jeju. Gần đây ông đang thực hiện công trình nghiên cứu nào ạ?"},
+			{"speaker": "남자", "text": "작년부터 다른 국가와 공동으로 팀을 꾸려서 태평양의 어종 분포에 대해 조사하고 있습니다.", "translation": "Từ năm ngoái, chúng tôi đã thành lập đội ngũ hợp tác chung với các quốc gia khác để khảo sát về sự phân bố các loài cá ở vùng biển Thái Bình Dương."}
+		],
+		"grammar": [
+			{"point": "팀을 꾸리다", "meaning": "Thành lập, xây dựng một đội ngũ / nhóm làm việc", "example": "새로운 팀을 꾸렸다."},
+			{"point": "-에 대해 조사하다", "meaning": "Điều tra, nghiên cứu về lĩnh vực gì", "example": "어종 분포에 대해 조사하다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "수온", "vietnamese": "Nhiệt độ nước"}, {"korean": "논문", "vietnamese": "Luận văn, công trình nghiên cứu"}],
+			"verbs": [{"korean": "줄어들다", "vietnamese": "Giảm đi"}, {"korean": "늘어나다", "vietnamese": "Tăng lên"}],
+			"adjectives": [],
+			"adverbs": [{"korean": "현재", "vietnamese": "Hiện tại"}]
+		}
+	},
+	{
+		"id": "q_l_96_31",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "listening",
+		"questionNumber": 31,
+		"typeId": "L_TYPE_5",
+		"typeName": "Nghe: Suy nghĩ trọng tâm & Luận điểm",
+		"instruction": "※ [31～32] 다음을 듣고 물음에 답하십시오. (각 2점)\n31. 남자의 중심 생각으로 가장 알맞은 것을 고르십시오.",
+		"passage": "여자: 오토바이 사고를 줄이려면 현재 뒷면에 있는 번호판을 더 크게 만들고 단속을 강화하는 것이 최선의 방안이라고 생각합니다.\n남자: 그런데 현재 단속 시스템으로는 번호판이 아무리 커도 뒷면에 있어서 식별이 어렵습니다. 앞에도 번호판을 달아야 합니다.\n여자: 하지만 오토바이는 앞면에 번호판을 부착하기 어려운 구조입니다.\n남자: 그런 문제 때문에 앞면에 스티커로 된 번호판을 부착한 해외의 사례도 있습니다. 매년 증가하는 오토바이 사고를 감소시키려면 더 이상 미룰 수만은 없는 문제입니다.",
+		"audioUrl": "de/Đề thi thật/Kỳ thi số 96/제96회 TOPIK II 듣기파일/2-31.mp3",
+		"options": [
+			"오토바이의 교통 법규 위반은 강하게 처벌해야 한다.",
+			"오토바이 사고 예방을 위해 단속 장비를 늘려야 한다.",
+			"오토바이 운전자를 대상으로 안전 교육을 실시해야 한다.",
+			"오토바이 사고를 줄이려면 번호판 부착 제도를 개선해야 한다."
+		],
+		"correctAnswer": 4,
+		"isAiAnswer": false,
+		"explanation": "Người nam phản đối việc chỉ phóng to biển số phía sau và khẳng định phải gắn biển số cả ở phía trước xe máy (앞에도 번호판을 달아야 합니다). Khi người nữ nói khó lắp biển cứng phía trước, người nam dẫn chứng nước ngoài dán decal biển số trước và nhấn mạnh phải thay đổi ngay để giảm tai nạn. Trọng tâm ý kiến của người nam là: Muốn giảm tai nạn xe máy thì cần cải tiến quy định gắn biển số xe (오토바이 사고를 줄이려면 번호판 부착 제도를 개선해야 한다) -> Đáp án ④.",
+		"transcript": [
+			{"speaker": "여자", "text": "오토바이 사고를 줄이려면 현재 뒷면에 있는 번호판을 더 크게 만들고 단속을 강화하는 것이 최선의 방안이라고 생각합니다.", "translation": "Tôi nghĩ rằng để giảm tai nạn xe máy thì giải pháp tối ưu là làm to hơn biển số hiện đang gắn ở mặt sau và tăng cường tuần tra xử phạt."},
+			{"speaker": "남자", "text": "그런데 현재 단속 시스템으로는 번호판이 아무리 커도 뒷면에 있어서 식별이 어렵습니다. 앞에도 번호판을 달아야 합니다.", "translation": "Thế nhưng với hệ thống giám sát hiện nay, biển số dù có to đến mấy mà gắn đằng sau thì vẫn rất khó nhận diện. Cần phải gắn biển số ở cả phía trước nữa."},
+			{"speaker": "여자", "text": "하지만 오토바이는 앞면에 번호판을 부착하기 어려운 구조입니다.", "translation": "Nhưng xe máy vốn có cấu tạo rất khó để gắn biển số ở mặt trước."},
+			{"speaker": "남자", "text": "그런 문제 때문에 앞면에 스티커로 된 번호판을 부착한 해외의 사례도 있습니다. 매년 증가하는 오토바이 사고를 감소시키려면 더 이상 미룰 수만은 없는 문제입니다.", "translation": "Chính vì vấn đề cấu tạo đó nên ở nước ngoài đã có tiền lệ dán biển số dạng decal tem dán ở phía trước. Nếu muốn giảm thiểu các vụ tai nạn xe máy đang tăng hàng năm thì đây là vấn đề không thể cứ trì hoãn thêm được nữa."}
+		],
+		"grammar": [
+			{"point": "아무리 -아/어도", "meaning": "Dù cho có... đến thế nào đi chăng nữa", "example": "아무리 커도 식별이 어렵다."},
+			{"point": "-(으)ㄹ 수만은 없다", "meaning": "Không thể cứ mãi... được", "example": "더 이상 미룰 수만은 없다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "번호판", "vietnamese": "Biển số xe"}, {"korean": "단속", "vietnamese": "Kiểm tra, xử phạt, tuần tra"}, {"korean": "식별", "vietnamese": "Nhận diện, phân biệt"}],
+			"verbs": [{"korean": "부착하다", "vietnamese": "Dán vào, gắn vào"}, {"korean": "감소시키다", "vietnamese": "Làm giảm thiểu"}],
+			"adjectives": [],
+			"adverbs": [{"korean": "더 이상", "vietnamese": "Thêm nữa, hơn nữa"}]
+		}
+	},
+	{
+		"id": "q_l_96_32",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "listening",
+		"questionNumber": 32,
+		"typeId": "L_TYPE_5",
+		"typeName": "Nghe: Thái độ của người nói",
+		"instruction": "※ [31～32] 다음을 듣고 물음에 답하십시오. (각 2점)\n32. 남자의 태도로 가장 알맞은 것을 고르십시오.",
+		"passage": "여자: 오토바이 사고를 줄이려면 현재 뒷면에 있는 번호판을 더 크게 만들고 단속을 강화하는 것이 최선의 방안이라고 생각합니다.\n남자: 그런데 현재 단속 시스템으로는 번호판이 아무리 커도 뒷면에 있어서 식별이 어렵습니다. 앞에도 번호판을 달아야 합니다.\n여자: 하지만 오토바이는 앞면에 번호판을 부착하기 어려운 구조입니다.\n남자: 그런 문제 때문에 앞면에 스티커로 된 번호판을 부착한 해외의 사례도 있습니다. 매년 증가하는 오토바이 사고를 감소시키려면 더 이상 미룰 수만은 없는 문제입니다.",
+		"audioUrl": "de/Đề thi thật/Kỳ thi số 96/제96회 TOPIK II 듣기파일/2-31.mp3",
+		"options": [
+			"문제 해결 방안에 일부 동의하고 있다.",
+			"상대방과 협의하여 타협점을 찾고 있다.",
+			"상대방의 주장을 일관되게 반박하고 있다.",
+			"상대방에게 명확한 근거를 요구하고 있다."
+		],
+		"correctAnswer": 3,
+		"isAiAnswer": false,
+		"explanation": "Trong toàn bộ cuộc trao đổi, người nam liên tục phản bác các lập luận của người nữ: khi người nữ bảo làm to biển số sau, người nam phản bác bảo phía sau khó nhận diện phải gắn phía trước; khi người nữ bảo phía trước khó gắn biển số, người nam lại tiếp tục phản bác rằng có thể dùng tem dán như nước ngoài. Thái độ của người nam là kiên định phản bác quan điểm của đối phương (상대방의 주장을 일관되게 반박하고 있다) -> Đáp án ③.",
+		"transcript": [
+			{"speaker": "여자", "text": "오토바이 사고를 줄이려면 현재 뒷면에 있는 번호판을 더 크게 만들고 단속을 강화하는 것이 최선의 방안이라고 생각합니다.", "translation": "Tôi nghĩ rằng để giảm tai nạn xe máy thì giải pháp tối ưu là làm to hơn biển số hiện đang gắn ở mặt sau và tăng cường tuần tra xử phạt."},
+			{"speaker": "남자", "text": "그런데 현재 단속 시스템으로는 번호판이 아무리 커도 뒷면에 있어서 식별이 어렵습니다. 앞에도 번호판을 달아야 합니다.", "translation": "Thế nhưng với hệ thống giám sát hiện nay, biển số dù có to đến mấy mà gắn đằng sau thì vẫn rất khó nhận diện. Cần phải gắn biển số ở cả phía trước nữa."},
+			{"speaker": "여자", "text": "하지만 오토바이는 앞면에 번호판을 부착하기 어려운 구조입니다.", "translation": "Nhưng xe máy vốn có cấu tạo rất khó để gắn biển số ở mặt trước."},
+			{"speaker": "남자", "text": "그런 문제 때문에 앞면에 스티커로 된 번호판을 부착한 해외의 사례도 있습니다. 매년 증가하는 오토바이 사고를 감소시키려면 더 이상 미룰 수만은 없는 문제입니다.", "translation": "Chính vì vấn đề cấu tạo đó nên ở nước ngoài đã có tiền lệ dán biển số dạng decal tem dán ở phía trước. Nếu muốn giảm thiểu các vụ tai nạn xe máy đang tăng hàng năm thì đây là vấn đề không thể cứ trì hoãn thêm được nữa."}
+		],
+		"grammar": [
+			{"point": "일관되게 반박하다", "meaning": "Phản bác một cách nhất quán, kiên định", "example": "상대방의 의견을 반박하다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "상대방", "vietnamese": "Đối phương"}, {"korean": "주장", "vietnamese": "Chủ trương, luận điểm"}],
+			"verbs": [{"korean": "반박하다", "vietnamese": "Phản bác"}, {"korean": "동의하다", "vietnamese": "Đồng ý"}],
+			"adjectives": [],
+			"adverbs": [{"korean": "일관되게", "vietnamese": "Một cách nhất quán, kiên định"}]
+		}
+	},
+	{
+		"id": "q_l_96_33",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "listening",
+		"questionNumber": 33,
+		"typeId": "L_TYPE_5",
+		"typeName": "Nghe: Xác định chủ đề đoạn thuyết trình",
+		"instruction": "※ [33～34] 다음을 듣고 물음에 답하십시오. (각 2점)\n33. 무엇에 대한 내용인지 알맞은 것을 고르십시오.",
+		"passage": "여자: 목까지 올라오는 옷이나 넥타이를 착용하는 걸 불편해하는 사람들이 있습니다. 그건 뇌의 신경망이 피부를 압박하는 자극을 위험한 신호로 과도하게 인식해서 나타나는 증상입니다. 이걸 ‘촉각 방어’라고 하죠. 이 증상은 신체 어디에서나 생길 수 있지만 특히 목에 많이 나타나는데요. 심한 경우 미용실에서 머리를 감거나 자를 때 목이 닿는 것이 걱정돼 거부 반응을 보이기도 합니다. 이런 증상은 보통 성장하면서 자연스럽게 없어집니다. 하지만 성인이 되고도 남아 있거나 악화되는 경우도 있습니다.",
+		"audioUrl": "de/Đề thi thật/Kỳ thi số 96/제96회 TOPIK II 듣기파일/2-33.mp3",
+		"options": [
+			"정신 건강을 위협하는 환경",
+			"뇌 성장과 발달의 결정적 시기",
+			"불편한 피부 자극에 대한 신경학적 설명",
+			"촉각 방어 증상을 완화하기 위한 치료법"
+		],
+		"correctAnswer": 3,
+		"isAiAnswer": false,
+		"explanation": "Đoạn văn giải thích dưới góc độ thần kinh học (뇌의 신경망) về nguyên nhân nhiều người khó chịu khi mặc áo cổ lọ hoặc thắt cà vạt: do não nhận diện quá mức kích thích đè nén trên da thành tín hiệu nguy hiểm, gọi là 'phòng vệ xúc giác'. Đây chính là lời giải thích khoa học thần kinh về phản ứng khó chịu trước kích thích trên da (불편한 피부 자극에 대한 신경학적 설명) -> Đáp án ③.",
+		"transcript": [
+			{"speaker": "여자", "text": "목까지 올라오는 옷이나 넥타이를 착용하는 걸 불편해하는 사람들이 있습니다. 그건 뇌의 신경망이 피부를 압박하는 자극을 위험한 신호로 과도하게 인식해서 나타나는 증상입니다. 이걸 ‘촉각 방어’라고 하죠. 이 증상은 신체 어디에서나 생길 수 있지만 특히 목에 많이 나타나는데요. 심한 경우 미용실에서 머리를 감거나 자를 때 목이 닿는 것이 걱정돼 거부 반응을 보이기도 합니다. 이런 증상은 보통 성장하면서 자연스럽게 없어집니다. 하지만 성인이 되고도 남아 있거나 악화되는 경우도 있습니다.", "translation": "Có những người cảm thấy vô cùng khó chịu khi mặc áo cổ lọ cao chạm cổ hay thắt cà vạt. Đó là triệu chứng xuất hiện do mạng lưới thần kinh của não bộ nhận thức thái quá kích thích đè nén lên da như một tín hiệu nguy hiểm. Người ta gọi hiện tượng này là 'phòng vệ xúc giác'. Triệu chứng này có thể xuất hiện ở bất cứ vị trí nào trên cơ thể, nhưng biểu hiện rõ rệt nhất ở vùng cổ. Ở mức độ nghiêm trọng, khi gội đầu hoặc cắt tóc ở tiệm làm tóc, có người còn lo sợ việc bị chạm vào cổ đến mức sinh ra phản ứng cự tuyệt. Những triệu chứng này thông thường sẽ tự biến mất theo quá trình trưởng thành, tuy nhiên cũng có trường hợp vẫn kéo dài hoặc trầm trọng hơn khi đã thành người lớn."}
+		],
+		"grammar": [
+			{"point": "-(으)로 인식하다", "meaning": "Nhận thức (cái gì) là/như là...", "example": "위험한 신호로 인식하다."},
+			{"point": "-면서", "meaning": "Cùng với, theo đà (thời gian, quá trình)", "example": "성장하면서 없어진다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "신경망", "vietnamese": "Mạng lưới dây thần kinh"}, {"korean": "촉각 방어", "vietnamese": "Phòng vệ xúc giác (tactile defensiveness)"}, {"korean": "거부 반응", "vietnamese": "Phản ứng cự tuyệt, từ chối"}],
+			"verbs": [{"korean": "압박하다", "vietnamese": "Chèn ép, đè nén"}, {"korean": "악화되다", "vietnamese": "Xấu đi, trầm trọng hơn"}],
+			"adjectives": [{"korean": "신경학적이다", "vietnamese": "Thuộc về thần kinh học"}],
+			"adverbs": [{"korean": "과도하게", "vietnamese": "Một cách thái quá"}]
+		}
+	},
+	{
+		"id": "q_l_96_34",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "listening",
+		"questionNumber": 34,
+		"typeId": "L_TYPE_4",
+		"typeName": "Nghe: Chọn nội dung giống với bài nghe",
+		"instruction": "※ [33～34] 다음을 듣고 물음에 답하십시오. (각 2점)\n34. 들은 내용과 같은 것을 고르십시오.",
+		"passage": "여자: 목까지 올라오는 옷이나 넥타이를 착용하는 걸 불편해하는 사람들이 있습니다. 그건 뇌의 신경망이 피부를 압박하는 자극을 위험한 신호로 과도하게 인식해서 나타나는 증상입니다. 이걸 ‘촉각 방어’라고 하죠. 이 증상은 신체 어디에서나 생길 수 있지만 특히 목에 많이 나타나는데요. 심한 경우 미용실에서 머리를 감거나 자를 때 목이 닿는 것이 걱정돼 거부 반응을 보이기도 합니다. 이런 증상은 보통 성장하면서 자연스럽게 없어집니다. 하지만 성인이 되고도 남아 있거나 악화되는 경우도 있습니다.",
+		"audioUrl": "de/Đề thi thật/Kỳ thi số 96/제96회 TOPIK II 듣기파일/2-33.mp3",
+		"options": [
+			"이 증상은 뇌와 관련이 있다.",
+			"이 증상은 성인에게 발생하지 않는다.",
+			"이 증상은 목 주변에서 드물게 나타난다.",
+			"이 증상은 저절로 좋아지는 경우가 적다."
+		],
+		"correctAnswer": 1,
+		"isAiAnswer": false,
+		"explanation": "Bài nói khẳng định: '그건 뇌의 신경망이 피부를 압박하는 자극을 위험한 신호로 과도하게 인식해서 나타나는 증상입니다' (Đó là triệu chứng xuất hiện do mạng lưới thần kinh của não bộ nhận diện kích thích thành tín hiệu nguy hiểm). Do đó triệu chứng này có liên quan trực tiếp đến não bộ (이 증상은 뇌와 관련이 있다) -> Đáp án ①.",
+		"transcript": [
+			{"speaker": "여자", "text": "목까지 올라오는 옷이나 넥타이를 착용하는 걸 불편해하는 사람들이 있습니다. 그건 뇌의 신경망이 피부를 압박하는 자극을 위험한 신호로 과도하게 인식해서 나타나는 증상입니다. 이걸 ‘촉각 방어’라고 하죠. 이 증상은 신체 어디에서나 생길 수 있지만 특히 목에 많이 나타나는데요. 심한 경우 미용실에서 머리를 감거나 자를 때 목이 닿는 것이 걱정돼 거부 반응을 보이기도 합니다. 이런 증상은 보통 성장하면서 자연스럽게 없어집니다. 하지만 성인이 되고도 남아 있거나 악화되는 경우도 있습니다.", "translation": "Có những người cảm thấy khó chịu khi mặc áo cổ lọ hay thắt cà vạt. Đó là triệu chứng do mạng thần kinh não nhận thức thái quá kích thích đè nén trên da thành tín hiệu nguy hiểm. Người ta gọi là phòng vệ xúc giác. Triệu chứng này có thể ở bất cứ đâu nhưng hay gặp ở cổ. Thường khi lớn lên sẽ tự biến mất, nhưng cũng có trường hợp vẫn còn ở người trưởng thành."}
+		],
+		"grammar": [
+			{"point": "-와/과 관련이 있다", "meaning": "Có liên quan đến...", "example": "뇌와 관련이 있다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "뇌", "vietnamese": "Bộ não"}, {"korean": "자극", "vietnamese": "Kích thích"}],
+			"verbs": [{"korean": "착용하다", "vietnamese": "Đeo, mặc, thắt (quần áo, cà vạt)"}],
+			"adjectives": [{"korean": "자연스럽다", "vietnamese": "Tự nhiên"}],
+			"adverbs": [{"korean": "보통", "vietnamese": "Thông thường, bình thường"}]
+		}
+	},
+	{
+		"id": "q_l_96_35",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "listening",
+		"questionNumber": 35,
+		"typeId": "L_TYPE_3",
+		"typeName": "Nghe: Xác định việc nhân vật đang làm",
+		"instruction": "※ [35～36] 다음을 듣고 물음에 답하십시오. (각 2점)\n35. 남자가 무엇을 하고 있는지 고르십시오.",
+		"passage": "남자: 오늘 이렇게 배구 선수로서의 마지막 경기를 마련해 주신 대한배구협회와 국내뿐만 아니라 해외에서도 와 주신 팬분들께 감사드립니다. 고등학교 때 처음 국가 대표 유니폼을 입고 17년 동안 세 번의 올림픽과 네 번의 아시안게임에 출전하면서 우리나라를 대표할 수 있어 영광이었습니다. 다만 2년 전 올림픽에서 우승하지 못한 것이 조금 아쉽기는 한데요. 저의 이런 아쉬움은 앞으로 태극 마크를 달고 뛸 후배들이 달래 줄 거라 믿습니다. 저는 코트를 떠나지만, 배구에 대한 여러분의 사랑은 변함없으리라 생각합니다. 감사합니다.",
+		"audioUrl": "de/Đề thi thật/Kỳ thi số 96/제96회 TOPIK II 듣기파일/2-35.mp3",
+		"options": [
+			"선수 생활을 마치면서 소감을 밝히고 있다.",
+			"올림픽 출전에 대한 포부를 드러내고 있다.",
+			"대표 선수를 선발하는 절차를 소개하고 있다.",
+			"경기를 하기 전에 선수를 대표해 선서하고 있다."
+		],
+		"correctAnswer": 1,
+		"isAiAnswer": false,
+		"explanation": "Vận động viên bóng chuyền nam phát biểu trong trận đấu chia tay sự nghiệp: 'Hôm nay cảm ơn Hiệp hội Bóng chuyền Hàn Quốc đã tổ chức trận đấu cuối cùng trong tư cách vận động viên bóng chuyền cho tôi... Dù tôi rời khỏi sân đấu bóng chuyền...' (배구 선수로서의 마지막 경기를 마련해 주신... 저는 코트를 떠나지만). Điều này chứng minh người nam đang chia sẻ cảm nghĩ, bộc bạch tâm sự khi kết thúc sự nghiệp thi đấu (선수 생활을 마치면서 소감을 밝히고 있다) -> Đáp án ①.",
+		"transcript": [
+			{"speaker": "남자", "text": "오늘 이렇게 배구 선수로서의 마지막 경기를 마련해 주신 대한배구협회와 국내뿐만 아니라 해외에서도 와 주신 팬분들께 감사드립니다. 고등학교 때 처음 국가 대표 유니폼을 입고 17년 동안 세 번의 올림픽과 네 번의 아시안게임에 출전하면서 우리나라를 대표할 수 있어 영광이었습니다. 다만 2년 전 올림픽에서 우승하지 못한 것이 조금 아쉽기는 한데요. 저의 이런 아쉬움은 앞으로 태극 마크를 달고 뛸 후배들이 달래 줄 거라 믿습니다. 저는 코트를 떠나지만, 배구에 대한 여러분의 사랑은 변함없으리라 생각합니다. 감사합니다.", "translation": "Hôm nay, tôi xin gửi lời cảm ơn chân thành tới Hiệp hội Bóng chuyền Hàn Quốc đã tổ chức trận đấu cuối cùng trong sự nghiệp cầu thủ bóng chuyền này cho tôi, cũng như gửi lời tri ân sâu sắc tới người hâm mộ trong nước và từ nước ngoài đã đến đây. Lần đầu khoác áo đội tuyển quốc gia từ thời cấp ba, trải qua suốt 17 năm với 3 kỳ Olympic và 4 kỳ Á vận hội, được đại diện cho đất nước là niềm vinh dự tột cùng của tôi. Dẫu vậy, việc không thể vô địch ở kỳ Olympic 2 năm trước vẫn là một chút nuối tiếc. Nhưng tôi tin rằng các thế hệ đàn em khoác cờ đỏ sao vàng tiếp theo sẽ thay tôi xoa dịu niềm tiếc nuối này. Dù tôi giã từ sàn đấu, tôi tin tình yêu của quý vị dành cho môn bóng chuyền sẽ không bao giờ thay đổi. Xin chân thành cảm ơn."}
+		],
+		"grammar": [
+			{"point": "-(으)로서", "meaning": "Với tư cách là...", "example": "선수로서의 마지막 경기."},
+			{"point": "-(으)리라 생각하다", "meaning": "Nghĩ rằng chắc chắn sẽ...", "example": "사랑은 변함없으리라 생각합니다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "배구 선수", "vietnamese": "Vận động viên bóng chuyền"}, {"korean": "소감", "vietnamese": "Cảm nghĩ, tâm sự"}, {"korean": "코트", "vietnamese": "Sân đấu (court)"}],
+			"verbs": [{"korean": "출전하다", "vietnamese": "Xuất trận, thi đấu"}, {"korean": "달래다", "vietnamese": "Xoa dịu, an ủi"}],
+			"adjectives": [{"korean": "영광이다", "vietnamese": "Vinh quang, vinh dự"}, {"korean": "아쉽다", "vietnamese": "Tiếc nuối"}],
+			"adverbs": [{"korean": "변함없이", "vietnamese": "Không thay đổi, bền bỉ"}]
+		}
+	},
+	{
+		"id": "q_l_96_36",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "listening",
+		"questionNumber": 36,
+		"typeId": "L_TYPE_4",
+		"typeName": "Nghe: Chọn nội dung giống với bài nghe",
+		"instruction": "※ [35～36] 다음을 듣고 물음에 답하십시오. (각 2점)\n36. 들은 내용과 같은 것을 고르십시오.",
+		"passage": "남자: 오늘 이렇게 배구 선수로서의 마지막 경기를 마련해 주신 대한배구협회와 국내뿐만 아니라 해외에서도 와 주신 팬분들께 감사드립니다. 고등학교 때 처음 국가 대표 유니폼을 입고 17년 동안 세 번의 올림픽과 네 번의 아시안게임에 출전하면서 우리나라를 대표할 수 있어 영광이었습니다. 다만 2년 전 올림픽에서 우승하지 못한 것이 조금 아쉽기는 한데요. 저의 이런 아쉬움은 앞으로 태극 마크를 달고 뛸 후배들이 달래 줄 거라 믿습니다. 저는 코트를 떠나지만, 배구에 대한 여러분의 사랑은 변함없으리라 생각합니다. 감사합니다.",
+		"audioUrl": "de/Đề thi thật/Kỳ thi số 96/제96회 TOPIK II 듣기파일/2-35.mp3",
+		"options": [
+			"남자는 아시안게임에 나가지 못했다.",
+			"남자는 2년 전 올림픽 경기에서 우승했다.",
+			"남자는 오늘 해외에서 열린 경기에 출전했다.",
+			"남자는 고등학생 때 처음 국가 대표가 되었다."
+		],
+		"correctAnswer": 4,
+		"isAiAnswer": false,
+		"explanation": "Trong bài phát biểu, vận động viên nhớ lại: '고등학교 때 처음 국가 대표 유니폼을 입고 17년 동안...' (Lần đầu tiên mặc áo đồng phục đội tuyển quốc gia vào thời cấp 3...). Chi tiết này khẳng định người nam lần đầu trở thành tuyển thủ quốc gia khi còn là học sinh trung học phổ thông (남자는 고등학생 때 처음 국가 대표가 되었다) -> Đáp án ④.",
+		"transcript": [
+			{"speaker": "남자", "text": "오늘 이렇게 배구 선수로서의 마지막 경기를 마련해 주신 대한배구협회와 국내뿐만 아니라 해외에서도 와 주신 팬분들께 감사드립니다. 고등학교 때 처음 국가 대표 유니폼을 입고 17년 동안 세 번의 올림픽과 네 번의 아시안게임에 출전하면서 우리나라를 대표할 수 있어 영광이었습니다. 다만 2년 전 올림픽에서 우승하지 못한 것이 조금 아쉽기는 한데요. 저의 이런 아쉬움은 앞으로 태극 마크를 달고 뛸 후배들이 달래 줄 거라 믿습니다. 저는 코트를 떠나지만, 배구에 대한 여러분의 사랑은 변함없으리라 생각합니다. 감사합니다.", "translation": "Lần đầu khoác áo tuyển quốc gia từ thời cấp ba, suốt 17 năm tham gia 3 kỳ Olympic và 4 kỳ Á vận hội... Tôi tin thế hệ sau sẽ tiếp bước tôi. Cảm ơn tình cảm của quý vị."}
+		],
+		"grammar": [
+			{"point": "-았/었던 때", "meaning": "Thời điểm khi... trong quá khứ", "example": "고등학교 때 처음 입었다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "국가 대표", "vietnamese": "Đại diện quốc gia, đội tuyển quốc gia"}, {"korean": "유니폼", "vietnamese": "Đồng phục thi đấu"}],
+			"verbs": [{"korean": "우승하다", "vietnamese": "Giành chức vô địch"}],
+			"adjectives": [],
+			"adverbs": [{"korean": "처음", "vietnamese": "Lần đầu tiên"}]
+		}
+	},
+	{
+		"id": "q_l_96_37",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "listening",
+		"questionNumber": 37,
+		"typeId": "L_TYPE_5",
+		"typeName": "Nghe: Suy nghĩ trọng tâm của nhân vật nữ",
+		"instruction": "※ [37～38] 다음을 듣고 물음에 답하십시오. (각 2점)\n37. 여자의 중심 생각으로 가장 알맞은 것을 고르십시오.",
+		"passage": "남자: 요즘 각 도시마다 도심에 공원을 늘리는 추세인데요. 공원을 조성할 때 어떤 점에 신경을 써야 하나요?\n여자: 예전에 만든 공원은 어디에 있든 구조나 시설이 비슷비슷했죠. 하지만 최근의 공원을 보면 그곳을 주로 찾는 사람들의 생활을 분석하여 반영했음을 알 수 있습니다. 인주 시립 병원에 있는 공원이 좋은 예죠. 인주시는 이 공원을 조성하면서 주변이 보이지 않을 정도로 빽빽하게 나무를 심어 숲을 만들었는데요. 거기에서 주변을 신경 쓰지 않고 환자들이 혼자만의 시간을 갖기도 하고, 간호하느라 지친 보호자나 의료진이 언제든지 찾아와 아늑함을 느끼며 쉴 수 있도록 한 것이죠.",
+		"audioUrl": "de/Đề thi thật/Kỳ thi số 96/제96회 TOPIK II 듣기파일/2-37.mp3",
+		"options": [
+			"공원에 다양한 놀이 시설을 확충할 필요가 있다.",
+			"공원에 예쁜 꽃과 나무를 더 많이 심는 것이 좋다.",
+			"공원은 찾아오는 사람의 상황을 고려해 조성해야 한다.",
+			"공원은 지속적이고 체계적으로 관리하는 것이 중요하다."
+		],
+		"correctAnswer": 3,
+		"isAiAnswer": false,
+		"explanation": "Chuyên gia (nữ) nhấn mạnh xu hướng xây dựng công viên hiện đại: '그곳을 주로 찾는 사람들의 생활을 분석하여 반영했음을 알 수 있습니다' (phân tích và phản ánh cuộc sống của những người chủ yếu tìm đến đó). Bà lấy ví dụ công viên bệnh viện được phủ cây xanh rậm rạp để bệnh nhân, người nhà và y bác sĩ có không gian riêng tư thư giãn. Tư tưởng trọng tâm của bà là khi xây dựng công viên cần phải cân nhắc hoàn cảnh, nhu cầu của những người lui tới (공원은 찾아오는 사람의 상황을 고려해 조성해야 한다) -> Đáp án ③.",
+		"transcript": [
+			{"speaker": "남자", "text": "요즘 각 도시마다 도심에 공원을 늘리는 추세인데요. 공원을 조성할 때 어떤 점에 신경을 써야 하나요?", "translation": "Dạo này ở các đô thị có xu hướng tăng cường xây thêm công viên. Khi kiến thiết công viên thì cần lưu tâm đến những điểm nào thưa cô?"},
+			{"speaker": "여자", "text": "예전에 만든 공원은 어디에 있든 구조나 시설이 비슷비슷했죠. 하지만 최근의 공원을 보면 그곳을 주로 찾는 사람들의 생활을 분석하여 반영했음을 알 수 있습니다. 인주 시립 병원에 있는 공원이 좋은 예죠. 인주시는 이 공원을 조성하면서 주변이 보이지 않을 정도로 빽빽하게 나무를 심어 숲을 만들었는데요. 거기에서 주변을 신경 쓰지 않고 환자들이 혼자만의 시간을 갖기도 하고, 간호하느라 지친 보호자나 의료진이 언제든지 찾아와 아늑함을 느끼며 쉴 수 있도록 한 것이죠.", "translation": "Trước đây công viên dù ở đâu thì cấu trúc và trang thiết bị cũng na ná như nhau. Nhưng nếu quan sát các công viên gần đây, ta thấy người ta đã phân tích và phản ánh lối sống của những đối tượng thường lui tới nơi đó. Công viên tại Bệnh viện Đô thị Inju là một ví dụ điển hình. Thành phố Inju khi xây dựng công viên này đã trồng cây dày đặc đến mức che khuất hoàn toàn xung quanh để tạo thành một khu rừng nhỏ. Nhờ vậy, người bệnh có thể dành thời gian tĩnh dưỡng cho riêng mình mà không cần để ý ánh mắt xung quanh, còn thân nhân mệt mỏi vì chăm sóc hay các nhân viên y tế đều có thể ghé qua bất cứ lúc nào để cảm nhận sự ấm cúng, thư thái."}
+		],
+		"grammar": [
+			{"point": "-을/를 고려하다", "meaning": "Xem xét, cân nhắc, tính đến...", "example": "상황을 고려해 조성하다."},
+			{"point": "-을 정도로", "meaning": "Đến mức độ, tới mức mà...", "example": "주변이 보이지 않을 정도로 빽빽하다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "공원 조성", "vietnamese": "Xây dựng, kiến thiết công viên"}, {"korean": "의료진", "vietnamese": "Đội ngũ y bác sĩ, nhân viên y tế"}, {"korean": "보호자", "vietnamese": "Người nhà bệnh nhân, người bảo hộ"}],
+			"verbs": [{"korean": "반영하다", "vietnamese": "Phản ánh"}, {"korean": "신경을 쓰다", "vietnamese": "Lưu tâm, bận tâm"}],
+			"adjectives": [{"korean": "빽빽하다", "vietnamese": "Dày đặc, rậm rạp"}, {"korean": "아늑하다", "vietnamese": "Ấm cúng, thanh bình, dễ chịu"}],
+			"adverbs": [{"korean": "주로", "vietnamese": "Chủ yếu"}]
+		}
+	},
+	{
+		"id": "q_l_96_38",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "listening",
+		"questionNumber": 38,
+		"typeId": "L_TYPE_4",
+		"typeName": "Nghe: Chọn nội dung giống với bài nghe",
+		"instruction": "※ [37～38] 다음을 듣고 물음에 답하십시오. (각 2점)\n38. 들은 내용과 같은 것을 고르십시오.",
+		"passage": "남자: 요즘 각 도시마다 도심에 공원을 늘리는 추세인데요. 공원을 조성할 때 어떤 점에 신경을 써야 하나요?\n여자: 예전에 만든 공원은 어디에 있든 구조나 시설이 비슷비슷했죠. 하지만 최근의 공원을 보면 그곳을 주로 찾는 사람들의 생활을 분석하여 반영했음을 알 수 있습니다. 인주 시립 병원에 있는 공원이 좋은 예죠. 인주시는 이 공원을 조성하면서 주변이 보이지 않을 정도로 빽빽하게 나무를 심어 숲을 만들었는데요. 거기에서 주변을 신경 쓰지 않고 환자들이 혼자만의 시간을 갖기도 하고, 간호하느라 지친 보호자나 의료진이 언제든지 찾아와 아늑함을 느끼며 쉴 수 있도록 한 것이죠.",
+		"audioUrl": "de/Đề thi thật/Kỳ thi số 96/제96회 TOPIK II 듣기파일/2-37.mp3",
+		"options": [
+			"이 공원은 나무가 많지 않다.",
+			"인주시에서 이 공원을 만들었다.",
+			"이 공원은 의료진만 이용할 수 있다.",
+			"최근에 도심 속 공원이 줄어들고 있다."
+		],
+		"correctAnswer": 2,
+		"isAiAnswer": false,
+		"explanation": "Người nữ nói rõ: '인주시립병원에 있는 공원이 좋은 예죠. 인주시는 이 공원을 조성하면서...' (Công viên ở Bệnh viện Đô thị Inju là ví dụ tốt. Thành phố Inju khi xây dựng công viên này...). Do đó thông tin thành phố Inju đã xây dựng công viên này (인주시에서 이 공원을 만들었다) là hoàn toàn chính xác theo bài nghe -> Đáp án ②.",
+		"transcript": [
+			{"speaker": "남자", "text": "요즘 각 도시마다 도심에 공원을 늘리는 추세인데요. 공원을 조성할 때 어떤 점에 신경을 써야 하나요?", "translation": "Dạo này công viên tăng lên. Cần chú ý điều gì ạ?"},
+			{"speaker": "여자", "text": "인주시립병원 공원이 좋은 예죠. 인주시는 이 공원을 조성하면서 주변이 보이지 않을 정도로 빽빽하게 나무를 심어 숲을 만들었습니다...", "translation": "Thành phố Inju đã xây công viên này và trồng cây dày đặc như một khu rừng..."}
+		],
+		"grammar": [
+			{"point": "-을/를 조성하다", "meaning": "Xây dựng, kiến tạo nên...", "example": "인주시에서 공원을 조성했다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "인주시", "vietnamese": "Thành phố Inju"}, {"korean": "숲", "vietnamese": "Khu rừng"}],
+			"verbs": [{"korean": "심다", "vietnamese": "Trồng (cây)"}],
+			"adjectives": [],
+			"adverbs": []
+		}
+	},
+	{
+		"id": "q_l_96_39",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "listening",
+		"questionNumber": 39,
+		"typeId": "L_TYPE_4",
+		"typeName": "Nghe: Phán đoán nội dung liền trước cuộc đối thoại",
+		"instruction": "※ [39～40] 다음을 듣고 물음에 답하십시오. (각 2점)\n39. 이 대화 전의 내용으로 가장 알맞은 것을 고르십시오.",
+		"passage": "여자: 그럼 본인이 희망하면 성인이 된 후에도 보육원에서 지낼 수 있게 된 거네요. 보육원 퇴소 시기가 만 18세에서 24세까지로 늦춰진 거죠?\n남자: 네. 그뿐만 아니라 정부에서는 사업비 규모를 늘려 보육원에서 나온 청년이 자립을 하는 데에 필요한 지원을 확대하고 있는데요. 올해부터 매달 주는 자립 수당을 50만 원으로 올렸고, 의료비도 일부 보조합니다. 또한 기존 담당 부서에 심리 상담이 가능한 전담 인력도 보충해 상담 서비스를 지원하고 있고요. 전국 17개 시, 도에서는 1,000만 원 이상의 자립 정착금도 지급하고 있습니다.",
+		"audioUrl": "de/Đề thi thật/Kỳ thi số 96/제96회 TOPIK II 듣기파일/2-39.mp3",
+		"options": [
+			"보호자 없이 생활하고 있는 청소년의 수가 감소했다.",
+			"청년의 주거 마련을 위한 정부의 경제적 지원이 줄었다.",
+			"청소년의 심리를 상담할 수 있는 전문가를 충원하고 있다.",
+			"보호자가 없는 청소년이 보육원에서 지낼 수 있는 기간이 연장됐다."
+		],
+		"correctAnswer": 4,
+		"isAiAnswer": false,
+		"explanation": "Câu mở đầu của người nữ tóm lược lại thông tin vừa nghe trước đó: '그럼 본인이 희망하면 성인이 된 후에도 보육원에서 지낼 수 있게 된 거네요. 보육원 퇴소 시기가 만 18세에서 24세까지로 늦춰진 거죠?' (Vậy là nếu bản thân có nguyện vọng thì sau khi thành niên vẫn có thể ở lại trại trẻ mồ côi. Thời điểm rời trại đã được lùi từ đủ 18 tuổi sang 24 tuổi đúng không?). Nội dung ngay trước cuộc đối thoại này chắc chắn là tin tức về việc kéo dài thời gian thanh thiếu niên không có người giám hộ được ở lại trại bảo trợ (보호자가 없는 청소년이 보육원에서 지낼 수 있는 기간이 연장됐다) -> Đáp án ④.",
+		"transcript": [
+			{"speaker": "여자", "text": "그럼 본인이 희망하면 성인이 된 후에도 보육원에서 지낼 수 있게 된 거네요. 보육원 퇴소 시기가 만 18세에서 24세까지로 늦춰진 거죠?", "translation": "Vậy là nếu bản thân có nguyện vọng thì sau khi đủ tuổi trưởng thành vẫn có thể tiếp tục ở lại viện mồ côi. Thời gian xuất viện bảo trợ đã được lùi từ 18 tuổi sang tận 24 tuổi đúng không ạ?"},
+			{"speaker": "남자", "text": "네. 그뿐만 아니라 정부에서는 사업비 규모를 늘려 보육원에서 나온 청년이 자립을 하는 데에 필요한 지원을 확대하고 있는데요. 올해부터 매달 주는 자립 수당을 50만 원으로 올렸고, 의료비도 일부 보조합니다. 또한 기존 담당 부서에 심리 상담이 가능한 전담 인력도 보충해 상담 서비스를 지원하고 있고요. 전국 17개 시, 도에서는 1,000만 원 이상의 자립 정착금도 지급하고 있습니다.", "translation": "Vâng đúng vậy. Không những thế, chính phủ còn mở rộng quy mô ngân sách để tăng cường các khoản hỗ trợ cần thiết giúp thanh niên rời viện mồ côi tự lập. Từ năm nay, trợ cấp tự lập hàng tháng đã tăng lên 500.000 won, và chi phí y tế cũng được hỗ trợ một phần. Ngoài ra, tại bộ phận phụ trách cũng bổ sung nhân sự chuyên trách tư vấn tâm lý để hỗ trợ các dịch vụ tham vấn. Tại 17 tỉnh thành trên toàn quốc, khoản tiền định cư tự lập từ 10 triệu won trở lên cũng đang được chi trả."}
+		],
+		"grammar": [
+			{"point": "-게 되다", "meaning": "Được trở nên, biến chuyển thành...", "example": "지낼 수 있게 되었다."},
+			{"point": "그뿐만 아니라", "meaning": "Không chỉ có thế, hơn thế nữa...", "example": "그뿐만 아니라 지원을 확대하고 있다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "보육원", "vietnamese": "Viện mồ côi, trại bảo trợ trẻ em"}, {"korean": "퇴소", "vietnamese": "Rời viện, xuất viện bảo trợ"}, {"korean": "자립 수당", "vietnamese": "Trợ cấp tự lập"}],
+			"verbs": [{"korean": "늦추다", "vietnamese": "Lùi lại, hoãn lại, kéo dài ra"}, {"korean": "연장되다", "vietnamese": "Được gia hạn, kéo dài"}],
+			"adjectives": [],
+			"adverbs": [{"korean": "매달", "vietnamese": "Hàng tháng"}]
+		}
+	},
+	{
+		"id": "q_l_96_40",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "listening",
+		"questionNumber": 40,
+		"typeId": "L_TYPE_4",
+		"typeName": "Nghe: Chọn nội dung giống với bài nghe",
+		"instruction": "※ [39～40] 다음을 듣고 물음에 답하십시오. (각 2점)\n40. 들은 내용과 같은 것을 고르십시오.",
+		"passage": "여자: 그럼 본인이 희망하면 성인이 된 후에도 보육원에서 지낼 수 있게 된 거네요. 보육원 퇴소 시기가 만 18세에서 24세까지로 늦춰진 거죠?\n남자: 네. 그뿐만 아니라 정부에서는 사업비 규모를 늘려 보육원에서 나온 청년이 자립을 하는 데에 필요한 지원을 확대하고 있는데요. 올해부터 매달 주는 자립 수당을 50만 원으로 올렸고, 의료비도 일부 보조합니다. 또한 기존 담당 부서에 심리 상담이 가능한 전담 인력도 보충해 상담 서비스를 지원하고 있고요. 전국 17개 시, 도에서는 1,000만 원 이상의 자립 정착금도 지급하고 있습니다.",
+		"audioUrl": "de/Đề thi thật/Kỳ thi số 96/제96회 TOPIK II 듣기파일/2-39.mp3",
+		"options": [
+			"자립 정착금은 내년부터 지급할 예정이다.",
+			"자립 준비 청년을 담당하는 부서가 신설되었다.",
+			"자립 준비 청년을 대상으로 심리 상담을 진행하고 있다.",
+			"올해부터 자립 준비 청년을 지원하는 사업비가 축소됐다."
+		],
+		"correctAnswer": 3,
+		"isAiAnswer": false,
+		"explanation": "Trong bài, người nam nói rõ: '기존 담당 부서에 심리 상담이 가능한 전담 인력도 보충해 상담 서비스를 지원하고 있고요' (bổ sung nhân lực chuyên trách có khả năng tư vấn tâm lý vào phòng ban phụ trách hiện có để cung cấp dịch vụ tư vấn). Do đó khẳng định đang triển khai tư vấn tâm lý cho các thanh niên chuẩn bị tự lập (자립 준비 청년을 대상으로 심리 상담을 진행하고 있다) là chính xác -> Đáp án ③.",
+		"transcript": [
+			{"speaker": "남자", "text": "기존 담당 부서에 심리 상담이 가능한 전담 인력도 보충해 상담 서비스를 지원하고 있고요. 전국 17개 시, 도에서는 1,000만 원 이상의 자립 정착금도 지급하고 있습니다.", "translation": "Chúng tôi cũng bổ sung nhân sự chuyên trách tư vấn tâm lý vào bộ phận hiện tại để hỗ trợ dịch vụ tư vấn. Trên 17 tỉnh thành cũng đang chi trả tiền hỗ trợ tự lập từ 10 triệu won trở lên."}
+		],
+		"grammar": [
+			{"point": "-을/를 대상으로", "meaning": "Lấy đối tượng là...", "example": "청년을 대상으로 상담을 진행하다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "전담 인력", "vietnamese": "Lực lượng nhân sự chuyên trách"}, {"korean": "심리 상담", "vietnamese": "Tư vấn tâm lý"}, {"korean": "정착금", "vietnamese": "Tiền định cư, tiền an cư ban đầu"}],
+			"verbs": [{"korean": "보충하다", "vietnamese": "Bổ sung"}, {"korean": "지급하다", "vietnamese": "Chi trả, cấp phát"}],
+			"adjectives": [],
+			"adverbs": []
+		}
+	},
+	{
+		"id": "q_l_96_41",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "listening",
+		"questionNumber": 41,
+		"typeId": "L_TYPE_5",
+		"typeName": "Nghe: Nội dung trọng tâm bài giảng",
+		"instruction": "※ [41～42] 다음을 듣고 물음에 답하십시오. (각 2점)\n41. 이 강연의 중심 내용으로 가장 알맞은 것을 고르십시오.",
+		"passage": "여자: 여기 사진에 붉은 벽돌과 푸른 빛의 창틀이 어우러진 프랑스풍의 서양식 2층 건물 보이시죠? 이곳은 바로 ‘돈덕전’입니다. 서양 열강에 근대화된 나라의 위상을 보여 주고 싶었던 고종은 즉위 40주년을 경축하는 국제적인 행사를 하기 위해 1902년부터 1년여에 걸쳐 이곳을 만들었습니다. 이곳은 한동안 고종이 외교 사절을 접견하고 국외 주요 인사들과 연회를 베푸는 장소이자 국빈급 외국인의 숙소로 사용됐습니다. 이렇게 돈덕전은 근대 국가로서의 위상을 국제 사회에 한껏 드러내고자 한 곳이었습니다.",
+		"audioUrl": "de/Đề thi thật/Kỳ thi số 96/제96회 TOPIK II 듣기파일/2-41.mp3",
+		"options": [
+			"돈덕전 건축에 특별한 기법이 적용되었다.",
+			"돈덕전은 외국 자본을 유치하여 건설되었다.",
+			"돈덕전은 근대 국가의 위상을 보여 주는 외교 공간이었다.",
+			"돈덕전은 철저한 관리를 통해 원형 그대로를 유지하고 있다."
+		],
+		"correctAnswer": 3,
+		"isAiAnswer": false,
+		"explanation": "Diễn giả giải thích: Vua Gojong xây dựng Dondeokjeon (Đôn Đức Điện) nhằm thể hiện vị thế của một quốc gia hiện đại hóa trước các cường quốc phương Tây, làm nơi tiếp đón các phái đoàn ngoại giao, tổ chức yến tiệc cho quan khách quốc tế và chỗ nghỉ của các nguyên thủ quốc gia nước ngoài. Câu kết luận bài giảng khẳng định: '돈덕전은 근대 국가로서의 위상을 국제 사회에 한껏 드러내고자 한 곳이었습니다'. Trọng tâm bài giảng là Dondeokjeon từng là không gian ngoại giao thể hiện vị thế của quốc gia cận đại (돈덕전은 근대 국가의 위상을 보여 주는 외교 공간이었다) -> Đáp án ③.",
+		"transcript": [
+			{"speaker": "여자", "text": "여기 사진에 붉은 벽돌과 푸른 빛의 창틀이 어우러진 프랑스풍의 서양식 2층 건물 보이시죠? 이곳은 바로 ‘돈덕전’입니다. 서양 열강에 근대화된 나라의 위상을 보여 주고 싶었던 고종은 즉위 40주년을 경축하는 국제적인 행사를 하기 위해 1902년부터 1년여에 걸쳐 이곳을 만들었습니다. 이곳은 한동안 고종이 외교 사절을 접견하고 국외 주요 인사들과 연회를 베푸는 장소이자 국빈급 외국인의 숙소로 사용됐습니다. 이렇게 돈덕전은 근대 국가로서의 위상을 국제 사회에 한껏 드러내고자 한 곳이었습니다.", "translation": "Quý vị có nhìn thấy tòa nhà 2 tầng kiểu phương Tây mang phong cách Pháp với sự hòa quyện giữa gạch đỏ và khung cửa sổ ánh xanh trong bức ảnh này không? Nơi đây chính là 'Dondeokjeon' (Điện Đôn Đức). Vua Gojong - người khát khao muốn thể hiện vị thế của một đất nước cận đại hóa trước các cường quốc phương Tây - đã cho xây dựng công trình này trong suốt hơn 1 năm bắt đầu từ năm 1902 để tổ chức đại lễ quốc tế kỷ niệm 40 năm lên ngôi. Trong một thời gian, nơi đây từng là địa điểm để vua Gojong tiếp đón các đoàn sứ thần ngoại giao, mở quốc yến thết đãi các yếu nhân nước ngoài, đồng thời là nơi lưu trú của các quốc khách cấp cao quốc tế. Cứ như thế, Dondeokjeon chính là nơi thể hiện trọn vẹn vị thế của một nhà nước cận đại trước cộng đồng quốc tế."}
+		],
+		"grammar": [
+			{"point": "-(으)로서의", "meaning": "Với tư cách là, với vị thế là...", "example": "근대 국가로서의 위상."},
+			{"point": "-(으)고자 하다", "meaning": "Muốn, có ý định làm gì...", "example": "위상을 드러내고자 했다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "외교 사절", "vietnamese": "Đoàn sứ thần ngoại giao"}, {"korean": "연회", "vietnamese": "Yến tiệc, dạ tiệc"}, {"korean": "국빈", "vietnamese": "Quốc khách, khách quý cấp nhà nước"}],
+			"verbs": [{"korean": "접견하다", "vietnamese": "Tiếp kiến, hội kiến"}, {"korean": "베풀다", "vietnamese": "Mở tiệc, ban tặng"}, {"korean": "드러내다", "vietnamese": "Thể hiện, phô diễn, bộc lộ"}],
+			"adjectives": [{"korean": "근대화되다", "vietnamese": "Được cận đại hóa"}],
+			"adverbs": [{"korean": "한껏", "vietnamese": "Hết mức, thỏa thuê"}]
+		}
+	},
+	{
+		"id": "q_l_96_42",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "listening",
+		"questionNumber": 42,
+		"typeId": "L_TYPE_4",
+		"typeName": "Nghe: Chọn nội dung giống với bài nghe",
+		"instruction": "※ [41～42] 다음을 듣고 물음에 답하십시오. (각 2점)\n42. 들은 내용과 같은 것을 고르십시오.",
+		"passage": "여자: 여기 사진에 붉은 벽돌과 푸른 빛의 창틀이 어우러진 프랑스풍의 서양식 2층 건물 보이시죠? 이곳은 바로 ‘돈덕전’입니다. 서양 열강에 근대화된 나라의 위상을 보여 주고 싶었던 고종은 즉위 40주년을 경축하는 국제적인 행사를 하기 위해 1902년부터 1년여에 걸쳐 이곳을 만들었습니다. 이곳은 한동안 고종이 외교 사절을 접견하고 국외 주요 인사들과 연회를 베푸는 장소이자 국빈급 외국인의 숙소로 사용됐습니다. 이렇게 돈덕전은 근대 국가로서의 위상을 국제 사회에 한껏 드러내고자 한 곳이었습니다.",
+		"audioUrl": "de/Đề thi thật/Kỳ thi số 96/제96회 TOPIK II 듣기파일/2-41.mp3",
+		"options": [
+			"이곳은 완공되는 데 40년이 걸렸다.",
+			"이곳은 연회장으로 사용되던 곳이었다.",
+			"이곳은 한국의 전통 건축 양식을 보여 준다.",
+			"이곳은 국내 고위 관리를 위한 숙소로 활용됐다."
+		],
+		"correctAnswer": 2,
+		"isAiAnswer": false,
+		"explanation": "Trong bài nêu rõ: '이곳은 한동안 고종이 외교 사절을 접견하고 국외 주요 인사들과 연회를 베푸는 장소이자...' (Nơi đây từng là nơi vua Gojong mở yến tiệc với các yếu nhân nước ngoài...). Như vậy Dondeokjeon từng được sử dụng làm phòng yến tiệc (이곳은 연회장으로 사용되던 곳이었다) -> Đáp án ②.",
+		"transcript": [
+			{"speaker": "여자", "text": "이곳은 한동안 고종이 외교 사절을 접견하고 국외 주요 인사들과 연회를 베푸는 장소이자 국빈급 외국인의 숙소로 사용됐습니다.", "translation": "Nơi này từng là nơi vua Gojong tiếp đón đoàn sứ thần và tổ chức yến tiệc với các yếu nhân nước ngoài, kiêm nơi ở của quốc khách."}
+		],
+		"grammar": [
+			{"point": "-(으)이자", "meaning": "Vừa là A vừa đồng thời là B", "example": "연회를 베푸는 장소이자 숙소."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "연회장", "vietnamese": "Phòng dạ tiệc, sảnh tiệc"}, {"korean": "숙소", "vietnamese": "Nơi lưu trú"}],
+			"verbs": [{"korean": "사용되다", "vietnamese": "Được sử dụng"}],
+			"adjectives": [],
+			"adverbs": []
+		}
+	},
+	{
+		"id": "q_l_96_43",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "listening",
+		"questionNumber": 43,
+		"typeId": "L_TYPE_5",
+		"typeName": "Nghe: Xác định nội dung bài thuyết minh",
+		"instruction": "※ [43～44] 다음을 듣고 물음에 답하십시오. (각 2점)\n43. 무엇에 대한 내용인지 알맞은 것을 고르십시오.",
+		"passage": "남자: 눈 덮인 설산 같은 소금 더미, 뜨거운 태양 아래 소금 장인이 묵묵히 일하는 이곳 염전. 드넓은 갯벌에 칸막이를 만들고 바닷물을 가둬 놓았다. 바닷물이 증발하면서 염전 바닥에 하얀 정육면체 결정이 생겨나기 시작한다. 태양이 좀 더 머물고 바람이 실랑실랑 불어 주니 소금 결정이 눈처럼 쌓인다. 이제 소금을 수확할 시간. 염전 일꾼은 끌개로 부지런히 염전 바닥 가득한 소금 결정을 모아 한데 쌓아 놓는다. 포장하기 전 소금에 남아 있는 수분을 조금이라도 더 제거하기 위함이다. 이윽고 긴 인내의 끝에 자연과 인간이 빚어낸 소금이 탄생한다.",
+		"audioUrl": "de/Đề thi thật/Kỳ thi số 96/제96회 TOPIK II 듣기파일/2-43.mp3",
+		"options": [
+			"소금을 생산하는 과정",
+			"소금을 관리하는 방법",
+			"소금이 지닌 경제적 가치",
+			"소금이 건강에 미치는 영향"
+		],
+		"correctAnswer": 1,
+		"isAiAnswer": false,
+		"explanation": "Đoạn phim tài liệu miêu tả sinh động từng công đoạn làm muối: dẫn nước biển vào ô ruộng trên bãi triều, nước bốc hơi dưới nắng gió kết tinh thành hạt muối trắng muốt, người thợ cào gom muối chất thành đống để róc nước ẩm, và cuối cùng đóng gói thành phẩm. Toàn bộ nội dung là quá trình sản xuất muối ăn (소금을 생산하는 과정) -> Đáp án ①.",
+		"transcript": [
+			{"speaker": "남자", "text": "눈 덮인 설산 같은 소금 더미, 뜨거운 태양 아래 소금 장인이 묵묵히 일하는 이곳 염전. 드넓은 갯벌에 칸막이를 만들고 바닷물을 가둬 놓았다. 바닷물이 증발하면서 염전 바닥에 하얀 정육면체 결정이 생겨나기 시작한다. 태양이 좀 더 머물고 바람이 실랑실랑 불어 주니 소금 결정이 눈처럼 쌓인다. 이제 소금을 수확할 시간. 염전 일꾼은 끌개로 부지런히 염전 바닥 가득한 소금 결정을 모아 한데 쌓아 놓는다. 포장하기 전 소금에 남아 있는 수분을 조금이라도 더 제거하기 위함이다. 이윽고 긴 인내의 끝에 자연과 인간이 빚어낸 소금이 탄생한다.", "translation": "Những đụn muối trắng muốt tựa núi tuyết phủ, dưới ánh mặt trời chói chang người nghệ nhân làm muối lặng lẽ làm việc nơi cánh đồng muối này. Trên bãi triều mênh mông, người ta ngăn ô và giữ nước biển lại. Nước biển bốc hơi dần, trên nền ruộng muối bắt đầu xuất hiện những tinh thể hình khối vuông màu trắng. Ánh nắng lưu lại lâu hơn và ngọn gió hiu hiu thổi tới, những tinh thể muối chất đầy như tuyết rơi. Giờ là lúc thu hoạch muối. Người thợ ruộng muối dùng bàn cào cần mẫn gom những hạt muối trải khắp mặt ruộng lại và vun thành đống. Đó là để loại bỏ thêm chút nước ẩm còn đọng lại trước khi đem đóng gói. Sau chuỗi ngày nhẫn nại dài đằng đẵng, những hạt muối do thiên nhiên và bàn tay con người nhào nặn nên chính thức ra đời."}
+		],
+		"grammar": [
+			{"point": "-기 위함이다", "meaning": "Chính là nhằm mục đích... (văn phong trang trọng)", "example": "수분을 제거하기 위함이다."},
+			{"point": "-(으)면서", "meaning": "Vừa... vừa..., trong khi...", "example": "바닷물이 증발하면서 결정이 생긴다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "염전", "vietnamese": "Ruộng muối, cánh đồng muối"}, {"korean": "결정", "vietnamese": "Tinh thể"}, {"korean": "끌개", "vietnamese": "Bàn cào muối"}],
+			"verbs": [{"korean": "증발하다", "vietnamese": "Bay hơi"}, {"korean": "수확하다", "vietnamese": "Thu hoạch"}, {"korean": "제거하다", "vietnamese": "Loại bỏ, khử"}],
+			"adjectives": [{"korean": "드넓다", "vietnamese": "Mênh mông, bao la"}],
+			"adverbs": [{"korean": "묵묵히", "vietnamese": "Lặng lẽ, âm thầm"}, {"korean": "이윽고", "vietnamese": "Cuối cùng, sau đó"}]
+		}
+	},
+	{
+		"id": "q_l_96_44",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "listening",
+		"questionNumber": 44,
+		"typeId": "L_TYPE_4",
+		"typeName": "Nghe: Tìm nguyên nhân của hành động",
+		"instruction": "※ [43～44] 다음을 듣고 물음에 답하십시오. (각 2점)\n44. 소금을 한곳에 쌓아 두는 이유로 맞는 것을 고르십시오.",
+		"passage": "남자: 눈 덮인 설산 같은 소금 더미, 뜨거운 태양 아래 소금 장인이 묵묵히 일하는 이곳 염전. 드넓은 갯벌에 칸막이를 만들고 바닷물을 가둬 놓았다. 바닷물이 증발하면서 염전 바닥에 하얀 정육면체 결정이 생겨나기 시작한다. 태양이 좀 더 머물고 바람이 실랑실랑 불어 주니 소금 결정이 눈처럼 쌓인다. 이제 소금을 수확할 시간. 염전 일꾼은 끌개로 부지런히 염전 바닥 가득한 소금 결정을 모아 한데 쌓아 놓는다. 포장하기 전 소금에 남아 있는 수분을 조금이라도 더 제거하기 위함이다. 이윽고 긴 인내의 끝에 자연과 인간이 빚어낸 소금이 탄생한다.",
+		"audioUrl": "de/Đề thi thật/Kỳ thi số 96/제96회 TOPIK II 듣기파일/2-43.mp3",
+		"options": [
+			"염전을 홍보하기 위해",
+			"다른 염전으로 옮기기 위해",
+			"소금 생산량을 확인하기 위해",
+			"소금에 남아 있는 물기를 없애기 위해"
+		],
+		"correctAnswer": 4,
+		"isAiAnswer": false,
+		"explanation": "Bài nói nêu trực tiếp nguyên nhân cào muối chất thành đống một chỗ: '염전 일꾼은 끌개로 부지런히 염전 바닥 가득한 소금 결정을 모아 한데 쌓아 놓는다. 포장하기 전 소금에 남아 있는 수분을 조금이라도 더 제거하기 위함이다'. Từ '수분을 제거하다' (loại bỏ lượng nước/độ ẩm) tương đương với '물기를 없애다' (làm hết nước/ẩm). Vì vậy lý do vun muối lại thành đống là để loại bỏ lượng nước còn sót lại trong muối -> Đáp án ④.",
+		"transcript": [
+			{"speaker": "남자", "text": "염전 일꾼은 끌개로 부지런히 염전 바닥 가득한 소금 결정을 모아 한데 쌓아 놓는다. 포장하기 전 소금에 남아 있는 수분을 조금이라도 더 제거하기 위함이다.", "translation": "Người thợ gom muối chất lại thành đống là nhằm loại bỏ thêm phần nước còn đọng lại trong muối trước khi đem đóng gói."}
+		],
+		"grammar": [
+			{"point": "-기 위해(서)", "meaning": "Để làm gì đó (chỉ mục đích)", "example": "물기를 없애기 위해 쌓아 둔다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "수분 / 물기", "vietnamese": "Nước ẩm, độ ẩm"}, {"korean": "포장", "vietnamese": "Đóng gói"}],
+			"verbs": [{"korean": "쌓다", "vietnamese": "Chất lên, vun thành đống"}, {"korean": "없애다", "vietnamese": "Làm mất đi, khử đi"}],
+			"adjectives": [],
+			"adverbs": [{"korean": "조금이라도", "vietnamese": "Dù chỉ một chút"}]
+		}
+	},
+	{
+		"id": "q_l_96_45",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "listening",
+		"questionNumber": 45,
+		"typeId": "L_TYPE_4",
+		"typeName": "Nghe: Chọn nội dung giống với bài nghe",
+		"instruction": "※ [45～46] 다음을 듣고 물음에 답하십시오. (각 2점)\n45. 들은 내용과 같은 것을 고르십시오.",
+		"passage": "여자: 무쇠로 만든 전통 가마솥에 밥을 지으면 밥맛이 참 좋은데요. 왜 그런 걸까요? 첫째, 솥뚜껑 무게 때문입니다. 솥뚜껑은 솥 무게의 3분의 1에 달할 정도로 무겁습니다. 이 솥뚜껑으로 솥을 덮으면 공기와 수증기가 빠져나가지 못하도록 밀폐할 수 있죠. 덕분에 내부 압력이 올라가고 고온 상태가 유지돼 쌀이 익는 속도가 빨라집니다. 이렇게 익히면 쌀의 전분이 포도당으로 빨리 분해돼 밥의 풍미가 올라갑니다. 둘째, 솥 바닥의 두께 때문에 밥맛이 깊어집니다. 불에 닿는 중앙 부분은 두껍고 가장자리로 갈수록 얇아지는데요. 그래서 열이 솥 전체에 균일하게 전달돼 쌀알 하나하나가 골고루 잘 익는 겁니다.",
+		"audioUrl": "de/Đề thi thật/Kỳ thi số 96/제96회 TOPIK II 듣기파일/2-45.mp3",
+		"options": [
+			"가마솥 바닥은 중앙 부분이 가장 얇다.",
+			"가마솥의 솥뚜껑이 가벼울수록 밥맛이 좋다.",
+			"가마솥으로 밥을 지으면 쌀이 천천히 익는다.",
+			"가마솥 뚜껑은 솥 내부의 압력을 높이는 역할을 한다."
+		],
+		"correctAnswer": 4,
+		"isAiAnswer": false,
+		"explanation": "Trong bài, diễn giả giải thích về nắp nồi: nắp nồi gang rất nặng, đậy kín ngăn không khí và hơi nước thoát ra, 'nhờ đó áp suất bên trong tăng lên và duy trì nhiệt độ cao' (덕분에 내부 압력이 올라가고 고온 상태가 유지돼). Điều này chứng minh nắp nồi có tác dụng làm tăng áp suất bên trong nồi (가마솥 뚜껑은 솥 내부의 압력을 높이는 역할을 한다) -> Đáp án ④.",
+		"transcript": [
+			{"speaker": "여자", "text": "무쇠로 만든 전통 가마솥에 밥을 지으면 밥맛이 참 좋은데요. 왜 그런 걸까요? 첫째, 솥뚜껑 무게 때문입니다. 솥뚜껑은 솥 무게의 3분의 1에 달할 정도로 무겁습니다. 이 솥뚜껑으로 솥을 덮으면 공기와 수증기가 빠져나가지 못하도록 밀폐할 수 있죠. 덕분에 내부 압력이 올라가고 고온 상태가 유지돼 쌀이 익는 속도가 빨라집니다. 이렇게 익히면 쌀의 전분이 포도당으로 빨리 분해돼 밥의 풍미가 올라갑니다. 둘째, 솥 바닥의 두께 때문에 밥맛이 깊어집니다. 불에 닿는 중앙 부분은 두껍고 가장자리로 갈수록 얇아지는데요. 그래서 열이 솥 전체에 균일하게 전달돼 쌀알 하나하나가 골고루 잘 익는 겁니다.", "translation": "Nấu cơm bằng nồi gang truyền thống thì hạt cơm rất ngon dẻo. Tại sao lại như vậy? Thứ nhất là nhờ trọng lượng của nắp nồi gang. Nắp nồi nặng tới 1/3 trọng lượng của cả chiếc nồi. Khi đậy bằng chiếc nắp này, nồi được đóng kín không cho không khí và hơi nước thoát ra ngoài. Nhờ đó, áp suất bên trong nồi tăng lên và nhiệt độ cao được duy trì giúp gạo chín nhanh hơn. Khi chín như thế này, tinh bột trong hạt gạo sẽ nhanh chóng phân giải thành đường glucose giúp tăng hương vị thơm ngon của cơm. Thứ hai là nhờ độ dày đáy nồi làm hương vị cơm đậm đà hơn. Phần trung tâm tiếp xúc với lửa thì dày và mỏng dần về phía mép. Nhờ đó nhiệt truyền đều khắp toàn bộ nồi giúp từng hạt gạo chín đều hoàn hảo."}
+		],
+		"grammar": [
+			{"point": "-도록", "meaning": "Để cho, sao cho...", "example": "수증기가 빠져나가지 못하도록 밀폐하다."},
+			{"point": "덕분에", "meaning": "Nhờ có... (kết quả tích cực)", "example": "덕분에 내부 압력이 올라간다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "가마솥", "vietnamese": "Nồi gang truyền thống"}, {"korean": "솥뚜껑", "vietnamese": "Vung nồi, nắp nồi"}, {"korean": "내부 압력", "vietnamese": "Áp suất bên trong"}],
+			"verbs": [{"korean": "밀폐하다", "vietnamese": "Bịt kín, đóng kín"}, {"korean": "분해되다", "vietnamese": "Phân giải, phân tách"}],
+			"adjectives": [{"korean": "균일하다", "vietnamese": "Đều đặn, đồng đều"}],
+			"adverbs": [{"korean": "골고루", "vietnamese": "Đều khắp, hạt nào cũng như hạt nào"}]
+		}
+	},
+	{
+		"id": "q_l_96_46",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "listening",
+		"questionNumber": 46,
+		"typeId": "L_TYPE_5",
+		"typeName": "Nghe: Cách thức diễn đạt của người nói",
+		"instruction": "※ [45～46] 다음을 듣고 물음에 답하십시오. (각 2점)\n46. 여자가 말하는 방식으로 알맞은 것을 고르십시오.",
+		"passage": "여자: 무쇠로 만든 전통 가마솥에 밥을 지으면 밥맛이 참 좋은데요. 왜 그런 걸까요? 첫째, 솥뚜껑 무게 때문입니다. 솥뚜껑은 솥 무게의 3분의 1에 달할 정도로 무겁습니다. 이 솥뚜껑으로 솥을 덮으면 공기와 수증기가 빠져나가지 못하도록 밀폐할 수 있죠. 덕분에 내부 압력이 올라가고 고온 상태가 유지돼 쌀이 익는 속도가 빨라집니다. 이렇게 익히면 쌀의 전분이 포도당으로 빨리 분해돼 밥의 풍미가 올라갑니다. 둘째, 솥 바닥의 두께 때문에 밥맛이 깊어집니다. 불에 닿는 중앙 부분은 두껍고 가장자리로 갈수록 얇아지는데요. 그래서 열이 솥 전체에 균일하게 전달돼 쌀알 하나하나가 골고루 잘 익는 겁니다.",
+		"audioUrl": "de/Đề thi thật/Kỳ thi số 96/제96회 TOPIK II 듣기파일/2-45.mp3",
+		"options": [
+			"데이터를 통해 결과를 예상하고 있다.",
+			"자료를 분석해 개념을 규정하고 있다.",
+			"이유를 나열하며 원리를 알려 주고 있다.",
+			"설정한 기준에 따라 문제점을 지적하고 있다."
+		],
+		"correctAnswer": 3,
+		"isAiAnswer": false,
+		"explanation": "Người nói đặt câu hỏi 'Tại sao cơm nấu nồi gang lại ngon?' rồi lần lượt liệt kê 2 nguyên nhân: '첫째, 솥뚜껑 무게 때문...' (nguyên lý áp suất và giữ nhiệt) và '둘째, 솥 바닥의 두께 때문...' (nguyên lý truyền nhiệt đồng đều). Cách diễn đạt này chính là liệt kê các lý do và giải thích nguyên lý khoa học đằng sau (이유를 나열하며 원리를 알려 주고 있다) -> Đáp án ③.",
+		"transcript": [
+			{"speaker": "여자", "text": "왜 그런 걸까요? 첫째, 솥뚜껑 무게 때문입니다... 둘째, 솥 바닥의 두께 때문에 밥맛이 깊어집니다...", "translation": "Vì sao vậy? Thứ nhất là do sức nặng nắp vung... Thứ hai là do độ dày đáy nồi..."}
+		],
+		"grammar": [
+			{"point": "첫째..., 둘째...", "meaning": "Thứ nhất là..., thứ hai là... (liệt kê các điểm)", "example": "첫째는 무게, 둘째는 두께 때문이다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "원리", "vietnamese": "Nguyên lý"}, {"korean": "이유", "vietnamese": "Lý do"}],
+			"verbs": [{"korean": "나열하다", "vietnamese": "Liệt kê"}, {"korean": "알려 주다", "vietnamese": "Chỉ bảo, cho biết"}],
+			"adjectives": [],
+			"adverbs": []
+		}
+	},
+	{
+		"id": "q_l_96_47",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "listening",
+		"questionNumber": 47,
+		"typeId": "L_TYPE_4",
+		"typeName": "Nghe: Chọn nội dung giống với bài nghe",
+		"instruction": "※ [47～48] 다음을 듣고 물음에 답하십시오. (각 2점)\n47. 들은 내용과 같은 것을 고르십시오.",
+		"passage": "여자: 건실한 기업을 만들고자 도입된 사외 이사 제도가 법제화된 지도 벌써 25년이 지났는데요. 그 실효성 논란이 끊이지 않습니다.\n남자: 사외 이사 제도는 기업 내부자 이외에 외부 전문가도 이사회에 참여시키는 제도로, 기업 내 권력 집중을 막고 경영에 전문 지식을 활용하기 위해 도입됐습니다. 그러나 경영진에게도 사외 이사 추천권이 있어서 자신들과 친분이 있는 인물을 추천하고, 그러다 보니 이들이 경영진을 견제하기란 쉽지 않습니다. 또 전문성이 검증되지 않은 인물이 선임되기도 해 제도의 취지를 무색하게 하죠. 후보 추천 방법을 개선하고 자격 검증을 강화하는 등의 대책 마련이 시급합니다.",
+		"audioUrl": "de/Đề thi thật/Kỳ thi số 96/제96회 TOPIK II 듣기파일/2-47.mp3",
+		"options": [
+			"이 제도는 시행된 지 얼마 되지 않았다.",
+			"사외 이사는 이사회에 참여할 자격이 없다.",
+			"경영진은 사외 이사를 직접 추천할 수 있다.",
+			"이 제도로 사외 이사의 자격 논란이 해소되었다."
+		],
+		"correctAnswer": 3,
+		"isAiAnswer": false,
+		"explanation": "Trong đoạn phân tích, người nam chỉ ra: '경영진에게도 사외 이사 추천권이 있어서 자신들과 친분이 있는 인물을 추천하고...' (ban điều hành doanh nghiệp cũng có quyền giới thiệu ứng viên thành viên HĐQT độc lập nên họ giới thiệu những người thân thiết với mình...). Điều này đồng nghĩa với ban giám đốc/ban quản lý có quyền trực tiếp tiến cử thành viên HĐQT ngoài doanh nghiệp (경영진은 사외 이사를 직접 추천할 수 있다) -> Đáp án ③.",
+		"transcript": [
+			{"speaker": "여자", "text": "건실한 기업을 만들고자 도입된 사외 이사 제도가 법제화된 지도 벌써 25년이 지났는데요. 그 실효성 논란이 끊이지 않습니다.", "translation": "Chế độ Thành viên Hội đồng Quản trị độc lập ngoài doanh nghiệp nhằm xây dựng doanh nghiệp lành mạnh đã được luật hóa 25 năm nay, nhưng tranh cãi về tính hiệu quả của nó vẫn không dứt."},
+			{"speaker": "남자", "text": "사외 이사 제도는 기업 내부자 이외에 외부 전문가도 이사회에 참여시키는 제도로, 기업 내 권력 집중을 막고 경영에 전문 지식을 활용하기 위해 도입됐습니다. 그러나 경영진에게도 사외 이사 추천권이 있어서 자신들과 친분이 있는 인물을 추천하고, 그러다 보니 이들이 경영진을 견제하기란 쉽지 않습니다. 또 전문성이 검증되지 않은 인물이 선임되기도 해 제도의 취지를 무색하게 하죠. 후보 추천 방법을 개선하고 자격 검증을 강화하는 등의 대책 마련이 시급합니다.", "translation": "Chế độ Thành viên HĐQT độc lập là chế độ cho phép chuyên gia bên ngoài tham gia vào HĐQT ngoài người nội bộ công ty, nhằm ngăn chặn tập trung quyền lực và vận dụng tri thức chuyên môn vào quản trị. Tuy nhiên, do ban giám đốc cũng nắm quyền tiến cử thành viên ngoài công ty nên họ toàn giới thiệu người thân quen, dẫn tới việc các thành viên này rất khó kiềm tỏa ban giám đốc. Hơn nữa những người chưa được kiểm chứng chuyên môn cũng được bổ nhiệm khiến ý nghĩa ban đầu của chế độ bị lu mờ. Việc cải tiến phương thức đề cử và thắt chặt thẩm tra tư cách đang là biện pháp vô cùng cấp bách."}
+		],
+		"grammar": [
+			{"point": "-고자", "meaning": "Để, nhằm mục đích...", "example": "건실한 기업을 만들고자 도입되다."},
+			{"point": "-기란 쉽지 않다", "meaning": "Việc làm gì đó thật không hề dễ dàng", "example": "경영진을 견제하기란 쉽지 않다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "사외 이사", "vietnamese": "Thành viên độc lập Hội đồng Quản trị"}, {"korean": "경영진", "vietnamese": "Ban điều hành, ban giám đốc"}, {"korean": "권력 집중", "vietnamese": "Tập trung quyền lực"}],
+			"verbs": [{"korean": "견제하다", "vietnamese": "Kiềm tỏa, kiềm chế, giám sát"}, {"korean": "선임되다", "vietnamese": "Được bổ nhiệm, được bầu chọn"}],
+			"adjectives": [{"korean": "시급하다", "vietnamese": "Cấp bách, khẩn cấp"}],
+			"adverbs": [{"korean": "벌써", "vietnamese": "Đã... rồi"}]
+		}
+	},
+	{
+		"id": "q_l_96_48",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "listening",
+		"questionNumber": 48,
+		"typeId": "L_TYPE_5",
+		"typeName": "Nghe: Thái độ của người nam",
+		"instruction": "※ [47～48] 다음을 듣고 물음에 답하십시오. (각 2점)\n48. 남자의 태도로 알맞은 것을 고르십시오.",
+		"passage": "여자: 건실한 기업을 만들고자 도입된 사외 이사 제도가 법제화된 지도 벌써 25년이 지났는데요. 그 실효성 논란이 끊이지 않습니다.\n남자: 사외 이사 제도는 기업 내부자 이외에 외부 전문가도 이사회에 참여시키는 제도로, 기업 내 권력 집중을 막고 경영에 전문 지식을 활용하기 위해 도입됐습니다. 그러나 경영진에게도 사외 이사 추천권이 있어서 자신들과 친분이 있는 인물을 추천하고, 그러다 보니 이들이 경영진을 견제하기란 쉽지 않습니다. 또 전문성이 검증되지 않은 인물이 선임되기도 해 제도의 취지를 무색하게 하죠. 후보 추천 방법을 개선하고 자격 검증을 강화하는 등의 대책 마련이 시급합니다.",
+		"audioUrl": "de/Đề thi thật/Kỳ thi số 96/제96회 TOPIK II 듣기파일/2-47.mp3",
+		"options": [
+			"제도의 필요성과 의의를 강조하고 있다.",
+			"제도의 지나친 확대 적용을 경계하고 있다.",
+			"제도의 한계를 지적하며 개선책을 촉구하고 있다.",
+			"제도의 내용을 언급하며 사회적 관심을 호소하고 있다."
+		],
+		"correctAnswer": 3,
+		"isAiAnswer": false,
+		"explanation": "Người nam phân tích rõ ràng những mặt hạn chế hiện nay của chế độ thành viên HĐQT ngoài doanh nghiệp (khó kiềm tỏa ban giám đốc, thiếu chuyên môn), sau đó đưa ra lời kêu gọi: '후보 추천 방법을 개선하고 자격 검증을 강화하는 등의 대책 마련이 시급합니다' (cần cấp bách đưa ra đối sách cải tiến cách thức tiến cử và tăng cường kiểm tra tư cách). Thái độ của người nam là vạch ra giới hạn hạn chế của chế độ và thúc giục đưa ra giải pháp cải thiện (제도의 한계를 지적하며 개선책을 촉구하고 있다) -> Đáp án ③.",
+		"transcript": [
+			{"speaker": "남자", "text": "후보 추천 방법을 개선하고 자격 검증을 강화하는 등의 대책 마련이 시급합니다.", "translation": "Việc đưa ra giải pháp cải tiến cách tiến cử ứng viên và siết chặt kiểm chứng năng lực là điều hết sức cấp bách."}
+		],
+		"grammar": [
+			{"point": "-을/를 촉구하다", "meaning": "Kêu gọi, thúc giục, hối thúc", "example": "개선책을 촉구하고 있다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "한계", "vietnamese": "Giới hạn, hạn chế"}, {"korean": "개선책", "vietnamese": "Sách lược cải tiến"}],
+			"verbs": [{"korean": "촉구하다", "vietnamese": "Hối thúc, thúc giục"}],
+			"adjectives": [],
+			"adverbs": []
+		}
+	},
+	{
+		"id": "q_l_96_49",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "listening",
+		"questionNumber": 49,
+		"typeId": "L_TYPE_4",
+		"typeName": "Nghe: Chọn nội dung giống với bài nghe",
+		"instruction": "※ [49～50] 다음을 듣고 물음에 답하십시오. (각 2점)\n49. 들은 내용과 같은 것을 고르십시오.",
+		"passage": "남자: 얼마 전 대한민국의 로켓 ‘누리호’가 우주 상공에 위성을 올려놓기 위해 발사됐는데요. 그 시각이 콕 집어 저녁 6시 24분이었습니다. 왜 발사 시각을 분 단위까지 철저히 계산했을까요? 이는 누리호에 실린 위성 때문이었습니다. 이 위성에는 정교한 관측 자료를 제공해 줄 영상 레이더가 탑재돼 있는데요. 전력 소비가 굉장히 큰 이 위성이 임무를 수행하려면 항상 전력이 필요합니다. 이러한 이유로 태양 전지를 부착해 충전하게 하였죠. 그래서 24시간 내내 태양을 볼 수 있는 궤도 안에 위성을 안착시켜야 했는데요. 누리호 발사 위치와 지구의 움직임 등을 따져서 이 궤도에 진입할 수 있는 시점을 계산하니 그 시각이 딱 6시 24분이었던 겁니다.",
+		"audioUrl": "de/Đề thi thật/Kỳ thi số 96/제96회 TOPIK II 듣기파일/2-49.mp3",
+		"options": [
+			"이번 위성에는 태양 전지를 부착하지 않았다.",
+			"누리호는 우주 관측을 위해 곧 발사될 예정이다.",
+			"위성에 탑재된 영상 레이더는 전력 소비가 적은 편이다.",
+			"위성이 안착한 이 궤도에서는 항상 태양 빛을 받을 수 있다."
+		],
+		"correctAnswer": 4,
+		"isAiAnswer": false,
+		"explanation": "Trong bài, chuyên gia giải thích: vì vệ tinh tiêu thụ điện cực lớn nên cần sạc pin liên tục bằng pin mặt trời, 'do đó phải đưa vệ tinh vào quỹ đạo có thể đón ánh sáng mặt trời suốt 24 giờ' (그래서 24시간 내내 태양을 볼 수 있는 궤도 안에 위성을 안착시켜야 했는데요). Điều này hoàn toàn trùng khớp với đáp án ④: 'Tại quỹ đạo mà vệ tinh này neo đậu, vệ tinh luôn luôn có thể đón nhận ánh sáng mặt trời' (위성이 안착한 이 궤도에서는 항상 태양 빛을 받을 수 있다).",
+		"transcript": [
+			{"speaker": "남자", "text": "얼마 전 대한민국의 로켓 ‘누리호’가 우주 상공에 위성을 올려놓기 위해 발사됐는데요. 그 시각이 콕 집어 저녁 6시 24분이었습니다. 왜 발사 시각을 분 단위까지 철저히 계산했을까요? 이는 누리호에 실린 위성 때문이었습니다. 이 위성에는 정교한 관측 자료를 제공해 줄 영상 레이더가 탑재돼 있는데요. 전력 소비가 굉장히 큰 이 위성이 임무를 수행하려면 항상 전력이 필요합니다. 이러한 이유로 태양 전지를 부착해 충전하게 하였죠. 그래서 24시간 내내 태양을 볼 수 있는 궤도 안에 위성을 안착시켜야 했는데요. 누리호 발사 위치와 지구의 움직임 등을 따져서 이 궤도에 진입할 수 있는 시점을 계산하니 그 시각이 딱 6시 24분이었던 겁니다.", "translation": "Cách đây ít lâu, tên lửa Nuri của Hàn Quốc đã được phóng để đưa vệ tinh lên không gian vũ trụ. Giờ phóng được ấn định chính xác đến từng phút là đúng 6 giờ 24 phút tối. Tại sao lại phải tính toán thời điểm phóng kỹ lưỡng đến từng phút như vậy? Đó chính là vì vệ tinh được chở trên tàu Nuri. Vệ tinh này được trang bị radar hình ảnh nhằm cung cấp các dữ liệu quan sát vô cùng tinh vi. Vệ tinh này tiêu thụ điện năng cực kỳ lớn, muốn hoàn thành sứ mệnh thì bắt buộc phải luôn luôn có điện. Vì lý do đó, người ta đã gắn pin mặt trời để sạc điện. Do đó, cần phải đưa vệ tinh neo đậu vào trong quỹ đạo có thể đón ánh sáng mặt trời suốt 24 giờ liên tục. Khi tính toán kỹ vị trí bệ phóng tên lửa Nuri và chuyển động quay của Trái Đất để chọn thời điểm tiến vào quỹ đạo này, kết quả tính ra thời khắc chuẩn xác chính là 6 giờ 24 phút tối."}
+		],
+		"grammar": [
+			{"point": "-기 위해(서)", "meaning": "Để làm gì đó (mục đích)", "example": "위성을 올려놓기 위해 발사됐다."},
+			{"point": "24시간 내내", "meaning": "Suốt 24 giờ liên tục", "example": "24시간 내내 태양을 볼 수 있다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "누리호", "vietnamese": "Tên lửa vũ trụ Nuri (Hàn Quốc)"}, {"korean": "궤도", "vietnamese": "Quỹ đạo"}, {"korean": "영상 레이더", "vietnamese": "Radar ghi hình ảnh (SAR)"}],
+			"verbs": [{"korean": "발사되다", "vietnamese": "Được phóng đi"}, {"korean": "안착시키다", "vietnamese": "Neo đậu an toàn, đưa vào vị trí ổn định"}],
+			"adjectives": [{"korean": "정교하다", "vietnamese": "Tinh vi, tinh xảo"}],
+			"adverbs": [{"korean": "철저히", "vietnamese": "Một cách triệt để, cẩn mật"}, {"korean": "딱", "vietnamese": "Đúng chuẩn, vừa khít"}]
+		}
+	},
+	{
+		"id": "q_l_96_50",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "listening",
+		"questionNumber": 50,
+		"typeId": "L_TYPE_5",
+		"typeName": "Nghe: Cách thức diễn đạt của người nói",
+		"instruction": "※ [49～50] 다음을 듣고 물음에 답하십시오. (각 2점)\n50. 남자가 말하는 방식으로 알맞은 것을 고르십시오.",
+		"passage": "남자: 얼마 전 대한민국의 로켓 ‘누리호’가 우주 상공에 위성을 올려놓기 위해 발사됐는데요. 그 시각이 콕 집어 저녁 6시 24분이었습니다. 왜 발사 시각을 분 단위까지 철저히 계산했을까요? 이는 누리호에 실린 위성 때문이었습니다. 이 위성에는 정교한 관측 자료를 제공해 줄 영상 레이더가 탑재돼 있는데요. 전력 소비가 굉장히 큰 이 위성이 임무를 수행하려면 항상 전력이 필요합니다. 이러한 이유로 태양 전지를 부착해 충전하게 하였죠. 그래서 24시간 내내 태양을 볼 수 있는 궤도 안에 위성을 안착시켜야 했는데요. 누리호 발사 위치와 지구의 움직임 등을 따져서 이 궤도에 진입할 수 있는 시점을 계산하니 그 시각이 딱 6시 24분이었던 겁니다.",
+		"audioUrl": "de/Đề thi thật/Kỳ thi số 96/제96회 TOPIK II 듣기파일/2-49.mp3",
+		"options": [
+			"발사 시각이 정해진 배경을 과학적으로 설명하고 있다.",
+			"우주선 발사의 과학사적 의미를 새롭게 정의하고 있다.",
+			"위성이 우주에서 일으킬 수 있는 문제를 예측하고 있다.",
+			"천문학적 지식을 토대로 문제 해결 방법을 제시하고 있다."
+		],
+		"correctAnswer": 1,
+		"isAiAnswer": false,
+		"explanation": "Diễn giả mở đầu bằng câu hỏi: 'Tại sao thời điểm phóng tên lửa lại được tính toán chuẩn xác đến tận 6 giờ 24 phút?', sau đó giải thích chi tiết cơ chế khoa học: mức tiêu hao điện năng của radar hình ảnh trên vệ tinh, sự cần thiết của pin mặt trời, yêu cầu quỹ đạo 24/24 giờ nhận ánh nắng, và sự tương quan giữa vị trí phóng với vận động tự quay của Trái Đất. Đây chính là cách giải thích một cách khoa học về bối cảnh/nguyên do ấn định giờ phóng tên lửa (발사 시각이 정해진 배경을 과학적으로 설명하고 있다) -> Đáp án ①.",
+		"transcript": [
+			{"speaker": "남자", "text": "왜 발사 시각을 분 단위까지 철저히 계산했을까요? 이는 누리호에 실린 위성 때문이었습니다...", "translation": "Vì sao giờ phóng lại được tính chuẩn xác tới từng phút? Đó là do vệ tinh chở trên tên lửa Nuri..."}
+		],
+		"grammar": [
+			{"point": "-을/를 따져서", "meaning": "Tính toán, cân nhắc, xem xét kỹ lưỡng...", "example": "지구의 움직임 등을 따져서 계산했다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "발사 시각", "vietnamese": "Thời điểm phóng"}, {"korean": "배경", "vietnamese": "Bối cảnh, căn nguyên lý do"}],
+			"verbs": [{"korean": "설명하다", "vietnamese": "Giải thích, thuyết minh"}],
+			"adjectives": [{"korean": "과학적이다", "vietnamese": "Mang tính khoa học"}],
+			"adverbs": [{"korean": "과학적으로", "vietnamese": "Dưới góc độ khoa học"}]
+		}
+	}
+]

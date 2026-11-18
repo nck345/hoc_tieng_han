@@ -232,6 +232,12 @@
 						<button class="btn-back" id="btn-exam-folder-back">← Quay lại danh sách loại đề</button>
 						<h3 id="exam-folder-detail-title" style="font-size:18px;">Tên Folder Đề Thi</h3>
 					</div>
+					<div class="folder-section-filter-bar" id="exam-folder-section-filter" style="display:flex;gap:8px;padding:10px 0 4px 0;flex-wrap:wrap;">
+						<button class="filter-pill active" data-filter="all">📁 Tất cả các phần</button>
+						<button class="filter-pill" data-filter="listening">🎧 Chỉ Phần Nghe (듣기)</button>
+						<button class="filter-pill" data-filter="reading">📖 Chỉ Phần Đọc (읽기)</button>
+						<button class="filter-pill" data-filter="writing">✍️ Chỉ Phần Viết (쓰기)</button>
+					</div>
 					<div class="exam-items-grid" id="exam-folder-items-grid"></div>
 				</div>
 				<!-- EXAM PACKS (DẠNG CÂU HỎI) VIEW -->
@@ -289,7 +295,7 @@
 						<div class="analysis-section" id="exam-transcript-section" style="display:none;">
 							<div class="analysis-title">
 								<span>📜</span>
-								<span>Kịch bản nghe (Transcript) • Bấm vào câu để nghe riêng:</span>
+								<span>Phụ đề & Kịch bản nghe (Transcript) • Bấm vào câu để nghe riêng:</span>
 							</div>
 							<div class="transcript-box" id="exam-transcript-box"></div>
 						</div>
@@ -463,6 +469,33 @@
 				<button class="btn-back" id="btn-close-bird-modal">Tiếp tục luyện tập</button>
 				<button class="mode-btn" id="btn-view-bird-collection" style="background:#f59e0b;">Xem bộ sưu tập chim →</button>
 			</div>
+		</div>
+	</div>
+
+	<!-- MODAL TỔNG KẾT KẾT QUẢ ĐỀ THI -->
+	<div class="modal-overlay" id="exam-result-modal">
+		<div class="modal-card celebrate-card" style="max-width:440px;">
+			<div class="celebrate-icon" id="exam-result-icon">🏆</div>
+			<h3 style="font-size:22px;margin-bottom:4px;">Tổng Kết Kết Quả Làm Bài</h3>
+			<p id="exam-result-title" style="font-size:15px;color:#60a5fa;font-weight:700;margin-bottom:14px;">Đề thi TOPIK</p>
+			
+			<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;margin-bottom:14px;">
+				<div style="background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.3);padding:12px;border-radius:10px;text-align:center;">
+					<div style="font-size:12px;color:#34d399;font-weight:700;">SỐ CÂU ĐÚNG</div>
+					<div id="exam-result-correct" style="font-size:22px;font-weight:800;color:#10b981;margin-top:4px;">0 câu</div>
+				</div>
+				<div style="background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.3);padding:12px;border-radius:10px;text-align:center;">
+					<div style="font-size:12px;color:#f87171;font-weight:700;">SỐ CÂU SAI</div>
+					<div id="exam-result-wrong" style="font-size:22px;font-weight:800;color:#ef4444;margin-top:4px;">0 câu</div>
+				</div>
+			</div>
+
+			<div style="display:flex;justify-content:space-around;width:100%;padding:10px 14px;background:var(--surface);border-radius:8px;border:1px solid var(--border);margin-bottom:16px;font-size:13px;">
+				<div><span>Tỷ lệ: </span><strong id="exam-result-percent" style="color:var(--accent);font-size:15px;">0%</strong></div>
+				<div><span>Thời gian: </span><strong id="exam-result-time" style="color:var(--text-primary);font-size:15px;">00:00</strong></div>
+			</div>
+
+			<button class="mode-btn" id="btn-close-exam-result" style="width:100%;padding:12px;font-size:14px;">Quay lại danh sách đề thi</button>
 		</div>
 	</div>
 

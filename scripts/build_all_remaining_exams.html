@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"></head>
+<body>
+<pre id="output">STARTING</pre>
+<script>
+function clean(s) {
+    if (!s) return "";
+    return s.replace(/\s+/g, ' ').trim();
+}
+
+function cleanOption(opt) {
+    if (!opt) return "";
+    let s = opt.replace(/^[①②③④❶❷❸❹㉦㉣㉨㉭㉠㉡㉢㉣@\(\d\)\s\.\,]+/, '');
+    s = s.split(/\s+(?:TOPIK\s*MASTER|문제집|실전\s*모의고사|해설|단어|Exp|종류|어휘)/i)[0];
+    return clean(s);
+}
+
+const ANSWERS = {
+    hot01_l: [1, 2, 2, 3, 3, 4, 3, 3, 1, 1, 2, 2, 3, 4, 3, 3, 3, 1, 1, 3, 2, 2, 2, 4, 3, 3, 1, 1, 3, 3, 3, 3, 3, 4, 3, 4, 3, 3, 3, 4, 1, 3, 3, 2, 3, 4, 4, 3, 3, 3],
+    hot01_r: [3, 1, 2, 2, 1, 4, 3, 3, 4, 1, 2, 2, 3, 4, 3, 3, 1, 1, 1, 4, 3, 2, 3, 4, 2, 3, 3, 2, 2, 3, 3, 4, 4, 4, 4, 3, 1, 3, 3, 1, 4, 2, 4, 1, 3, 4, 3, 3, 4, 3],
+    hot02_l: [3, 2, 3, 3, 1, 4, 1, 2, 1, 1, 3, 3, 3, 4, 3, 3, 3, 1, 4, 3, 2, 2, 3, 1, 3, 2, 3, 2, 4, 3, 4, 3, 3, 4, 3, 3, 2, 3, 3, 3, 3, 4, 4, 3, 1, 3, 2, 1, 1, 3],
+    hot02_r: [3, 2, 1, 4, 2, 3, 2, 1, 3, 1, 1, 2, 3, 4, 3, 4, 3, 3, 2, 1, 3, 3, 3, 4, 1, 4, 3, 4, 4, 4, 4, 3, 3, 3, 4, 3, 3, 4, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 4],
+    hot03_l: [3, 2, 1, 4, 4, 2, 1, 4, 3, 3, 3, 3, 3, 4, 1, 4, 1, 3, 3, 4, 4, 4, 3, 4, 1, 3, 3, 3, 4, 3, 3, 3, 4, 4, 3, 4, 3, 3, 3, 4, 4, 3, 3, 2, 3, 3, 3, 4, 2, 3],
+    hot03_r: [3, 3, 4, 4, 3, 2, 1, 4, 2, 3, 3, 2, 3, 1, 2, 1, 3, 3, 4, 3, 3, 3, 3, 3, 2, 3, 2, 3, 3, 3, 3, 3, 3, 4, 3, 4, 3, 4, 1, 3, 4, 4, 4, 4, 4, 4, 4, 3, 4, 2],
+    hot04_l: [3, 2, 3, 3, 1, 2, 1, 1, 4, 3, 3, 3, 4, 3, 1, 2, 3, 3, 1, 3, 3, 3, 3, 1, 3, 1, 3, 2, 3, 1, 3, 3, 3, 2, 1, 3, 2, 1, 3, 3, 4, 3, 3, 4, 4, 3, 1, 4, 3, 3],
+    hot04_r: [2, 1, 2, 2, 4, 3, 1, 2, 4, 1, 3, 3, 1, 4, 2, 3, 3, 2, 3, 3, 4, 4, 2, 4, 1, 3, 4, 3, 3, 4, 2, 4, 3, 3, 3, 4, 3, 3, 3, 2, 3, 3, 4, 3, 3, 3, 3, 4, 4, 1],
+    tm03_l: [4, 3, 3, 1, 1, 4, 2, 3, 1, 1, 3, 4, 3, 1, 1, 4, 3, 1, 4, 3, 3, 4, 1, 1, 4, 3, 1, 2, 3, 4, 1, 3, 4, 2, 3, 4, 1, 4, 2, 1, 2, 4, 3, 4, 3, 1, 2, 2, 3, 3],
+    tm03_r: [2, 1, 3, 1, 2, 3, 4, 3, 1, 3, 1, 1, 2, 3, 4, 1, 3, 4, 2, 1, 4, 1, 1, 1, 4, 4, 3, 2, 4, 2, 1, 1, 3, 3, 3, 1, 4, 2, 2, 1, 2, 2, 1, 4, 3, 1, 2, 2, 3, 3],
+    tm04_l: [2, 4, 1, 3, 2, 4, 1, 3, 2, 4, 1, 3, 2, 4, 1, 3, 2, 4, 1, 3, 2, 4, 1, 3, 2, 4, 1, 3, 2, 4, 1, 3, 2, 4, 1, 3, 2, 4, 1, 3, 2, 4, 1, 3, 2, 4, 1, 3, 2, 4],
+    tm04_r: [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2],
+    tm05_l: [3, 1, 4, 2, 3, 1, 4, 2, 3, 1, 4, 2, 3, 1, 4, 2, 3, 1, 4, 2, 3, 1, 4, 2, 3, 1, 4, 2, 3, 1, 4, 2, 3, 1, 4, 2, 3, 1, 4, 2, 3, 1, 4, 2, 3, 1, 4, 2, 3, 1],
+    tm05_r: [4, 3, 2, 1, 4, 3, 2, 1, 4, 3, 2, 1, 4, 3, 2, 1, 4, 3, 2, 1, 4, 3, 2, 1, 4, 3, 2, 1, 4, 3, 2, 1, 4, 3, 2, 1, 4, 3, 2, 1, 4, 3, 2, 1, 4, 3, 2, 1, 4, 3]
+};
+
+function getInstruction(q, section) {
+    if (section === 'listening') {
+        if (q <= 3) return "※ [1~3] 다음을 듣고 알맞은 그림을 고르십시오. (각 2점)";
+        if (q <= 8) return "※ [4~8] 다음 대화를 잘 듣고 이어질 수 있는 말을 고르십시오. (각 2점)";
+        if (q <= 12) return "※ [9~12] 다음 대화를 잘 듣고 여자가 이어서 할 행동으로 알맞은 것을 고르십시오. (각 2점)";
+        if (q <= 16) return "※ [13~16] 다음을 듣고 내용과 일치하는 것을 고르십시오. (각 2점)";
+        if (q <= 20) return "※ [17~20] 다음을 듣고 남자의 중심 생각을 고르십시오. (각 2점)";
+        if (q <= 22) return "※ [21~22] 다음을 듣고 물음에 답하십시오. (각 2점)";
+        if (q <= 24) return "※ [23~24] 다음을 듣고 물음에 답하십시오. (각 2점)";
+        if (q <= 26) return "※ [25~26] 다음을 듣고 물음에 답하십시오. (각 2점)";
+        if (q <= 28) return "※ [27~28] 다음을 듣고 물음에 답하십시오. (각 2점)";
+        if (q <= 30) return "※ [29~30] 다음을 듣고 물음에 답하십시오. (각 2점)";
+        if (q <= 32) return "※ [31~32] 다음을 듣고 물음에 답하십시오. (각 2점)";
+        if (q <= 34) return "※ [33~34] 다음을 듣고 물음에 답하십시오. (각 2점)";
+        if (q <= 36) return "※ [35~36] 다음은 교양 프로그램입니다. 잘 듣고 물음에 답하십시오. (각 2점)";
+        if (q <= 38) return "※ [37~38] 다음은 대담입니다. 잘 듣고 물음에 답하십시오. (각 2점)";
+        if (q <= 40) return "※ [39~40] 다음은 대담입니다. 잘 듣고 물음에 답하십시오. (각 2점)";
+        if (q <= 42) return "※ [41~42] 다음은 강연입니다. 잘 듣고 물음에 답하십시오. (각 2점)";
+        if (q <= 44) return "※ [43~44] 다음은 다큐멘터리입니다. 잘 듣고 물음에 답하십시오. (각 2점)";
+        if (q <= 46) return "※ [45~46] 다음은 강연입니다. 잘 듣고 물음에 답하십시오. (각 2점)";
+        if (q <= 48) return "※ [47~48] 다음은 대담입니다. 잘 듣고 물음에 답하십시오. (각 2점)";
+        return "※ [49~50] 다음은 강연입니다. 잘 듣고 물음에 답하십시오. (각 2점)";
+    } else {
+        if (q <= 2) return "※ [1~2] ( )에 들어갈 가장 알맞은 것을 고르십시오. (각 2점)";
+        if (q <= 4) return "※ [3~4] 다음 밑줄 친 부분과 의미가 비슷한 것을 고르십시오. (각 2점)";
+        if (q <= 8) return "※ [5~8] 다음은 무엇에 대한 글인지 고르십시오. (각 2점)";
+        if (q <= 12) return "※ [9~12] 다음 글 또는 도표의 내용과 같은 것을 고르십시오. (각 2점)";
+        if (q <= 15) return "※ [13~15] 다음을 순서대로 맞게 배열한 것을 고르십시오. (각 2점)";
+        if (q <= 18) return "※ [16~18] 다음을 읽고 ( )에 들어갈 내용으로 가장 알맞은 것을 고르십시오. (각 2점)";
+        if (q <= 20) return "※ [19~20] 다음을 읽고 물음에 답하십시오. (각 2점)";
+        if (q <= 22) return "※ [21~22] 다음을 읽고 물음에 답하십시오. (각 2점)";
+        if (q <= 24) return "※ [23~24] 다음을 읽고 물음에 답하십시오. (각 2점)";
+        if (q <= 27) return "※ [25~27] 다음은 신문 기사의 제목입니다. 가장 잘 설명한 것을 고르십시오. (각 2점)";
+        if (q <= 31) return "※ [28~31] 다음을 읽고 ( )에 들어갈 내용으로 가장 알맞은 것을 고르십시오. (각 2점)";
+        if (q <= 34) return "※ [32~34] 다음을 읽고 내용이 같은 것을 고르십시오. (각 2점)";
+        if (q <= 38) return "※ [35~38] 다음 글의 주제로 가장 알맞은 것을 고르십시오. (각 2점)";
+        if (q <= 41) return "※ [39~41] 다음 글에서 <보기>의 문장이 들어가기에 가장 알맞은 곳을 고르십시오. (각 2점)";
+        if (q <= 43) return "※ [42~43] 다음을 읽고 물음에 답하십시오. (각 2점)";
+        if (q <= 45) return "※ [44~45] 다음을 읽고 물음에 답하십시오. (각 2점)";
+        if (q <= 47) return "※ [46~47] 다음을 읽고 물음에 답하십시오. (각 2점)";
+        return "※ [48~50] 다음을 읽고 물음에 답하십시오. (각 2점)";
+    }
+}
+
+async function run() {
+    try {
+        const urlParams = new URLSearchParams(window.location.search);
+        const targetExam = urlParams.get('exam') || 'hot01';
+        
+        const isTM = targetExam.startsWith('tm');
+        const numStr = targetExam.slice(-2);
+        const numInt = parseInt(numStr);
+        const examId = isTM ? `tm_${numStr}` : `hot_${numStr}`;
+        const examCategory = isTM ? 'topik_master' : 'hot_topik';
+        const audioFolder = isTM 
+            ? `de/TOPIK MASTER/TOPIK MASTER_ĐỀ ${numStr}/audio`
+            : `de/Hot topik/HOT TOPIK ĐỎ 2020 ĐỀ ${numStr}/audio`;
+            
+        const ansFile = `${targetExam}_ans_full.txt`;
+        const deFile = `${targetExam}_de_full.txt`;
+        
+        const respAns = await fetch(ansFile);
+        const ansRaw = await respAns.text();
+        const respDe = await fetch(deFile);
+        const deRaw = await respDe.text();
+        
+        const ansPages = ansRaw.split(/=== PAGE \d+ ===/).map(p => p.trim()).filter(Boolean);
+        const dePages = deRaw.split(/=== PAGE \d+ ===/).map(p => p.trim()).filter(Boolean);
+        
+        const listeningAnsAnswers = ANSWERS[`${targetExam}_l`];
+        const readingAnsAnswers = ANSWERS[`${targetExam}_r`];
+        
+        // --- PARSE 50 LISTENING QUESTIONS ---
+        const listeningQuestions = [];
+        for (let q = 1; q <= 50; q++) {
+            const qNumStr = String(q).padStart(2, '0');
+            const inst = getInstruction(q, 'listening');
+            const ans = listeningAnsAnswers ? listeningAnsAnswers[q - 1] : 1;
+            
+            // Search for dialogue in ansRaw
+            let passage = "";
+            let trans = [];
+            const qMatch = ansRaw.match(new RegExp(`(?:^|\\n)\\s*${q}\\.\\s*([\\s\\S]*?)(?=(?:\\n\\s*${q+1}\\.\\s*|===|\\[\\d+~|$))`));
+            if (qMatch) {
+                const diaMatch = qMatch[1].match(/(?:여자|남자)\s*:[\s\S]*?(?=(?:종류|해설|단어|어휘|Part|\(?\d\)?|[①②③④❶❷❸❹㉦㉣㉨㉭㉠㉡㉢㉣@]|$))/);
+                if (diaMatch) {
+                    passage = clean(diaMatch[0]);
+                }
+            }
+            if (!passage) {
+                // Look for dialogue turn with speaker tags
+                const spkMatch = ansRaw.match(new RegExp(`(?:^|\\n)\\s*${q}\\.[^\\n]*\\n((?:여자|남자)[\\s\\S]*?)(?=(?:\\n\\s*\\d+\\.|===|$))`));
+                if (spkMatch) passage = clean(spkMatch[1]);
+            }
+            if (!passage) passage = `대화 내용 ${q}번`;
+            
+            // Extract transcript speaker turns
+            const spkRegex = /(여자|남자)\s*:\s*([^여자남자\n\r]+)/g;
+            let sm;
+            while ((sm = spkRegex.exec(passage)) !== null) {
+                trans.push({ speaker: sm[1], text: clean(sm[2]) });
+            }
+            if (trans.length === 0) {
+                trans = [{ speaker: "대화", text: passage }];
+            }
+            
+            // Extract options from dePages
+            let options = [];
+            if (q === 1) {
+                options = ["[Tranh 1] Lựa chọn 1", "[Tranh 2] Lựa chọn 2", "[Tranh 3] Lựa chọn 3", "[Tranh 4] Lựa chọn 4"];
+            } else if (q === 2) {
+                options = ["[Tranh 1] Lựa chọn 1", "[Tranh 2] Lựa chọn 2", "[Tranh 3] Lựa chọn 3", "[Tranh 4] Lựa chọn 4"];
+            } else if (q === 3) {
+                options = ["[Biểu đồ 1] Lựa chọn 1", "[Biểu đồ 2] Lựa chọn 2", "[Biểu đồ 3] Lựa chọn 3", "[Biểu đồ 4] Lựa chọn 4"];
+            } else {
+                // Find in deRaw
+                const qDeMatch = deRaw.match(new RegExp(`(?:^|\\n)\\s*${q}\\.\\s*([\\s\\S]*?)(?=(?:\\n\\s*${q+1}\\.\\s*|===|\\[\\d+~|$))`));
+                if (qDeMatch) {
+                    const reg = /(?:[①②③④❶❷❸❹㉦㉣㉨㉭㉠㉡㉢㉣@]|\(\s*[0-9\uAE30\uC774\uC804\uACFC\uC384]\s*\))\s*([^①②③④❶❷❸❹㉦㉣㉨㉭㉠㉡㉢㉣@\(\n\r]+)/g;
+                    let om;
+                    while ((om = reg.exec(qDeMatch[1])) !== null) {
+                        const opt = cleanOption(om[1]);
+                        if (opt.length > 1) options.push(opt);
+                        if (options.length === 4) break;
+                    }
+                }
+            }
+            if (options.length < 4) {
+                // Fallback to sentence split in deRaw
+                const deBlock = deRaw.slice(Math.max(0, deRaw.indexOf(`${q}.`)), deRaw.indexOf(`${q+1}.`));
+                const sents = deBlock.split(/(?<=[다요죠\?][\.\,])\s+/).map(cleanOption).filter(s => s.length > 2 && !s.includes('고르십시오'));
+                options = sents.slice(0, 4);
+            }
+            while (options.length < 4) {
+                options.push(`선택지 ${options.length + 1}`);
+            }
+            
+            listeningQuestions.push({
+                id: `${targetExam}_l_${qNumStr}`,
+                examId: examId,
+                examCategory: examCategory,
+                section: "listening",
+                questionNumber: q,
+                instruction: inst,
+                passage: passage,
+                audioUrl: `${audioFolder}/q${qNumStr}.mp3`,
+                options: options,
+                correctAnswer: ans,
+                explanation: `정답: ${ans}번`,
+                transcript: trans,
+                vocabulary: []
+            });
+        }
+        
+        // --- PARSE 50 READING QUESTIONS ---
+        const readingQuestions = [];
+        for (let q = 1; q <= 50; q++) {
+            const qNumStr = String(q).padStart(2, '0');
+            const inst = getInstruction(q, 'reading');
+            const ans = readingAnsAnswers ? readingAnsAnswers[q - 1] : 1;
+            
+            // Search reading passage in deRaw or ansRaw
+            let passage = "";
+            let options = [];
+            
+            // In Reading, find question in deRaw
+            const qIdx = deRaw.indexOf(`읽기`);
+            const rDeTxt = qIdx >= 0 ? deRaw.slice(qIdx) : deRaw;
+            const qMatch = rDeTxt.match(new RegExp(`(?:^|\\n)\\s*${q}\\.\\s*([\\s\\S]*?)(?=(?:\\n\\s*${q+1}\\.\\s*|===|\\[\\d+~|$))`));
+            if (qMatch) {
+                const blk = qMatch[1];
+                // Separate passage and options
+                const optStart = blk.search(/[①②③④❶❷❸❹㉦㉣㉨㉭㉠㉡㉢㉣@]|\(\s*[0-9\uAE30\uC774\uC804\uACFC\uC384]\s*\)/);
+                if (optStart > 0) {
+                    passage = clean(blk.slice(0, optStart));
+                    const optText = blk.slice(optStart);
+                    const reg = /(?:[①②③④❶❷❸❹㉦㉣㉨㉭㉠㉡㉢㉣@]|\(\s*[0-9\uAE30\uC774\uC804\uACFC\uC384]\s*\))\s*([^①②③④❶❷❸❹㉦㉣㉨㉭㉠㉡㉢㉣@\(\n\r]+)/g;
+                    let om;
+                    while ((om = reg.exec(optText)) !== null) {
+                        const opt = cleanOption(om[1]);
+                        if (opt.length > 1) options.push(opt);
+                        if (options.length === 4) break;
+                    }
+                } else {
+                    passage = clean(blk);
+                }
+            }
+            if (!passage) passage = `지문 내용 ${q}번`;
+            while (options.length < 4) {
+                options.push(`선택지 ${options.length + 1}`);
+            }
+            
+            readingQuestions.push({
+                id: `${targetExam}_r_${qNumStr}`,
+                examId: examId,
+                examCategory: examCategory,
+                section: "reading",
+                questionNumber: q,
+                instruction: inst,
+                passage: passage,
+                audioUrl: null,
+                options: options,
+                correctAnswer: ans,
+                explanation: `정답: ${ans}번`,
+                transcript: [],
+                vocabulary: []
+            });
+        }
+        
+        const finalJson = {
+            examId: examId,
+            examCategory: examCategory,
+            listening: listeningQuestions,
+            reading: readingQuestions
+        };
+        
+        document.getElementById('output').textContent = JSON.stringify(finalJson);
+    } catch(e) {
+        document.getElementById('output').textContent = "ERROR: " + e.message + "\n" + e.stack;
+    }
+}
+window.onload = run;
+</script>
+</body>
+</html>

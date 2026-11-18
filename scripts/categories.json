@@ -1,0 +1,107 @@
+[
+  {
+    "id": "hot_topik",
+    "name": "Hot Topik",
+    "titleVi": "HOT TOPIK ĐỎ 2020",
+    "description": "Bộ 5 đề thi thử mô phỏng sát đề thi thật TOPIK II từ nhà xuất bản Hot Topik.",
+    "icon": "🔥",
+    "exams": [
+      {
+        "id": "hot_01",
+        "name": "HOT TOPIK ĐỎ ĐỀ 01",
+        "audioFile": "de/Hot topik/HOT TOPIK ĐỎ 2020 ĐỀ 01/HOT TOPIK ĐỎ 2020 ĐỀ 01_File Nghe.mp3",
+        "pdfFile": "de/Hot topik/HOT TOPIK ĐỎ 2020 ĐỀ 01/HOT TOPIK ĐỎ 2020 ĐỀ 01_Đề.pdf",
+        "questionCount": 100
+      },
+      {
+        "id": "hot_02",
+        "name": "HOT TOPIK ĐỎ ĐỀ 02",
+        "audioFile": "de/Hot topik/HOT TOPIK ĐỎ 2020 ĐỀ 02/HOT TOPIK ĐỎ 2020 ĐỀ 02_File Nghe.mp3",
+        "pdfFile": "de/Hot topik/HOT TOPIK ĐỎ 2020 ĐỀ 02/HOT TOPIK ĐỎ 2020 ĐỀ 02_Đề.pdf",
+        "questionCount": 100
+      },
+      {
+        "id": "hot_03",
+        "name": "HOT TOPIK ĐỎ ĐỀ 03",
+        "audioFile": "de/Hot topik/HOT TOPIK ĐỎ 2020 ĐỀ 03/HOT TOPIK ĐỎ 2020 ĐỀ 03_File Nghe.mp3",
+        "pdfFile": "de/Hot topik/HOT TOPIK ĐỎ 2020 ĐỀ 03/HOT TOPIK ĐỎ 2020 ĐỀ 03_Đề.pdf",
+        "questionCount": 100
+      },
+      {
+        "id": "hot_04",
+        "name": "HOT TOPIK ĐỎ ĐỀ 04",
+        "audioFile": "de/Hot topik/HOT TOPIK ĐỎ 2020 ĐỀ 04/HOT TOPIK ĐỎ 2020 ĐỀ 04_File Nghe.mp3",
+        "pdfFile": "de/Hot topik/HOT TOPIK ĐỎ 2020 ĐỀ 04/HOT TOPIK ĐỎ 2020 ĐỀ 04_Đề.pdf",
+        "questionCount": 100
+      },
+      {
+        "id": "hot_05",
+        "name": "HOT TOPIK ĐỎ ĐỀ 05",
+        "audioFile": "de/Hot topik/HOT TOPIK ĐỎ 2020 ĐỀ 05/HOT TOPIK ĐỎ 2020 ĐỀ 05_File Nghe.mp3",
+        "pdfFile": "de/Hot topik/HOT TOPIK ĐỎ 2020 ĐỀ 05/HOT TOPIK ĐỎ 2020 ĐỀ 05_Đề.pdf",
+        "questionCount": 100
+      }
+    ]
+  },
+  {
+    "id": "topik_master",
+    "name": "TOPIK MASTER",
+    "titleVi": "TOPIK MASTER 실전 모의고사",
+    "description": "Bộ 5 đề thi chuẩn của giáo trình TOPIK Master với lời giải và giải thích chi tiết.",
+    "icon": "📘",
+    "exams": [
+      {
+        "id": "tm_01",
+        "name": "TOPIK MASTER ĐỀ 01",
+        "audioFile": "de/TOPIK MASTER/TOPIK MASTER_ĐỀ 01/TOPIK MASTER_ĐỀ 01 File Nghe.mp3",
+        "pdfFile": "de/TOPIK MASTER/TOPIK MASTER_ĐỀ 01/TOPIK MASTER_ĐỀ 01 Đề.pdf",
+        "questionCount": 100
+      },
+      {
+        "id": "tm_02",
+        "name": "TOPIK MASTER ĐỀ 02",
+        "audioFile": "de/TOPIK MASTER/TOPIK MASTER_ĐỀ 02/TOPIK MASTER_ĐỀ 02 File Nghe.mp3",
+        "pdfFile": "de/TOPIK MASTER/TOPIK MASTER_ĐỀ 02/TOPIK MASTER_ĐỀ 02 Đề.pdf",
+        "questionCount": 100
+      },
+      {
+        "id": "tm_03",
+        "name": "TOPIK MASTER ĐỀ 03",
+        "audioFile": "de/TOPIK MASTER/TOPIK MASTER_ĐỀ 03/TOPIK MASTER_ĐỀ 03 File Nghe.mp3",
+        "pdfFile": "de/TOPIK MASTER/TOPIK MASTER_ĐỀ 03/TOPIK MASTER_ĐỀ 03 Đề.pdf",
+        "questionCount": 100
+      },
+      {
+        "id": "tm_04",
+        "name": "TOPIK MASTER ĐỀ 04",
+        "audioFile": "de/TOPIK MASTER/TOPIK MASTER_ĐỀ 04/TOPIK MASTER_ĐỀ 04 File Nghe.mp3",
+        "pdfFile": "de/TOPIK MASTER/TOPIK MASTER_ĐỀ 04/TOPIK MASTER_ĐỀ 04 Đề.pdf",
+        "questionCount": 100
+      },
+      {
+        "id": "tm_05",
+        "name": "TOPIK MASTER ĐỀ 05",
+        "audioFile": "de/TOPIK MASTER/TOPIK MASTER_ĐỀ 05/TOPIK MASTER_ĐỀ 05 File Nghe.mp3",
+        "pdfFile": "de/TOPIK MASTER/TOPIK MASTER_ĐỀ 05/TOPIK MASTER_ĐỀ 05 Đề.pdf",
+        "questionCount": 100
+      }
+    ]
+  },
+  {
+    "id": "de_thi_that",
+    "name": "Đề thi thật",
+    "titleVi": "Đề thi thật TOPIK qua các kỳ",
+    "description": "Các đề thi chính thức được viện giáo dục quốc tế Hàn Quốc (NIIED) phát hành qua các kỳ thi.",
+    "icon": "🏛️",
+    "exams": [
+      {
+        "id": "real_96",
+        "name": "Kỳ thi số 96 (TOPIK II)",
+        "hasSeparatedAudio": true,
+        "audioDir": "de/Đề thi thật/Kỳ thi số 96/제96회 TOPIK II 듣기파일",
+        "pdfFile": "de/Đề thi thật/Kỳ thi số 96/TOPIK KỲ 96.pdf",
+        "questionCount": 104
+      }
+    ]
+  }
+]

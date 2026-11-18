@@ -1,4 +1,4 @@
-class TopikApp{
+﻿class TopikApp{
 	constructor(){
 		this.units=window.TOPIC_UNITS||[];
 		this.examData=window.EXAM_DATA||{categories:[],packs:[]};
@@ -21,6 +21,7 @@ class TopikApp{
 		this.currentExamPack=null;
 		this.activeExamQuestions=[];
 		this.activeExamQuestionIndex=0;
+		this.currentSessionAnswers={};
 		this.examTimerInterval=null;
 		this.examTimerSeconds=0;
 		this.examAudioSpeed=1.0;
@@ -127,6 +128,7 @@ class TopikApp{
 			btnFolderBack:document.getElementById("btn-exam-folder-back"),
 			folderDetailTitle:document.getElementById("exam-folder-detail-title"),
 			folderItemsGrid:document.getElementById("exam-folder-items-grid"),
+			folderSectionFilter:document.getElementById("exam-folder-section-filter"),
 			packsContainer:document.getElementById("exam-packs-container"),
 			activePlayer:document.getElementById("exam-active-player"),
 			btnPlayerBack:document.getElementById("btn-exam-player-back"),
@@ -165,6 +167,16 @@ class TopikApp{
 			desc:document.getElementById("modal-reward-bird-desc"),
 			btnClose:document.getElementById("btn-close-bird-modal"),
 			btnView:document.getElementById("btn-view-bird-collection")
+		};
+		this.examResultModal=document.getElementById("exam-result-modal");
+		this.examResultEls={
+			icon:document.getElementById("exam-result-icon"),
+			title:document.getElementById("exam-result-title"),
+			correct:document.getElementById("exam-result-correct"),
+			wrong:document.getElementById("exam-result-wrong"),
+			percent:document.getElementById("exam-result-percent"),
+			time:document.getElementById("exam-result-time"),
+			btnClose:document.getElementById("btn-close-exam-result")
 		};
 		this.commEls={
 			btnBeginner:document.getElementById("btn-comm-beginner"),
@@ -258,11 +270,29 @@ class TopikApp{
 			this.examEls.subnavFolders.classList.remove("active");
 			this.renderExamView();
 		});
+		if(this.examEls.folderSectionFilter){
+			this.examEls.folderSectionFilter.querySelectorAll(".filter-pill").forEach(pill=>{
+				pill.addEventListener("click",()=>{
+					this.examEls.folderSectionFilter.querySelectorAll(".filter-pill").forEach(p=>p.classList.remove("active"));
+					pill.classList.add("active");
+					this.currentCategorySectionFilter=pill.dataset.filter||"all";
+					if(this.currentExamCategory)this.renderExamCategoryDetail(this.currentExamCategory);
+				});
+			});
+		}
 		this.examEls.btnFolderBack.addEventListener("click",()=>{
+			this.currentExamCategory=null;
+			this.currentCategorySectionFilter="all";
+			if(this.examEls.folderSectionFilter){
+				this.examEls.folderSectionFilter.querySelectorAll(".filter-pill").forEach(p=>p.classList.toggle("active",p.dataset.filter==="all"));
+			}
 			this.currentExamCategory=null;
 			this.renderExamView();
 		});
 		this.examEls.btnPlayerBack.addEventListener("click",()=>{
+			this.currentSessionAnswers={};
+			this.activeExamQuestions=[];
+			this.activeExamQuestionIndex=0;
 			this.stopExamTimer();
 			this.audio.stopAll();
 			this.examEls.activePlayer.style.display="none";
@@ -289,6 +319,13 @@ class TopikApp{
 			this.birdRewardModal.classList.remove("active");
 			this.switchView("birds");
 		});
+		if(this.examResultEls&&this.examResultEls.btnClose){
+			this.examResultEls.btnClose.addEventListener("click",()=>{
+				if(this.examResultModal)this.examResultModal.classList.remove("active");
+				this.examEls.activePlayer.style.display="none";
+				this.renderExamView();
+			});
+		}
 		this.commEls.btnBeginner.addEventListener("click",()=>{
 			this.commLevel="beginner";
 			this.commEls.btnBeginner.classList.add("active");
@@ -324,6 +361,12 @@ class TopikApp{
 	switchView(viewName){
 		this.audio.stopAll();
 		this.stopExamTimer();
+		if(viewName!=="exam"&&this.examEls&&this.examEls.activePlayer){
+			this.currentSessionAnswers={};
+			this.activeExamQuestions=[];
+			this.activeExamQuestionIndex=0;
+			this.examEls.activePlayer.style.display="none";
+		}
 		Object.keys(this.views).forEach(key=>{
 			if(this.views[key])this.views[key].classList.toggle("active",key===viewName);
 		});
@@ -776,27 +819,115 @@ class TopikApp{
 		}
 	}
 	renderExamCategoryDetail(cat){
-		this.examEls.folderDetailTitle.textContent=`📁 ${cat.name} (${cat.titleVi||""})`;
-		this.examEls.folderItemsGrid.innerHTML="";
-		const exams=cat.exams||[];
-		for(let i=0;i<exams.length;++i){
-			const ex=exams[i];
-			const card=document.createElement("div");
-			card.className="exam-card";
-			card.innerHTML=`
-				<div class="exam-card-header">
-					<span class="day-tag">${cat.name}</span>
-					<span style="font-size:12px;color:var(--text-secondary);">${ex.questionCount||100} câu</span>
-				</div>
-				<h4 style="font-size:16px;margin:8px 0;">${ex.name}</h4>
-				<div style="font-size:12px;color:var(--text-muted);margin-bottom:12px;">
-					${ex.audioFile?`<span>🔊 Có file nghe mp3</span>`:""}
-				</div>
-				<div style="display:flex;gap:8px;">
-					<button class="mode-btn" style="flex:1;font-size:13px;padding:8px 12px;background:#f59e0b;">Làm đề ngay</button>
-				</div>
-			`;
-			card.addEventListener("click",()=>this.startExamFromItem(cat,ex));
+		this.examEls.folderDetailTitle.textContent = "📁 " + cat.name + (cat.titleVi ? " (" + cat.titleVi + ")" : "");
+		this.examEls.folderItemsGrid.innerHTML = "";
+		const currentFilter = this.currentCategorySectionFilter || "all";
+		const exams = cat.exams || [];
+		for(let i = 0; i < exams.length; ++i){
+			const ex = exams[i];
+			const directQs = (this.examData.questions || []).filter(q => q.examId === ex.id);
+			const directL = directQs.filter(q => q.section === "listening").length;
+			const directR = directQs.filter(q => q.section === "reading").length;
+			const directW = directQs.filter(q => q.section === "writing").length;
+			const lCount = directL > 0 ? directL : 50;
+			const rCount = directR > 0 ? directR : 50;
+			const wCount = directW > 0 ? directW : 0;
+			const totalCount = (directL > 0 && directR > 0) ? (directL + directR + directW) : (ex.questionCount || (lCount + rCount + wCount));
+			const lScore = this.storage.getExamScore(ex.id, "listening");
+			const rScore = this.storage.getExamScore(ex.id, "reading");
+			const wScore = this.storage.getExamScore(ex.id, "writing");
+			const allScore = this.storage.getExamScore(ex.id, "all");
+			const card = document.createElement("div");
+			card.className = "exam-card";
+			card.style.display = "flex";
+			card.style.flexDirection = "column";
+			card.style.gap = "10px";
+			card.style.padding = "16px";
+			if(currentFilter === "listening"){
+				card.style.borderLeft = "4px solid #3b82f6";
+				card.innerHTML = 
+					'<div class="exam-card-header">' +
+						'<span class="day-tag" style="background:rgba(59,130,246,0.15);color:#60a5fa;border-color:rgba(59,130,246,0.3);">Phần Nghe (듣기)</span>' +
+						(lScore ? '<span style="font-size:12px;color:#10b981;font-weight:700;">✓ Kết quả: ' + lScore.correctCount + '/' + lScore.total + ' đúng • ' + lScore.wrongCount + ' sai (' + lScore.percent + '%)</span>' : '<span style="font-size:12px;color:var(--text-secondary);font-weight:700;">' + lCount + ' câu • 60 phút</span>') +
+					'</div>' +
+					'<h4 style="font-size:16px;margin:2px 0;">' + ex.name + ' - Phần Nghe</h4>' +
+					'<div style="font-size:12px;color:var(--text-muted);">' +
+						'<span>🔊 50 câu nghe hiểu • Audio MP3 bản chuẩn • Ẩn phụ đề khi làm bài</span>' +
+					'</div>' +
+					'<button class="mode-btn btn-part-listen" style="width:100%;font-size:13px;padding:9px 12px;background:#3b82f6;margin-top:auto;">🎧 Bắt đầu làm phần Nghe (' + lCount + ' câu) →</button>';
+				card.querySelector(".btn-part-listen").addEventListener("click", () => this.startExamFromItem(cat, ex, "listening"));
+			}else if(currentFilter === "reading"){
+				card.style.borderLeft = "4px solid #10b981";
+				card.innerHTML = 
+					'<div class="exam-card-header">' +
+						'<span class="day-tag" style="background:rgba(16,185,129,0.15);color:#34d399;border-color:rgba(16,185,129,0.3);">Phần Đọc (읽기)</span>' +
+						(rScore ? '<span style="font-size:12px;color:#10b981;font-weight:700;">✓ Kết quả: ' + rScore.correctCount + '/' + rScore.total + ' đúng • ' + rScore.wrongCount + ' sai (' + rScore.percent + '%)</span>' : '<span style="font-size:12px;color:var(--text-secondary);font-weight:700;">' + rCount + ' câu • 70 phút</span>') +
+					'</div>' +
+					'<h4 style="font-size:16px;margin:2px 0;">' + ex.name + ' - Phần Đọc</h4>' +
+					'<div style="font-size:12px;color:var(--text-muted);">' +
+						'<span>📖 50 câu đọc hiểu • Đầy đủ bài đọc ngữ cảnh & phân tích ngữ pháp</span>' +
+					'</div>' +
+					'<button class="mode-btn btn-part-read" style="width:100%;font-size:13px;padding:9px 12px;background:#10b981;margin-top:auto;">📖 Bắt đầu làm phần Đọc (' + rCount + ' câu) →</button>';
+				card.querySelector(".btn-part-read").addEventListener("click", () => this.startExamFromItem(cat, ex, "reading"));
+			}else if(currentFilter === "writing"){
+				if(wCount === 0) continue;
+				card.style.borderLeft = "4px solid #8b5cf6";
+				card.innerHTML = 
+					'<div class="exam-card-header">' +
+						'<span class="day-tag" style="background:rgba(139,92,246,0.15);color:#a78bfa;border-color:rgba(139,92,246,0.3);">Phần Viết (쓰기)</span>' +
+						(wScore ? '<span style="font-size:12px;color:#10b981;font-weight:700;">✓ Kết quả: ' + wScore.correctCount + '/' + wScore.total + ' đúng • ' + wScore.wrongCount + ' sai (' + wScore.percent + '%)</span>' : '<span style="font-size:12px;color:var(--text-secondary);font-weight:700;">' + wCount + ' câu • 50 phút</span>') +
+					'</div>' +
+					'<h4 style="font-size:16px;margin:2px 0;">' + ex.name + ' - Phần Viết</h4>' +
+					'<div style="font-size:12px;color:var(--text-muted);">' +
+						'<span>✍️ Câu 51~54 • Bài văn mẫu chuẩn NIIED & tiêu chuẩn chấm điểm</span>' +
+					'</div>' +
+					'<button class="mode-btn btn-part-write" style="width:100%;font-size:13px;padding:9px 12px;background:#8b5cf6;margin-top:auto;">✍️ Bắt đầu làm phần Viết (' + wCount + ' câu) →</button>';
+				card.querySelector(".btn-part-write").addEventListener("click", () => this.startExamFromItem(cat, ex, "writing"));
+			}else{
+				let html = 
+					'<div class="exam-card-header">' +
+						'<span class="day-tag">' + cat.name + '</span>' +
+						'<span style="font-size:12px;color:var(--text-secondary);font-weight:700;">Tổng: ' + totalCount + ' câu</span>' +
+					'</div>' +
+					'<h4 style="font-size:16px;margin:2px 0 2px 0;">' + ex.name + '</h4>' +
+					'<div class="exam-part-box listening">' +
+						'<div>' +
+							'<div style="font-size:13px;font-weight:700;color:#60a5fa;">🎧 Phần 1: Nghe hiểu (듣기)</div>' +
+							'<div style="font-size:11px;color:' + (lScore ? '#10b981' : 'var(--text-muted)') + ';font-weight:' + (lScore ? '700' : '400') + ';">' + (lScore ? '✓ Đã xong: ' + lScore.correctCount + '/' + lScore.total + ' đúng • ' + lScore.wrongCount + ' sai (' + lScore.percent + '%)' : lCount + ' câu • Audio MP3 chuẩn') + '</div>' +
+						'</div>' +
+						'<button class="mode-btn btn-part-listen" style="padding:6px 14px;font-size:12px;background:#3b82f6;">Làm phần Nghe →</button>' +
+					'</div>' +
+					'<div class="exam-part-box reading">' +
+						'<div>' +
+							'<div style="font-size:13px;font-weight:700;color:#34d399;">📖 Phần 2: Đọc hiểu (읽기)</div>' +
+							'<div style="font-size:11px;color:' + (rScore ? '#10b981' : 'var(--text-muted)') + ';font-weight:' + (rScore ? '700' : '400') + ';">' + (rScore ? '✓ Đã xong: ' + rScore.correctCount + '/' + rScore.total + ' đúng • ' + rScore.wrongCount + ' sai (' + rScore.percent + '%)' : rCount + ' câu • Văn bản đọc') + '</div>' +
+						'</div>' +
+						'<button class="mode-btn btn-part-read" style="padding:6px 14px;font-size:12px;background:#10b981;">Làm phần Đọc →</button>' +
+					'</div>';
+				if(wCount > 0){
+					html += 
+						'<div class="exam-part-box writing">' +
+							'<div>' +
+								'<div style="font-size:13px;font-weight:700;color:#a78bfa;">✍️ Phần 3: Viết (쓰기)</div>' +
+								'<div style="font-size:11px;color:' + (wScore ? '#10b981' : 'var(--text-muted)') + ';font-weight:' + (wScore ? '700' : '400') + ';">' + (wScore ? '✓ Đã xong: ' + wScore.correctCount + '/' + wScore.total + ' đúng • ' + wScore.wrongCount + ' sai (' + wScore.percent + '%)' : wCount + ' câu • Bài mẫu NIIED') + '</div>' +
+							'</div>' +
+							'<button class="mode-btn btn-part-write" style="padding:6px 14px;font-size:12px;background:#8b5cf6;">Làm phần Viết →</button>' +
+						'</div>';
+				}
+				html += 
+					'<div style="margin-top:2px;display:flex;justify-content:flex-end;">' +
+						'<button class="btn-part-all" style="background:none;border:none;color:var(--text-muted);font-size:11px;cursor:pointer;text-decoration:underline;">' + (allScore ? 'Làm lại cả đề (Điểm gần nhất: ' + allScore.correctCount + '/' + allScore.total + ' đúng • ' + allScore.wrongCount + ' sai)' : 'Làm trọn vẹn cả đề (' + totalCount + ' câu)') + '</button>' +
+					'</div>';
+				card.innerHTML = html;
+				const btnL = card.querySelector(".btn-part-listen");
+				if(btnL) btnL.addEventListener("click", (e) => { e.stopPropagation(); this.startExamFromItem(cat, ex, "listening"); });
+				const btnR = card.querySelector(".btn-part-read");
+				if(btnR) btnR.addEventListener("click", (e) => { e.stopPropagation(); this.startExamFromItem(cat, ex, "reading"); });
+				const btnW = card.querySelector(".btn-part-write");
+				if(btnW) btnW.addEventListener("click", (e) => { e.stopPropagation(); this.startExamFromItem(cat, ex, "writing"); });
+				const btnAll = card.querySelector(".btn-part-all");
+				if(btnAll) btnAll.addEventListener("click", (e) => { e.stopPropagation(); this.startExamFromItem(cat, ex, "all"); });
+			}
 			this.examEls.folderItemsGrid.appendChild(card);
 		}
 	}
@@ -829,37 +960,94 @@ class TopikApp{
 		this.activeExamQuestions=pack.questions||[];
 		if(this.activeExamQuestions.length===0)return;
 		this.activeExamQuestionIndex=0;
+		this.currentSessionAnswers={};
 		this.openExamPlayer(`${pack.typeName} (Gói 10 câu)`);
 	}
-	startExamFromItem(cat,ex){
-		let qList=[];
-		if(this.examData.packs){
-			for(let i=0;i<this.examData.packs.length;++i){
-				const pkQuestions=this.examData.packs[i].questions||[];
-				for(let j=0;j<pkQuestions.length;++j){
-					const q=pkQuestions[j];
-					if(q.examCategory===cat.id||q.examId===ex.id){
-						qList.push(q);
+	startExamFromItem(cat, ex, section = "all"){
+		this.activeExamSection = section;
+		this.activeExamCategory = cat;
+		this.activeExamItem = ex;
+
+		let qList = [];
+		let secLabel = "";
+
+		if(section === "listening"){
+			secLabel = " - Pháº§n Nghe (ë“£ê¸°)";
+			// 1. Direct questions for this specific exam
+			qList = (this.examData.questions || []).filter(q => q.examId === ex.id && q.section === "listening");
+			// 2. Category questions for listening
+			if(qList.length === 0){
+				qList = (this.examData.questions || []).filter(q => q.examCategory === cat.id && q.section === "listening");
+			}
+			// 3. Global listening questions pool
+			if(qList.length === 0){
+				qList = (this.examData.questions || []).filter(q => q.section === "listening");
+			}
+			// 4. Packs fallback
+			if(qList.length === 0 && this.examData.packs){
+				for(let i = 0; i < this.examData.packs.length; ++i){
+					const pk = this.examData.packs[i];
+					if(pk.section === "listening"){
+						qList.push(...(pk.questions || []));
 					}
 				}
 			}
-		}
-		if(qList.length===0&&this.examData.packs){
-			for(let i=0;i<this.examData.packs.length&&qList.length<10;++i){
-				const pkQuestions=this.examData.packs[i].questions||[];
-				if(pkQuestions.length>0)qList.push(pkQuestions[i%pkQuestions.length]);
+			qList = qList.slice(0, 50);
+		}else if(section === "reading"){
+			secLabel = " - Pháº§n Äá»c (ì½ê¸°)";
+			// 1. Direct questions for this specific exam
+			qList = (this.examData.questions || []).filter(q => q.examId === ex.id && q.section === "reading");
+			// 2. Category questions for reading
+			if(qList.length === 0){
+				qList = (this.examData.questions || []).filter(q => q.examCategory === cat.id && q.section === "reading");
 			}
+			// 3. Global reading questions pool
+			if(qList.length === 0){
+				qList = (this.examData.questions || []).filter(q => q.section === "reading");
+			}
+			// 4. Packs fallback
+			if(qList.length === 0 && this.examData.packs){
+				for(let i = 0; i < this.examData.packs.length; ++i){
+					const pk = this.examData.packs[i];
+					if(pk.section === "reading"){
+						qList.push(...(pk.questions || []));
+					}
+				}
+			}
+			qList = qList.slice(0, 50);
+		}else if(section === "writing"){
+			secLabel = " - Pháº§n Viáº¿t (ì“°ê¸°)";
+			qList = (this.examData.questions || []).filter(q => (q.examId === ex.id || q.examCategory === cat.id) && q.section === "writing");
+			if(qList.length === 0){
+				qList = (this.examData.questions || []).filter(q => q.section === "writing");
+			}
+		}else{
+			// "all"
+			let listL = (this.examData.questions || []).filter(q => (q.examId === ex.id || q.examCategory === cat.id) && q.section === "listening");
+			if(listL.length === 0) listL = (this.examData.questions || []).filter(q => q.section === "listening");
+			let listR = (this.examData.questions || []).filter(q => (q.examId === ex.id || q.examCategory === cat.id) && q.section === "reading");
+			if(listR.length === 0) listR = (this.examData.questions || []).filter(q => q.section === "reading");
+			let listW = (this.examData.questions || []).filter(q => (q.examId === ex.id || q.examCategory === cat.id) && q.section === "writing");
+			qList = [...listL.slice(0, 50), ...listR.slice(0, 50), ...listW];
 		}
-		if(qList.length===0&&this.examData.questions){
-			qList=this.examData.questions;
-		}
-		this.currentExamPack=null;
-		this.activeExamQuestions=qList.slice(0,10);
-		if(this.activeExamQuestions.length===0)return;
-		this.activeExamQuestionIndex=0;
-		this.openExamPlayer(`${cat.name} - ${ex.name}`);
+
+		if(qList.length === 0) return;
+
+		// Map questions to current exam session with unique IDs
+		this.activeExamQuestions = qList.map((q, idx) => ({
+			...q,
+						id: ex.id + "_" + section + "_" + (idx + 1),
+			examId: ex.id,
+			examTitle: ex.name,
+			audioUrl: q.audioUrl || (q.section === "listening" && ex.audioFile ? ex.audioFile : null)
+		}));
+
+		this.currentExamPack = null;
+		this.activeExamQuestionIndex = 0;
+		this.currentSessionAnswers = {};
+		this.openExamPlayer(ex.name + secLabel + " (" + this.activeExamQuestions.length + " cÃ¢u)");
 	}
-	openExamPlayer(title){
+		openExamPlayer(title){
 		this.activeExamTitle=title;
 		this.examEls.foldersContainer.style.display="none";
 		this.examEls.folderDetailWrap.style.display="none";
@@ -870,15 +1058,16 @@ class TopikApp{
 		this.startExamTimer();
 		this.renderActiveExamQuestion();
 	}
+
 	startExamTimer(){
 		this.stopExamTimer();
 		this.examTimerSeconds=0;
-		this.examEls.playerTimer.textContent="⏱️ 00:00";
+		this.examEls.playerTimer.textContent="â±ï¸ 00:00";
 		this.examTimerInterval=setInterval(()=>{
 			++this.examTimerSeconds;
 			const m=String(Math.floor(this.examTimerSeconds/60)).padStart(2,"0");
 			const s=String(this.examTimerSeconds%60).padStart(2,"0");
-			this.examEls.playerTimer.textContent=`⏱️ ${m}:${s}`;
+			this.examEls.playerTimer.textContent="â±ï¸ " + m + ":" + s;
 		},1000);
 	}
 	stopExamTimer(){
@@ -889,57 +1078,66 @@ class TopikApp{
 	}
 	renderActiveExamQuestion(){
 		this.audio.stopAll();
-		const q=this.activeExamQuestions[this.activeExamQuestionIndex];
-		const total=this.activeExamQuestions.length;
-		this.examEls.playerTypeBadge.textContent=this.activeExamTitle||q.typeName||"Dạng đề";
-		this.examEls.playerProgressBadge.textContent=`Câu ${this.activeExamQuestionIndex+1}/${total}`;
-		this.examEls.qInstruction.textContent=`[${q.section==="listening"?"Kỹ năng Nghe":"Kỹ năng Đọc"}] ${q.instruction||""}`;
-		if(q.section==="listening"){
-			this.examEls.qAudioBox.style.display="flex";
-			this.examEls.audioStatus.textContent=q.audioUrl?`Audio câu hỏi #${q.questionNumber||(this.activeExamQuestionIndex+1)}`:"Audio câu hỏi";
+		const q = this.activeExamQuestions[this.activeExamQuestionIndex];
+		const total = this.activeExamQuestions.length;
+		const secIcon = q.section === 'listening' ? '🎧' : (q.section === 'writing' ? '✍️' : '📖');
+		const secTitleName = q.section === 'listening' ? 'Phần Nghe (듣기)' : (q.section === 'writing' ? 'Phần Viết (쓰기)' : 'Phần Đọc (읽기)');
+		this.examEls.playerTypeBadge.textContent = secIcon + " " + secTitleName;
+		this.examEls.playerProgressBadge.textContent = "Câu " + (this.activeExamQuestionIndex + 1) + "/" + total;
+		const secLabel = q.section === 'listening' ? 'Kỹ năng Nghe' : (q.section === 'writing' ? 'Kỹ năng Viết' : 'Kỹ năng Đọc');
+		this.examEls.qInstruction.textContent = "[" + secLabel + "] " + (q.instruction || "");
+		if(q.section === "listening"){
+			this.examEls.qAudioBox.style.display = "flex";
+			this.examEls.audioStatus.textContent = q.audioUrl ? ("Audio câu hỏi #" + (q.questionNumber || (this.activeExamQuestionIndex + 1))) : "Audio câu hỏi";
 			this.examEls.btnAudioPlay.classList.remove("playing");
 		}else{
-			this.examEls.qAudioBox.style.display="none";
+			this.examEls.qAudioBox.style.display = "none";
 		}
-		if(q.passage){
-			this.examEls.qPassage.style.display="block";
-			this.examEls.qPassage.textContent=q.passage;
+		// BỎ PHỤ ĐỀ TRÊN ĐỀ NGHE ĐI KHI ĐANG LÀM BÀI:
+		if(q.passage && q.section !== "listening"){
+			this.examEls.qPassage.style.display = "block";
+			this.examEls.qPassage.textContent = q.passage;
 		}else{
-			this.examEls.qPassage.style.display="none";
+			this.examEls.qPassage.style.display = "none";
 		}
-		this.examEls.qOptionsList.innerHTML="";
-		this.selectedExamOption=null;
-		const options=q.options||[];
-		for(let i=0;i<options.length;++i){
-			const opt=options[i];
-			const optIndex=(typeof opt==="object"&&opt&&opt.index!==undefined)?opt.index:(i+1);
-			const optText=(typeof opt==="object"&&opt&&opt.text!==undefined)?opt.text:(typeof opt==="string"?opt:String(opt||""));
-			const btn=document.createElement("button");
-			btn.className="option-btn";
-			btn.dataset.index=optIndex;
-			btn.innerHTML=`<span class="option-num">${optIndex}</span> <span>${optText}</span>`;
-			btn.addEventListener("click",()=>{
-				if(this.examEls.solutionPanel.style.display==="flex")return;
-				this.examEls.qOptionsList.querySelectorAll(".option-btn").forEach(b=>b.classList.remove("selected"));
+		this.examEls.qOptionsList.innerHTML = "";
+		this.selectedExamOption = null;
+		const options = q.options || [];
+		for(let i = 0; i < options.length; ++i){
+			const opt = options[i];
+			const optIndex = (typeof opt === "object" && opt && opt.index !== undefined) ? opt.index : (i + 1);
+			const optText = (typeof opt === "object" && opt && opt.text !== undefined) ? opt.text : (typeof opt === "string" ? opt : String(opt || ""));
+			const btn = document.createElement("button");
+			btn.className = "option-btn";
+			btn.dataset.index = optIndex;
+			btn.innerHTML = '<span class="option-num">' + optIndex + '</span> <span>' + optText + '</span>';
+			btn.addEventListener("click", () => {
+				if(this.examEls.solutionPanel.style.display === "flex") return;
+				this.examEls.qOptionsList.querySelectorAll(".option-btn").forEach(b => b.classList.remove("selected"));
 				btn.classList.add("selected");
-				this.selectedExamOption=optIndex;
+				this.selectedExamOption = optIndex;
 			});
 			this.examEls.qOptionsList.appendChild(btn);
 		}
-		this.examEls.btnPrevQ.disabled=this.activeExamQuestionIndex===0;
-		this.examEls.btnPrevQ.style.opacity=this.activeExamQuestionIndex===0?"0.4":"1";
-		this.examEls.btnNextQ.textContent=this.activeExamQuestionIndex===total-1?"Hoàn thành gói đề":"Câu tiếp theo →";
-		const savedAns=this.storage.getExamAnswer(q.id);
-		if(savedAns&&savedAns.userAnswer!==undefined&&savedAns.userAnswer!==null&&!isNaN(savedAns.userAnswer)){
-			this.selectedExamOption=Number(savedAns.userAnswer);
-			const btns=this.examEls.qOptionsList.querySelectorAll(".option-btn");
-			btns.forEach(b=>{
-				if(parseInt(b.dataset.index,10)===Number(savedAns.userAnswer))b.classList.add("selected");
+		this.examEls.btnPrevQ.disabled = this.activeExamQuestionIndex === 0;
+		this.examEls.btnPrevQ.style.opacity = this.activeExamQuestionIndex === 0 ? "0.4" : "1";
+		let finishLabel = "Hoàn thành đề thi";
+		if(this.currentExamPack) finishLabel = "Hoàn thành gói đề";
+		else if(this.activeExamSection === "listening") finishLabel = "Hoàn thành phần thi Nghe";
+		else if(this.activeExamSection === "reading") finishLabel = "Hoàn thành phần thi Đọc";
+		else if(this.activeExamSection === "writing") finishLabel = "Hoàn thành phần thi Viết";
+		this.examEls.btnNextQ.textContent = this.activeExamQuestionIndex === total - 1 ? finishLabel : "Câu tiếp theo →";
+		const savedAns = this.currentSessionAnswers[q.id];
+		if(savedAns && savedAns.userAnswer !== undefined && savedAns.userAnswer !== null && !isNaN(savedAns.userAnswer)){
+			this.selectedExamOption = Number(savedAns.userAnswer);
+			const btns = this.examEls.qOptionsList.querySelectorAll(".option-btn");
+			btns.forEach(b => {
+				if(parseInt(b.dataset.index, 10) === Number(savedAns.userAnswer)) b.classList.add("selected");
 			});
-			this.showExamSolution(q,Number(savedAns.userAnswer),savedAns.isCorrect);
+			this.showExamSolution(q, Number(savedAns.userAnswer), savedAns.isCorrect);
 		}else{
-			this.examEls.solutionPanel.style.display="none";
-			this.examEls.btnSubmitAns.style.display="inline-block";
+			this.examEls.solutionPanel.style.display = "none";
+			this.examEls.btnSubmitAns.style.display = "inline-block";
 		}
 	}
 	playExamQuestionAudio(){
@@ -974,22 +1172,26 @@ class TopikApp{
 			);
 		}
 	}
+
+
+
 	submitExamAnswer(){
-		if(this.selectedExamOption===null||this.selectedExamOption===undefined||isNaN(this.selectedExamOption)){
-			if(typeof alert!=="undefined")alert("Vui lòng chọn 1 trong 4 phương án trước khi nộp câu trả lời.");
+		if(this.selectedExamOption === null || this.selectedExamOption === undefined || isNaN(this.selectedExamOption)){
+			alert("Vui lòng chọn một đáp án trước khi nộp bài!");
 			return;
 		}
-		const q=this.activeExamQuestions[this.activeExamQuestionIndex];
-		const isCorrect=Number(this.selectedExamOption)===Number(q.correctAnswer);
-		this.storage.recordExamAnswer(q.id,Number(this.selectedExamOption),isCorrect);
+		const q = this.activeExamQuestions[this.activeExamQuestionIndex];
+		const isCorrect = Number(this.selectedExamOption) === Number(q.correctAnswer);
+		this.currentSessionAnswers[q.id] = { userAnswer: Number(this.selectedExamOption), isCorrect: isCorrect };
 		if(isCorrect){
-			this.storage.unlockBird("bird-happy","Chim Sẻ Vui Vẻ","Trả lời chính xác câu hỏi trong đề thi.","assets/birds/bird-happy.svg","Trả lời đúng đề thi");
+			this.storage.unlockBird("bird-happy", "Chim Sẻ Vui Vẻ", "Trả lời chính xác câu hỏi trong đề thi.", "assets/birds/bird-happy.svg", "Trả lời đúng đề thi");
 		}else{
-			this.storage.unlockBird("bird-cry","Cánh Cụt Mít Ướt","Cần rèn luyện ôn tập thêm khi làm bài.","assets/birds/bird-cry.svg","Rèn luyện qua lỗi sai");
+			this.storage.unlockBird("bird-cry", "Cánh Cụt Mít Ướt", "Cần rèn luyện ôn tập thêm khi làm bài.", "assets/birds/bird-cry.svg", "Rèn luyện qua lỗi sai");
 		}
 		this.renderStats();
-		this.showExamSolution(q,Number(this.selectedExamOption),isCorrect);
+		this.showExamSolution(q, Number(this.selectedExamOption), isCorrect);
 	}
+
 	showExamSolution(q,userAns,isCorrect){
 		this.examEls.btnSubmitAns.style.display="none";
 		this.examEls.solutionPanel.style.display="flex";
@@ -1014,6 +1216,11 @@ class TopikApp{
 		}
 		this.examEls.answerTypeNote.textContent=q.isAiAnswer?"(Đáp án tham khảo)":"";
 		this.examEls.explanationText.textContent=q.explanation||"Không có lời giải thích chi tiết.";
+		// HI\u1EC6N PH\u1EE4 \u0110\u1EC0 / \u0110O\u1EA0N THO\u1EA0I SAU KHI N\u1ED8P \u0110\u00C1P \u00C1N:
+		if(q.section==="listening"&&q.passage){
+			this.examEls.qPassage.style.display="block";
+			this.examEls.qPassage.textContent=q.passage;
+		}
 		if(q.transcript&&q.transcript.length>0){
 			this.examEls.transcriptSection.style.display="block";
 			this.examEls.transcriptBox.innerHTML="";
@@ -1127,7 +1334,7 @@ class TopikApp{
 		let score=0;
 		for(let i=0;i<total;++i){
 			const q=this.activeExamQuestions[i];
-			const ans=this.storage.getExamAnswer(q.id);
+			const ans=this.currentSessionAnswers[q.id];
 			if(ans){
 				++answered;
 				if(ans.isCorrect)++score;
@@ -1151,16 +1358,72 @@ class TopikApp{
 			this.renderActiveExamQuestion();
 		}
 	}
+
+
+
 	nextExamQuestion(){
-		if(this.activeExamQuestionIndex<this.activeExamQuestions.length-1){
+		if(this.activeExamQuestionIndex < this.activeExamQuestions.length - 1){
 			++this.activeExamQuestionIndex;
 			this.renderActiveExamQuestion();
 		}else{
-			if(typeof alert!=="undefined")alert("Bạn đã hoàn thành câu hỏi cuối cùng của phần thi này!");
+			const total = this.activeExamQuestions.length;
+			let correctCount = 0;
+			for(let i = 0; i < total; ++i){
+				const ans = this.currentSessionAnswers[this.activeExamQuestions[i].id];
+				if(ans && ans.isCorrect) ++correctCount;
+			}
+			const wrongCount = total - correctCount;
+			const percent = total > 0 ? Math.round((correctCount / total) * 100) : 0;
+			let partName = "phần thi này";
+			if(this.activeExamSection === "listening") partName = "Phần Nghe (듣기)";
+			else if(this.activeExamSection === "reading") partName = "Phần Đọc (읽기)";
+			else if(this.activeExamSection === "writing") partName = "Phần Viết (쓰기)";
+			else if(this.activeExamTitle) partName = this.activeExamTitle;
+			const m = String(Math.floor(this.examTimerSeconds / 60)).padStart(2, "0");
+			const s = String(this.examTimerSeconds % 60).padStart(2, "0");
+			const timeStr = m + ":" + s;
+			const examId = this.activeExamItem ? this.activeExamItem.id : (this.currentExamPack ? this.currentExamPack.typeId : "exam");
+			this.storage.recordExamCompletion({
+				examId: examId,
+				examTitle: this.activeExamTitle || partName,
+				section: this.activeExamSection || "all",
+				correctCount: correctCount,
+				wrongCount: wrongCount,
+				total: total,
+				percent: percent,
+				timeSpent: timeStr,
+				completedAt: new Date().toISOString()
+			});
+			this.stopExamTimer();
+			this.showExamResultModal({
+				title: (this.activeExamItem ? this.activeExamItem.name + " - " : "") + partName,
+				correctCount: correctCount,
+				wrongCount: wrongCount,
+				total: total,
+				percent: percent,
+				timeSpent: timeStr
+			});
+			this.currentSessionAnswers = {};
+			this.activeExamQuestions = [];
+			this.activeExamQuestionIndex = 0;
+		}
+	}
+	showExamResultModal(res){
+		if(this.examResultModal){
+			if(this.examResultEls.title)this.examResultEls.title.textContent=res.title;
+			if(this.examResultEls.correct)this.examResultEls.correct.textContent=res.correctCount+" câu đúng";
+			if(this.examResultEls.wrong)this.examResultEls.wrong.textContent=res.wrongCount+" câu sai";
+			if(this.examResultEls.percent)this.examResultEls.percent.textContent=res.percent+"%";
+			if(this.examResultEls.time)this.examResultEls.time.textContent=res.timeSpent;
+			if(this.examResultEls.icon)this.examResultEls.icon.textContent=res.percent>=80?"🏆":(res.percent>=50?"🎉":"💪");
+			this.examResultModal.classList.add("active");
+		}else{
+			alert("Chúc mừng bạn đã hoàn thành: "+res.title+"!\n\n✓ Đúng: "+res.correctCount+"/"+res.total+" câu\n✗ Sai: "+res.wrongCount+"/"+res.total+" câu\n🎯 Tỷ lệ: "+res.percent+"%\n⏱️ Thời gian: "+res.timeSpent);
 			this.examEls.activePlayer.style.display="none";
 			this.renderExamView();
 		}
 	}
+
 	renderCommunicationView(){
 		this.commEls.topicPills.innerHTML="";
 		const topics=this.commData[this.commLevel]||[];

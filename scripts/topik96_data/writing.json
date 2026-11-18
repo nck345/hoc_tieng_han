@@ -1,0 +1,137 @@
+[
+	{
+		"id": "q_w_96_51",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "writing",
+		"questionNumber": 51,
+		"typeId": "W_TYPE_1",
+		"typeName": "Viết: Điền câu vào chỗ trống đoạn văn thực tế (Câu 51)",
+		"instruction": "※ [51～52] 다음 글의 ㉠과 ㉡에 알맞은 말을 각각 쓰시오. (각 10점)",
+		"passage": "제목: 어디로 이사하는 것이 좋을까요?\n작성자: 에르덴\n\n안녕하세요. 외국인 유학생입니다.\n기숙사 생활이 불편해서 이번 방학에 이사를 (     ㉠     ).\n집값이 싸고 좀 깨끗한 동네면 좋겠습니다.\n그런데 어느 (     ㉡     ) 잘 모르겠습니다.\n좋은 곳을 아시면 추천 부탁드립니다.",
+		"audioUrl": null,
+		"options": [
+			"㉠ 하려고 합니다 / 하고 싶습니다, ㉡ 동네가 좋은지 / 동네가 좋을지 (Đáp án chuẩn)",
+			"㉠ 갈까 합니다 / 할 생각입니다, ㉡ 동네로 가야 할지 / 곳으로 갈지",
+			"㉠ 한 적이 있습니다, ㉡ 동네가 비싼지",
+			"㉠ 가지 않으려고 합니다, ㉡ 방이 넓은지"
+		],
+		"correctAnswer": 1,
+		"isAiAnswer": false,
+		"explanation": "【Phân tích đáp án chuẩn câu 51】:\n- Vị trí ㉠: Người viết nêu lý do vì ký túc xá bất tiện nên kỳ nghỉ này dự định/muốn chuyển nhà. Ngữ pháp thể hiện ý định hoặc mong muốn với đuôi kết thúc trang trọng (-ㅂ니다/습니다): '하려고 합니다' hoặc '하고 싶습니다' (ngoài ra chấp nhận '갈까 합니다', '할 생각입니다', '하려 합니다'). (10 điểm)\n- Vị trí ㉡: Vế trước người viết nói muốn khu nào nhà rẻ và sạch, nhưng lại không biết khu xóm nào thì tốt. Đi cùng động từ '잘 모르겠습니다' ở cuối là cấu trúc nghi vấn gián tiếp '-는지/-(으)ㄹ지': '동네가 좋은지' hoặc '동네가 좋을지', '곳으로 갈지', '동네로 가야 할지'. (10 điểm)\n- Lưu ý điểm số: Dùng đúng ngữ pháp và kính ngữ trang trọng phù hợp với bài đăng trên bảng tin sinh viên.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-(으)려고 하다", "meaning": "Dự định làm gì...", "example": "이사를 하려고 합니다."},
+			{"point": "-는지 / -(으)ㄹ지 모르다", "meaning": "Không biết là có/nên... hay không", "example": "어느 동네가 좋은지 모르겠습니다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "유학생", "vietnamese": "Du học sinh"}, {"korean": "기숙사", "vietnamese": "Ký túc xá"}, {"korean": "동네", "vietnamese": "Khu xóm, khu phố"}],
+			"verbs": [{"korean": "이사하다", "vietnamese": "Chuyển nhà"}, {"korean": "추천하다", "vietnamese": "Giới thiệu, đề xuất, gợi ý"}],
+			"adjectives": [{"korean": "불편하다", "vietnamese": "Bất tiện"}, {"korean": "깨끗하다", "vietnamese": "Sạch sẽ"}],
+			"adverbs": []
+		}
+	},
+	{
+		"id": "q_w_96_52",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "writing",
+		"questionNumber": 52,
+		"typeId": "W_TYPE_2",
+		"typeName": "Viết: Điền câu vào bài văn giải thích học thuật (Câu 52)",
+		"instruction": "※ [51～52] 다음 글의 ㉠과 ㉡에 알맞은 말을 각각 쓰시오. (각 10점)",
+		"passage": "개구리가 겨울에 추위를 피해 겨울잠을 잔다는 것은 잘 알려져 있다. 그런데 개구리가 꼭 추운 겨울에만 긴 잠을 (     ㉠     ). 더운 지역에 사는 개구리는 기온이 매우 높은 기간에 긴 잠을 자기도 한다. 왜냐하면 개구리는 사람과 달리 체내에서 체온 조절을 (     ㉡     ). 개구리처럼 체온 조절을 못하는 동물에게는 추위뿐만 아니라 더위도 생존에 위협이 되는 것이다.",
+		"audioUrl": null,
+		"options": [
+			"㉠ 자는 것은 아니다, ㉡ 못하기 때문이다 / 하지 못하기 때문이다 (Đáp án chuẩn)",
+			"㉠ 자는 법이다, ㉡ 잘하기 때문이다",
+			"㉠ 자지 않는 편이다, ㉡ 조절할 수 있기 때문이다",
+			"㉠ 자야만 한다, ㉡ 하지 않기 때문이다"
+		],
+		"correctAnswer": 1,
+		"isAiAnswer": false,
+		"explanation": "【Phân tích đáp án chuẩn câu 52】:\n- Vị trí ㉠: Câu trước nói ếch ngủ đông để tránh rét là điều ai cũng biết. Câu tiếp theo dùng liên từ đối lập '그런데' và trạng từ '꼭 ~만' (nhất thiết chỉ có...), và câu liền sau giải thích ếch ở xứ nóng cũng ngủ dài ngày vào mùa nóng. Do đó vế ㉠ phải mang nghĩa phủ định một phần: 'không phải là nhất thiết chỉ ngủ vào mùa đông lạnh' -> '자는 것은 아니다' (hoặc '자는 것은 아니라고 한다', '자는 것만은 아니다'). Đuôi câu dùng văn phong trần thuật gián tiếp '-ㄴ/는다'. (10 điểm)\n- Vị trí ㉡: Câu hỏi nguyên nhân bắt đầu bằng '왜냐하면' (bởi vì) thì kết thúc câu bắt buộc phải có cấu trúc '-기 때문이다'. Câu sau nhắc lại '개구리처럼 체온 조절을 못하는 동물' (động vật không điều hòa được thân nhiệt như ếch). Vì vậy vế ㉡ là '못하기 때문이다' hoặc '하지 못하기 때문이다', '할 수 없기 때문이다'. (10 điểm)",
+		"transcript": [],
+		"grammar": [
+			{"point": "-는 것은 아니다", "meaning": "Không hẳn là, không phải là... (phủ định một phần)", "example": "꼭 겨울에만 자는 것은 아니다."},
+			{"point": "왜냐하면 -기 때문이다", "meaning": "Sở dĩ như vậy là vì...", "example": "왜냐하면 체온 조절을 못하기 때문이다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "개구리", "vietnamese": "Con ếch"}, {"korean": "겨울잠", "vietnamese": "Giấc ngủ đông"}, {"korean": "체온 조절", "vietnamese": "Điều hòa thân nhiệt"}, {"korean": "생존", "vietnamese": "Sinh tồn, sự sống còn"}],
+			"verbs": [],
+			"adjectives": [{"korean": "추위", "vietnamese": "Cái lạnh"}, {"korean": "더위", "vietnamese": "Cái nóng"}],
+			"adverbs": [{"korean": "체내에서", "vietnamese": "Trong cơ thể"}]
+		}
+	},
+	{
+		"id": "q_w_96_53",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "writing",
+		"questionNumber": 53,
+		"typeId": "W_TYPE_3",
+		"typeName": "Viết: Phân tích biểu đồ & số liệu 200~300 chữ (Câu 53)",
+		"instruction": "53. 다음은 ‘인주시 마라톤 대회 참가자 수의 변화’에 대한 자료이다. 이 내용을 200～300자의 글로 쓰시오. 단, 글의 제목은 쓰지 마시오. (30점)",
+		"passage": "[조사 기관: 한국스포츠연구소]\n\n1. 인주시 마라톤 대회 참가자 수:\n- 2013년 40만 명 → 2023년 100만 명 (2.5배 증가)\n\n2. 연령별 참가자 수:\n- 20~30대: 지난 10년간 4배 증가\n- 40~50대: 같은 기간에 1.3배 증가\n\n3. 증가 원인:\n- 건강 관리에 대한 관심 증가 → 달리기 문화 확산\n- SNS를 통한 마라톤 모임 활성화 → 20~30대 참가자 증가",
+		"audioUrl": null,
+		"options": [
+			"한국스포츠연구소에서 인주시 마라톤 대회 참가자 수의 변화를 조사하였다. 그 결과 인주시 마라톤 대회 참가자 수는 2013년 40만 명에서 2023년 100만 명으로 2.5배 증가한 것으로 나타났다. 이를 연령별로 살펴보면 20~30대는 지난 10년간 4배 증가한 반면 40~50대는 같은 기간에 1.3배 증가하는 데에 그쳤다. 이러한 변화의 원인은 건강 관리에 대한 관심이 높아져 달리기 문화가 확산되었고 SNS를 통한 마라톤 모임이 활성화되어 20~30대 참가자가 증가하였기 때문인 것으로 보인다. (280자)",
+			"Bài viết thiếu số liệu phân tích độ tuổi 40~50 và không nêu cơ quan khảo sát",
+			"Bài viết sai xu hướng: cho rằng số người tham gia giảm sút qua 10 năm",
+			"Bài viết tự ý đặt tiêu đề và viết quá dài trên 400 chữ vi phạm yêu cầu đề bài"
+		],
+		"correctAnswer": 1,
+		"isAiAnswer": false,
+		"explanation": "【Bài viết mẫu chính thức từ NIIED - 280 chữ】:\n\n한국스포츠연구소에서 인주시 마라톤 대회 참가자 수의 변화를 조사하였다. 그 결과 인주시 마라톤 대회 참가자 수는 2013년 40만 명에서 2023년 100만 명으로 2.5배 증가한 것으로 나타났다. 이를 연령별로 살펴보면 20~30대는 지난 10년간 4배 증가한 반면 40~50대는 같은 기간에 1.3배 증가하는 데에 그쳤다. 이러한 변화의 원인은 건강 관리에 대한 관심이 높아져 달리기 문화가 확산되었고 SNS를 통한 마라톤 모임이 활성화되어 20~30대 참가자가 증가하였기 때문인 것으로 보인다. (280자)\n\n【Hướng dẫn cách viết đạt điểm tối đa (30/30)】:\n1. Mở bài (1 câu): Nêu cơ quan khảo sát và chủ đề (한국스포츠연구소에서 ... 조사하였다).\n2. Thân bài 1 - Biểu đồ tổng thể: Nêu biến động 2 mốc thời gian và độ tăng gấp bao nhiêu lần (2013년 40만 명에서 2023년 100만 명으로 2.5배 증가한 것으로 나타났다).\n3. Thân bài 2 - So sánh nhóm tuổi: Dùng cặp liên từ đối chiếu '-ㄴ/은 반면' giữa 20~30대 (tăng mạnh 4 lần) và 40~50대 (tăng khiêm tốn 1.3배 '...하는 데에 그쳤다').\n4. Kết bài - Nêu nguyên nhân: Dùng cấu trúc '이러한 변화의 원인은 ~ 때문인 것으로 보인다' kết hợp nguyên nhân sức khỏe và mạng xã hội SNS.\n5. Tuyệt đối không viết tiêu đề, không dùng kính ngữ -습니다/ㅂ니다 mà dùng đuôi văn viết khách quan trần thuật -ㄴ/는다, -었다/았다.",
+		"transcript": [],
+		"grammar": [
+			{"point": "~에 대해 조사한 결과에 따르면 / ~를 조사하였다", "meaning": "Mở đầu báo cáo số liệu", "example": "참가자 수의 변화를 조사하였다."},
+			{"point": "~(으)로 나타났다", "meaning": "Được cho thấy là...", "example": "2.5배 증가한 것으로 나타났다."},
+			{"point": "~(으)ㄴ 반면(에) ~하는 데에 그쳤다", "meaning": "Trong khi A tăng mạnh thì B chỉ dừng lại ở mức...", "example": "4배 증가한 반면 1.3배에 그쳤다."},
+			{"point": "~기 때문인 것으로 보인다", "meaning": "Dường như là vì nguyên nhân...", "example": "모임이 활성화되었기 때문인 것으로 보인다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "참가자 수", "vietnamese": "Số lượng người tham gia"}, {"korean": "연령별", "vietnamese": "Theo từng độ tuổi"}, {"korean": "달리기 문화", "vietnamese": "Văn hóa chạy bộ"}],
+			"verbs": [{"korean": "확산되다", "vietnamese": "Lan rộng, phổ biến"}, {"korean": "활성화되다", "vietnamese": "Trở nên sôi nổi, tích cực hóa"}],
+			"adjectives": [],
+			"adverbs": [{"korean": "지난 10년간", "vietnamese": "Trong 10 năm qua"}]
+		}
+	},
+	{
+		"id": "q_w_96_54",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "writing",
+		"questionNumber": 54,
+		"typeId": "W_TYPE_4",
+		"typeName": "Viết: Bài luận nghị luận xã hội 600~700 chữ (Câu 54)",
+		"instruction": "54. 다음을 참고하여 600～700자로 글을 쓰시오. 단, 문제를 그대로 옮겨 쓰지 마시오. (50점)",
+		"passage": "오늘날 직장 내에서 복장, 출퇴근 시간, 업무 방식 등에 대해 개인의 자율성을 원하는 사람들이 많다. 회사에서 이런 자율성이 보장될 때 생기는 장점이 있다. 그러나 개인의 자율성만을 중시하는 사람이 많아지면 여러 문제가 발생할 우려도 있다. 아래의 내용을 중심으로 ‘직장과 개인의 자율성’에 대한 자신의 생각을 쓰라.\n\n• 직장에서 개인의 자율성이 보장될 때의 장점은 무엇인가?\n• 직장 내 사람들이 개인의 자율성만 중시할 때 생기는 문제는 무엇인가?\n• 이런 문제를 해결하기 위해서는 어떻게 해야 하는가?",
+		"audioUrl": null,
+		"options": [
+			"사회의 변화로 개인의 자율성을 중시하는 사람들이 많아졌다. 이에 따라 기업에서도 유연근무제를 실시하는 등 직장 내 자율성을 높이고자 노력하고 있다. 직장에서 개인의 자율성이 보장될 때 생기는 장점으로 먼저 직장 내 문화가 유연해져 개인이 창의성을 발휘할 수 있는 근무 환경이 만들어진다. 또한 개인이 자신에게 적합한 근무 여건을 조성하여 일할 수 있어 일과 삶의 균형이 생긴다. 이것이 구성원의 업무 효율을 높이는 데 기여하여 조직의 목표를 달성하는 데에 도움이 된다. 그러나 직장 내 사람들이 개인의 자율성만 중시하면 부작용이 발생할 수 있다. 먼저, 개인이 공동의 목표보다는 자신의 입장만을 생각하다 보면 자율성이 이기주의로 변질될 수 있다. 이러한 상황이 계속되면 책임자와 팀원 간 갈등, 세대 간 갈등이 발생할 수도 있다. 또한 업무의 자율성이 높아져 개별적으로 일할 수 있는 환경이 익숙해지면 소통이 부재하여 합의점을 찾기 어렵고 협력을 통한 성과를 내기 어려울 수 있다. 이러한 문제를 해결하기 위해서는 직장 내 개개인이 자율성을 가지면서도 업무를 수행할 때는 최대한 동료와 협업하고 서로를 배려하는 마음을 가질 필요가 있다. 또한 조직은 구성원의 자율성을 높이면서 조직의 목표를 성취하는 데 도움이 되는 방안을 고민해야 한다. 나아가 효율적인 의사소통 방안을 마련하여 구성원 간 원활한 협력이 가능하도록 해야 할 것이다. (678자)",
+			"Bài viết lạc đề sang bàn luận về phương thức tìm việc làm của giới trẻ hiện nay",
+			"Bài viết chép lại toàn bộ nguyên văn câu hỏi đề bài và dung lượng dưới 400 chữ",
+			"Bài viết sử dụng văn phong khẩu ngữ giao tiếp -아요/어요 vi phạm thể loại văn nghị luận"
+		],
+		"correctAnswer": 1,
+		"isAiAnswer": false,
+		"explanation": "【Bài văn nghị luận mẫu chính thức từ NIIED - 678 chữ】:\n\n사회의 변화로 개인의 자율성을 중시하는 사람들이 많아졌다. 이에 따라 기업에서도 유연근무제를 실시하는 등 직장 내 자율성을 높이고자 노력하고 있다. 직장에서 개인의 자율성이 보장될 때 생기는 장점으로 먼저 직장 내 문화가 유연해져 개인이 창의성을 발휘할 수 있는 근무 환경이 만들어진다. 또한 개인이 자신에게 적합한 근무 여건을 조성하여 일할 수 있어 일과 삶의 균형이 생긴다. 이것이 구성원의 업무 효율을 높이는 데 기여하여 조직의 목표를 달성하는 데에 도움이 된다.\n\n그러나 직장 내 사람들이 개인의 자율성만 중시하면 부작용이 발생할 수 있다. 먼저, 개인이 공동의 목표보다는 자신의 입장만을 생각하다 보면 자율성이 이기주의로 변질될 수 있다. 이러한 상황이 계속되면 책임자와 팀원 간 갈등, 세대 간 갈등이 발생할 수도 있다. 또한 업무의 자율성이 높아져 개별적으로 일할 수 있는 환경이 익숙해지면 소통이 부재하여 합의점을 찾기 어렵고 협력을 통한 성과를 내기 어려울 수 있다.\n\n이러한 문제를 해결하기 위해서는 직장 내 개개인이 자율성을 가지면서도 업무를 수행할 때는 최대한 동료와 협업하고 서로를 배려하는 마음을 가질 필요가 있다. 또한 조직은 구성원의 자율성을 높이면서 조직의 목표를 성취하는 데 도움이 되는 방안을 고민해야 한다. 나아가 효율적인 의사소통 방안을 마련하여 구성원 간 원활한 협력이 가능하도록 해야 할 것이다. (678자)\n\n【Bí quyết đạt điểm cao TOPIK II (40~50/50)】:\n- Trả lời đầy đủ 3 ý gợi ý tương ứng với 3 đoạn văn rõ ràng.\n- Sử dụng từ vựng cao cấp TOPIK II: 유연근무제 (chế độ làm việc linh hoạt), 워라밸 / 일과 삶의 균형 (cân bằng công việc - cuộc sống), 이기주의로 변질되다 (biến chất thành chủ nghĩa ích kỷ), 소통의 부재 (thiếu vắng giao tiếp), 합의점 (điểm đồng thuận), 원활한 협력 (hợp tác trôi chảy).\n- Đuôi câu trần thuật chuẩn mực: -ㄴ/는다, -ㄹ/을 것이다.",
+		"transcript": [],
+		"grammar": [
+			{"point": "~(으)ㄹ 때 생기는 장점으로는", "meaning": "Về mặt ưu điểm phát sinh khi...", "example": "자율성이 보장될 때 생기는 장점으로는."},
+			{"point": "-다 보면 -게 변질될 수 있다", "meaning": "Nếu cứ... thì có nguy cơ biến chất thành...", "example": "자율성이 이기주의로 변질될 수 있다."},
+			{"point": "~(으)면서도 ~할 필요가 있다", "meaning": "Vừa có thể... song đồng thời cũng cần...", "example": "자율성을 가지면서도 협업할 필요가 있다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "자율성", "vietnamese": "Tính tự chủ"}, {"korean": "일과 삶의 균형", "vietnamese": "Cân bằng công việc và cuộc sống"}, {"korean": "소통의 부재", "vietnamese": "Sự thiếu vắng giao tiếp, chia sẻ"}, {"korean": "합의점", "vietnamese": "Điểm chung, điểm đồng thuận"}],
+			"verbs": [{"korean": "발휘하다", "vietnamese": "Phát huy"}, {"korean": "변질되다", "vietnamese": "Bị biến chất"}, {"korean": "배려하다", "vietnamese": "Quan tâm, thấu hiểu, chu đáo"}],
+			"adjectives": [{"korean": "원활하다", "vietnamese": "Trôi chảy, êm thấm, thuận lợi"}],
+			"adverbs": [{"korean": "나아가", "vietnamese": "Tiến xa hơn nữa, hơn thế nữa"}]
+		}
+	}
+]

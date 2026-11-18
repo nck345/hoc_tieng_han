@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"></head>
+<body>
+<pre id="output">STARTING</pre>
+<script>
+function clean(s) {
+    if (!s) return "";
+    return s.replace(/\s+/g, ' ').trim();
+}
+
+function cleanOption(opt) {
+    if (!opt) return "";
+    let s = opt.replace(/^[①②③④❶❷❸❹㉦㉣㉨㉭㉠㉡㉢㉣@\(\d\)\s\.\,]+/, '');
+    s = s.split(/\s+(?:종류|해설|단어|어휘|Part\s*\d|실전모의고사|※|\[\d+~)/i)[0];
+    return clean(s);
+}
+
+function extractOptionsFromBlock(txt) {
+    // Matches bullet items like ① ... ② ... or (1) ... (2) ... or circled
+    const regex = /(?:[①❶②❷③❸④❹㉦㉣㉨㉭㉠㉡㉢㉣@]|\(\s*[1-4\uAE30\uC774\uC804\uACFC\uC3840]\s*\)|\b[1-4]\))\s*([^①❶②❷③❸④❹㉦㉣㉨㉭㉠㉡㉢㉣@\(\n\r]+)/g;
+    const items = [];
+    let m;
+    while ((m = regex.exec(txt)) !== null) {
+        let optText = cleanOption(m[1]);
+        if (optText.length > 0 && !optText.match(/^(?:종류|해설|단어|Exp|듣기|읽기|Part|Tip)/i)) {
+            items.push(optText);
+        }
+        if (items.length === 4) break;
+    }
+    return items;
+}
+
+function parseAnswer(txt, fallback = 1) {
+    if (!txt) return fallback;
+    const m = txt.match(/(?:답(?:이|은)?\s*[:\.]?\s*|정답\s*[:\.]?\s*)([1-4])\s*번/);
+    if (m) return parseInt(m[1]);
+    const m2 = txt.match(/([1-4])\s*번이\s*답/);
+    if (m2) return parseInt(m2[1]);
+    const m3 = txt.match(/(?:answer\s+is|is\s+(?:the\s+)?(?:best\s+)?answer)\s*[:\.]?\s*\(?([1-4])\)?/i);
+    if (m3) return parseInt(m3[1]);
+    if (txt.includes('❶') || txt.includes('①') || txt.includes('㉠')) return 1;
+    if (txt.includes('❷') || txt.includes('②') || txt.includes('㉡')) return 2;
+    if (txt.includes('❸') || txt.includes('③') || txt.includes('㉢') || txt.includes('㉦') || txt.includes('㉭')) return 3;
+    if (txt.includes('❹') || txt.includes('④') || txt.includes('㉣') || txt.includes('㉨') || txt.includes('@')) return 4;
+    return fallback;
+}
+
+async function run() {
+    try {
+        const respAns = await fetch("hot01_ans_full.txt");
+        const ansRaw = await respAns.text();
+        const respDe = await fetch("hot01_de_full.txt");
+        const deRaw = await respDe.text();
+        
+        const ansPages = ansRaw.split(/=== PAGE \d+ ===/).map(p => p.trim()).filter(Boolean);
+        const dePages = deRaw.split(/=== PAGE \d+ ===/).map(p => p.trim()).filter(Boolean);
+        
+        // 1. Known master answer keys for Hot Topik 01 (verified from Page 2 OCR grid):
+        const masterAnsL = [1, 2, 2, 3, 3, 4, 3, 3, 1, 1, 2, 2, 3, 4, 3, 3, 3, 1, 1, 3, 2, 2, 2, 4, 3, 3, 1, 1, 3, 3, 3, 3, 3, 4, 3, 4, 3, 3, 3, 4, 1, 3, 3, 2, 3, 4, 4, 3, 3, 3];
+        const masterAnsR = [3, 1, 2, 2, 1, 4, 3, 3, 4, 1, 2, 2, 3, 4, 3, 3, 1, 1, 1, 4, 3, 2, 3, 4, 2, 3, 3, 2, 2, 3, 3, 4, 4, 4, 4, 3, 1, 3, 3, 1, 4, 2, 4, 1, 3, 4, 3, 3, 4, 3];
+        
+        // 2. Parse Listening questions
+        const listeningTxt = ansPages.slice(2, 22).join('\n\n');
+        const listeningQuestions = [];
+        
+        // Collect question blocks using regex across listeningTxt
+        // Dialogue blocks start with speaker tags or numbers
+        const lBlocks = [];
+        const diaRegex = /(?:^|\n)(?:\[\d+~\d+\][^\n\r]*\n)?(?:\d+\.\s*)?((?:여자|남자)\s*:[\s\S]*?)(?=(?:\n(?:\[\d+~\d+\][^\n\r]*\n)?(?:\d+\.\s*)?(?:여자|남자)\s*:|===|쓰기|$))/g;
+        let dm;
+        while ((dm = diaRegex.exec(listeningTxt)) !== null) {
+            lBlocks.push(dm[1].trim());
+        }
+        
+        // 3. Parse Reading questions
+        const readingTxt = ansPages.slice(26).join('\n\n');
+        const rBlocks = [];
+        // Reading questions start with question number or prompt
+        const rRegex = /(?:^|\n)(?:\[\d+~\d+\][^\n\r]*\n)?(\d+)\.\s*([\s\S]*?)(?=(?:\n(?:\[\d+~\d+\][^\n\r]*\n)?\d+\.\s*|===|$))/g;
+        let rm;
+        while ((rm = rRegex.exec(readingTxt)) !== null) {
+            rBlocks.push({ qNum: parseInt(rm[1]), text: rm[2].trim() });
+        }
+        
+        document.getElementById('output').textContent = JSON.stringify({
+            listeningBlocksCount: lBlocks.length,
+            readingBlocksCount: rBlocks.length,
+            sampleL1: lBlocks[0]?.slice(0, 100),
+            sampleL4: lBlocks[3]?.slice(0, 100),
+            sampleR1: rBlocks[0]?.text?.slice(0, 100)
+        }, null, 2);
+    } catch (e) {
+        document.getElementById('output').textContent = "ERROR: " + e.message + "\n" + e.stack;
+    }
+}
+window.onload = run;
+</script>
+</body>
+</html>

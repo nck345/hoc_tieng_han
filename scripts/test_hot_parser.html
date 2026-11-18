@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"></head>
+<body>
+<pre id="output">STARTING</pre>
+<script>
+function clean(s) {
+    if (!s) return "";
+    return s.replace(/\s+/g, ' ').trim();
+}
+
+function removeHeader(txt) {
+    if (!txt) return "";
+    return txt.replace(/L\s*ư\s*u\s+T\s*h[\s\S]*?gmail\.com\s*\d+/gi, '').trim();
+}
+
+function getAnswerFromCircle(txt) {
+    if (!txt) return 0;
+    if (txt.includes('❶')) return 1;
+    if (txt.includes('❷')) return 2;
+    if (txt.includes('❸')) return 3;
+    if (txt.includes('❹')) return 4;
+    return 0;
+}
+
+function cleanOption(opt) {
+    if (!opt) return "";
+    let s = opt;
+    // Cut off grammar, vocab, translation tags
+    s = s.split(/\s+(?:[AVN]\s*[\(\+]|\b[AVN]\s*\/\s*[AVN]\s*[\(\+]|N\s*\(|V\s*\(|A\s*\(|-\s*에도)/)[0];
+    s = s.split(/\s+(?:N\s*ữ\s*:|Nam\s*:|D\s*ị\s*ch\s*:|[0-9]+\.\s*H\s*ã\s*y|[0-9]+\.\s*C\s*h\s*ọ\s*n)/i)[0];
+    s = s.split(/\s+[가-힣\s\(\)]+\s*:\s*[A-Za-zÀ-ỹ]/)[0];
+    s = s.split(/L\s*ư\s*u\s+T\s*h/i)[0];
+    s = s.replace(/[\r\n]+/g, ' ');
+    return clean(s);
+}
+
+function extractOptions(txt) {
+    const regex = /([①❶②❷③❸④❹])\s*([\s\S]*?)(?=[①❶②❷③❸④❹]|$)/g;
+    const items = [];
+    let m;
+    while ((m = regex.exec(txt)) !== null) {
+        let optText = cleanOption(m[2]);
+        items.push(optText);
+        if (items.length === 4) break;
+    }
+    return items;
+}
+
+async function run() {
+    try {
+        const respL = await fetch("hot05_listening_full.txt");
+        const lRaw = await respL.text();
+        const respR = await fetch("hot05_reading_full.txt");
+        const rRaw = await respR.text();
+        
+        const lPages = lRaw.split(/=== PAGE \d+ ===/).map(p => p.trim()).filter(Boolean);
+        const rPages = rRaw.split(/=== PAGE \d+ ===/).map(p => p.trim()).filter(Boolean);
+        
+        console.error("LOG: lPages=" + lPages.length + ", rPages=" + rPages.length);
+        document.getElementById("output").textContent = "L=" + lPages.length + ", R=" + rPages.length;
+    } catch(e) {
+        console.error("ERR: " + e.message);
+        document.getElementById("output").textContent = "ERR: " + e.message;
+    }
+}
+run();
+</script>
+</body>
+</html>

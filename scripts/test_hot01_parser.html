@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"></head>
+<body>
+<pre id="output">STARTING</pre>
+<script>
+function findQuestionIndices(text) {
+    const indices = {};
+    for (let q = 1; q <= 50; q++) {
+        const reg = new RegExp(`(?:^|[\\n\\r]|\\.\\s*|\\)\\s*|】\\s*|\\s{2,})(${q})\\.\\s*(?![0-9~])`, 'g');
+        let m;
+        let bestIdx = -1;
+        while ((m = reg.exec(text)) !== null) {
+            const before = text.slice(Math.max(0, m.index - 5), m.index + m[0].length);
+            if (!before.includes('~') && !before.includes('[')) {
+                bestIdx = m.index + m[0].indexOf(m[1] + '.');
+                break;
+            }
+        }
+        indices[q] = bestIdx;
+    }
+    return indices;
+}
+
+async function run() {
+    try {
+        const resp = await fetch("hot01_ans_full.txt");
+        const raw = await resp.text();
+        
+        const log = [];
+        const lStart = raw.search(/듣기\s*\([^\)]*50번\)/);
+        const lEnd = raw.indexOf('쓰기 (51번');
+        const listeningTxt = raw.slice(lStart, lEnd);
+        
+        const indices = findQuestionIndices(listeningTxt);
+        const missing = [];
+        for (let q = 1; q <= 50; q++) {
+            if (indices[q] === -1) missing.push(q);
+        }
+        log.push(`Listening missing questions: ${missing.length} (${missing.join(', ')})`);
+        
+        // Also test Reading
+        const rStart = raw.indexOf('읽기 (1번');
+        const readingTxt = raw.slice(rStart);
+        const rIndices = findQuestionIndices(readingTxt);
+        const rMissing = [];
+        for (let q = 1; q <= 50; q++) {
+            if (rIndices[q] === -1) rMissing.push(q);
+        }
+        log.push(`Reading missing questions: ${rMissing.length} (${rMissing.join(', ')})`);
+        
+        document.getElementById('output').textContent = JSON.stringify({ log, indices, rIndices }, null, 2);
+    } catch (e) {
+        document.getElementById('output').textContent = "ERROR: " + e.message;
+    }
+}
+window.onload = run;
+</script>
+</body>
+</html>

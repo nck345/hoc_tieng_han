@@ -1,0 +1,2 @@
+const fs = require('fs');
+// Wait, we don't have node directly in PATH, but we can write an HTML file and run it in Edge!

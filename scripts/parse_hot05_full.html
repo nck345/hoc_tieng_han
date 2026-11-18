@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"></head>
+<body>
+<pre id="output">STARTING</pre>
+<script>
+function clean(s) {
+    if (!s) return "";
+    return s.replace(/\s+/g, ' ').trim();
+}
+
+function removeHeader(txt) {
+    if (!txt) return "";
+    return txt.replace(/L\s*ư\s*u\s+T\s*h[\s\S]*?gmail\.com\s*\d+/gi, '').trim();
+}
+
+function getAnswerFromCircle(txt) {
+    if (!txt) return 0;
+    if (txt.includes('❶')) return 1;
+    if (txt.includes('❷')) return 2;
+    if (txt.includes('❸')) return 3;
+    if (txt.includes('❹')) return 4;
+    return 0;
+}
+
+function cleanOption(opt) {
+    if (!opt) return "";
+    let s = opt;
+    // Cut off grammar patterns like V +, A +, N +, V/A +, N(으로)
+    s = s.split(/\s+(?:[AVN]\s*[\(\+]|\b[AVN]\s*\/\s*[AVN]\s*[\(\+]|N\s*\(|V\s*\(|A\s*\(|-\s*에도)/)[0];
+    // Cut off Vietnamese speaker tags, sentences, or translations
+    s = s.split(/\s+(?:N\s*ữ\s*:|Nam\s*:|D\s*ị\s*ch\s*:|\bChờ\s+một\s+chút|\bVì\s+tóc|[0-9]+\.\s*H\s*ã\s*y|[0-9]+\.\s*C\s*h\s*ọ\s*n|S\s*ợ\s+m|Ng\s*ay\s+v|Nh\s*ớ\s+n|R\s*ấ\s*t\s+h)/i)[0];
+    // Cut off Korean vocab items with colon: e.g. 단어 : ý nghĩa
+    s = s.split(/\s+[가-힣\s\(\)]+\s*:\s*[A-Za-zÀ-ỹ]/)[0];
+    // Cut off page headers
+    s = s.split(/L\s*ư\s*u\s+T\s*h/i)[0];
+    s = s.replace(/[\r\n]+/g, ' ');
+    return clean(s);
+}
+
+function extractOptions(txt) {
+    const regex = /([①❶②❷③❸④❹])\s*([\s\S]*?)(?=[①❶②❷③❸④❹]|$)/g;
+    const items = [];
+    let m;
+    while ((m = regex.exec(txt)) !== null) {
+        let optText = cleanOption(m[2]);
+        items.push(optText);
+        if (items.length === 4) break;
+    }
+    return items;
+}
+
+async function run() {
+    try {
+        const respL = await fetch("hot05_listening_full.txt");
+        const lRaw = await respL.text();
+        const respR = await fetch("hot05_reading_full.txt");
+        const rRaw = await respR.text();
+        
+        const lPages = lRaw.split(/=== PAGE \d+ ===/).map(p => p.trim()).filter(Boolean);
+        const rPages = rRaw.split(/=== PAGE \d+ ===/).map(p => p.trim()).filter(Boolean);
+        
+        const listeningQuestions = [];
+        const readingQuestions = [];
+        
+        let curInstruction = "";
+        
+        // --- 1. PARSE LISTENING QUESTIONS (1..50) ---
+        // Pages 0..19: Questions 1..20
+        for (let i = 0; i < 20; i++) {
+            const pageTxt = removeHeader(lPages[i]);
+            const qNum = i + 1;
+            
+            const instM = pageTxt.match(/(※\s*\[\d+~\d+\][\s\S]*?\))/);
+            if (instM) curInstruction = clean(instM[1]);
+            
+            let passage = "";
+            const diaM = pageTxt.match(/((?:(?:여자|남자)\s*:[\s\S]*?)(?=[①❶]|\b[A-Za-zÀ-ỹ]+:|$))/);
+            if (diaM) {
+                passage = clean(diaM[1]);
+            } else {
+                const narM = pageTxt.match(/남자\s*:[\s\S]*?(?=[①❶]|$)/);
+                if (narM) passage = clean(narM[0]);
+            }
+            if (passage.search(/\b(?:N\s*ữ|Nam)\s*:/i) > 0) {
+                passage = passage.slice(0, passage.search(/\b(?:N\s*ữ|Nam)\s*:/i));
+            }
+            if (passage.search(/[가-힣\s\(\)]+\s*:\s*[A-Za-zÀ-ỹ]/) > 0) {
+                passage = passage.slice(0, passage.search(/[가-힣\s\(\)]+\s*:\s*[A-Za-zÀ-ỹ]/));
+            }
+            passage = clean(passage);
+            
+            const trans = [];
+            const spkRegex = /(여자|남자)\s*:\s*([^여자남자①❶②❷③❸④❹\n\r]+)/g;
+            let sm;
+            while ((sm = spkRegex.exec(passage)) !== null) {
+                trans.push({ speaker: sm[1], text: clean(sm[2]) });
+            }
+            
+            const ans = getAnswerFromCircle(pageTxt);
+            let opts = extractOptions(pageTxt);
+            
+            // For Q1..3 (image/graph questions)
+            if (qNum === 1) {
+                opts = [
+                    "[Tranh 1] Người nam và nữ tại quầy lễ tân khách sạn",
+                    "[Tranh 2] Khách hàng đọc tên Kim Ji-min đã đặt chỗ trước",
+                    "[Tranh 3] Người nam kiểm tra máy tính ở văn phòng",
+                    "[Tranh 4] Người phụ nữ ngồi chờ ở sảnh"
+                ];
+            } else if (qNum === 2) {
+                opts = [
+                    "[Tranh 1] Khách hàng rơi máy tính xách tay xuống sàn",
+                    "[Tranh 2] Bật laptop kiểm tra màn hình",
+                    "[Tranh 3] Nhân viên nữ tiếp nhận máy tính xách tay hỏng để sửa chữa",
+                    "[Tranh 4] Khách hàng nhận lại máy sau khi sửa"
+                ];
+            } else if (qNum === 3) {
+                opts = [
+                    "[Biểu đồ 1] Đặt vé qua ứng dụng cao nhất (20~40 tuổi), tiếp theo là rạp và điện thoại",
+                    "[Biểu đồ 2] Đặt vé tại rạp chiếu phim chiếm tỷ lệ cao nhất",
+                    "[Biểu đồ 3] Đặt vé qua điện thoại chiếm tỷ lệ cao nhất",
+                    "[Biểu đồ 4] Đặt vé qua ứng dụng giảm so với năm ngoái"
+                ];
+            }
+            
+            // Explanation: Vietnamese translation
+            let expl = "";
+            const vnIdx = pageTxt.search(/\b(?:Nam|N\s*ữ)\s*:/i);
+            if (vnIdx > 0) {
+                expl = clean(pageTxt.slice(vnIdx));
+            } else {
+                expl = clean(pageTxt);
+            }
+            
+            const numStr = String(qNum).padStart(2, '0');
+            listeningQuestions.push({
+                id: `hot05_l_${numStr}`,
+                examId: "hot_05",
+                examCategory: "hot_topik",
+                section: "listening",
+                questionNumber: qNum,
+                instruction: curInstruction || "다음을 듣고 알맞은 것을 고르십시오.",
+                passage: passage,
+                audioUrl: `de/Hot topik/HOT TOPIK ĐỎ 2020 ĐỀ 05/audio/q${numStr}.mp3`,
+                options: opts,
+                correctAnswer: ans,
+                explanation: expl,
+                transcript: trans,
+                vocabulary: []
+            });
+        }
+        
+        // Pages 20..49: Questions 21..50 (Pairs on every 2 pages: page2k = Korean, page2k+1 = VN)
+        const pairStarts = [
+            21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49
+        ];
+        
+        pairStarts.forEach((qStart, pIdx) => {
+            const korPage = removeHeader(lPages[20 + pIdx * 2]);
+            const vnPage = (21 + pIdx * 2 < lPages.length) ? removeHeader(lPages[21 + pIdx * 2]) : "";
+            
+            const instM = korPage.match(/(※\s*\[\d+~\d+\][\s\S]*?\))/);
+            if (instM) curInstruction = clean(instM[1]);
+            
+            // Common passage
+            let passage = "";
+            const pM = korPage.match(/((?:(?:여자|남자)\s*:[\s\S]*?)(?=[0-9]+\.\s*(?:여자|남자|들은|내용|다음)|$))/);
+            if (pM) passage = clean(pM[1]);
+            
+            const trans = [];
+            const spkRegex = /(여자|남자)\s*:\s*([^여자남자0-9①❶②❷③❸④❹\n\r]+)/g;
+            let sm;
+            while ((sm = spkRegex.exec(passage)) !== null) {
+                trans.push({ speaker: sm[1], text: clean(sm[2]) });
+            }
+            
+            // Two questions: qA = qStart, qB = qStart + 1
+            const qA = qStart;
+            const qB = qStart + 1;
+            
+            // Find section for qA and qB in korPage
+            const qAPos = korPage.search(new RegExp(`(?:^|\\s)${qA}\\.\\s*`));
+            const qBPos = korPage.search(new RegExp(`(?:^|\\s)${qB}\\.\\s*`));
+            
+            let qATxt = (qAPos >= 0 && qBPos > qAPos) ? korPage.slice(qAPos, qBPos) : korPage;
+            let qBTxt = (qBPos >= 0) ? korPage.slice(qBPos) : korPage;
+            
+            // Extract prompt
+            const qAPromptM = qATxt.match(new RegExp(`${qA}\\.\\s*([\\s\\S]*?)(?=[①❶]|$)`));
+            const qBPromptM = qBTxt.match(new RegExp(`${qB}\\.\\s*([\\s\\S]*?)(?=[①❶]|$)`));
+            const promptA = qAPromptM ? clean(qAPromptM[1]) : "";
+            const promptB = qBPromptM ? clean(qBPromptM[1]) : "";
+            
+            const ansA = getAnswerFromCircle(qATxt);
+            const ansB = getAnswerFromCircle(qBTxt);
+            
+            const optsA = extractOptions(qATxt);
+            const optsB = extractOptions(qBTxt);
+            
+            const numStrA = String(qA).padStart(2, '0');
+            const numStrB = String(qB).padStart(2, '0');
+            
+            listeningQuestions.push({
+                id: `hot05_l_${numStrA}`,
+                examId: "hot_05",
+                examCategory: "hot_topik",
+                section: "listening",
+                questionNumber: qA,
+                instruction: curInstruction || "다음을 듣고 물음에 답하십시오.",
+                passage: promptA ? `${promptA}\n\n[Đoạn hội thoại chung]:\n${passage}` : passage,
+                audioUrl: `de/Hot topik/HOT TOPIK ĐỎ 2020 ĐỀ 05/audio/q${numStrA}.mp3`,
+                options: optsA,
+                correctAnswer: ansA,
+                explanation: clean(vnPage),
+                transcript: trans,
+                vocabulary: []
+            });
+            
+            listeningQuestions.push({
+                id: `hot05_l_${numStrB}`,
+                examId: "hot_05",
+                examCategory: "hot_topik",
+                section: "listening",
+                questionNumber: qB,
+                instruction: curInstruction || "다음을 듣고 물음에 답하십시오.",
+                passage: promptB ? `${promptB}\n\n[Đoạn hội thoại chung]:\n${passage}` : passage,
+                audioUrl: `de/Hot topik/HOT TOPIK ĐỎ 2020 ĐỀ 05/audio/q${numStrB}.mp3`,
+                options: optsB,
+                correctAnswer: ansB,
+                explanation: clean(vnPage),
+                transcript: trans,
+                vocabulary: []
+            });
+        });
+        
+        console.error("PARSED_LISTENING_COUNT: " + listeningQuestions.length);
+        
+        // --- 2. PARSE READING QUESTIONS (1..50) ---
+        // Mapping of reading questions across rPages (45 pages):
+        const readingPageMap = [
+            { qNums: [1, 2], p: 0 },
+            { qNums: [3, 4], p: 1 },
+            { qNums: [5, 6], p: 2 },
+            { qNums: [7, 8], p: 3 },
+            { qNums: [9], p: 4 },
+            { qNums: [10], p: 5 },
+            { qNums: [11], p: 6 },
+            { qNums: [12], p: 7 },
+            { qNums: [13], p: 8 },
+            { qNums: [14], p: 9 },
+            { qNums: [15], p: 10 },
+            { qNums: [16], p: 11 },
+            { qNums: [17], p: 12 },
+            { qNums: [18], p: 13 },
+            { qNums: [19, 20], p: 14, pVn: 15 },
+            { qNums: [21, 22], p: 16, pVn: 17 },
+            { qNums: [23, 24], p: 18, pVn: 19 },
+            { qNums: [25], p: 20 },
+            { qNums: [26], p: 21 },
+            { qNums: [27], p: 22 },
+            { qNums: [28], p: 23 },
+            { qNums: [29], p: 24 },
+            { qNums: [30], p: 25 },
+            { qNums: [31], p: 26 },
+            { qNums: [32], p: 27 },
+            { qNums: [33], p: 28 },
+            { qNums: [34], p: 29 },
+            { qNums: [35], p: 30 },
+            { qNums: [36], p: 31 },
+            { qNums: [37], p: 32 },
+            { qNums: [38], p: 33 },
+            { qNums: [39], p: 34 },
+            { qNums: [40], p: 35 },
+            { qNums: [41], p: 36 },
+            { qNums: [42, 43], p: 37, pVn: 38 },
+            { qNums: [44, 45], p: 39, pVn: 40 },
+            { qNums: [46, 47], p: 41, pVn: 42 },
+            { qNums: [48, 49, 50], p: 43, pVn: 44 }
+        ];
+        
+        let curReadInst = "";
+        
+        readingPageMap.forEach(grp => {
+            const pTxt = removeHeader(rPages[grp.p]);
+            const pVnTxt = grp.pVn !== undefined && grp.pVn < rPages.length ? removeHeader(rPages[grp.pVn]) : "";
+            
+            const instM = pTxt.match(/(※\s*\[\d+~\d+\][\s\S]*?\))/);
+            if (instM) curReadInst = clean(instM[1]);
+            
+            if (grp.qNums.length === 1) {
+                const qNum = grp.qNums[0];
+                const ans = getAnswerFromCircle(pTxt);
+                const opts = extractOptions(pTxt);
+                
+                // Prompt / passage
+                let passage = "";
+                const numM = pTxt.match(new RegExp(`(?:^|\\s)${qNum}\\.\\s*([\\s\\S]*?)(?=[①❶]|$)`));
+                if (numM) passage = clean(numM[1]);
+                
+                // Explanation
+                let expl = "";
+                const vnStart = pTxt.search(/[가-힣\s\(\)]+\s*:\s*[A-Za-zÀ-ỹ]/);
+                if (vnStart > 0) expl = clean(pTxt.slice(vnStart));
+                else expl = clean(pTxt);
+                
+                const numStr = String(qNum).padStart(2, '0');
+                readingQuestions.push({
+                    id: `hot05_r_${numStr}`,
+                    examId: "hot_05",
+                    examCategory: "hot_topik",
+                    section: "reading",
+                    questionNumber: qNum,
+                    instruction: curReadInst || "다음을 읽고 물음에 답하십시오.",
+                    passage: passage || pTxt.slice(0, 100),
+                    options: opts,
+                    correctAnswer: ans,
+                    explanation: expl,
+                    grammar: [],
+                    vocabulary: []
+                });
+            } else {
+                // Multiple questions on the page (e.g. 2 or 3)
+                grp.qNums.forEach((qNum, subIdx) => {
+                    const nextQNum = (subIdx + 1 < grp.qNums.length) ? grp.qNums[subIdx + 1] : null;
+                    const qPos = pTxt.search(new RegExp(`(?:^|\\s)${qNum}\\.\\s*`));
+                    let subTxt = "";
+                    if (qPos >= 0) {
+                        if (nextQNum) {
+                            const nextPos = pTxt.search(new RegExp(`(?:^|\\s)${nextQNum}\\.\\s*`));
+                            subTxt = (nextPos > qPos) ? pTxt.slice(qPos, nextPos) : pTxt.slice(qPos);
+                        } else {
+                            subTxt = pTxt.slice(qPos);
+                        }
+                    } else {
+                        subTxt = pTxt;
+                    }
+                    
+                    const ans = getAnswerFromCircle(subTxt);
+                    const opts = extractOptions(subTxt);
+                    
+                    // Passage
+                    let passage = "";
+                    const pM = subTxt.match(new RegExp(`(?:^|\\s)${qNum}\\.\\s*([\\s\\S]*?)(?=[①❶]|$)`));
+                    if (pM) passage = clean(pM[1]);
+                    
+                    const numStr = String(qNum).padStart(2, '0');
+                    readingQuestions.push({
+                        id: `hot05_r_${numStr}`,
+                        examId: "hot_05",
+                        examCategory: "hot_topik",
+                        section: "reading",
+                        questionNumber: qNum,
+                        instruction: curReadInst || "다음을 읽고 물음에 답하십시오.",
+                        passage: passage || clean(subTxt.slice(0, 150)),
+                        options: opts,
+                        correctAnswer: ans,
+                        explanation: pVnTxt ? clean(pVnTxt) : clean(subTxt),
+                        grammar: [],
+                        vocabulary: []
+                    });
+                });
+            }
+        });
+        
+        console.error("PARSED_READING_COUNT: " + readingQuestions.length);
+        
+        // Final sanity verification
+        const result = {
+            listening: listeningQuestions,
+            reading: readingQuestions
+        };
+        
+        console.error("HOT05_JSON_START" + JSON.stringify(result) + "HOT05_JSON_END");
+        document.getElementById("output").textContent = "DONE";
+        console.error("TOTAL_HOT05_READY: L=" + listeningQuestions.length + ", R=" + readingQuestions.length);
+        
+    } catch(e) {
+        console.error("PARSER_ERR: " + e.message + " " + e.stack);
+        document.getElementById("output").textContent = "ERR: " + e.message;
+    }
+}
+run();
+</script>
+</body>
+</html>

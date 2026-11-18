@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"></head>
+<body>
+<pre id="output">STARTING</pre>
+<script>
+function clean(s) {
+    if (!s) return "";
+    if (typeof s !== "string") s = String(s);
+    return s.replace(/\s+/g, ' ').trim();
+}
+
+function removeHeader(txt) {
+    if (!txt) return "";
+    return txt.replace(/L\s*ư\s*u\s+T\s*h[\s\S]*?gmail\.com\s*\d+/gi, '').trim();
+}
+
+function getAnswerFromCircle(txt) {
+    if (!txt) return 0;
+    if (txt.includes('❶')) return 1;
+    if (txt.includes('❷')) return 2;
+    if (txt.includes('❸')) return 3;
+    if (txt.includes('❹')) return 4;
+    return 0;
+}
+
+function cleanOption(opt) {
+    if (!opt) return "";
+    let s = opt;
+    // 1. Cut off grammar patterns like V +, A +, N +, V/A +, N(으)로
+    s = s.split(/\s+(?:[AVN]\s*[\(\+]|\b[AVN]\s*\/\s*[AVN]\s*[\(\+]|N\s*\(|V\s*\(|A\s*\(|-\s*에도)/)[0];
+    // 2. Cut off Vietnamese speaker tags, sentences, or translations
+    s = s.split(/\s+(?:N\s*ữ\s*:|Nam\s*:|D\s*ị\s*ch\s*:|\bChờ\s+một\s+chút|\bVì\s+tóc|[0-9]+\.\s*H\s*ã\s*y|[0-9]+\.\s*C\s*h\s*ọ\s*n|S\s*ợ\s+m|Ng\s*ay\s+v|Nh\s*ớ\s+n|R\s*ấ\s*t\s+h)/i)[0];
+    // 3. Cut off Korean vocab items with colon: e.g. 단어 : ý nghĩa
+    s = s.split(/\s+[가-힣\s\(\)]+\s*:\s*[A-Za-zÀ-ỹ]/)[0];
+    // 4. Cut off page headers
+    s = s.split(/L\s*ư\s*u\s+T\s*h/i)[0];
+    // 5. Cut off trailing numbers or bullet
+    s = s.replace(/[\r\n]+/g, ' ');
+    return clean(s);
+}
+
+function extractOptions(txt) {
+    const regex = /([①❶②❷③❸④❹])\s*([\s\S]*?)(?=[①❶②❷③❸④❹]|$)/g;
+    const items = [];
+    let m;
+    while ((m = regex.exec(txt)) !== null) {
+        let optText = cleanOption(m[2]);
+        items.push(optText);
+        if (items.length === 4) break;
+    }
+    return items;
+}
+
+async function run() {
+    try {
+        const respL = await fetch("tm02_listening_full.txt");
+        const lRaw = await respL.text();
+        const respR = await fetch("tm02_reading_full.txt");
+        const rRaw = await respR.text();
+        
+        const lPages = lRaw.split(/=== PAGE \d+ ===/).map(p => p.trim()).filter(Boolean);
+        const rPages = rRaw.split(/=== PAGE \d+ ===/).map(p => p.trim()).filter(Boolean);
+        
+        const listeningQuestions = [];
+        const readingQuestions = [];
+        
+        let curInstruction = "";
+        
+        // --- 1. PARSE LISTENING ---
+        // Pages 0..19: Questions 1..20
+        for (let i = 0; i < 20; i++) {
+            const pageTxt = removeHeader(lPages[i]);
+            const qNum = i + 1;
+            
+            const instM = pageTxt.match(/(※\s*\[\d+~\d+\][\s\S]*?\))/);
+            if (instM) curInstruction = clean(instM[1]);
+            
+            let passage = "";
+            const diaM = pageTxt.match(/((?:(?:여자|남자)\s*:[\s\S]*?)(?=[①❶]|\b[A-Za-zÀ-ỹ]+:|$))/);
+            if (diaM) {
+                passage = clean(diaM[1]);
+            } else {
+                const narM = pageTxt.match(/남자\s*:[\s\S]*?(?=[①❶]|$)/);
+                if (narM) passage = clean(narM[0]);
+            }
+            
+            // Clean passage from any accidental Vietnamese text
+            if (passage.search(/\b(?:N\s*ữ|Nam)\s*:/i) > 0) {
+                passage = passage.slice(0, passage.search(/\b(?:N\s*ữ|Nam)\s*:/i));
+            }
+            if (passage.search(/[가-힣\s\(\)]+\s*:\s*[A-Za-zÀ-ỹ]/) > 0) {
+                passage = passage.slice(0, passage.search(/[가-힣\s\(\)]+\s*:\s*[A-Za-zÀ-ỹ]/));
+            }
+            passage = clean(passage);
+            
+            const trans = [];
+            const spkRegex = /(여자|남자)\s*:\s*([^여자남자①❶②❷③❸④❹\n\r]+)/g;
+            let sm;
+            while ((sm = spkRegex.exec(passage)) !== null) {
+                trans.push({ speaker: sm[1], text: clean(sm[2]) });
+            }
+            
+            const ans = getAnswerFromCircle(pageTxt);
+            let options = [];
+            if (qNum === 1) {
+                options = [
+                    "[Tranh 1] Người nam và nữ gặp nhau ở phòng khách của nhà mới",
+                    "[Tranh 2] Người nam và người nữ gặp nhau trước cửa nhà, tặng quà tân gia",
+                    "[Tranh 3] Người nam đang dọn dẹp nhà cửa",
+                    "[Tranh 4] Người phụ nữ đang nấu ăn trong bếp"
+                ];
+            } else if (qNum === 2) {
+                options = [
+                    "[Tranh 1] Người phụ nữ đang làm việc ở văn phòng",
+                    "[Tranh 2] Người nam và em trai đang nói chuyện ở quán cà phê",
+                    "[Tranh 3] Người phụ nữ và người nam cùng đi xem kịch",
+                    "[Tranh 4] Người nữ rủ người nam đi xem nhạc kịch sau giờ tan làm"
+                ];
+            } else if (qNum === 3) {
+                options = [
+                    "[Biểu đồ 1] Xe buýt chiếm nhiều nhất, sau đó đến tàu điện ngầm",
+                    "[Biểu đồ 2] Xe gia đình chiếm nhiều nhất",
+                    "[Biểu đồ 3] Tàu điện ngầm nhiều nhất, tiếp theo là xe buýt, sau đó là xe riêng",
+                    "[Biểu đồ 4] Tàu điện ngầm và xe buýt có tỷ lệ ngang nhau"
+                ];
+            } else {
+                const optPartM = pageTxt.match(/([①❶][\s\S]*?[④❹][\s\S]*?)(?=[A-Za-zÀ-ỹ]+:|\bN\s*ữ:|\bNam:|===|$)/);
+                if (optPartM) {
+                    options = extractOptions(optPartM[1]);
+                }
+            }
+            
+            let explanation = "";
+            const vnM = pageTxt.match(/((?:N\s*ữ:|Nam:|Dịch:)[\s\S]*)/i);
+            if (vnM) {
+                explanation = clean(vnM[1]);
+            }
+            
+            const vocab = [];
+            const vocLines = pageTxt.match(/([가-힣\s\(\)]+)\s*:\s*([^\n\r①❶②❷③❸④❹여자남자]+)/g);
+            if (vocLines) {
+                for (let vl of vocLines) {
+                    const parts = vl.split(':');
+                    if (parts.length === 2) {
+                        const k = clean(parts[0]);
+                        const v = clean(parts[1]);
+                        if (!k.includes('Nam') && !k.includes('Nữ') && !k.includes('여자') && !k.includes('남자')) {
+                            vocab.push({ korean: k, vietnamese: v });
+                        }
+                    }
+                }
+            }
+            
+            const numStr = qNum < 10 ? "0" + qNum : "" + qNum;
+            listeningQuestions.push({
+                id: "tm02_l_" + numStr,
+                examId: "tm_02",
+                examCategory: "topik_master",
+                section: "listening",
+                questionNumber: qNum,
+                instruction: curInstruction || "※ 다음을 듣고 알맞은 것을 고르십시오.",
+                passage: passage,
+                audioUrl: "de/TOPIK MASTER/TOPIK MASTER_ĐỀ 02/audio/q" + numStr + ".mp3",
+                options: options.length === 4 ? options : ["①", "②", "③", "④"],
+                correctAnswer: ans || 1,
+                explanation: explanation,
+                transcript: trans.length > 0 ? trans : [{ speaker: "대화", text: passage }],
+                vocabulary: vocab
+            });
+        }
+        
+        // Paired questions: Pages 20..49 (15 pairs -> Q21..50)
+        for (let pairIdx = 0; pairIdx < 15; pairIdx++) {
+            const pKorean = removeHeader(lPages[20 + pairIdx * 2]);
+            const pViet = removeHeader(lPages[20 + pairIdx * 2 + 1]);
+            
+            const qA = 21 + pairIdx * 2;
+            const qB = 22 + pairIdx * 2;
+            
+            const instM = pKorean.match(/(※\s*\[\d+~\d+\][\s\S]*?\))/);
+            if (instM) curInstruction = clean(instM[1]);
+            
+            let passage = "";
+            const diaM = pKorean.match(/((?:(?:여자|남자)\s*:[\s\S]*?)(?=\b\d+\.\s*|\b[①❶]|$))/);
+            if (diaM) passage = clean(diaM[1]);
+            
+            const trans = [];
+            const spkRegex = /(여자|남자)\s*:\s*([^여자남자①❶②❷③❸④❹\n\r]+)/g;
+            let sm;
+            while ((sm = spkRegex.exec(passage)) !== null) {
+                trans.push({ speaker: sm[1], text: clean(sm[2]) });
+            }
+            
+            const qAMatch = pKorean.match(new RegExp("\\b" + qA + "\\.\\s*([\\s\\S]*?)(?=\\b" + qB + "\\.|$)"));
+            const qBMatch = pKorean.match(new RegExp("\\b" + qB + "\\.\\s*([\\s\\S]*?)$"));
+            
+            const qAText = qAMatch ? qAMatch[1] : "";
+            const qBText = qBMatch ? qBMatch[1] : "";
+            
+            const ansA = getAnswerFromCircle(qAText);
+            const ansB = getAnswerFromCircle(qBText);
+            
+            const optsA = extractOptions(qAText);
+            const optsB = extractOptions(qBText);
+            
+            const promptAMatch = qAText.match(/^([^①❶②❷③❸④❹]+)/);
+            const promptBMatch = qBText.match(/^([^①❶②❷③❸④❹]+)/);
+            const promptA = promptAMatch ? clean(promptAMatch[1]) : "";
+            const promptB = promptBMatch ? clean(promptBMatch[1]) : "";
+            
+            const vocab = [];
+            const vocLines = pViet.match(/([가-힣\s\(\)]+)\s*:\s*([^\n\r①❶②❷③❸④❹NữNam]+)/g);
+            if (vocLines) {
+                for (let vl of vocLines) {
+                    const parts = vl.split(':');
+                    if (parts.length === 2) {
+                        const k = clean(parts[0]);
+                        const v = clean(parts[1]);
+                        if (!k.includes('Nam') && !k.includes('Nữ')) vocab.push({ korean: k, vietnamese: v });
+                    }
+                }
+            }
+            
+            const explA = "Giải thích & Dịch:\n" + clean(pViet);
+            const explB = "Giải thích & Dịch:\n" + clean(pViet);
+            
+            const numStrA = "" + qA;
+            const numStrB = "" + qB;
+            
+            listeningQuestions.push({
+                id: "tm02_l_" + numStrA,
+                examId: "tm_02",
+                examCategory: "topik_master",
+                section: "listening",
+                questionNumber: qA,
+                instruction: curInstruction || "※ 다음을 듣고 물음에 답하십시오.",
+                questionPrompt: promptA,
+                passage: passage,
+                audioUrl: "de/TOPIK MASTER/TOPIK MASTER_ĐỀ 02/audio/q" + numStrA + ".mp3",
+                options: optsA.length === 4 ? optsA : ["①", "②", "③", "④"],
+                correctAnswer: ansA || 1,
+                explanation: explA,
+                transcript: trans.length > 0 ? trans : [{ speaker: "대화", text: passage }],
+                vocabulary: vocab
+            });
+            
+            listeningQuestions.push({
+                id: "tm02_l_" + numStrB,
+                examId: "tm_02",
+                examCategory: "topik_master",
+                section: "listening",
+                questionNumber: qB,
+                instruction: curInstruction || "※ 다음을 듣고 물음에 답하십시오.",
+                questionPrompt: promptB,
+                passage: passage,
+                audioUrl: "de/TOPIK MASTER/TOPIK MASTER_ĐỀ 02/audio/q" + numStrB + ".mp3",
+                options: optsB.length === 4 ? optsB : ["①", "②", "③", "④"],
+                correctAnswer: ansB || 1,
+                explanation: explB,
+                transcript: trans.length > 0 ? trans : [{ speaker: "대화", text: passage }],
+                vocabulary: vocab
+            });
+        }
+        
+        // --- 2. PARSE READING ---
+        const rFull = removeHeader(rRaw);
+        let curRInst = "";
+        
+        for (let q = 1; q <= 50; q++) {
+            let qRegex;
+            if (q === 8) {
+                qRegex = /(?:^|\s)(?:8\s+①|8\.\s*)([\s\S]*?)(?=(?:※\s*\[|9\.\s*|$))/;
+            } else if (q === 50) {
+                qRegex = /(?:^|\s)50\.\s*([\s\S]*?)(?=(?:=== PAGE|48\.\s*|$))/;
+            } else {
+                const nextQ = q + 1;
+                qRegex = new RegExp("(?:^|\\s)" + q + "\\.\\s*([\\s\\S]*?)(?=(?:※\\s*\\[|\\b" + nextQ + "\\.\\s*|$))");
+            }
+            
+            const qMatch = rFull.match(qRegex);
+            const qBlock = qMatch ? qMatch[1] : "";
+            
+            const preChunk = rFull.slice(0, rFull.indexOf(qBlock));
+            const lastInst = preChunk.match(/(※\s*\[\d+~?\d*\][\s\S]*?\))/g);
+            if (lastInst && lastInst.length > 0) {
+                curRInst = clean(lastInst[lastInst.length - 1]);
+            }
+            
+            const optEnd = qBlock.search(/[④❹]/);
+            const optSlice = optEnd > 0 ? qBlock.slice(0, optEnd + 60) : qBlock;
+            const ans = getAnswerFromCircle(optSlice);
+            const opts = extractOptions(qBlock);
+            
+            let passage = "";
+            const optIdx = qBlock.search(/[①❶]/);
+            if (optIdx > 0) {
+                passage = clean(qBlock.slice(0, optIdx));
+            }
+            
+            const grammar = [];
+            const gMatches = qBlock.match(/([AVN]\s*\+\s*[가-힣\s\/\(\)]+)\s+([^\n\r①❶②❷③❸④❹]+)/g);
+            if (gMatches) {
+                for (let gm of gMatches) {
+                    grammar.push({ pattern: clean(gm), meaning: "" });
+                }
+            }
+            
+            const vocab = [];
+            const vMatches = qBlock.match(/([가-힣\s\(\)]+)\s*:\s*([^\n\r①❶②❷③❸④❹]+)/g);
+            if (vMatches) {
+                for (let vm of vMatches) {
+                    const p = vm.split(':');
+                    if (p.length === 2) vocab.push({ korean: clean(p[0]), vietnamese: clean(p[1]) });
+                }
+            }
+            
+            let expl = "";
+            const vnStart = qBlock.search(/(?:Dịch:|Ngay|Đây|Thông|Nhớ|Sợ|Rất|Theo|Khi|Nếu|[0-9]+\.\s*Hãy|[0-9]+\.\s*Chọn)/i);
+            if (vnStart > 0) {
+                expl = clean(vnStart);
+            } else {
+                expl = clean(qBlock);
+            }
+            
+            const numStr = q < 10 ? "0" + q : "" + q;
+            readingQuestions.push({
+                id: "tm02_r_" + numStr,
+                examId: "tm_02",
+                examCategory: "topik_master",
+                section: "reading",
+                questionNumber: q,
+                instruction: curRInst || "※ 다음을 읽고 물음에 답하십시오.",
+                passage: passage,
+                options: opts.length === 4 ? opts : ["①", "②", "③", "④"],
+                correctAnswer: ans || 1,
+                explanation: expl,
+                grammar: grammar,
+                vocabulary: vocab
+            });
+        }
+        
+        const finalData = {
+            listening: listeningQuestions,
+            reading: readingQuestions
+        };
+        
+        document.getElementById("output").textContent = JSON.stringify(finalData);
+    } catch(err) {
+        document.getElementById("output").textContent = "ERR: " + err.message;
+    }
+}
+run();
+</script>
+</body>
+</html>

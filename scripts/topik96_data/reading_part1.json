@@ -1,0 +1,821 @@
+[
+	{
+		"id": "q_r_96_01",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 1,
+		"typeId": "R_TYPE_1",
+		"typeName": "Đọc: Điền ngữ pháp & từ vựng vào chỗ trống",
+		"instruction": "※ [1～2] (          )에 들어갈 가장 알맞은 것을 고르십시오. (각 2점)",
+		"passage": "감기약을 (          ) 열이 내렸다.",
+		"audioUrl": null,
+		"options": [
+			"먹느라고",
+			"먹더라도",
+			"먹을 텐데",
+			"먹고 나서"
+		],
+		"correctAnswer": 4,
+		"isAiAnswer": false,
+		"explanation": "Câu gốc có nghĩa: 'Uống thuốc cảm xong thì đã hạ sốt'. Cấu trúc '-고 나서' diễn tả hành động thứ nhất hoàn tất thì hành động thứ hai kế tiếp diễn ra (sau khi... xong thì...). Các cấu trúc còn lại không phù hợp ngữ cảnh: ① '-느라고' (chỉ nguyên nhân mải mê dẫn đến kết quả tiêu cực); ② '-더라도' (cho dù... thì cũng); ③ '-(으)ㄹ 텐데' (dự đoán/tiếc nuối chắc là... nên). Do đó đáp án ④ là chính xác.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-고 나서", "meaning": "Sau khi làm xong việc gì thì làm tiếp việc khác", "example": "밥을 먹고 나서 커피를 마셨다."},
+			{"point": "-느라고", "meaning": "Vì mải mê làm vế trước nên gây ra kết quả tiêu cực ở vế sau", "example": "시험공부를 하느라고 잠을 못 잤다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "감기약", "vietnamese": "Thuốc cảm"}, {"korean": "열", "vietnamese": "Cơn sốt, thân nhiệt"}],
+			"verbs": [{"korean": "먹다", "vietnamese": "Uống (thuốc), ăn"}, {"korean": "내리다", "vietnamese": "Hạ xuống, giảm đi"}],
+			"adjectives": [],
+			"adverbs": []
+		}
+	},
+	{
+		"id": "q_r_96_02",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 2,
+		"typeId": "R_TYPE_1",
+		"typeName": "Đọc: Điền ngữ pháp & từ vựng vào chỗ trống",
+		"instruction": "※ [1～2] (          )에 들어갈 가장 알맞은 것을 고르십시오. (각 2점)",
+		"passage": "내일 김밥을 만들려고 재료를 미리 (          ).",
+		"audioUrl": null,
+		"options": [
+			"준비해 놓았다",
+			"준비하곤 했다",
+			"준비하면 된다",
+			"준비하는 법이다"
+		],
+		"correctAnswer": 1,
+		"isAiAnswer": false,
+		"explanation": "Câu gốc có nghĩa: 'Để mai làm kimbap, tôi đã chuẩn bị sẵn nguyên liệu từ trước'. Cấu trúc '-아/어 놓다' diễn tả một hành động đã được chuẩn bị xong xuôi trước và trạng thái đó vẫn được duy trì (làm sẵn trước). Các đáp án khác: ② '-곤 했다' (thường hay làm gì trong quá khứ); ③ '-(으)면 된다' (chỉ cần làm... là được); ④ '-는 법이다' (đương nhiên, theo lẽ thường là...). Đáp án ① là chính xác.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-아/어 놓다", "meaning": "Làm sẵn một hành động và duy trì kết quả đó cho tương lai", "example": "비행기 표를 미리 사 놓았다."},
+			{"point": "-(으)려고", "meaning": "Để, với mục đích làm gì", "example": "김밥을 만들려고 준비했다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "김밥", "vietnamese": "Cơm cuộn rong biển (kimbap)"}, {"korean": "재료", "vietnamese": "Nguyên liệu"}],
+			"verbs": [{"korean": "만들다", "vietnamese": "Làm, chế biến"}, {"korean": "준비하다", "vietnamese": "Chuẩn bị"}],
+			"adjectives": [],
+			"adverbs": [{"korean": "미리", "vietnamese": "Sẵn trước, từ trước"}]
+		}
+	},
+	{
+		"id": "q_r_96_03",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 3,
+		"typeId": "R_TYPE_1",
+		"typeName": "Đọc: Chọn ngữ pháp đồng nghĩa",
+		"instruction": "※ [3～4] 밑줄 친 부분과 의미가 가장 비슷한 것을 고르십시오. (각 2점)",
+		"passage": "버스를 잘못 <u>타는 바람에</u> 수업에 늦었다.",
+		"audioUrl": null,
+		"options": [
+			"탄 탓에",
+			"타는 김에",
+			"탄 반면에",
+			"타는 대신에"
+		],
+		"correctAnswer": 1,
+		"isAiAnswer": false,
+		"explanation": "Ngữ pháp '-는 바람에' diễn tả nguyên nhân tiêu cực xảy ra đột ngột dẫn đến kết quả xấu không mong muốn ('do/vì... nên...'). Cấu trúc đồng nghĩa trực tiếp là '-(으)ㄴ 탓에' (do lỗi, vì nguyên nhân xấu nào đó). Các đáp án khác: ② '-는 김에' (nhân tiện, tiện thể); ③ '-(으)ㄴ 반면에' (ngược lại, trái lại); ④ '-는 대신에' (thay vì, bù lại). Do đó đáp án ① là chính xác.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-는 바람에", "meaning": "Do, vì một biến cố bất ngờ dẫn đến kết quả tiêu cực", "example": "비가 오는 바람에 소풍이 취소되었다."},
+			{"point": "-(으)ㄴ/는 탓에", "meaning": "Vì, do lỗi của... (chỉ kết quả tiêu cực, đồng nghĩa -는 바람에)", "example": "늦잠을 잔 탓에 지각했다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "버스", "vietnamese": "Xe buýt"}, {"korean": "수업", "vietnamese": "Giờ học, buổi học"}],
+			"verbs": [{"korean": "타다", "vietnamese": "Đi, lên (xe)"}, {"korean": "늦다", "vietnamese": "Trễ, muộn"}],
+			"adjectives": [],
+			"adverbs": [{"korean": "잘못", "vietnamese": "Nhầm, sai"}]
+		}
+	},
+	{
+		"id": "q_r_96_04",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 4,
+		"typeId": "R_TYPE_1",
+		"typeName": "Đọc: Chọn ngữ pháp đồng nghĩa",
+		"instruction": "※ [3～4] 밑줄 친 부분과 의미가 가장 비슷한 것을 고르십시오. (각 2점)",
+		"passage": "회의가 길어져서 약속 시간을 <u>미뤄야만 했다</u>.",
+		"audioUrl": null,
+		"options": [
+			"미루기만 했다",
+			"미룰 줄 몰랐다",
+			"미루기가 어려웠다",
+			"미룰 수밖에 없었다"
+		],
+		"correctAnswer": 4,
+		"isAiAnswer": false,
+		"explanation": "Cấu trúc '-아야/어야만 하다' nhấn mạnh tính bắt buộc, tính tất yếu phải thực hiện hành động ('buộc phải, nhất định phải'). Tương đương với cấu trúc '-(으)ㄹ 수밖에 없다' (không còn cách nào khác ngoài việc..., đành phải...). Các đáp án khác: ① '-기만 하다' (chỉ làm mỗi việc...); ② '-(으)ㄹ 줄 몰랐다' (không nghĩ là / không biết làm...); ③ '-기가 어렵다' (khó mà làm gì). Do đó đáp án ④ là chính xác.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-아야/어야만 하다", "meaning": "Bắt buộc phải, nhất định phải làm gì", "example": "성공하려면 노력해야만 한다."},
+			{"point": "-(으)ㄹ 수밖에 없다", "meaning": "Không còn lựa chọn nào khác ngoài việc..., buộc phải...", "example": "비가 와서 집에 있을 수밖에 없었다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "회의", "vietnamese": "Cuộc họp"}, {"korean": "약속 시간", "vietnamese": "Thời gian hẹn"}],
+			"verbs": [{"korean": "미루다", "vietnamese": "Hoãn lại, dời lại"}],
+			"adjectives": [{"korean": "길어지다", "vietnamese": "Kéo dài ra"}],
+			"adverbs": []
+		}
+	},
+	{
+		"id": "q_r_96_05",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 5,
+		"typeId": "R_TYPE_2",
+		"typeName": "Đọc: Chọn chủ đề biển báo & mẩu tin ngắn",
+		"instruction": "※ [5～8] 다음은 무엇에 대한 글인지 고르십시오. (각 2점)",
+		"passage": "덮자마자 꿈나라로~\n아침까지 포근하고 따뜻하게!",
+		"audioUrl": null,
+		"options": [
+			"장갑",
+			"이불",
+			"화장품",
+			"손수건"
+		],
+		"correctAnswer": 2,
+		"isAiAnswer": false,
+		"explanation": "Các từ khóa: '덮자마자' (ngay khi đắp lên), '꿈나라로' (đi vào xứ sở của những giấc mơ / chìm vào giấc ngủ), '아침까지 포근하고 따뜻하게' (êm ái và ấm áp cho tới tận sáng mai). Vật dụng để 'đắp' (덮다) và mang lại giấc ngủ ấm áp chính là chiếc chăn (이불). Các lựa chọn khác: 장갑 (găng tay), 화장품 (mỹ phẩm), 손수건 (khăn tay). Đáp án ② là chính xác.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-자마자", "meaning": "Ngay sau khi làm gì đó thì...", "example": "눕자마자 잠이 들었다."},
+			{"point": "-게", "meaning": "Một cách... (biến tính từ thành phó từ)", "example": "따뜻하게 입으세요."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "이불", "vietnamese": "Cái chăn, mền đắp"}, {"korean": "꿈나라", "vietnamese": "Xứ sở giấc mơ (giấc ngủ)"}],
+			"verbs": [{"korean": "덮다", "vietnamese": "Đắp, trùm lên"}],
+			"adjectives": [{"korean": "포근하다", "vietnamese": "Êm ái, ấm áp dễ chịu"}, {"korean": "따뜻하다", "vietnamese": "Ấm áp"}],
+			"adverbs": [{"korean": "아침까지", "vietnamese": "Cho tới sáng"}]
+		}
+	},
+	{
+		"id": "q_r_96_06",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 6,
+		"typeId": "R_TYPE_2",
+		"typeName": "Đọc: Chọn chủ đề biển báo & mẩu tin ngắn",
+		"instruction": "※ [5～8] 다음은 무엇에 대한 글인지 고르십시오. (각 2점)",
+		"passage": "오늘의 추억을 한 장에\n아름다운 모습 그대로 남기세요.",
+		"audioUrl": null,
+		"options": [
+			"서점",
+			"은행",
+			"빨래방",
+			"사진관"
+		],
+		"correctAnswer": 4,
+		"isAiAnswer": false,
+		"explanation": "Từ khóa: '오늘의 추억을 한 장에' (lưu giữ kỷ niệm hôm nay trên một tấm...) và '아름다운 모습 그대로 남기세요' (hãy lưu lại trọn vẹn dáng vẻ tươi đẹp). Nơi lưu giữ hình ảnh và kỷ niệm trên từng tấm hình chính là tiệm chụp ảnh/studio ảnh (사진관). Các lựa chọn khác: 서점 (nhà sách), 은행 (ngân hàng), 빨래방 (tiệm giặt ủi). Đáp án ④ là chính xác.",
+		"transcript": [],
+		"grammar": [
+			{"point": "그대로", "meaning": "Y nguyên, nguyên vẹn như vốn có", "example": "있는 그대로 보여 주다."},
+			{"point": "-(으)세요", "meaning": "Hãy... (khuyên nhủ, đề nghị lịch sự)", "example": "남기세요."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "추억", "vietnamese": "Kỷ niệm"}, {"korean": "모습", "vietnamese": "Hình dáng, diện mạo, dáng vẻ"}, {"korean": "사진관", "vietnamese": "Tiệm chụp ảnh"}],
+			"verbs": [{"korean": "남기다", "vietnamese": "Lưu lại, để lại"}],
+			"adjectives": [{"korean": "아름답다", "vietnamese": "Đẹp đẽ"}],
+			"adverbs": []
+		}
+	},
+	{
+		"id": "q_r_96_07",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 7,
+		"typeId": "R_TYPE_2",
+		"typeName": "Đọc: Chọn chủ đề biển báo & mẩu tin ngắn",
+		"instruction": "※ [5～8] 다음은 무엇에 대한 글인지 고르십시오. (각 2점)",
+		"passage": "학교 앞 천천히!\n아이들이 있는지 한 번 더 살피세요.",
+		"audioUrl": null,
+		"options": [
+			"안전 운전",
+			"건강 관리",
+			"전기 절약",
+			"환경 보호"
+		],
+		"correctAnswer": 1,
+		"isAiAnswer": false,
+		"explanation": "Từ khóa: '학교 앞 천천히' (Đi chậm lại trước cổng trường!) và '아이들이 있는지 한 번 더 살피세요' (Hãy quan sát kỹ thêm một lần xem có trẻ nhỏ hay không). Đây là khẩu hiệu giao thông nhắc nhở người lái xe phải lái xe an toàn (안전 운전) khi đi qua khu vực trường học. Các lựa chọn khác: 건강 관리 (quản lý sức khỏe), 전기 절약 (tiết kiệm điện), 환경 보호 (bảo vệ môi trường). Đáp án ① là chính xác.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-(으)ㄴ지", "meaning": "Xem có... hay không", "example": "아이가 있는지 살피다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "안전 운전", "vietnamese": "Lái xe an toàn"}, {"korean": "학교 앞", "vietnamese": "Trước cổng trường"}],
+			"verbs": [{"korean": "살피다", "vietnamese": "Quan sát, xem xét, để mắt"}],
+			"adjectives": [],
+			"adverbs": [{"korean": "천천히", "vietnamese": "Chậm chạp, từ từ"}]
+		}
+	},
+	{
+		"id": "q_r_96_08",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 8,
+		"typeId": "R_TYPE_2",
+		"typeName": "Đọc: Chọn chủ đề biển báo & mẩu tin ngắn",
+		"instruction": "※ [5～8] 다음은 무엇에 대한 글인지 고르십시오. (각 2점)",
+		"passage": "❶ 식사를 원하는 날짜와 시간, 인원수를 선택하십시오.\n❷ 연락 받을 분의 성함과 연락처를 입력하십시오.",
+		"audioUrl": null,
+		"options": [
+			"예약 방법",
+			"일정 문의",
+			"이용 후기",
+			"제품 소개"
+		],
+		"correctAnswer": 1,
+		"isAiAnswer": false,
+		"explanation": "Nội dung gồm 2 bước hướng dẫn: 1) Chọn ngày, giờ và số lượng người dùng bữa; 2) Nhập họ tên và số điện thoại người nhận liên lạc. Đây là hướng dẫn cách thức đặt bàn / đặt chỗ nhà hàng (예약 방법). Các lựa chọn khác: 일정 문의 (hỏi đáp lịch trình), 이용 후기 (đánh giá sau khi dùng), 제품 소개 (giới thiệu sản phẩm). Đáp án ① là chính xác.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-(으)십시오", "meaning": "Xin hãy... (hướng dẫn mệnh lệnh trang trọng)", "example": "선택하십시오."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "예약 방법", "vietnamese": "Phương thức đặt chỗ"}, {"korean": "인원수", "vietnamese": "Số lượng người"}, {"korean": "연락처", "vietnamese": "Thông tin liên lạc"}],
+			"verbs": [{"korean": "선택하다", "vietnamese": "Lựa chọn"}, {"korean": "입력하다", "vietnamese": "Nhập dữ liệu"}],
+			"adjectives": [],
+			"adverbs": []
+		}
+	},
+	{
+		"id": "q_r_96_09",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 9,
+		"typeId": "R_TYPE_3",
+		"typeName": "Đọc: Đọc hiểu văn bản thông báo",
+		"instruction": "※ [9～12] 다음 글 또는 그래프의 내용과 같은 것을 고르십시오. (각 2점)",
+		"passage": "제3회 인주시 영상 노래 대회\n● 제출 방법: 노래하는 영상과 신청서를 이메일(norae@inju.go.kr)로 전송\n※ 신청서는 인주시청 홈페이지 게시판에서 다운로드 가능\n● 제출 기간: 2024년 11월 1일(금)~15일(금)\n● 결과 발표: 11월 29일(금), 인주시청 홈페이지 게시",
+		"audioUrl": null,
+		"options": [
+			"결과는 이메일로 알려 준다.",
+			"11월 29일까지 신청서를 내야 한다.",
+			"신청서는 홈페이지에서 내려받을 수 있다.",
+			"노래하는 영상은 직접 가서 제출해야 한다."
+		],
+		"correctAnswer": 3,
+		"isAiAnswer": false,
+		"explanation": "Trong bảng thông báo có ghi chú dấu hoa thị: '※ 신청서는 인주시청 홈페이지 게시판에서 다운로드 가능' (Đơn đăng ký có thể tải xuống từ bảng tin trên trang chủ tòa thị chính Inju). Cụm '다운로드' đồng nghĩa với từ thuần Hàn '내려받다' (tải về). Do đó đáp án ③ '신청서는 홈페이지에서 내려받을 수 있다' là hoàn toàn chính xác. Các phương án khác sai: kết quả đăng trên trang chủ (không phải báo qua email); hạn nộp đơn là 15/11 (không phải 29/11); gửi video qua email (không phải đến nộp trực tiếp).",
+		"transcript": [],
+		"grammar": [
+			{"point": "-(으)ㄹ 수 있다", "meaning": "Có thể làm gì đó (khả năng)", "example": "다운로드할 수 있다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "신청서", "vietnamese": "Đơn đăng ký"}, {"korean": "게시판", "vietnamese": "Bảng thông báo, diễn đàn"}, {"korean": "결과 발표", "vietnamese": "Công bố kết quả"}],
+			"verbs": [{"korean": "내려받다", "vietnamese": "Tải về (download)"}, {"korean": "전송하다", "vietnamese": "Truyền gửi đi"}],
+			"adjectives": [{"korean": "가능하다", "vietnamese": "Khả thi, có thể"}],
+			"adverbs": []
+		}
+	},
+	{
+		"id": "q_r_96_10",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 10,
+		"typeId": "R_TYPE_3",
+		"typeName": "Đọc: Đọc hiểu biểu đồ số liệu",
+		"instruction": "※ [9～12] 다음 글 또는 그래프의 내용과 같은 것을 고르십시오. (각 2점)",
+		"passage": "[택배로 가장 많이 배송되는 물건은?]\n<조사 대상: 2023년 인주택배 배송 물품>\n- 식품: 31%\n- 의류: 25%\n- 화장품: 19%\n- 전자 제품: 13%\n- 운동 용품: 8%\n- 기타: 4%",
+		"audioUrl": null,
+		"options": [
+			"택배로 배송되는 물건 중 의류가 가장 많다.",
+			"택배로 화장품이 배송되는 비율이 식품보다 낮다.",
+			"택배로 운동 용품이 배송되는 비율은 10%가 넘는다.",
+			"택배로 전자 제품이 배송되는 비율이 두 번째로 높다."
+		],
+		"correctAnswer": 2,
+		"isAiAnswer": false,
+		"explanation": "Phân tích biểu đồ: Thực phẩm (식품) chiếm 31% (vị trí số 1), Quần áo (의류) 25% (vị trí số 2), Mỹ phẩm (화장품) 19% (vị trí số 3), Đồ điện tử (전자 제품) 13%, Dụng cụ thể thao (운동 용품) 8%. Đáp án ② 'Tỷ lệ mỹ phẩm chuyển phát nhanh thấp hơn thực phẩm' (19% < 31%) là nhận định hoàn toàn đúng. Các đáp án khác sai: Quần áo đứng thứ hai chứ không phải nhiều nhất; Dụng cụ thể thao chỉ đạt 8% (chưa vượt 10%); Đồ điện tử đứng thứ tư chứ không phải thứ hai.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-보다", "meaning": "So với... (dùng trong câu so sánh)", "example": "화장품이 식품보다 낮다."},
+			{"point": "-이/가 넘다", "meaning": "Vượt quá con số...", "example": "10%가 넘는다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "택배", "vietnamese": "Dịch vụ chuyển phát nhanh"}, {"korean": "비율", "vietnamese": "Tỷ lệ"}, {"korean": "화장품", "vietnamese": "Mỹ phẩm"}],
+			"verbs": [{"korean": "배송되다", "vietnamese": "Được giao hàng, vận chuyển"}],
+			"adjectives": [{"korean": "낮다", "vietnamese": "Thấp"}, {"korean": "높다", "vietnamese": "Cao"}],
+			"adverbs": []
+		}
+	},
+	{
+		"id": "q_r_96_11",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 11,
+		"typeId": "R_TYPE_3",
+		"typeName": "Đọc: Đọc hiểu văn bản tin tức ngắn",
+		"instruction": "※ [9～12] 다음 글 또는 그래프의 내용과 같은 것을 고르십시오. (각 2점)",
+		"passage": "인주로봇연구소는 작년에 이어 올해에도 겨울 방학을 맞은 인주시 초등학생들을 대상으로 교육 프로그램을 운영한다. 여기에 참여하는 학생들은 연구소에서 직접 로봇을 만들어 보고 조종하는 체험을 할 수 있다. 이 프로그램은 로봇 과학자가 되기를 희망하는 학생들에게 특히 반응이 좋다. 연구소는 내년 겨울 방학에도 이 프로그램을 진행할 예정이다.",
+		"audioUrl": null,
+		"options": [
+			"이 프로그램은 올해 처음 시작됐다.",
+			"내년에는 이 프로그램이 학기 중에 진행된다.",
+			"연구소의 과학자가 학교로 직접 가서 교육을 해 준다.",
+			"이 프로그램은 로봇 과학자를 꿈꾸는 학생들에게 인기가 많다."
+		],
+		"correctAnswer": 4,
+		"isAiAnswer": false,
+		"explanation": "Đoạn văn có câu: '이 프로그램은 로봇 과학자가 되기를 희망하는 학생들에게 특히 반응이 좋다' (Chương trình này nhận được phản hồi đặc biệt tốt từ những học sinh có nguyện vọng trở thành nhà khoa học chế tạo robot). '반응이 좋다' tương đương với '인기가 많다' (được yêu thích, hưởng ứng). Do đó đáp án ④ là chính xác. Các phương án khác sai: chương trình đã mở từ năm ngoái (không phải năm nay mới bắt đầu); năm sau tiếp tục mở vào kỳ nghỉ đông (không phải trong học kỳ); học sinh đến tận viện nghiên cứu để học (không phải nhà khoa học tới trường).",
+		"transcript": [],
+		"grammar": [
+			{"point": "-에 이어", "meaning": "Tiếp nối theo...", "example": "작년에 이어 올해도 열렸다."},
+			{"point": "-기를 희망하다", "meaning": "Hy vọng, mong muốn làm được điều gì", "example": "과학자가 되기를 희망한다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "겨울 방학", "vietnamese": "Kỳ nghỉ đông"}, {"korean": "로봇 과학자", "vietnamese": "Nhà khoa học robot"}, {"korean": "반응", "vietnamese": "Phản hồi, hưởng ứng"}],
+			"verbs": [{"korean": "운영하다", "vietnamese": "Vận hành, tổ chức"}, {"korean": "조종하다", "vietnamese": "Điều khiển"}],
+			"adjectives": [{"korean": "인기가 많다", "vietnamese": "Rất được ưa chuộng, nổi tiếng"}],
+			"adverbs": [{"korean": "직접", "vietnamese": "Trực tiếp"}, {"korean": "특히", "vietnamese": "Đặc biệt"}]
+		}
+	},
+	{
+		"id": "q_r_96_12",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 12,
+		"typeId": "R_TYPE_3",
+		"typeName": "Đọc: Đọc hiểu bản tin xã hội",
+		"instruction": "※ [9～12] 다음 글 또는 그래프의 내용과 같은 것을 고르십시오. (각 2점)",
+		"passage": "지난 23일, 한 차량이 산길에서 미끄러지는 사고가 발생했다. 이 사고로 차를 운전하던 김 씨가 의식을 잃자 함께 있던 김 씨의 개가 차에서 빠져나와 근처 마을로 달려갔다. 주인 없는 개가 계속 짖는 것을 이상하게 여긴 마을 사람들이 개를 따라가 김 씨를 발견했다. 사람들의 신고로 김 씨는 병원으로 옮겨져 치료 중이다.",
+		"audioUrl": null,
+		"options": [
+			"김 씨는 개를 근처 마을로 보냈다.",
+			"김 씨는 등산을 하다가 사고를 당했다.",
+			"마을 사람들이 키우던 개가 김 씨를 발견했다.",
+			"사람들은 개를 따라가 사고가 난 것을 알게 되었다."
+		],
+		"correctAnswer": 4,
+		"isAiAnswer": false,
+		"explanation": "Đoạn văn thuật lại việc tài xế Kim ngất xỉu khi xe trượt dốc trên đường núi, chú chó của ông chạy về làng sủa liên tục khiến người dân thấy lạ liền đi theo chú chó và phát hiện ra ông Kim bị tai nạn (마을 사람들이 개를 따라가 김 씨를 발견했다). Do đó đáp án ④ 'Mọi người đi theo chú chó và biết được vụ tai nạn đã xảy ra' là hoàn toàn đúng với nội dung. Các câu khác sai: ông Kim ngất nên không tự gửi chó đi; ông Kim lái xe chứ không phải leo núi; chú chó là của ông Kim chứ không phải chó của dân làng.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-자", "meaning": "Ngay khi vế trước vừa xảy ra thì vế sau tiếp diễn", "example": "의식을 잃자 개가 달려갔다."},
+			{"point": "-게 여기다", "meaning": "Xem cái gì đó như là..., coi là...", "example": "이상하게 여긴 마을 사람들."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "사고", "vietnamese": "Tai nạn, sự cố"}, {"korean": "의식", "vietnamese": "Ý thức"}, {"korean": "신고", "vietnamese": "Trình báo, khai báo cứu hộ"}],
+			"verbs": [{"korean": "미끄러지다", "vietnamese": "Trượt, trơn trượt"}, {"korean": "빠져나오다", "vietnamese": "Thoát ra ngoài"}, {"korean": "짖다", "vietnamese": "Sủa (chó)"}],
+			"adjectives": [{"korean": "이상하다", "vietnamese": "Kỳ lạ, bất thường"}],
+			"adverbs": [{"korean": "계속", "vietnamese": "Liên tục"}]
+		}
+	},
+	{
+		"id": "q_r_96_13",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 13,
+		"typeId": "R_TYPE_4",
+		"typeName": "Đọc: Sắp xếp trật tự các câu [가-나-다-라]",
+		"instruction": "※ [13～15] 다음을 순서에 맞게 배열한 것을 고르십시오. (각 2점)",
+		"passage": "(가) 대학생 때 처음으로 해외여행을 가게 되었다.\n(나) 가족들은 그 엽서를 받고 아주 감동적이었다고 했다.\n(다) 여행지에서 가족들을 위한 선물을 사고 싶었는데 돈이 별로 없었다.\n(라) 고민하다가 그 나라 풍경이 담긴 엽서에 여행 이야기를 담아 보냈다.",
+		"audioUrl": null,
+		"options": [
+			"(가) - (나) - (라) - (다)",
+			"(가) - (다) - (라) - (나)",
+			"(다) - (나) - (가) - (라)",
+			"(다) - (라) - (나) - (가)"
+		],
+		"correctAnswer": 2,
+		"isAiAnswer": false,
+		"explanation": "Mạch truyện diễn ra theo trình tự thời gian logic: (가) Câu mở đầu nêu bối cảnh: 'Thời sinh viên lần đầu tiên tôi được đi du lịch nước ngoài'; (다) Phát sinh tình huống: 'Ở nơi du lịch tôi rất muốn mua quà cho gia đình nhưng lại không có nhiều tiền'; (라) Biện pháp giải quyết: 'Sau khi đắn đo suy nghĩ, tôi đã viết câu chuyện chuyến đi lên tấm bưu thiếp in phong cảnh đất nước đó gửi về'; (나) Kết quả cảm xúc: 'Gia đình sau khi nhận được tấm bưu thiếp đó đã nói rằng họ vô cùng xúc động'. Trình tự chuẩn: (가) - (다) - (라) - (나) -> Đáp án ②.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-다가", "meaning": "Đang làm gì đó thì có hành động/sự việc khác xen vào", "example": "고민하다가 편지를 썼다."},
+			{"point": "-게 되다", "meaning": "Được, bị, trở nên (kết quả do hoàn cảnh)", "example": "여행을 가게 되었다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "해외여행", "vietnamese": "Du lịch nước ngoài"}, {"korean": "엽서", "vietnamese": "Bưu thiếp"}, {"korean": "풍경", "vietnamese": "Phong cảnh"}],
+			"verbs": [{"korean": "고민하다", "vietnamese": "Băn khoăn, đắn đo"}, {"korean": "보내다", "vietnamese": "Gửi đi"}],
+			"adjectives": [{"korean": "감동적이다", "vietnamese": "Cảm động"}],
+			"adverbs": [{"korean": "처음으로", "vietnamese": "Lần đầu tiên"}]
+		}
+	},
+	{
+		"id": "q_r_96_14",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 14,
+		"typeId": "R_TYPE_4",
+		"typeName": "Đọc: Sắp xếp trật tự các câu [가-나-다-라]",
+		"instruction": "※ [13～15] 다음을 순서에 맞게 배열한 것을 고르십시오. (각 2점)",
+		"passage": "(가) 고리 모양의 반죽은 기름에 골고루 튀겨져 전체가 잘 익었다.\n(나) 그런데 동그란 반죽의 가운데 부분이 익지 않는 경우가 많았다.\n(다) 도넛은 원래 밀가루를 동그랗게 반죽해 기름에 튀겨서 만들었다.\n(라) 어떤 사람이 도넛 반죽의 가운데를 파내 고리 모양으로 만들었다.",
+		"audioUrl": null,
+		"options": [
+			"(가) - (다) - (나) - (라)",
+			"(가) - (라) - (다) - (나)",
+			"(다) - (나) - (라) - (가)",
+			"(다) - (라) - (가) - (나)"
+		],
+		"correctAnswer": 3,
+		"isAiAnswer": false,
+		"explanation": "Mạch văn giải thích lịch sử ra đời chiếc bánh donut hình vòng khuyên: (다) Giới thiệu nguồn gốc ban đầu: 'Bánh donut vốn dĩ làm từ bột mì nhào tròn rồi đem chiên ngập dầu'; (나) Nêu vấn đề khuyết điểm: 'Tuy nhiên phần chính giữa khối bột tròn thường hay không chín'; (라) Đưa ra sáng kiến khắc phục: 'Một người đã khoét rỗng phần giữa khối bột để tạo thành hình chiếc vòng'; (가) Kết quả hoàn thiện: 'Khối bột hình vòng được dầu chiên đều khắp nên toàn bộ bánh chín giòn ngon'. Trình tự chuẩn: (다) - (나) - (라) - (가) -> Đáp án ③.",
+		"transcript": [],
+		"grammar": [
+			{"point": "그런데", "meaning": "Tuy nhiên, nhưng mà (chuyển ý đối lập)", "example": "그런데 가운데가 익지 않았다."},
+			{"point": "-아/어지다", "meaning": "Bị, được (dạng bị động)", "example": "골고루 튀겨졌다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "도넛", "vietnamese": "Bánh donut"}, {"korean": "반죽", "vietnamese": "Khối bột nhào"}, {"korean": "고리 모양", "vietnamese": "Hình chiếc vòng khuyên"}],
+			"verbs": [{"korean": "튀기다", "vietnamese": "Chiên, rán ngập dầu"}, {"korean": "파내다", "vietnamese": "Khoét ra, đào bới ra"}],
+			"adjectives": [{"korean": "동그랗다", "vietnamese": "Tròn trĩnh"}],
+			"adverbs": [{"korean": "골고루", "vietnamese": "Đều khắp"}]
+		}
+	},
+	{
+		"id": "q_r_96_15",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 15,
+		"typeId": "R_TYPE_4",
+		"typeName": "Đọc: Sắp xếp trật tự các câu [가-나-다-라]",
+		"instruction": "※ [13～15] 다음을 순서에 맞게 배열한 것을 고르십시오. (각 2점)",
+		"passage": "(가) 또한 고양이는 수염으로 기분을 드러내기도 한다.\n(나) 고양이는 높고 좁은 담 위에서도 흔들림 없이 걷는다.\n(다) 수염으로 바람의 방향을 느끼며 몸의 균형을 잡기 때문이다.\n(라) 두려울 때는 수염을 뒤쪽으로 당기고, 편안할 때는 아래로 내린다.",
+		"audioUrl": null,
+		"options": [
+			"(나) - (다) - (가) - (라)",
+			"(나) - (라) - (가) - (다)",
+			"(라) - (가) - (나) - (다)",
+			"(라) - (나) - (다) - (가)"
+		],
+		"correctAnswer": 1,
+		"isAiAnswer": false,
+		"explanation": "Đoạn văn nói về 2 công dụng của râu mèo: (나) Nêu hiện tượng thú vị: 'Mèo có thể bước đi vững vàng không hề chao đảo trên những bức tường vừa cao vừa hẹp'; (다) Giải thích nguyên nhân bằng râu mèo: 'Đó là vì mèo dùng râu để cảm nhận hướng gió và giữ thăng bằng cơ thể'; (가) Bổ sung công dụng thứ hai bằng liên từ '또한': 'Ngoài ra, mèo còn bộc lộ tâm trạng qua râu'; (라) Minh họa chi tiết cho tâm trạng: 'Khi sợ hãi mèo kéo râu về phía sau, còn khi thư thái thì hạ râu buông xuống'. Trình tự chuẩn: (나) - (다) - (가) - (라) -> Đáp án ①.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-(으)ㅁ 없이", "meaning": "Không hề có... (dạng phó từ hóa)", "example": "흔들림 없이 걷는다."},
+			{"point": "또한", "meaning": "Ngoài ra, hơn nữa (bổ sung thông tin song song)", "example": "또한 기분을 드러내기도 한다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "수염", "vietnamese": "Râu (mèo)"}, {"korean": "균형", "vietnamese": "Sự cân bằng"}, {"korean": "담", "vietnamese": "Bức tường bao"}],
+			"verbs": [{"korean": "균형을 잡다", "vietnamese": "Giữ thăng bằng"}, {"korean": "드러내다", "vietnamese": "Bộc lộ, thể hiện ra"}],
+			"adjectives": [{"korean": "두렵다", "vietnamese": "Sợ hãi"}, {"korean": "편안하다", "vietnamese": "Thoải mái, bình an"}],
+			"adverbs": []
+		}
+	},
+	{
+		"id": "q_r_96_16",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 16,
+		"typeId": "R_TYPE_5",
+		"typeName": "Đọc: Điền câu vào chỗ trống đoạn văn",
+		"instruction": "※ [16～18] (          )에 들어갈 말로 가장 알맞은 것을 고르십시오. (각 2점)",
+		"passage": "영화 속 장면에서 전화번호가 나오는 경우가 있다. 이때 실제 전화번호를 사용하면 호기심에 전화하는 사람이 생겨서 이 번호를 사용하는 사람은 일상생활이 힘들어질 수 있다. 영화진흥위원회에서는 이와 같은 (          ) 영화에 나와도 상관없는 전화번호를 확보해 두고 이를 영화 제작사에 제공해 주고 있다.",
+		"audioUrl": null,
+		"options": [
+			"피해를 막기 위해",
+			"사실을 화면에 담고자",
+			"관객 요구를 반영하고자",
+			"제작 방법을 알리기 위해"
+		],
+		"correctAnswer": 1,
+		"isAiAnswer": false,
+		"explanation": "Đoạn văn nêu vấn đề: nếu để lộ số điện thoại thật trên phim, khán giả hiếu kỳ gọi đến làm đảo lộn đời sống người sở hữu số đó. Do đó, Hội đồng Phát triển Điện ảnh chuẩn bị sẵn các số điện thoại ảo dùng riêng cho phim 'nhằm ngăn chặn những thiệt hại/phiền toái như vậy' (이와 같은 피해를 막기 위해). Do đó đáp án ① là hoàn toàn chính xác.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-기 위해(서)", "meaning": "Nhằm mục đích, để...", "example": "피해를 막기 위해 번호를 제공한다."},
+			{"point": "-아/어도 상관없다", "meaning": "Dù có... thì cũng không sao, không ảnh hưởng", "example": "영화에 나와도 상관없다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "영화진흥위원회", "vietnamese": "Hội đồng Phát triển Điện ảnh Hàn Quốc"}, {"korean": "피해", "vietnamese": "Thiệt hại, phiền toái"}, {"korean": "호기심", "vietnamese": "Tính tò mò, hiếu kỳ"}],
+			"verbs": [{"korean": "막다", "vietnamese": "Ngăn chặn, ngăn ngừa"}, {"korean": "확보하다", "vietnamese": "Thu thập sẵn, bảo đảm có sẵn"}],
+			"adjectives": [],
+			"adverbs": []
+		}
+	},
+	{
+		"id": "q_r_96_17",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 17,
+		"typeId": "R_TYPE_5",
+		"typeName": "Đọc: Điền câu vào chỗ trống đoạn văn",
+		"instruction": "※ [16～18] (          )에 들어갈 말로 가장 알맞은 것을 고르십시오. (각 2점)",
+		"passage": "30년 전 에너지 전문가들은 그로부터 40년 후에는 지구에 사용할 수 있는 석유가 남아 있지 않을 거라고 경고했다. 그러나 현재의 전문가들은 앞으로도 50년 이상은 계속해서 석유를 사용할 수 있을 거라고 예측한다. 이렇게 석유의 (          ) 이유는 석유를 찾는 기술이 발전했기 때문이다. 이 기술로 석유가 있는 곳을 더 많이 발견하게 된 것이다.",
+		"audioUrl": null,
+		"options": [
+			"품질이 더 좋아진",
+			"가격이 상승하고 있는",
+			"사용 가능 기간이 늘어난",
+			"가치가 계속해서 떨어지는"
+		],
+		"correctAnswer": 3,
+		"isAiAnswer": false,
+		"explanation": "Trước đây các chuyên gia cảnh báo dầu mỏ sẽ cạn kiệt sau 40 năm, nhưng hiện nay dự báo vẫn có thể dùng thêm hơn 50 năm nữa nhờ kỹ thuật thăm dò tìm kiếm phát triển phát hiện thêm nhiều mỏ mới. Hiện tượng thời gian dự trữ dầu kéo dài ra được tóm gọn bằng cụm 'thời gian có thể sử dụng được tăng lên' (석유의 사용 가능 기간이 늘어난 이유). Do đó đáp án ③ là chính xác.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-는/은 이유", "meaning": "Lý do mà việc gì xảy ra...", "example": "기간이 늘어난 이유는 기술 발전 때문이다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "석유", "vietnamese": "Dầu mỏ"}, {"korean": "사용 가능 기간", "vietnamese": "Thời hạn có thể sử dụng"}],
+			"verbs": [{"korean": "경고하다", "vietnamese": "Cảnh báo"}, {"korean": "예측하다", "vietnamese": "Dự đoán, dự báo"}],
+			"adjectives": [],
+			"adverbs": [{"korean": "계속해서", "vietnamese": "Liên tục, tiếp diễn"}]
+		}
+	},
+	{
+		"id": "q_r_96_18",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 18,
+		"typeId": "R_TYPE_5",
+		"typeName": "Đọc: Điền câu vào chỗ trống đoạn văn",
+		"instruction": "※ [16～18] (          )에 들어갈 말로 가장 알맞은 것을 고르십시오. (각 2점)",
+		"passage": "수표교는 홍수 피해에 대비하기 위해 만든 조선 시대의 다리이다. 돌로 된 수표교의 기둥에는 일정한 간격마다 표시가 되어 있어서 (          ) 쉽게 알 수 있었다. 수표교를 관리하는 담당자는 비가 오면 강물이 높아지는지를 수시로 확인하고 홍수가 날 것 같으면 사람들에게 알려 대피하도록 했다.",
+		"audioUrl": null,
+		"options": [
+			"강물의 높이 변화를",
+			"강물의 속도 차이를",
+			"다리 기둥의 간격을",
+			"다리를 만든 재료를"
+		],
+		"correctAnswer": 1,
+		"isAiAnswer": false,
+		"explanation": "Đoạn văn giới thiệu cầu Supyogyo thời Joseon để phòng chống lũ lụt. Trên các cột đá có vạch khắc theo khoảng cách đều đặn, câu sau nêu rõ viên quan phụ trách thường xuyên kiểm tra xem 'mực nước sông dâng cao như thế nào' (강물이 높아지는지를 수시로 확인). Nhờ các vạch khắc đó mà người ta có thể dễ dàng đo biết được sự thay đổi độ cao của nước sông (강물의 높이 변화를). Do đó đáp án ① là chính xác.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-에 대비하다", "meaning": "Ứng phó, chuẩn bị đối phó với...", "example": "홍수 피해에 대비하다."},
+			{"point": "-도록 하다", "meaning": "Khiến cho, yêu cầu/bảo ai làm gì", "example": "알려 대피하도록 했다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "수표교", "vietnamese": "Cầu Supyogyo (cầu đo mực nước)"}, {"korean": "홍수", "vietnamese": "Lũ lụt"}, {"korean": "높이 변화", "vietnamese": "Sự biến đổi độ cao (mực nước)"}],
+			"verbs": [{"korean": "대피하다", "vietnamese": "Sơ tán, lánh nạn"}],
+			"adjectives": [{"korean": "일정하다", "vietnamese": "Nhất định, đều đặn"}],
+			"adverbs": [{"korean": "수시로", "vietnamese": "Thường xuyên, bất cứ lúc nào"}]
+		}
+	},
+	{
+		"id": "q_r_96_19",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 19,
+		"typeId": "R_TYPE_6",
+		"typeName": "Đọc: Điền liên từ/phó từ vào chỗ trống",
+		"instruction": "※ [19～20] 다음을 읽고 물음에 답하십시오. (각 2점)\n19. (          )에 들어갈 말로 가장 알맞은 것을 고르십시오.",
+		"passage": "좋은 생각을 끌어내려면 질문을 어떻게 할지 잘 고민해야 한다. 어떤 회사에서 신제품을 만들고자 직원에게 질문을 한다고 치자. “어떤 물건이 잘 팔릴까?”라고 막연하게 질문하면 대답이 잘 나오지 않는다. 좋은 질문이 아니기 때문이다. (          ) “지금까지의 제품에서 무엇을 개선할까?”라고 질문하면 도움이 되는 구체적인 답이 나온다.",
+		"audioUrl": null,
+		"options": [
+			"결코",
+			"특히",
+			"비록",
+			"반면"
+		],
+		"correctAnswer": 4,
+		"isAiAnswer": false,
+		"explanation": "Hai câu văn đặt trong mối quan hệ đối chiếu: Câu trước đưa ra câu hỏi mơ hồ không đem lại câu trả lời tốt, còn câu sau đưa ra cách đặt câu hỏi cụ thể mang lại câu trả lời hữu ích. Liên từ diễn tả quan hệ tương phản, đối chiếu thích hợp nhất là '반면' (ngược lại, trái lại). Các từ khác: 결코 (tuyệt đối không), 특히 (đặc biệt là), 비록 (cho dẫu). Do đó đáp án ④ là chính xác.",
+		"transcript": [],
+		"grammar": [
+			{"point": "반면(에)", "meaning": "Trái lại, ngược lại (chỉ sự đối lập giữa hai vế)", "example": "형은 부지런한 반면 동생은 게으르다."},
+			{"point": "-다고 치자", "meaning": "Cứ cho là, giả sử như là...", "example": "질문을 한다고 치자."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "신제품", "vietnamese": "Sản phẩm mới"}, {"korean": "개선", "vietnamese": "Cải tiến, cải thiện"}],
+			"verbs": [{"korean": "끌어내다", "vietnamese": "Khơi gợi, lôi kéo ra"}],
+			"adjectives": [{"korean": "막연하다", "vietnamese": "Mơ hồ, chung chung"}, {"korean": "구체적이다", "vietnamese": "Cụ thể, rõ ràng"}],
+			"adverbs": [{"korean": "반면", "vietnamese": "Trái lại, ngược lại"}]
+		}
+	},
+	{
+		"id": "q_r_96_20",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 20,
+		"typeId": "R_TYPE_6",
+		"typeName": "Đọc: Chủ đề chính của đoạn văn",
+		"instruction": "※ [19～20] 다음을 읽고 물음에 답하십시오. (각 2점)\n20. 윗글의 주제로 가장 알맞은 것을 고르십시오.",
+		"passage": "좋은 생각을 끌어내려면 질문을 어떻게 할지 잘 고민해야 한다. 어떤 회사에서 신제품을 만들고자 직원에게 질문을 한다고 치자. “어떤 물건이 잘 팔릴까?”라고 막연하게 질문하면 대답이 잘 나오지 않는다. 좋은 질문이 아니기 때문이다. ( 반면 ) “지금까지의 제품에서 무엇을 개선할까?”라고 질문하면 도움이 되는 구체적인 답이 나온다.",
+		"audioUrl": null,
+		"options": [
+			"질문을 한 후에 생각할 시간을 줘야 한다.",
+			"도움이 되는 답을 얻으려면 질문을 잘해야 한다.",
+			"질문하기 전에 예상되는 답을 미리 생각해야 한다.",
+			"추상적인 질문으로 자유로운 생각을 끌어내야 한다."
+		],
+		"correctAnswer": 2,
+		"isAiAnswer": false,
+		"explanation": "Câu mở đầu nêu luận điểm chính: '좋은 생각을 끌어내려면 질문을 어떻게 할지 잘 고민해야 한다' (Muốn khơi gợi ý tưởng hay thì phải suy nghĩ kỹ xem nên đặt câu hỏi như thế nào). Sau đó đoạn văn minh họa việc đặt câu hỏi đúng cách sẽ mang lại câu trả lời cụ thể có ích. Chủ đề của bài là: Muốn có được câu trả lời hữu ích thì phải đặt câu hỏi thật khéo léo và đúng đắn (도움이 되는 답을 얻으려면 질문을 잘해야 한다) -> Đáp án ②.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-(으)려면", "meaning": "Nếu muốn làm gì...", "example": "답을 얻으려면 질문을 잘해야 한다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "주제", "vietnamese": "Chủ đề"}, {"korean": "답", "vietnamese": "Câu trả lời, lời giải"}],
+			"verbs": [{"korean": "얻다", "vietnamese": "Thu được, đạt được"}],
+			"adjectives": [],
+			"adverbs": []
+		}
+	},
+	{
+		"id": "q_r_96_21",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 21,
+		"typeId": "R_TYPE_6",
+		"typeName": "Đọc: Điền quán dụng ngữ / thành ngữ",
+		"instruction": "※ [21～22] 다음을 읽고 물음에 답하십시오. (각 2점)\n21. (          )에 들어갈 말로 가장 알맞은 것을 고르십시오.",
+		"passage": "학생 수 감소로 폐교가 될 뻔한 산골 초등학교가 위기에서 벗어나 화제이다. 이 학교 선생님들은 (          ) 학교를 살릴 방법을 고민했다. 그러다 찾은 것이 ‘음악 특성화 학교’였다. 선생님들은 예술대학교에 협조를 요청해 학생들에게 다양한 악기를 가르칠 전문가를 구했다. 또 기업의 기부를 받아 유명 음악가와 함께하는 음악회도 개최했다. 이런 소문을 듣고 음악을 배우러 오는 학생들이 생기면서 이 학교는 폐교 위기에서 벗어났다.",
+		"audioUrl": null,
+		"options": [
+			"눈을 딱 감고",
+			"머리를 맞대고",
+			"손에 땀을 쥐고",
+			"목에 힘을 주고"
+		],
+		"correctAnswer": 2,
+		"isAiAnswer": false,
+		"explanation": "Quán dụng ngữ '머리를 맞대다' nghĩa đen là chụm đầu vào nhau, nghĩa bóng là cùng nhau tụ họp, tập trung trí tuệ để thảo luận, bàn bạc tìm giải pháp ('chụm đầu bàn bạc'). Trong câu: các thầy cô giáo đã cùng nhau chụm đầu bàn bạc tìm phương cách cứu trường. Các thành ngữ khác: ① 눈을 딱 감다 (nhắm mắt làm liều); ③ 손에 땀을 쥐다 (hồi hộp toát mồ hôi tay); ④ 목에 힘을 주다 (lên giọng hách dịch, kiêu căng). Do đó đáp án ② là chính xác.",
+		"transcript": [],
+		"grammar": [
+			{"point": "머리를 맞대다", "meaning": "Chụm đầu cùng nhau bàn bạc, tập trung suy nghĩ tìm cách", "example": "문제를 해결하기 위해 머리를 맞댔다."},
+			{"point": "-(으)ㄹ 뻔하다", "meaning": "Suýt chút nữa thì...", "example": "폐교가 될 뻔했다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "폐교", "vietnamese": "Đóng cửa trường học"}, {"korean": "산골", "vietnamese": "Vùng núi non hẻo lánh"}, {"korean": "위기", "vietnamese": "Khủng hoảng, nguy cơ"}],
+			"verbs": [{"korean": "벗어나다", "vietnamese": "Thoát khỏi"}, {"korean": "살리다", "vietnamese": "Cứu sống, làm sống lại"}],
+			"adjectives": [],
+			"adverbs": []
+		}
+	},
+	{
+		"id": "q_r_96_22",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 22,
+		"typeId": "R_TYPE_6",
+		"typeName": "Đọc: Chọn nội dung giống với bài đọc",
+		"instruction": "※ [21～22] 다음을 읽고 물음에 답하십시오. (각 2점)\n22. 윗글의 내용과 같은 것을 고르십시오.",
+		"passage": "학생 수 감소로 폐교가 될 뻔한 산골 초등학교가 위기에서 벗어나 화제이다. 이 학교 선생님들은 ( 머리를 맞대고 ) 학교를 살릴 방법을 고민했다. 그러다 찾은 것이 ‘음악 특성화 학교’였다. 선생님들은 예술대학교에 협조를 요청해 학생들에게 다양한 악기를 가르칠 전문가를 구했다. 또 기업의 기부를 받아 유명 음악가와 함께하는 음악회도 개최했다. 이런 소문을 듣고 음악을 배우러 오는 학생들이 생기면서 이 학교는 폐교 위기에서 벗어났다.",
+		"audioUrl": null,
+		"options": [
+			"이 초등학교는 기업에 요청해 악기 전문가를 구했다.",
+			"이 초등학교는 선생님들의 노력에도 학생 수가 줄었다.",
+			"이 초등학교에서 개최한 음악회에 유명 음악가가 참여했다.",
+			"이 초등학교 선생님들이 학생들에게 직접 악기를 가르쳤다."
+		],
+		"correctAnswer": 3,
+		"isAiAnswer": false,
+		"explanation": "Đoạn văn nêu rõ hoạt động của trường: '또 기업의 기부를 받아 유명 음악가와 함께하는 음악회도 개최했다' (Ngoài ra còn nhận tài trợ từ doanh nghiệp và tổ chức buổi hòa nhạc có sự tham gia của các nghệ sĩ âm nhạc nổi tiếng). Điều này khẳng định nghệ sĩ nổi tiếng đã tham gia buổi hòa nhạc do trường tổ chức (이 초등학교에서 개최한 음악회에 유명 음악가가 참여했다) -> Đáp án ③ là chính xác. Các phương án khác sai: trường nhờ trường nghệ thuật cử chuyên gia (không phải nhờ doanh nghiệp); số lượng học sinh tăng lên sau đó; các chuyên gia dạy nhạc chứ không phải giáo viên tự dạy.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-와/과 함께하다", "meaning": "Cùng chung với...", "example": "유명 음악가와 함께하는 음악회."},
+			{"point": "-으면서/면서", "meaning": "Vừa... vừa..., đồng thời...", "example": "학생들이 생기면서 위기에서 벗어났다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "음악회", "vietnamese": "Buổi hòa nhạc"}, {"korean": "음악가", "vietnamese": "Nghệ sĩ âm nhạc"}, {"korean": "기부", "vietnamese": "Quyên góp, tài trợ"}],
+			"verbs": [{"korean": "개최하다", "vietnamese": "Đăng cai, tổ chức"}, {"korean": "참여하다", "vietnamese": "Tham gia"}],
+			"adjectives": [{"korean": "유명하다", "vietnamese": "Nổi tiếng"}],
+			"adverbs": []
+		}
+	},
+	{
+		"id": "q_r_96_23",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 23,
+		"typeId": "R_TYPE_6",
+		"typeName": "Đọc: Xác định tâm trạng nhân vật",
+		"instruction": "※ [23～24] 다음을 읽고 물음에 답하십시오. (각 2점)\n23. 밑줄 친 부분에 나타난 '나'의 심정으로 가장 알맞은 것을 고르십시오.",
+		"passage": "퇴직한 아빠는 매일 아침 운전을 해서 나를 직장까지 데려다주셨다. 출근길 대중교통이 불편했기 때문이다. 아빠는 운전하면서 잔소리를 많이 하셨다. “신입 사원은 인사를 잘해야 해. 돈 아껴 쓰고…….” 출근할 때마다 잔소리를 듣는 것도 싫고 운전도 하고 싶어서 운전면허를 땄다. 나는 면허증을 받자마자 직접 운전해서 출근하기로 했다. 새 차를 샀다가 긁히기라도 할까 봐 당분간 아빠의 차를 빌려 쓰기로 했다. “사방을 잘 살피면서 운전해야 한다.” 아빠에게 나도 그 정도는 안다고 큰소리를 치고 출발했다. <u>그러나 운전하는 내내 다리가 후들후들 떨렸다. 옆자리에 앉아 있을 때와는 달랐다. 운전대를 꼭 붙든 채 앞만 보고 도로를 달렸다.</u> 퇴근하고 집에 무사히 돌아왔을 땐 안도감에 눈물이 날 정도였다. 매일 나를 데려다주신 아빠에게 새삼 감사함을 느꼈다.",
+		"audioUrl": null,
+		"options": [
+			"기대되다",
+			"긴장되다",
+			"뿌듯하다",
+			"창피하다"
+		],
+		"correctAnswer": 2,
+		"isAiAnswer": false,
+		"explanation": "Phần gạch chân miêu tả: 'chân run lập cập suốt dọc đường lái xe, khác hẳn lúc ngồi ở ghế phụ bên cạnh, hai tay nắm chặt vô lăng chỉ dám nhìn chằm chằm phía trước' (다리가 후들후들 떨렸다... 운전대를 꼭 붙든 채 앞만 보고). Những biểu hiện này phản ánh trạng thái vô cùng căng thẳng, run sợ (긴장되다) của nhân vật khi lần đầu tự lái xe một mình. Các tâm trạng khác: 기대되다 (háo hức mong đợi), 뿌듯하다 (tự hào thỏa mãn), 창피하다 (xấu hổ). Đáp án ② là chính xác.",
+		"transcript": [],
+		"grammar": [
+			{"point": "내내", "meaning": "Suốt, trong suốt khoảng thời gian...", "example": "운전하는 내내 떨렸다."},
+			{"point": "-은/ㄴ 채(로)", "meaning": "Giữ nguyên một trạng thái trong khi thực hiện hành động khác", "example": "운전대를 꼭 붙든 채 앞만 보았다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "운전대", "vietnamese": "Vô lăng lái xe"}, {"korean": "안도감", "vietnamese": "Cảm giác an tâm, thở phào nhẹ nhõm"}],
+			"verbs": [{"korean": "후들후들 떨리다", "vietnamese": "Run rẩy lập cập (chân)"}, {"korean": "붙들다", "vietnamese": "Nắm chặt, ôm chặt"}],
+			"adjectives": [{"korean": "긴장되다", "vietnamese": "Căng thẳng, hồi hộp"}],
+			"adverbs": [{"korean": "새삼", "vietnamese": "Lại một lần nữa (thấy thấm thía)"}]
+		}
+	},
+	{
+		"id": "q_r_96_24",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 24,
+		"typeId": "R_TYPE_6",
+		"typeName": "Đọc: Chọn nội dung giống với bài đọc",
+		"instruction": "※ [23～24] 다음을 읽고 물음에 답하십시오. (각 2점)\n24. 윗글의 내용과 같은 것을 고르십시오.",
+		"passage": "퇴직한 아빠는 매일 아침 운전을 해서 나를 직장까지 데려다주셨다. 출근길 대중교통이 불편했기 때문이다. 아빠는 운전하면서 잔소리를 많이 하셨다. “신입 사원은 인사를 잘해야 해. 돈 아껴 쓰고…….” 출근할 때마다 잔소리를 듣는 것도 싫고 운전도 하고 싶어서 운전면허를 땄다. 나는 면허증을 받자마자 직접 운전해서 출근하기로 했다. 새 차를 샀다가 긁히기라도 할까 봐 당분간 아빠의 차를 빌려 쓰기로 했다. “사방을 잘 살피면서 운전해야 한다.” 아빠에게 나도 그 정도는 안다고 큰소리를 치고 출발했다. 그러나 운전하는 내내 다리가 후들후들 떨렸다. 옆자리에 앉아 있을 때와는 달랐다. 운전대를 꼭 붙든 채 앞만 보고 도로를 달렸다. 퇴근하고 집에 무사히 돌아왔을 땐 안도감에 눈물이 날 정도였다. 매일 나를 데려다주신 아빠에게 새삼 감사함을 느꼈다.",
+		"audioUrl": null,
+		"options": [
+			"나는 아빠의 차를 운전해서 회사에 다녀왔다.",
+			"나는 운전면허를 따기 전에 대중교통으로 출근했다.",
+			"나는 운전면허를 따자마자 자동차를 새로 구매했다.",
+			"나는 아빠의 조언 덕분에 운전하는 것이 어렵지 않았다."
+		],
+		"correctAnswer": 1,
+		"isAiAnswer": false,
+		"explanation": "Trong bài, nhân vật 'tôi' kể: sợ mua xe mới bị xước nên đã mượn xe của bố tự lái đi làm và chiều về nhà an toàn (당분간 아빠의 차를 빌려 쓰기로 했다... 퇴근하고 집에 무사히 돌아왔을 땐). Do đó thông tin 'Tôi đã lái xe của bố đi làm và trở về' (나는 아빠의 차를 운전해서 회사에 다녀왔다) là chính xác tuyệt đối -> Đáp án ①. Các câu khác sai: trước khi có bằng lái thì bố lái xe đưa đi làm chứ không đi xe buýt; nhân vật không mua xe mới ngay; việc tự lái xe rất căng thẳng chứ không hề dễ dàng.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-았/었다가", "meaning": "Làm gì đó rồi dẫn đến kết quả/chuyển biến...", "example": "새 차를 샀다가 긁힐까 봐."},
+			{"point": "-자마자", "meaning": "Ngay khi...", "example": "면허증을 받자마자 출근했다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "운전면허", "vietnamese": "Bằng lái xe"}, {"korean": "대중교통", "vietnamese": "Phương tiện giao thông công cộng"}, {"korean": "잔소리", "vietnamese": "Lời cằn nhằn, nhắc nhở lặp đi lặp lại"}],
+			"verbs": [{"korean": "출근하다", "vietnamese": "Đi làm"}, {"korean": "퇴근하다", "vietnamese": "Tan sở về nhà"}],
+			"adjectives": [{"korean": "불편하다", "vietnamese": "Bất tiện"}],
+			"adverbs": [{"korean": "무사히", "vietnamese": "Bình an vô sự"}]
+		}
+	},
+	{
+		"id": "q_r_96_25",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 25,
+		"typeId": "R_TYPE_6",
+		"typeName": "Đọc: Giải thích tiêu đề báo chí",
+		"instruction": "※ [25～27] 다음 신문 기사의 제목을 가장 잘 설명한 것을 고르십시오. (각 2점)",
+		"passage": "모처럼의 황금연휴, 여행사 예약 문의 ‘껑충’",
+		"audioUrl": null,
+		"options": [
+			"연휴가 짧아서 여행 상품을 찾는 예약 문의가 줄어들었다.",
+			"값이 비싸더라도 연휴 기간에 여행을 가려는 사람이 많아졌다.",
+			"오랜만에 오는 긴 연휴를 맞아 여행사에 예약 상담이 대폭 늘었다.",
+			"매년 돌아오는 연휴를 앞두고 여행사마다 적극적인 홍보를 시작했다."
+		],
+		"correctAnswer": 3,
+		"isAiAnswer": false,
+		"explanation": "Phân tích các từ khóa trong tiêu đề báo: '모처럼' nghĩa là 'sau một thời gian dài hiếm hoi mới có' (오랜만에); '황금연휴' là kỳ nghỉ dài ngày quý báu (긴 연휴); '껑충' là từ tượng hình miêu tả bước nhảy vọt tăng mạnh (대폭 늘었다). Ý nghĩa chuẩn xác của tiêu đề là: Nhân dịp kỳ nghỉ dài hiếm hoi mới có, các cuộc gọi tư vấn đặt tour tại công ty du lịch tăng vọt đột biến (오랜만에 오는 긴 연휴를 맞아 여행사에 예약 상담이 대폭 늘었다) -> Đáp án ③.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-을/를 맞아(서)", "meaning": "Đón chào, nhân dịp một sự kiện...", "example": "연휴를 맞아 여행을 떠났다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "황금연휴", "vietnamese": "Kỳ nghỉ vàng (kỳ nghỉ lễ dài ngày)"}, {"korean": "예약 문의", "vietnamese": "Hỏi thông tin đặt chỗ/tour"}],
+			"verbs": [{"korean": "늘다", "vietnamese": "Tăng lên"}],
+			"adjectives": [],
+			"adverbs": [{"korean": "모처럼", "vietnamese": "Hiếm hoi lắm mới có, sau một thời gian dài"}, {"korean": "껑충", "vietnamese": "Nhảy vọt (tăng vọt)"}, {"korean": "대폭", "vietnamese": "Đại phúc (mức độ lớn, tăng vọt)"}]
+		}
+	}
+]

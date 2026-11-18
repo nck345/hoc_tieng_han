@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"></head>
+<body>
+<pre id="output">STARTING</pre>
+<script>
+function clean(s) {
+    if (!s) return "";
+    return s.replace(/\s+/g, ' ').trim();
+}
+
+function cleanOption(opt) {
+    if (!opt) return "";
+    let s = opt.replace(/^[①②③④❶❷❸❹㉠㉡㉢㉣㉤㉥㉦㉧㉨㉩㉭@\(\)0-9가-힣a-zA-Z\.\,\s]+(?<=[①②③④❶❷❸❹㉠㉡㉢㉣㉤㉥㉦㉧㉨㉩㉭@\.\)])\s*/, '');
+    s = s.replace(/^[\(\[]?[0-9가-힣A-Za-z]+[\)\]\.]\s*/, '');
+    s = s.replace(/^0\s+/, '');
+    s = s.split(/\s+(?:TOPIK\s*MASTER|문제집|해설|단어|Exp|종류|어휘|Part\s*\d|실전모의고사|\d+회)/i)[0];
+    return clean(s);
+}
+
+const BULLET_REGEX = /(?:^|\s)(?:[①②③④❶❷❸❹㉠㉡㉢㉣㉤㉥㉦㉧㉨㉩㉭@]|\([0-9가-힣A-Za-z\.]+\)|[1-4]\s*[\)\.]|0\s+|[전결쇠]\))\s*/;
+
+function extractOptions(text) {
+    if (!text) return [];
+    
+    // 1. Cut off explanation header
+    const explIdx = text.search(/(?:종류|해설|단어|어휘|Exp|Part\s*\d)/);
+    const body = explIdx >= 0 ? text.slice(0, explIdx) : text;
+    
+    // 2. Try splitting on bullets
+    const parts = body.split(BULLET_REGEX);
+    let opts = [];
+    for (let p of parts) {
+        let c = cleanOption(p);
+        if (c.length > 1 && !c.match(/^(?:\d+\.|\※|\[\d|다음을|남자의|들은|여자가|이 글의|제\d회|남자\s*:|여자\s*:)/)) {
+            opts.push(c);
+        }
+    }
+    
+    if (opts.length === 4) return opts;
+    
+    // 3. If opts has 1, 2, or 3 items, try sentence splitting inside items
+    if (opts.length > 0 && opts.length < 4) {
+        let expanded = [];
+        for (let o of opts) {
+            const sents = o.split(/(?<=[다요죠까][\.\,\s])\s+/).map(cleanOption).filter(s => s.length > 1 && !s.match(/^(?:남자\s*:|여자\s*:)/));
+            if (sents.length > 1) {
+                expanded.push(...sents);
+            } else {
+                expanded.push(o);
+            }
+        }
+        if (expanded.length === 4) return expanded;
+        if (expanded.length > 4) return expanded.slice(0, 4);
+    }
+    
+    // 4. Try sentence splitting on body directly
+    const directSents = body.split(/(?<=[다요죠까][\.\,\s])\s+/).map(cleanOption).filter(s => s.length > 1 && !s.match(/^(?:\d+\.|\※|\[\d|다음을|남자의|들은|여자가|이 글의|제\d회|남자\s*:|여자\s*:)/));
+    if (directSents.length === 4) return directSents;
+    if (directSents.length > 4) return directSents.slice(-4);
+    
+    return opts;
+}
+
+async function test() {
+    try {
+        const respAns = await fetch("hot01_ans_full.txt");
+        const ansRaw = await respAns.text();
+        const respDe = await fetch("hot01_de_full.txt");
+        const deRaw = await respDe.text();
+        
+        const ansListen = ansRaw.slice(ansRaw.indexOf("=== PAGE 3 ==="), ansRaw.indexOf("읽기 (1번~50번)"));
+        const ansRead = ansRaw.slice(ansRaw.indexOf("읽기 (1번~50번)"));
+        
+        let dummyL = 0;
+        let dummyR = 0;
+        
+        // Test Listening Q4..Q50
+        const lResults = [];
+        for (let q = 4; q <= 50; q++) {
+            const nextQ = q + 1;
+            const reg = new RegExp(`(?:^|\\n|\\r|\\s)${q}\\.\\s*(?!\\d)([\\s\\S]*?)(?=(?:^|\\n|\\r|\\s)${nextQ}\\.\\s*(?!\\d)|=== PAGE|$)`);
+            const m = ansListen.match(reg);
+            let opts = m ? extractOptions(m[1]) : [];
+            
+            if (opts.length !== 4) {
+                // Try deRaw
+                const mDe = deRaw.match(reg);
+                if (mDe) {
+                    const deOpts = extractOptions(mDe[1]);
+                    if (deOpts.length === 4) opts = deOpts;
+                }
+            }
+            
+            if (opts.length !== 4) {
+                dummyL++;
+                lResults.push(`Q${q}: FAIL (got ${opts.length} opts: ${opts.join(' | ')})`);
+            } else {
+                lResults.push(`Q${q}: OK [${opts.join(' ; ')}]`);
+            }
+        }
+        
+        // Test Reading Q1..Q50
+        const rResults = [];
+        for (let q = 1; q <= 50; q++) {
+            const nextQ = q + 1;
+            const reg = new RegExp(`(?:^|\\n|\\r|\\s)${q}\\.\\s*(?!\\d)([\\s\\S]*?)(?=(?:^|\\n|\\r|\\s)${nextQ}\\.\\s*(?!\\d)|=== PAGE|$)`);
+            const m = ansRead.match(reg);
+            let opts = m ? extractOptions(m[1]) : [];
+            
+            if (opts.length !== 4) {
+                // Try deRaw
+                const mDe = deRaw.match(reg);
+                if (mDe) {
+                    const deOpts = extractOptions(mDe[1]);
+                    if (deOpts.length === 4) opts = deOpts;
+                }
+            }
+            
+            if (opts.length !== 4) {
+                dummyR++;
+                rResults.push(`Q${q}: FAIL (got ${opts.length} opts: ${opts.join(' | ')})`);
+            } else {
+                rResults.push(`Q${q}: OK [${opts.join(' ; ')}]`);
+            }
+        }
+        
+        const summary = `HOT01 TEST RESULT:\nListening Success: ${47 - dummyL}/47 (Dummies: ${dummyL})\nReading Success: ${50 - dummyR}/50 (Dummies: ${dummyR})\n\nFailed L:\n${lResults.filter(r => r.includes('FAIL')).join('\n')}\n\nFailed R:\n${rResults.filter(r => r.includes('FAIL')).join('\n')}`;
+        document.getElementById('output').textContent = summary;
+    } catch(e) {
+        document.getElementById('output').textContent = "ERR: " + e.message;
+    }
+}
+window.onload = test;
+</script>
+</body>
+</html>

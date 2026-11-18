@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"></head>
+<body>
+<pre id="output">STARTING</pre>
+<script>
+function clean(s) {
+    if (!s) return "";
+    return s.replace(/\s+/g, ' ').trim();
+}
+
+function cleanOption(opt) {
+    if (!opt) return "";
+    let s = opt.replace(/^[①②③④❶❷❸❹㉠㉡㉢㉣㉤㉥㉦㉧㉨㉩㉭@\(\)0-9가-힣a-zA-Z\.\,\s]+(?<=[①②③④❶❷❸❹㉠㉡㉢㉣㉤㉥㉦㉧㉨㉩㉭@\.\)])\s*/, '');
+    s = s.replace(/^[\(\[]?[0-9가-힣A-Za-z]+[\)\]\.]\s*/, '');
+    s = s.replace(/^0\s+/, '');
+    s = s.split(/\s+(?:TOPIK\s*MASTER|문제집|해설|단어|Exp|종류|어휘|Part\s*\d|실전모의고사|\d+회)/i)[0];
+    return clean(s);
+}
+
+const BULLET_REGEX = /(?:^|\s)(?:[①②③④❶❷❸❹㉠㉡㉢㉣㉤㉥㉦㉧㉨㉩㉭@]|\([0-9가-힣A-Za-z\.]+\)|[1-4]\s*[\)\.]|0\s+|[전결쇠]\))\s*/;
+
+function extractOptions(text) {
+    if (!text) return [];
+    const explIdx = text.search(/(?:종류|해설|단어|어휘|Exp|Part\s*\d|TOPIK\s*MASTER)/i);
+    const body = explIdx >= 0 ? text.slice(0, explIdx) : text;
+    
+    const parts = body.split(BULLET_REGEX);
+    let opts = [];
+    for (let p of parts) {
+        let c = cleanOption(p);
+        if (c.length > 1 && !c.match(/^(?:\d+\.|\※|\[\d|다음을|남자의|들은|여자가|이 글의|제\d회|남자\s*:|여자\s*:|\( \)\s*에)/)) {
+            opts.push(c);
+        }
+    }
+    
+    if (opts.length === 4) return opts;
+    
+    if (opts.length > 0 && opts.length < 4) {
+        let expanded = [];
+        for (let o of opts) {
+            const sents = o.split(/(?<=[다요죠까][\.\,\s])\s+/).map(cleanOption).filter(s => s.length > 1);
+            if (sents.length > 1) expanded.push(...sents);
+            else expanded.push(o);
+        }
+        if (expanded.length === 4) return expanded;
+    }
+    
+    return opts;
+}
+
+async function run() {
+    try {
+        const respDe = await fetch("tm03_de_full.txt");
+        const deRaw = await respDe.text();
+        const pages = deRaw.split(/=== PAGE \d+ ===/);
+        
+        // Page 28: Q21, Q22
+        const p28 = pages[28];
+        const q21Match = p28.match(/\(\s*\)\s*에\s*들어갈[\s\S]*?(?=이\s*글의\s*중심)/);
+        const q22Match = p28.match(/이\s*글의\s*중심[\s\S]*?(?=TOPIK\s*MASTER|$)/);
+        
+        const opts21 = extractOptions(q21Match ? q21Match[0] : "");
+        const opts22 = extractOptions(q22Match ? q22Match[0] : "");
+        
+        // Page 29: Q23, Q24
+        const p29 = pages[29];
+        const q23Match = p29.match(/나의\s*심정으로[\s\S]*?(?=이\s*글의\s*내용)/);
+        const q24Match = p29.match(/이\s*글의\s*내용과[\s\S]*?(?=\[25|$)/);
+        
+        const opts23 = extractOptions(q23Match ? q23Match[0] : "");
+        const opts24 = extractOptions(q24Match ? q24Match[0] : "");
+        
+        const res = [
+            `Q21 (${opts21.length}): ${opts21.join(' | ')}`,
+            `Q22 (${opts22.length}): ${opts22.join(' | ')}`,
+            `Q23 (${opts23.length}): ${opts23.join(' | ')}`,
+            `Q24 (${opts24.length}): ${opts24.join(' | ')}`
+        ].join('\n');
+        
+        document.getElementById("output").textContent = res;
+    } catch(e) {
+        document.getElementById("output").textContent = "ERR: " + e.message;
+    }
+}
+window.onload = run;
+</script>
+</body>
+</html>

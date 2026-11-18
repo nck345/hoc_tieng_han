@@ -1,0 +1,3 @@
+Get-Content "js\app.js" | Select-Object -Skip 830 -First 35 | ForEach-Object {
+    Write-Host $_
+}

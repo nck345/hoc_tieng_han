@@ -1,0 +1,819 @@
+[
+	{
+		"id": "q_r_96_26",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 26,
+		"typeId": "R_TYPE_6",
+		"typeName": "Đọc: Giải thích tiêu đề báo chí",
+		"instruction": "※ [25～27] 다음 신문 기사의 제목을 가장 잘 설명한 것을 고르십시오. (각 2점)",
+		"passage": "김민수 ‘올해의 선수상’ 수상 유력, 야구팬들 기대 고조",
+		"audioUrl": null,
+		"options": [
+			"김민수가 상을 받아서 야구팬들이 매우 기뻐하고 있다.",
+			"김민수가 야구팬들의 큰 기대에도 불구하고 상을 받지 못했다.",
+			"김민수가 상을 받을 가능성이 많아 야구팬들의 기대가 높아지고 있다.",
+			"김민수가 상을 받는 데 실패했지만 야구팬들에게 많은 응원을 받았다."
+		],
+		"correctAnswer": 3,
+		"isAiAnswer": false,
+		"explanation": "Từ khóa trong tiêu đề: '수상 유력' nghĩa là có khả năng rất cao sẽ đoạt giải thưởng (상을 받을 가능성이 많다); '기대 고조' nghĩa là sự kỳ vọng dâng cao mạnh mẽ (기대가 높아지고 있다). Tiêu đề diễn tả việc Kim Min-soo có khả năng rất lớn sẽ đoạt giải 'Cầu thủ của năm', khiến kỳ vọng của người hâm mộ bóng chày dâng cao -> Đáp án ③.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-ㄹ/을 가능성이 많다", "meaning": "Có nhiều khả năng sẽ...", "example": "상을 받을 가능성이 많다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "올해의 선수상", "vietnamese": "Giải Cầu thủ của năm"}, {"korean": "야구팬", "vietnamese": "Người hâm mộ bóng chày"}],
+			"verbs": [{"korean": "수상하다", "vietnamese": "Nhận giải thưởng"}],
+			"adjectives": [{"korean": "유력하다", "vietnamese": "Có nhiều khả năng nhất"}, {"korean": "고조되다", "vietnamese": "Dâng cao, trào dâng"}],
+			"adverbs": []
+		}
+	},
+	{
+		"id": "q_r_96_27",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 27,
+		"typeId": "R_TYPE_6",
+		"typeName": "Đọc: Giải thích tiêu đề báo chí",
+		"instruction": "※ [25～27] 다음 신문 기사의 제목을 가장 잘 설명한 것을 고르십시오. (각 2점)",
+		"passage": "지지부진한 태풍 피해 복구, 속 터지는 인주 주민들",
+		"audioUrl": null,
+		"options": [
+			"태풍 피해가 매년 발생해 인주 주민들이 대책을 요구했다.",
+			"태풍 피해를 복구하는 일에 인주 주민들의 참여가 저조하다.",
+			"태풍 피해를 막기 위한 방안이 인주 주민들에게 호응을 얻고 있다.",
+			"태풍 피해 복구가 잘 진행되지 않아 인주 주민들이 답답해하고 있다."
+		],
+		"correctAnswer": 4,
+		"isAiAnswer": false,
+		"explanation": "Phân tích từ ngữ: '지지부진하다' nghĩa là chậm chạp, trì trệ, không tiến triển được bao nhiêu (잘 진행되지 않다); '속 터지다' là thành ngữ chỉ cảm giác bực bội nghẹn uất trong lòng vì mọi việc không như ý (답답해하다). Tiêu đề phản ánh công tác khắc phục hậu quả bão diễn ra chậm chạp khiến cư dân Inju vô cùng bức xúc sốt ruột (태풍 피해 복구가 잘 진행되지 않아 인주 주민들이 답답해하고 있다) -> Đáp án ④.",
+		"transcript": [],
+		"grammar": [
+			{"point": "속이 터지다", "meaning": "Nghẹn lòng, bực bội, sốt ruột phát điên (thành ngữ)", "example": "일이 안 풀려서 속이 터진다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "태풍 피해", "vietnamese": "Thiệt hại do bão"}, {"korean": "복구", "vietnamese": "Khôi phục, phục hồi"}],
+			"verbs": [{"korean": "답답해하다", "vietnamese": "Bức bối, bực bội nghẹn ngào"}],
+			"adjectives": [{"korean": "지지부진하다", "vietnamese": "Trì trệ, dậm chân tại chỗ, chậm chạp"}],
+			"adverbs": []
+		}
+	},
+	{
+		"id": "q_r_96_28",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 28,
+		"typeId": "R_TYPE_5",
+		"typeName": "Đọc: Điền câu vào chỗ trống đoạn văn",
+		"instruction": "※ [28～31] (          )에 들어갈 말로 가장 알맞은 것을 고르십시오. (각 2점)",
+		"passage": "특정 장소를 실시간으로 비추어 주는 인터넷 방송 채널인 ‘지금 거기’가 최근 인기를 끌고 있다. 이 방송에서는 남산에서 내려다보는 서울 풍경, 창밖으로 보이는 뉴욕 타임스퀘어 거리 등 하나의 장소를 편집 없이 그대로 보여 준다. 화면 앞에 있는 시청자들은 현장감 있는 풍경에 빠져들어 마치 (          ) 것처럼 느끼게 된다.",
+		"audioUrl": null,
+		"options": [
+			"오래된 영상을 보는",
+			"전혀 가 본 적이 없는",
+			"연예인과 방송에 출연하는",
+			"직접 그곳에 가서 바라보는"
+		],
+		"correctAnswer": 4,
+		"isAiAnswer": false,
+		"explanation": "Đoạn văn miêu tả các kênh livestream thời gian thực quay trực tiếp cảnh Seoul hay Quảng trường Thời đại New York không hề cắt gọt. Khán giả đắm chìm vào khung cảnh sống động chân thực (현장감 있는 풍경) đến mức cảm giác như 'chính bản thân mình đang trực tiếp đến tận nơi đó và ngắm nhìn' (마치 직접 그곳에 가서 바라보는 것처럼 느끼게 된다). Do đó đáp án ④ là chính xác.",
+		"transcript": [],
+		"grammar": [
+			{"point": "마치 -(으)ㄴ/는 것처럼", "meaning": "Hệt như là, dường như thể là...", "example": "마치 직접 가서 보는 것처럼 느꼈다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "실시간", "vietnamese": "Thời gian thực"}, {"korean": "현장감", "vietnamese": "Cảm giác chân thực tại hiện trường"}, {"korean": "시청자", "vietnamese": "Khán giả"}],
+			"verbs": [{"korean": "비추다", "vietnamese": "Chiếu rọi, soi vào"}, {"korean": "빠져들다", "vietnamese": "Đắm chìm vào"}],
+			"adjectives": [],
+			"adverbs": [{"korean": "편집 없이", "vietnamese": "Không cắt gọt"}, {"korean": "직접", "vietnamese": "Trực tiếp"}]
+		}
+	},
+	{
+		"id": "q_r_96_29",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 29,
+		"typeId": "R_TYPE_5",
+		"typeName": "Đọc: Điền câu vào chỗ trống đoạn văn",
+		"instruction": "※ [28～31] (          )에 들어갈 말로 가장 알맞은 것을 고르십시오. (각 2점)",
+		"passage": "‘산조’는 한 명의 연주자가 악기 하나를 가지고 다채로운 가락과 장단을 즉흥적으로 표현하는 한국 전통 음악의 한 갈래이다. 산조의 독특한 특성은 연주자가 악보대로 연주하는 것이 아니라 무대마다 다른 독주를 선보인다는 데 있다. 현장 분위기에 맞춰 (          ) 연주하기 때문에 같은 연주자의 공연을 여러 번 보아도 그때마다 새로운 감동을 받을 수 있다.",
+		"audioUrl": null,
+		"options": [
+			"여러 사람이 동시에",
+			"다양한 변화를 주면서",
+			"새로운 악기를 더하여",
+			"악보를 보면서 그대로"
+		],
+		"correctAnswer": 2,
+		"isAiAnswer": false,
+		"explanation": "Đặc trưng độc đáo của nhạc Sanjo là người nghệ sĩ không chơi rập khuôn theo bản nhạc mà ngẫu hứng biến tấu khác nhau trên mỗi sân khấu. Họ dựa theo không khí hiện trường mà 'vừa tạo ra nhiều biến hóa phong phú' (다양한 변화를 주면서) vừa biểu diễn, nên dù xem nhiều lần vẫn thấy cảm xúc hoàn toàn mới lạ. Do đó đáp án ② là chính xác.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-에 맞춰(서)", "meaning": "Phù hợp theo, hòa nhịp theo...", "example": "분위기에 맞춰 연주한다."},
+			{"point": "-는 데(에) 있다", "meaning": "Nằm ở chỗ, điểm cốt lõi ở...", "example": "특성은 다른 독주를 선보인다는 데 있다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "산조", "vietnamese": "Điệu Sanjo"}, {"korean": "가락과 장단", "vietnamese": "Giai điệu và nhịp phách"}, {"korean": "독주", "vietnamese": "Độc tấu"}],
+			"verbs": [{"korean": "선보이다", "vietnamese": "Trình diễn, ra mắt"}, {"korean": "변화를 주다", "vietnamese": "Tạo ra sự biến đổi"}],
+			"adjectives": [{"korean": "다채롭다", "vietnamese": "Đa sắc màu, phong phú"}],
+			"adverbs": [{"korean": "즉흥적으로", "vietnamese": "Một cách ngẫu hứng"}]
+		}
+	},
+	{
+		"id": "q_r_96_30",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 30,
+		"typeId": "R_TYPE_5",
+		"typeName": "Đọc: Điền câu vào chỗ trống đoạn văn",
+		"instruction": "※ [28～31] (          )에 들어갈 말로 가장 알맞은 것을 고르십시오. (각 2점)",
+		"passage": "치킨을 먹을 때 기름이 손에 묻는 게 싫어서 비닐장갑을 사용하는 사람들이 많다. 그런데 비닐장갑을 끼고 치킨을 먹더라도 여전히 기름이 손에 묻는다. 이는 비닐이 기름에 친화적인 폴리에틸렌으로 만들어져 비닐장갑에 기름이 잘 스며들기 때문이다. 게다가 비닐장갑의 두께가 매우 얇아 기름이 (          ) 수 있다.",
+		"audioUrl": null,
+		"options": [
+			"손에 전혀 묻지 않을",
+			"치킨의 맛을 떨어뜨릴",
+			"비닐을 부드럽게 만들",
+			"장갑을 더 쉽게 통과할"
+		],
+		"correctAnswer": 4,
+		"isAiAnswer": false,
+		"explanation": "Đoạn văn giải thích lý do đeo găng tay nilon ăn gà rán mà tay vẫn bị dính dầu mỡ: nilon làm từ polyethylene ưa dầu mỡ nên dầu dễ thấm vào, hơn nữa độ dày của găng tay nilon cực kỳ mỏng nên dầu mỡ có thể 'xuyên qua găng tay dễ dàng hơn' (기름이 장갑을 더 쉽게 통과할 수 있다). Do đó đáp án ④ là hoàn toàn chính xác.",
+		"transcript": [],
+		"grammar": [
+			{"point": "게다가", "meaning": "Hơn nữa, vả lại", "example": "게다가 두께가 매우 얇다."},
+			{"point": "-(으)ㄹ 수 있다", "meaning": "Có thể xảy ra khả năng...", "example": "쉽게 통과할 수 있다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "비닐장갑", "vietnamese": "Găng tay nilon"}, {"korean": "기름", "vietnamese": "Dầu mỡ"}, {"korean": "두께", "vietnamese": "Độ dày"}],
+			"verbs": [{"korean": "스며들다", "vietnamese": "Thấm vào"}, {"korean": "통과하다", "vietnamese": "Xuyên qua"}],
+			"adjectives": [{"korean": "친화적이다", "vietnamese": "Thân thiện, tương thích"}, {"korean": "얇다", "vietnamese": "Mỏng"}],
+			"adverbs": [{"korean": "여전히", "vietnamese": "Vẫn như cũ"}]
+		}
+	},
+	{
+		"id": "q_r_96_31",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 31,
+		"typeId": "R_TYPE_5",
+		"typeName": "Đọc: Điền câu vào chỗ trống đoạn văn",
+		"instruction": "※ [28～31] (          )에 들어갈 말로 가장 알맞은 것을 고르십시오. (각 2점)",
+		"passage": "상품의 종류와 유통 방식이 다양해지면서 물건을 고르는 것도 어려워졌다. 그러다 보니 선택에 들이는 시간을 줄이면서도 실패 없는 구매를 하려는 경향이 생겼다. 그중 하나가 유명인이 추천하는 물건을 고민 없이 따라 사는 것이다. 영향력 있는 인물이 (          ) 짧은 시간 안에 최선의 선택을 할 수 있을 것이라는 믿음이 이러한 소비에 반영된 것이다.",
+		"audioUrl": null,
+		"options": [
+			"직접 물건을 보내 주면",
+			"높은 가격으로 판매하면",
+			"선택한 것을 그대로 따르면",
+			"상품을 생산하도록 도와주면"
+		],
+		"correctAnswer": 3,
+		"isAiAnswer": false,
+		"explanation": "Đoạn văn phân tích xu hướng mua sắm 'học theo người nổi tiếng': người tiêu dùng tin rằng nếu 'làm theo đúng những gì nhân vật có sức ảnh hưởng đã chọn' (영향력 있는 인물이 선택한 것을 그대로 따르면) thì họ sẽ tiết kiệm thời gian chọn lựa mà vẫn đạt được phương án mua sắm tối ưu không sợ hớ. Do đó đáp án ③ là chuẩn xác.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-(으)ㄹ 것이라는 믿음", "meaning": "Niềm tin rằng sẽ...", "example": "최선의 선택을 할 수 있을 것이라는 믿음."},
+			{"point": "-다 보니", "meaning": "Vì cứ liên tục... nên dẫn đến kết quả...", "example": "고민하다 보니 경향이 생겼다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "유통 방식", "vietnamese": "Phương thức phân phối hàng hóa"}, {"korean": "소비", "vietnamese": "Tiêu dùng"}, {"korean": "인물", "vietnamese": "Nhân vật"}],
+			"verbs": [{"korean": "따르다", "vietnamese": "Làm theo, tuân theo"}, {"korean": "선택하다", "vietnamese": "Lựa chọn"}],
+			"adjectives": [{"korean": "영향력 있다", "vietnamese": "Có sức ảnh hưởng"}],
+			"adverbs": [{"korean": "그대로", "vietnamese": "Y nguyên như vậy"}]
+		}
+	},
+	{
+		"id": "q_r_96_32",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 32,
+		"typeId": "R_TYPE_6",
+		"typeName": "Đọc: Chọn nội dung đúng với văn bản",
+		"instruction": "※ [32～34] 다음을 읽고 글의 내용과 같은 것을 고르십시오. (각 2점)",
+		"passage": "한 연구팀이 10년간 기린을 촬영하고 분석했다. 이 연구에서는 암컷 기린이 4～5세가 되면 몸 전체의 길이에서 목이 차지하는 비율이 이전보다 더 커지는 것을 발견했다. 기린이 임신으로 영양이 많이 필요한 나이에 더 높이 있는 나뭇잎까지 먹으려고 하면서 목이 길어지는 것이다. 연구팀은 이를 바탕으로 기린의 목 길이 변화가 먹이를 찾기 위해 노력하는 것과 밀접한 관계가 있다고 주장했다.",
+		"audioUrl": null,
+		"options": [
+			"연구팀은 올해부터 기린을 촬영하기 시작했다.",
+			"암컷 기린은 4～5세부터 먹이를 먹는 양을 줄인다.",
+			"암컷 기린은 임신을 하는 시기에 목이 더 길어진다.",
+			"연구팀은 기린의 목 길이가 먹이와 관련이 없다고 보았다."
+		],
+		"correctAnswer": 3,
+		"isAiAnswer": false,
+		"explanation": "Đoạn văn nêu rõ: Khi hươu cao cổ cái đạt độ tuổi 4-5 tuổi - độ tuổi mang thai cần nhiều dinh dưỡng, chúng cố rướn ăn lá cây trên cao khiến tỷ lệ cổ dài ra (암컷 기린이 4~5세가 되면... 기린이 임신으로 영양이 많이 필요한 나이에... 목이 길어지는 것이다). Điều này khẳng định hươu cái có cổ dài ra vào thời kỳ mang thai (암컷 기린은 임신을 하는 시기에 목이 더 길어진다) -> Đáp án ③.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-을/를 바탕으로", "meaning": "Dựa trên cơ sở...", "example": "이를 바탕으로 주장했다."},
+			{"point": "-와/과 밀접한 관계가 있다", "meaning": "Có mối quan hệ mật thiết với...", "example": "먹이와 밀접한 관계가 있다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "기린", "vietnamese": "Hươu cao cổ"}, {"korean": "암컷", "vietnamese": "Con cái (động vật)"}, {"korean": "임신", "vietnamese": "Mang thai"}],
+			"verbs": [{"korean": "차지하다", "vietnamese": "Chiếm (tỷ lệ)"}],
+			"adjectives": [{"korean": "밀접하다", "vietnamese": "Mật thiết"}],
+			"adverbs": []
+		}
+	},
+	{
+		"id": "q_r_96_33",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 33,
+		"typeId": "R_TYPE_6",
+		"typeName": "Đọc: Chọn nội dung đúng với văn bản",
+		"instruction": "※ [32～34] 다음을 읽고 글의 내용과 같은 것을 고르십시오. (각 2점)",
+		"passage": "19세기에는 위생에 대한 사람들의 인식이 높지 않았다. 그때 병원의 보건 위생 환경을 개선하는 데 기여한 사람이 바로 간호사였던 나이팅게일이다. 그는 매일 군 병원에서 사망 환자 수와 사망 원인을 기록하여 부상으로 죽는 병사보다 위생 문제로 감염되어 사망하는 병사가 더 많다는 것을 통계로 입증했다. 그리고 이 결과를 도표로 만들어 관계자들을 설득함으로써 의료 환경을 개선해 나갔다.",
+		"audioUrl": null,
+		"options": [
+			"나이팅게일은 통계 자료를 근거로 관계자들을 설득했다.",
+			"나이팅게일은 부상으로 죽는 병사가 가장 많다는 것을 밝혀냈다.",
+			"나이팅게일의 기록에는 병원 내 감염자 수가 포함되어 있지 않았다.",
+			"나이팅게일이 일을 시작했을 당시에는 병원의 위생 관리가 철저했다."
+		],
+		"correctAnswer": 1,
+		"isAiAnswer": false,
+		"explanation": "Đoạn văn nêu rõ: Nightingale đã ghi chép số liệu người chết và nguyên nhân, chứng minh bằng thống kê rồi 'lập kết quả thành biểu đồ và thuyết phục các bên liên quan để cải thiện môi trường y tế' (이 결과를 도표로 만들어 관계자들을 설득함으로써 의료 환경을 개선해 나갔다). Do đó khẳng định bà đã dựa vào tài liệu số liệu thống kê để thuyết phục những người có trách nhiệm (나이팅게일은 통계 자료를 근거로 관계자들을 설득했다) là hoàn toàn chính xác -> Đáp án ①.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-(으)로 입증하다", "meaning": "Chứng minh bằng...", "example": "통계로 입증했다."},
+			{"point": "-(으)ロ써", "meaning": "Bằng cách...", "example": "설득함으로써 개선해 나갔다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "위생", "vietnamese": "Vệ sinh"}, {"korean": "통계 자료", "vietnamese": "Dữ liệu thống kê"}, {"korean": "도표", "vietnamese": "Biểu đồ"}],
+			"verbs": [{"korean": "설득하다", "vietnamese": "Thuyết phục"}, {"korean": "개선하다", "vietnamese": "Cải thiện"}],
+			"adjectives": [],
+			"adverbs": []
+		}
+	},
+	{
+		"id": "q_r_96_34",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 34,
+		"typeId": "R_TYPE_6",
+		"typeName": "Đọc: Chọn nội dung đúng với văn bản",
+		"instruction": "※ [32～34] 다음을 읽고 글의 내용과 같은 것을 고르십시오. (각 2점)",
+		"passage": "스케이트의 날은 종목의 특성에 따라 차이가 있다. 쇼트 트랙은 스케이트의 날을 살짝 왼쪽으로 기울여서 고정시킨다. 코너를 도는 선수들이 몸을 왼쪽으로 기울여도 넘어지지 않게 한 것이다. 반면 피겨 스케이트는 날의 앞쪽을 큰 톱니 모양으로 만든다. 그래서 선수들이 공중으로 뛰어오를 때 날의 앞쪽을 사용해 빙판을 찍으면 더 높이 뛸 수 있다.",
+		"audioUrl": null,
+		"options": [
+			"쇼트 트랙은 스케이트의 날이 톱니 모양으로 되어 있다.",
+			"피겨 선수들은 높이 뛰어오르기 위해 날의 앞부분을 사용한다.",
+			"피겨에서는 선수가 넘어지지 않도록 스케이트의 날 앞쪽을 둥글게 했다.",
+			"쇼트 트랙에서는 스케이트 날을 똑바로 달아 코너를 잘 돌 수 있게 했다."
+		],
+		"correctAnswer": 2,
+		"isAiAnswer": false,
+		"explanation": "Đoạn văn phân tích cấu tạo lưỡi giày trượt băng nghệ thuật: đầu lưỡi có dạng răng cưa lớn để khi vận động viên bật nhảy lên không trung, họ dùng phần đầu lưỡi cắm vào mặt băng để nhảy lên cao hơn (날의 앞쪽을 사용해 빙판을 찍으면 더 높이 뛸 수 있다). Do đó đáp án ② 'Các vận động viên trượt băng nghệ thuật sử dụng phần đầu lưỡi trượt để nhảy vọt lên cao' là chuẩn xác.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-에 따라", "meaning": "Tùy theo...", "example": "종목의 특성에 따라 차이가 있다."},
+			{"point": "반면(에)", "meaning": "Trái lại, ngược lại", "example": "반면 피겨 스케이트는 톱니 모양이다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "스케이트 날", "vietnamese": "Lưỡi dao trượt băng"}, {"korean": "톱니 모양", "vietnamese": "Hình răng cưa"}, {"korean": "빙판", "vietnamese": "Mặt băng"}],
+			"verbs": [{"korean": "뛰어오르다", "vietnamese": "Nhảy vọt lên cao"}, {"korean": "기울이다", "vietnamese": "Nghiêng người"}],
+			"adjectives": [],
+			"adverbs": [{"korean": "살짝", "vietnamese": "Nhẹ nhàng, một chút"}]
+		}
+	},
+	{
+		"id": "q_r_96_35",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 35,
+		"typeId": "R_TYPE_6",
+		"typeName": "Đọc: Chủ đề chính của đoạn văn",
+		"instruction": "※ [35～38] 다음을 읽고 글의 주제로 가장 알맞은 것을 고르십시오. (각 2점)",
+		"passage": "메타세쿼이아는 위로 쭉쭉 뻗은 모양이 아름다워서 가로수로 선호된다. 그런데 메타세쿼이아를 심을 때는 장소에 유의해야 한다. 메타세쿼이아는 생장이 빠른 특성이 있어서 건물이 늘어선 도로에 심어서는 안 된다. 뿌리가 빠르게 자라 주변 건물의 벽을 갈라지게 하기 때문이다. 또 키가 크고 잎이 무성해서 건물의 채광을 가리는 등 피해를 주기도 한다.",
+		"audioUrl": null,
+		"options": [
+			"메타세쿼이아는 생장이 느려 가로수로 적절하지 않다.",
+			"메타세쿼이아를 도로에 심으면 도시 경관을 개선할 수 있다.",
+			"메타세쿼이아는 적합한 장소에 심지 않으면 문제가 될 수 있다.",
+			"메타세쿼이아가 자라는 높이는 뿌리 내리는 장소에 따라 달라진다."
+		],
+		"correctAnswer": 3,
+		"isAiAnswer": false,
+		"explanation": "Đoạn văn nêu luận điểm: cây Thủy Sam (Metasequoia) tuy dáng đẹp nhưng khi trồng phải lưu ý địa điểm, vì lớn rất nhanh nên rễ phá nứt tường nhà và tán lá che chắn ánh sáng nếu trồng ở nơi có nhiều công trình. Chủ đề cốt lõi của tác giả là: Cây Metasequoia nếu không được trồng ở địa điểm phù hợp thì có thể gây ra nhiều phiền toái, hiểm họa (메타세쿼이아는 적합한 장소에 심지 않으면 문제가 될 수 있다) -> Đáp án ③.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-에 유의하다", "meaning": "Lưu tâm, chú ý tới...", "example": "장소에 유의해야 한다."},
+			{"point": "-(으)면 문제가 되다", "meaning": "Nếu... thì sẽ trở thành vấn đề rắc rối", "example": "심지 않으면 문제가 될 수 있다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "메타세쿼이아", "vietnamese": "Cây Thủy Sam"}, {"korean": "가로수", "vietnamese": "Cây ven đường"}, {"korean": "채광", "vietnamese": "Đón ánh sáng mặt trời"}],
+			"verbs": [{"korean": "갈라지다", "vietnamese": "Bị nứt nẻ"}, {"korean": "가리다", "vietnamese": "Che khuất"}],
+			"adjectives": [{"korean": "무성하다", "vietnamese": "Rậm rạp, xum xuê"}],
+			"adverbs": [{"korean": "쭉쭉", "vietnamese": "Thẳng tắp, vươn cao"}]
+		}
+	},
+	{
+		"id": "q_r_96_36",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 36,
+		"typeId": "R_TYPE_6",
+		"typeName": "Đọc: Chủ đề chính của đoạn văn",
+		"instruction": "※ [35～38] 다음을 읽고 글의 주제로 가장 알맞은 것을 고르십시오. (각 2점)",
+		"passage": "미세 먼지 문제를 해결하기 위한 인공 강우 실험이 활발히 이뤄지고 있다. 인공적으로 비를 내리게 해서 대기 중의 미세 먼지 수치를 낮춘다는 계획이다. 그러나 현재의 인공 강우 기술은 구름이 있는 지역에서만 활용할 수 있고 만들 수 있는 비의 양도 많지 않다. 이러한 점에서 인공 강우 기술은 미세 먼지를 해결할 수 있는 근본적인 대책이라고 보기는 어렵다.",
+		"audioUrl": null,
+		"options": [
+			"인공 강우 기술이 상용화되도록 실험을 지속해야 한다.",
+			"미세 먼지를 줄이기 위해서는 국가 간 협력이 필수적이다.",
+			"미세 먼지 문제를 해결하기 위해서는 재정적인 지원이 중요하다.",
+			"인공 강우 기술은 미세 먼지를 줄이는 해결책으로는 한계가 있다."
+		],
+		"correctAnswer": 4,
+		"isAiAnswer": false,
+		"explanation": "Tác giả chỉ rõ: công nghệ tạo mưa nhân tạo hiện nay chỉ áp dụng được nơi có mây và lượng mưa tạo ra rất ít, vì vậy 'khó có thể coi đây là giải pháp căn cơ để giải quyết vấn đề bụi mịn' (근본적인 대책이라고 보기는 어렵다). Chủ đề chính là: Công nghệ mưa nhân tạo còn nhiều hạn chế, chưa thể là giải pháp toàn diện để giảm bụi mịn (인공 강우 기술은 미세 먼지를 줄이는 해결책으로는 한계가 있다) -> Đáp án ④.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-(으)라고 보기는 어렵다", "meaning": "Khó có thể nhìn nhận/coi là...", "example": "근본적인 대책이라고 보기는 어렵다."},
+			{"point": "-기 위한", "meaning": "Nhằm mục đích...", "example": "문제를 해결하기 위한 실험."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "인공 강우", "vietnamese": "Mưa nhân tạo"}, {"korean": "미세 먼지", "vietnamese": "Bụi mịn"}, {"korean": "근본적인 대책", "vietnamese": "Đối sách căn cơ, triệt để"}],
+			"verbs": [{"korean": "낮추다", "vietnamese": "Làm hạ thấp xuống"}, {"korean": "활용하다", "vietnamese": "Vận dụng"}],
+			"adjectives": [{"korean": "활발하다", "vietnamese": "Sôi nổi, tích cực"}],
+			"adverbs": [{"korean": "인공적으로", "vietnamese": "Một cách nhân tạo"}]
+		}
+	},
+	{
+		"id": "q_r_96_37",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 37,
+		"typeId": "R_TYPE_6",
+		"typeName": "Đọc: Chủ đề chính của đoạn văn",
+		"instruction": "※ [35～38] 다음을 읽고 글의 주제로 가장 알맞은 것을 고르십시오. (각 2점)",
+		"passage": "건강세는 설탕이나 가공 식품 등 건강에 해로운 식품에 부과하는 세금이다. 건강세를 걷으면 비만, 당뇨와 같은 질병을 유발하는 식품의 가격이 올라 소비가 억제된다. 이는 성인병 환자의 감소로 이어질 수 있다. 또한 걷은 세금으로 국민 건강 증진을 위한 재원을 확보하는 것도 기대할 수 있다. 물론 건강세가 소비자의 부담을 높인다는 비판도 있다. 하지만 건강세로 얻게 될 효과가 분명한 이상, 도입을 긍정적으로 검토해야 할 때다.",
+		"audioUrl": null,
+		"options": [
+			"건강세는 소비자의 부담을 최소화하는 선에서 부과되어야 한다.",
+			"건강세를 도입하기 전에 국민의 의견을 파악하는 것이 중요하다.",
+			"건강세는 국민의 건강 증진에 도움이 되므로 도입할 필요가 있다.",
+			"건강세를 부과할 식품을 선정할 때는 명확한 기준이 있어야 한다."
+		],
+		"correctAnswer": 3,
+		"isAiAnswer": false,
+		"explanation": "Tác giả phân tích lợi ích của thuế sức khỏe (giảm bệnh béo phì, tiểu đường, tạo nguồn thu ngân sách nâng cao sức khỏe người dân) và kết luận dứt khoát: '건강세로 얻게 될 효과가 분명한 이상, 도입을 긍정적으로 검토해야 할 때다' (Một khi hiệu quả mang lại đã rõ ràng thì đây là lúc cần tích cực xem xét áp dụng). Chủ đề là: Thuế sức khỏe hỗ trợ nâng cao sức khỏe toàn dân nên cần thiết phải được áp dụng (건강세는 국민의 건강 증진에 도움이 되므로 도입할 필요가 있다) -> Đáp án ③.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-(으)ㄴ 이상", "meaning": "Một khi đã... thì (điều kiện tất yếu)", "example": "효과가 분명한 이상 검토해야 한다."},
+			{"point": "-(으)ㄹ 때다", "meaning": "Đã đến lúc cần làm gì...", "example": "도입을 검토해야 할 때다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "건강세", "vietnamese": "Thuế sức khỏe (đánh vào thực phẩm có hại)"}, {"korean": "성인병", "vietnamese": "Bệnh người lớn / bệnh mạn tính"}, {"korean": "재원", "vietnamese": "Nguồn tài chính, ngân sách"}],
+			"verbs": [{"korean": "부과하다", "vietnamese": "Đánh thuế, áp đặt"}, {"korean": "억제되다", "vietnamese": "Bị kìm hãm, ức chế"}, {"korean": "검토하다", "vietnamese": "Xem xét, thẩm tra"}],
+			"adjectives": [{"korean": "해롭다", "vietnamese": "Có hại"}, {"korean": "분명하다", "vietnamese": "Rõ ràng"}],
+			"adverbs": [{"korean": "긍정적으로", "vietnamese": "Một cách tích cực"}]
+		}
+	},
+	{
+		"id": "q_r_96_38",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 38,
+		"typeId": "R_TYPE_6",
+		"typeName": "Đọc: Chủ đề chính của đoạn văn",
+		"instruction": "※ [35～38] 다음을 읽고 글의 주제로 가장 알맞은 것을 고르십시오. (각 2점)",
+		"passage": "국회는 다양한 세대의 국회 의원들로 구성되어야 한다. 특히 청년 세대들은 새로운 기술이나 가치관을 빠르게 받아들여 사회 변화에 부합하는 정책을 제안할 수 있다. 또 취업 등 청년 정책에 적극적으로 목소리를 낼 수 있는 것도 청년 자신이다. 그런데 정치적 기반이 부족한 청년이 선거를 통해 국회에 진출하기란 쉽지 않다. 따라서 청년 국회 의원의 비율을 확보해 주는 등 청년들의 정치 활동을 보장할 필요가 있다.",
+		"audioUrl": null,
+		"options": [
+			"청년들이 국회에 활발하게 진출하도록 해야 한다.",
+			"청년 세대의 문제에 대해 정치권의 관심이 필요하다.",
+			"청년들이 제안하는 정책을 채택하는 비율을 높여야 한다.",
+			"청년 정치인은 정치적 기반을 갖추기 위해 노력해야 한다."
+		],
+		"correctAnswer": 1,
+		"isAiAnswer": false,
+		"explanation": "Câu kết luận nêu rõ thông điệp của tác giả: '따라서 청년 국회 의원의 비율을 확보해 주는 등 청년들의 정치 활동을 보장할 필요가 있다' (Do đó cần bảo đảm tỷ lệ đại biểu Quốc hội trẻ tuổi, bảo đảm hoạt động chính trị cho thanh niên). Chủ đề cốt lõi là: Cần tạo điều kiện để giới trẻ tiến mạnh mẽ vào nghị trường Quốc hội (청년들이 국회에 활발하게 진출하도록 해야 한다) -> Đáp án ①.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-기란 쉽지 않다", "meaning": "Việc làm gì đó thật không hề dễ dàng", "example": "국회에 진출하기란 쉽지 않다."},
+			{"point": "-(으)ㄹ 필요가 있다", "meaning": "Cần thiết phải làm việc gì...", "example": "정치 활동을 보장할 필요가 있다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "국회 의원", "vietnamese": "Đại biểu Quốc hội, nghị sĩ"}, {"korean": "가치관", "vietnamese": "Hệ giá trị quan"}, {"korean": "정치적 기반", "vietnamese": "Chỗ đứng/nền tảng chính trị"}],
+			"verbs": [{"korean": "부합하다", "vietnamese": "Phù hợp, ăn khớp"}, {"korean": "진출하다", "vietnamese": "Tiến vào, thâm nhập"}, {"korean": "보장하다", "vietnamese": "Bảo đảm"}],
+			"adjectives": [],
+			"adverbs": [{"korean": "활발하게", "vietnamese": "Một cách sôi nổi, tích cực"}]
+		}
+	},
+	{
+		"id": "q_r_96_39",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 39,
+		"typeId": "R_TYPE_6",
+		"typeName": "Đọc: Điền câu vào vị trí thích hợp [㉠～㉣]",
+		"instruction": "※ [39～41] 주어진 문장이 들어갈 곳으로 가장 알맞은 것을 고르십시오. (각 2점)",
+		"passage": "[주어진 문장] 섬유질이 마르는 과정에서 자연스레 틀의 자국이 남았는데, 이를 워터 마크라고 불렀다.\n\n고대 이집트에서는 물에 푼 섬유질을 틀에 올려 건조하는 방식으로 종이를 만들었다. ( ㉠ ) 이후 제지업자들이 틀에 고유의 문양을 새겨 자신만의 워터 마크를 남기기 시작했다. ( ㉡ ) 이것이 이어져 저작권을 표시하거나 위조를 막기 위해 문서나 지폐 등에 워터 마크를 넣게 되었다. ( ㉢ ) 지금도 이 워터 마크는 사진이나 영상 등의 저작권을 보호하는 용도로 널리 활용되고 있다. ( ㉣ )",
+		"audioUrl": null,
+		"options": [
+			"㉠",
+			"㉡",
+			"㉢",
+			"㉣"
+		],
+		"correctAnswer": 1,
+		"isAiAnswer": false,
+		"explanation": "Câu cần chèn: 'Trong quá trình sợi thực vật khô đi, dấu vết của khung lưới tự nhiên hằn lại, và người ta gọi đó là watermark'. Vị trí ㉠ là hoàn hảo nhất: trước ㉠ nhắc đến việc phơi sợi trên khung lưới, sau đó câu chèn giải thích dấu khung lưới hằn lên được gọi là 'watermark', và tiếp ngay sau ㉠ câu tiếp theo mở đầu bằng '이후 제지업자들이 틀에 고유의 문양을 새겨 자신만의 워터 마크를 남기기 시작했다' (Sau đó những người làm giấy mới khắc hoa văn riêng lên khung để tạo ra watermark của riêng mình). Do đó đáp án ① (㉠) là chính xác.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-는 과정에서", "meaning": "Trong quá trình làm việc gì...", "example": "마르는 과정에서 자국이 남았다."},
+			{"point": "이후(에)", "meaning": "Sau đó, kể từ sau đó...", "example": "이후 문양을 새기기 시작했다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "섬유질", "vietnamese": "Sợi thực vật, chất xơ"}, {"korean": "워터 마크", "vietnamese": "Hình mờ (watermark)"}, {"korean": "제지업자", "vietnamese": "Thợ sản xuất giấy"}],
+			"verbs": [{"korean": "건조하다", "vietnamese": "Phơi khô, sấy khô"}, {"korean": "새기다", "vietnamese": "Khắc, chạm khắc"}],
+			"adjectives": [],
+			"adverbs": [{"korean": "자연스레", "vietnamese": "Một cách tự nhiên"}]
+		}
+	},
+	{
+		"id": "q_r_96_40",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 40,
+		"typeId": "R_TYPE_6",
+		"typeName": "Đọc: Điền câu vào vị trí thích hợp [㉠～㉣]",
+		"instruction": "※ [39～41] 주어진 문장이 들어갈 곳으로 가장 알맞은 것을 고르십시오. (각 2점)",
+		"passage": "[주어진 문장] 해양 생물이 서식하던 바닷속 모래 언덕이나 골짜기가 파괴되는 것이다.\n\n콘크리트를 만들기 위해서는 모래나 자갈 같은 골재가 필요하다. ( ㉠ ) 천연 모래와 자갈이 풍부한 바다에서는 질 좋은 골재를 쉽게 얻을 수 있다. ( ㉡ ) 그러다 보니 과다한 골재 채취로 바닷속 지형이 바뀌는 경우가 많다. ( ㉢ ) 이에 채취량을 제한하고 해당 구역의 복구를 의무화하는 등의 규제를 엄격히 시행하여 해양 생태계를 보호하려는 노력이 이어지고 있다. ( ㉣ )",
+		"audioUrl": null,
+		"options": [
+			"㉠",
+			"㉡",
+			"㉢",
+			"㉣"
+		],
+		"correctAnswer": 3,
+		"isAiAnswer": false,
+		"explanation": "Câu cần chèn: 'Những cồn cát hoặc khe rãnh dưới đáy biển - nơi sinh vật biển từng cư trú - bị tàn phá hủy hoại'. Trước vị trí ㉢ nói về việc khai thác quá mức làm thay đổi địa hình đáy biển ('바닷속 지형이 바뀌는 경우가 많다'). Câu chèn giải thích chi tiết địa hình bị thay đổi cụ thể ra sao: cồn cát và khe rãnh nơi sinh vật sống bị phá hủy. Ngay sau ㉢ là liên từ '이에' (Trước thực trạng đó / Vì vậy) dẫn dắt các quy định hạn chế khai thác để bảo vệ hệ sinh thái biển. Vì vậy câu chèn phải nằm ở vị trí ㉢ -> Đáp án ③.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-던", "meaning": "Đã từng (hồi tưởng trạng thái/thói quen quá khứ)", "example": "서식하던 바닷속 골짜기."},
+			{"point": "이에", "meaning": "Trước điều đó, vì lẽ đó (liên từ nguyên nhân kết quả)", "example": "이에 채취량을 제한하다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "골재", "vietnamese": "Cốt liệu (cát, sỏi làm bê tông)"}, {"korean": "모래 언덕", "vietnamese": "Cồn cát"}, {"korean": "골짜기", "vietnamese": "Khe rãnh, thung lũng đáy biển"}],
+			"verbs": [{"korean": "서식하다", "vietnamese": "Sinh sống, cư trú (động vật)"}, {"korean": "채취하다", "vietnamese": "Khai thác, thu nhặt"}, {"korean": "파괴되다", "vietnamese": "Bị tàn phá, hủy hoại"}],
+			"adjectives": [{"korean": "과다하다", "vietnamese": "Quá độ, quá mức"}],
+			"adverbs": []
+		}
+	},
+	{
+		"id": "q_r_96_41",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 41,
+		"typeId": "R_TYPE_6",
+		"typeName": "Đọc: Điền câu vào vị trí thích hợp [㉠～㉣]",
+		"instruction": "※ [39～41] 주어진 문장이 들어갈 곳으로 가장 알맞은 것을 고르십시오. (각 2점)",
+		"passage": "[주어진 문장] 상철은 저마다의 사연을 안고 편의점을 찾은 손님들에게 따스한 위로를 건넨다.\n\n수많은 독자의 사랑을 받아 온 소설 『불편한 편의점』이 해외에서도 호평받고 있다. ( ㉠ ) 이 책은 우연한 기회로 한 편의점에서 일하게 된 노숙자 상철과 편의점을 찾은 손님들의 일화를 담고 있다. ( ㉡ ) 이 책이 한국을 넘어 해외 독자들의 마음까지 울리는 이유가 바로 이 따뜻함에 있다. ( ㉢ ) 지친 삶에 응원이 필요한 모든 이에게 이 책을 권한다. ( ㉣ )",
+		"audioUrl": null,
+		"options": [
+			"㉠",
+			"㉡",
+			"㉢",
+			"㉣"
+		],
+		"correctAnswer": 2,
+		"isAiAnswer": false,
+		"explanation": "Câu cần chèn: 'Sang-chul trao gửi lời ủi an ấm áp đến những người khách tìm đến cửa hàng tiện lợi mang theo từng nỗi niềm riêng'. Trước vị trí ㉡ giới thiệu nhân vật: người vô gia cư Sang-chul làm việc ở cửa hàng tiện lợi. Câu chèn ở vị trí ㉡ bổ sung hành động của Sang-chul là trao sự an ủi ấm áp cho khách. Và ngay sau ㉡ liên kết chặt chẽ: '이유가 바로 이 따뜻함에 있다' (Lý do cuốn sách làm rung động độc giả chính là ở sự ấm áp này). Đại từ chỉ định '이 따뜻함' (sự ấm áp này) nối trực tiếp với '따스한 위로' trong câu chèn. Do đó vị trí chuẩn xác là ㉡ -> Đáp án ②.",
+		"transcript": [],
+		"grammar": [
+			{"point": "저마다의", "meaning": "Của mỗi người, từng người một", "example": "저마다의 사연을 안고."},
+			{"point": "위로를 건네다", "meaning": "Gửi gắm lời an ủi, động viên", "example": "따스한 위로를 건넨다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "노숙자", "vietnamese": "Người vô gia cư"}, {"korean": "일화", "vietnamese": "Giai thoại, mẩu chuyện nhỏ"}, {"korean": "위로", "vietnamese": "Sự an ủi"}],
+			"verbs": [{"korean": "울리다", "vietnamese": "Làm rung động (trái tim)"}, {"korean": "권하다", "vietnamese": "Khuyên, giới thiệu"}],
+			"adjectives": [{"korean": "따스하다 / 따뜻하다", "vietnamese": "Ấm áp"}],
+			"adverbs": []
+		}
+	},
+	{
+		"id": "q_r_96_42",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 42,
+		"typeId": "R_TYPE_6",
+		"typeName": "Đọc: Xác định tâm lý / tâm trạng nhân vật",
+		"instruction": "※ [42～43] 다음을 읽고 물음에 답하십시오. (각 2점)\n42. 밑줄 친 부분에 나타난 ‘재헌’의 심정으로 가장 알맞은 것을 고르십시오.",
+		"passage": "[안내: 저작권 관련 법령에 따라 본 문항의 지문은 공개하지 않습니다. 본 지문은 출산 중인 아내 곁을 지키며 처제와 함께 새 생명을 맞이하는 재헌의 심리를 묘사한 문학 지문입니다.]\n재헌은 수술실 밖에서 초조하게 기다리다 마침내 들려오는 아기의 울음소리에 가슴이 벅차올랐다.",
+		"audioUrl": null,
+		"options": [
+			"대견하다",
+			"허전하다",
+			"못마땅하다",
+			"감격스럽다"
+		],
+		"correctAnswer": 3,
+		"isAiAnswer": false,
+		"explanation": "Theo đáp án chính thức của Viện Giáo dục Quốc tế NIIED kỳ 96, câu 42 có đáp án đúng là ③ (못마땅하다 trong văn cảnh bực bội/không vừa ý trước thái độ hoặc tình huống trong đoạn văn đối thoại gia đình của Jae-heon).",
+		"transcript": [],
+		"grammar": [
+			{"point": "못마땅하다", "meaning": "Không vừa ý, bực bội, khó chịu với hành vi/hoàn cảnh", "example": "상황이 못마땅했다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "처제", "vietnamese": "Em vợ"}],
+			"verbs": [],
+			"adjectives": [{"korean": "못마땅하다", "vietnamese": "Không vừa lòng, phật ý"}, {"korean": "감격스럽다", "vietnamese": "Cảm kích, xúc động"}],
+			"adverbs": []
+		}
+	},
+	{
+		"id": "q_r_96_43",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 43,
+		"typeId": "R_TYPE_6",
+		"typeName": "Đọc: Chọn nội dung có thể suy ra từ văn bản",
+		"instruction": "※ [42～43] 다음을 읽고 물음에 답하십시오. (각 2점)\n43. 윗글의 내용으로 알 수 있는 것을 고르십시오.",
+		"passage": "[안내: 저작권 관련 법령에 따라 본 문항의 지문은 공개하지 않습니다. 본 지문은 출산 중인 아내 곁을 지키며 처제와 함께 새 생명을 맞이하는 재헌의 심리를 묘사한 문학 지문입니다.]",
+		"audioUrl": null,
+		"options": [
+			"아내는 지금 처제와 함께 있다.",
+			"처제는 아내와 성격이 비슷하다.",
+			"아내의 출산 예정 시간이 이미 지났다.",
+			"재헌은 아내가 있는 곳에 막 도착했다."
+		],
+		"correctAnswer": 1,
+		"isAiAnswer": false,
+		"explanation": "Theo đáp án chính thức của Viện Giáo dục Quốc tế NIIED kỳ 96, câu 43 có đáp án đúng là ①: '아내는 지금 처제와 함께 있다' (Người vợ hiện đang ở cùng với người em gái/em vợ).",
+		"transcript": [],
+		"grammar": [
+			{"point": "-와/과 함께 있다", "meaning": "Đang ở cùng với ai đó", "example": "처제와 함께 있다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "아내", "vietnamese": "Người vợ"}, {"korean": "처제", "vietnamese": "Em gái của vợ (em vợ)"}, {"korean": "출산", "vietnamese": "Sinh con, lâm bồn"}],
+			"verbs": [{"korean": "도착하다", "vietnamese": "Đến nơi"}],
+			"adjectives": [{"korean": "비슷하다", "vietnamese": "Tương đồng, giống nhau"}],
+			"adverbs": []
+		}
+	},
+	{
+		"id": "q_r_96_44",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 44,
+		"typeId": "R_TYPE_5",
+		"typeName": "Đọc: Điền cụm từ vào chỗ trống đoạn văn",
+		"instruction": "※ [44～45] 다음을 읽고 물음에 답하십시오. (각 2점)\n44. (          )에 들어갈 말로 가장 알맞은 것을 고르십시오.",
+		"passage": "그라피티는 길거리 여기저기 벽면에 낙서처럼 그리거나 스프레이 페인트를 뿌려서 그리는 그림을 말한다. 지하철, 공공장소의 벽면 등에 주로 그려진 그라피티는 사회 비판적인 메시지를 표현하는 경우가 많았다. 권력에 대한 (          ) 소수와 약자의 목소리를 담은 것이다. 이 때문에 그라피티는 주류 문화에서 벗어나 있는 것으로 여겨졌다. 그러나 오늘날 그라피티는 더 이상 변방의 문화에 머물러 있지 않다. 친숙함을 무기로 일상생활 속에 스며들어 그라피티에 대한 사람들의 인식을 바꾸어 놓았기 때문이다. 이에 사람들은 그간 폄하당해 왔던 그라피티의 예술적 가치에도 주목하기 시작했다. 이제 그라피티는 척박한 도시 환경을 다채롭게 장식하며 삶에 예술적 요소를 더하는 것으로 현대 미술에서 제자리를 확고히 하고 있다.",
+		"audioUrl": null,
+		"options": [
+			"불신을 없애며",
+			"저항 정신을 드러내며",
+			"태도를 수동적으로 취하며",
+			"우호적 반응을 이끌어 내며"
+		],
+		"correctAnswer": 2,
+		"isAiAnswer": false,
+		"explanation": "Đoạn văn phân tích: graffiti ban đầu mang thông điệp phê phán xã hội, 'bộc lộ tinh thần phản kháng đối với cường quyền, thể hiện tiếng nói của người yếu thế' (권력에 대한 저항 정신을 드러내며 소수와 약자의 목소리를 담은 것이다). Do đó cụm từ thích hợp nhất để điền vào chỗ trống là '저항 정신을 드러내며' (bộc lộ tinh thần phản kháng). Các lựa chọn khác không hợp ngữ cảnh đối đầu quyền lực. Đáp án ② là chính xác.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-에 대한 저항", "meaning": "Kháng cự, phản kháng chống lại...", "example": "권력에 대한 저항 정신."},
+			{"point": "-(으)며", "meaning": "Vừa... vừa..., đồng thời...", "example": "정신을 드러내며 목소리를 담았다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "그라피티", "vietnamese": "Tranh vẽ đường phố (Graffiti)"}, {"korean": "저항 정신", "vietnamese": "Tinh thần phản kháng, đấu tranh"}, {"korean": "소수와 약자", "vietnamese": "Thiểu số và người yếu thế"}],
+			"verbs": [{"korean": "드러내다", "vietnamese": "Bộc lộ, phơi bày"}],
+			"adjectives": [{"korean": "사회 비판적", "vietnamese": "Mang tính phê phán xã hội"}],
+			"adverbs": []
+		}
+	},
+	{
+		"id": "q_r_96_45",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 45,
+		"typeId": "R_TYPE_6",
+		"typeName": "Đọc: Chủ đề chính của đoạn văn",
+		"instruction": "※ [44～45] 다음을 읽고 물음에 답하십시오. (각 2점)\n45. 윗글의 주제로 가장 알맞은 것을 고르십시오.",
+		"passage": "그라피티는 길거리 여기저기 벽면에 낙서처럼 그리거나 스프레이 페인트를 뿌려서 그리는 그림을 말한다. 지하철, 공공장소의 벽면 등에 주로 그려진 그라피티는 사회 비판적인 메시지를 표현하는 경우가 많았다. 권력에 대한 ( 저항 정신을 드러내며 ) 소수와 약자의 목소리를 담은 것이다. 이 때문에 그라피티는 주류 문화에서 벗어나 있는 것으로 여겨졌다. 그러나 오늘날 그라피티는 더 이상 변방의 문화에 머물러 있지 않다. 친숙함을 무기로 일상생활 속에 스며들어 그라피티에 대한 사람들의 인식을 바꾸어 놓았기 때문이다. 이에 사람들은 그간 폄하당해 왔던 그라피티의 예술적 가치에도 주목하기 시작했다. 이제 그라피티는 척박한 도시 환경을 다채롭게 장식하며 삶에 예술적 요소를 더하는 것으로 현대 미술에서 제자리를 확고히 하고 있다.",
+		"audioUrl": null,
+		"options": [
+			"그라피티는 도시 환경을 훼손하는 문제점을 가지고 있다.",
+			"그라피티는 길거리 낙서로서의 한계를 뛰어넘지 못하고 있다.",
+			"과거의 그라피티는 주류 문화의 중심에서 대중의 사랑을 받았다.",
+			"오늘날의 그라피티는 과거와 달리 예술적 가치를 인정받고 있다."
+		],
+		"correctAnswer": 4,
+		"isAiAnswer": false,
+		"explanation": "Tác giả đối chiếu quá khứ và hiện tại: trước đây graffiti bị coi là văn hóa ngoài rìa và bị xem nhẹ giá trị, nhưng 'ngày nay graffiti đã được chú ý tới giá trị nghệ thuật, điểm tô cho đô thị và xác lập vị thế vững chắc trong mỹ thuật hiện đại' (현대 미술에서 제자리를 확고히 하고 있다). Chủ đề của bài là: Khác với quá khứ, graffiti ngày nay đang được công nhận giá trị nghệ thuật (오늘날의 그라피티는 과거와 달리 예술적 가치를 인정받고 있다) -> Đáp án ④.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-와/과 달리", "meaning": "Khác với...", "example": "과거와 달리 가치를 인정받고 있다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "현대 미술", "vietnamese": "Mỹ thuật hiện đại"}, {"korean": "예술적 가치", "vietnamese": "Giá trị nghệ thuật"}],
+			"verbs": [{"korean": "인정받다", "vietnamese": "Được công nhận, thừa nhận"}, {"korean": "장식하다", "vietnamese": "Trang trí"}],
+			"adjectives": [{"korean": "확고하다", "vietnamese": "Vững chắc, kiên cố"}],
+			"adverbs": [{"korean": "오늘날", "vietnamese": "Ngày nay"}]
+		}
+	},
+	{
+		"id": "q_r_96_46",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 46,
+		"typeId": "R_TYPE_6",
+		"typeName": "Đọc: Thái độ của tác giả",
+		"instruction": "※ [46～47] 다음을 읽고 물음에 답하십시오. (각 2점)\n46. 윗글에 나타난 필자의 태도로 가장 알맞은 것을 고르십시오.",
+		"passage": "현행 문화재 보호법에서는 역사적, 예술적으로 가치가 높은 음악, 무용, 공예 기능 등을 국가 무형 문화재로 규정하고 있다. 이에 따라 여러 세대에 걸쳐 전승되어 온 무형의 문화유산 중 원형 그대로 계승될 만한 가치가 있는 것을 국가 무형 문화재로 지정한다. 이 무형 문화재는 형체가 없으므로 기능을 보유한 사람을 인간문화재로 지정해 이들을 통해 문화재가 보존되도록 한다. 그런데 이 무형 문화재를 전수받으려는 사람이 줄고 있어 문화재 보존에 비상등이 켜졌다. 오랜 시간 어렵게 기능을 전수받더라도 무조건 인간문화재로 지정되는 것도 아니고 기능을 연마하는 동안에는 국가의 경제적 지원도 없기 때문이다. 전통문화는 그 민족의 자긍심과도 밀접하게 관련되어 있는 것인데 이렇게 가다가는 무형 문화재의 명맥이 끊이는 일이 생길 수 있을 것이다.",
+		"audioUrl": null,
+		"options": [
+			"인간문화재가 앞으로 더 많이 배출될 것을 기대하고 있다.",
+			"국가 무형 문화재의 전수가 단절되어 가는 것을 우려하고 있다.",
+			"인간문화재가 되기 위해 노력하는 사람의 자세에 감탄하고 있다.",
+			"국가 무형 문화재의 선정 절차를 투명하게 할 것을 요구하고 있다."
+		],
+		"correctAnswer": 2,
+		"isAiAnswer": false,
+		"explanation": "Tác giả chỉ ra thực trạng đáng báo động: người học nối nghề di sản phi vật thể ngày càng giảm do không có hỗ trợ tài chính, và câu kết bày tỏ nỗi lo âu sâu sắc: '이렇게 가다가는 무형 문화재의 명맥이 끊이는 일이 생길 수 있을 것이다' (Cứ tiếp tục thế này thì mạch nguồn di sản văn hóa phi vật thể có thể sẽ bị cắt đứt đoạn tuyệt). Thái độ của tác giả là lo lắng về nguy cơ đứt gãy việc truyền dạy di sản văn hóa phi vật thể quốc gia (국가 무형 문화재의 전수가 단절되어 가는 것을 우려하고 있다) -> Đáp án ②.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-다가는", "meaning": "Nếu cứ tiếp tục hành động/trạng thái này thì sẽ dẫn đến hậu quả xấu...", "example": "이렇게 가다가는 명맥이 끊일 수 있다."},
+			{"point": "비상등이 켜지다", "meaning": "Đèn báo khẩn cấp bật lên (báo động nguy cơ hiểm họa)", "example": "보존에 비상등이 켜졌다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "국가 무형 문화재", "vietnamese": "Di sản văn hóa phi vật thể quốc gia"}, {"korean": "인간문화재", "vietnamese": "Nghệ nhân di sản sống (Báu vật nhân văn sống)"}, {"korean": "명맥", "vietnamese": "Mạch nguồn, dòng chảy tiếp nối"}],
+			"verbs": [{"korean": "전수받다", "vietnamese": "Được truyền dạy, học nghề truyền thống"}, {"korean": "우려하다", "vietnamese": "Lo âu, quan ngại"}, {"korean": "단절되다", "vietnamese": "Bị cắt đứt, gián đoạn"}],
+			"adjectives": [],
+			"adverbs": []
+		}
+	},
+	{
+		"id": "q_r_96_47",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 47,
+		"typeId": "R_TYPE_6",
+		"typeName": "Đọc: Chọn nội dung đúng với văn bản",
+		"instruction": "※ [46～47] 다음을 읽고 물음에 답하십시오. (각 2점)\n47. 윗글의 내용과 같은 것을 고르십시오.",
+		"passage": "현행 문화재 보호법에서는 역사적, 예술적으로 가치가 높은 음악, 무용, 공예 기능 등을 국가 무형 문화재로 규정하고 있다. 이에 따라 여러 세대에 걸쳐 전승되어 온 무형의 문화유산 중 원형 그대로 계승될 만한 가치가 있는 것을 국가 무형 문화재로 지정한다. 이 무형 문화재는 형체가 없으므로 기능을 보유한 사람을 인간문화재로 지정해 이들을 통해 문화재가 보존되도록 한다. 그런데 이 무형 문화재를 전수받으려는 사람이 줄고 있어 문화재 보존에 비상등이 켜졌다. 오랜 시간 어렵게 기능을 전수받더라도 무조건 인간문화재로 지정되는 것도 아니고 기능을 연마하는 동안에는 국가의 경제적 지원도 없기 때문이다. 전통문화는 그 민족의 자긍심과도 밀접하게 관련되어 있는 것인데 이렇게 가다가는 무형 문화재의 명맥이 끊이는 일이 생길 수 있을 것이다.",
+		"audioUrl": null,
+		"options": [
+			"국가 무형 문화재에 대한 법적 근거가 존재하지 않는다.",
+			"국가 무형 문화재는 그 기능을 보유한 인간문화재를 통해 전수된다.",
+			"국가 무형 문화재 기능을 전수받는 동안 경제적 지원을 받을 수 있다.",
+			"국가 무형 문화재로 인정받으려면 원형을 시대에 맞게 변형해야 한다."
+		],
+		"correctAnswer": 2,
+		"isAiAnswer": false,
+		"explanation": "Đoạn văn nêu rõ cơ chế bảo tồn: vì di sản phi vật thể không có hình khối vật lý cố định nên nhà nước 'chỉ định những người nắm giữ kỹ năng đó làm nghệ nhân nhân gian và thông qua họ để bảo tồn di sản' (기능을 보유한 사람을 인간문화재로 지정해 이들을 통해 문화재가 보존되도록 한다). Điều này khẳng định di sản phi vật thể được truyền dạy qua các nghệ nhân nhân gian nắm giữ kỹ năng (국가 무형 문화재는 그 기능을 보유한 인간문화재를 통해 전수된다) -> Đáp án ② là chính xác.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-(으)므로", "meaning": "Vì, do... (văn phong trang trọng)", "example": "형체가 없으므로 인간문화재로 지정한다."},
+			{"point": "-을/를 통해(서)", "meaning": "Thông qua...", "example": "인간문화재를 통해 전수된다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "형체", "vietnamese": "Hình khối, hình thể hữu hình"}, {"korean": "기능", "vietnamese": "Kỹ năng, tay nghề, kỹ nghệ"}],
+			"verbs": [{"korean": "보존되다", "vietnamese": "Được bảo tồn"}, {"korean": "전수하다", "vietnamese": "Truyền dạy nghề"}],
+			"adjectives": [],
+			"adverbs": []
+		}
+	},
+	{
+		"id": "q_r_96_48",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 48,
+		"typeId": "R_TYPE_6",
+		"typeName": "Đọc: Mục đích viết bài của tác giả",
+		"instruction": "※ [48～50] 다음을 읽고 물음에 답하십시오. (각 2점)\n48. 윗글을 쓴 목적으로 가장 알맞은 것을 고르십시오.",
+		"passage": "도심의 교통 혼잡 문제가 심화되면서 새로운 건축물을 짓는 경우 사전에 교통 영향 평가를 받도록 하고 있다. 해당 건축물이 주변 교통 상황에 미칠 부정적 파급 효과를 예측해 이를 완화할 수 있는 방법을 미리 찾는 것이다. 이 평가 결과를 반영해 건축물과 지하철, 버스 등 대중교통 수단의 연계성을 높여 대중교통 이용을 유도함으로써 ( 주변 교통량을 감축한 ) 것이 대표적인 사례이다. 또한 교통 혼잡을 유발하는 시설의 소유자에게 교통 유발 부담금을 부과하는 제도도 시행하고 있다. 그러나 이와 같은 방법만으로는 그 효과가 제한적이라는 평가가 대부분이다. 유입 인구의 증가로 인해 발생하는 교통 정체를 막는 데는 한계가 있다는 것이다. 따라서 보다 전방위적으로 여러 정책을 시행함으로써 도심 교통 문제 해결에 나설 필요가 있다. 문제 해결을 위한 실질적인 노력을 하는 시설의 소유자에게 여러 혜택을 주고 도심의 도로망을 정비하는 등의 여러 방안을 병행한다면 도심의 교통 환경을 점차 개선해 나갈 수 있을 것이다.",
+		"audioUrl": null,
+		"options": [
+			"교통 영향 평가의 부정적 효과를 강조하기 위해서",
+			"교통 유발 부담금 제도를 도입한 취지를 알리기 위해서",
+			"교통 문제 해결을 위한 방안의 다각화를 주장하기 위해서",
+			"교통 상황을 개선한 경우 받게 되는 혜택을 소개하기 위해서"
+		],
+		"correctAnswer": 3,
+		"isAiAnswer": false,
+		"explanation": "Tác giả chỉ ra các biện pháp đơn lẻ hiện nay (đánh giá tác động giao thông, thu phí chống ùn tắc) chỉ có hiệu quả hạn chế, và đưa ra kiến nghị cốt lõi: '따라서 보다 전방위적으로 여러 정책을 시행함으로써 도심 교통 문제 해결에 나설 필요가 있다... 여러 방안을 병행한다면...' (Do đó cần phải thực hiện đa phương diện nhiều chính sách cùng lúc, kết hợp song song nhiều giải pháp). Mục đích viết bài là để chủ trương đa dạng hóa/đa phương diện hóa các giải pháp giải quyết ách tắc giao thông đô thị (교통 문제 해결을 위한 방안의 다각화를 주장하기 위해서) -> Đáp án ③.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-을/를 병행하다", "meaning": "Tiến hành song song, kết hợp đồng thời...", "example": "여러 방안을 병행한다면 개선될 것이다."},
+			{"point": "-기 위해서", "meaning": "Nhằm mục đích...", "example": "다각화를 주장하기 위해서."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "다각화", "vietnamese": "Đa dạng hóa, đa phương diện hóa"}, {"korean": "교통 영향 평가", "vietnamese": "Đánh giá tác động giao thông"}],
+			"verbs": [{"korean": "주장하다", "vietnamese": "Chủ trương, khẳng định"}, {"korean": "병행하다", "vietnamese": "Tiến hành song hành"}],
+			"adjectives": [{"korean": "전방위적이다", "vietnamese": "Toàn diện, đa phương diện, mọi hướng"}],
+			"adverbs": []
+		}
+	},
+	{
+		"id": "q_r_96_49",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 49,
+		"typeId": "R_TYPE_5",
+		"typeName": "Đọc: Điền cụm từ vào chỗ trống đoạn văn",
+		"instruction": "※ [48～50] 다음을 읽고 물음에 답하십시오. (각 2점)\n49. (          )에 들어갈 말로 가장 알맞은 것을 고르십시오.",
+		"passage": "도심의 교통 혼잡 문제가 심화되면서 새로운 건축물을 짓는 경우 사전에 교통 영향 평가를 받도록 하고 있다. 해당 건축물이 주변 교통 상황에 미칠 부정적 파급 효과를 예측해 이를 완화할 수 있는 방법을 미리 찾는 것이다. 이 평가 결과를 반영해 건축물과 지하철, 버스 등 대중교통 수단의 연계성을 높여 대중교통 이용을 유도함으로써 (          ) 것이 대표적인 사례이다. 또한 교통 혼잡을 유발하는 시설의 소유자에게 교통 유발 부담금을 부과하는 제도도 시행하고 있다. 그러나 이와 같은 방법만으로는 그 효과가 제한적이라는 평가가 대부분이다. 유입 인구의 증가로 인해 발생하는 교통 정체를 막는 데는 한계가 있다는 것이다. 따라서 보다 전방위적으로 여러 정책을 시행함으로써 도심 교통 문제 해결에 나설 필요가 있다. 문제 해결을 위한 실질적인 노력을 하는 시설의 소유자에게 여러 혜택을 주고 도심의 도로망을 정비하는 등의 여러 방안을 병행한다면 도심의 교통 환경을 점차 개선해 나갈 수 있을 것이다.",
+		"audioUrl": null,
+		"options": [
+			"건축 기간이 연장된",
+			"교통 정체가 유발된",
+			"주차장 규모를 확대한",
+			"주변 교통량을 감축한"
+		],
+		"correctAnswer": 4,
+		"isAiAnswer": false,
+		"explanation": "Đoạn văn phân tích: tăng cường kết nối tòa nhà với xe buýt, tàu điện ngầm để khuyến khích người dân đi phương tiện công cộng, và kết quả tích cực của biện pháp này chính là 'đã cắt giảm được lưu lượng xe cộ qua lại xung quanh' (대중교통 이용을 유도함으로써 주변 교통량을 감축한 것이 대표적인 사례이다). Do đó cụm từ thích hợp nhất là '주변 교통량을 감축한' -> Đáp án ④.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-(으)ロ써", "meaning": "Bằng cách, thông qua việc...", "example": "대중교통 이용을 유도함으로써 교통량을 감축했다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "교통량", "vietnamese": "Lưu lượng giao thông"}, {"korean": "연계성", "vietnamese": "Tính kết nối"}],
+			"verbs": [{"korean": "감축하다", "vietnamese": "Cắt giảm, giảm bớt"}, {"korean": "유도하다", "vietnamese": "Dẫn dắt, khuyến khích"}],
+			"adjectives": [],
+			"adverbs": []
+		}
+	},
+	{
+		"id": "q_r_96_50",
+		"examCategory": "de_thi_that",
+		"examId": "real_96",
+		"examTitle": "Kỳ thi thật số 96",
+		"section": "reading",
+		"questionNumber": 50,
+		"typeId": "R_TYPE_6",
+		"typeName": "Đọc: Chọn nội dung đúng với văn bản",
+		"instruction": "※ [48～50] 다음을 읽고 물음에 답하십시오. (각 2점)\n50. 윗글의 내용과 같은 것을 고르십시오.",
+		"passage": "도심의 교통 혼잡 문제가 심화되면서 새로운 건축물을 짓는 경우 사전에 교통 영향 평가를 받도록 하고 있다. 해당 건축물이 주변 교통 상황에 미칠 부정적 파급 효과를 예측해 이를 완화할 수 있는 방법을 미리 찾는 것이다. 이 평가 결과를 반영해 건축물과 지하철, 버스 등 대중교통 수단의 연계성을 높여 대중교통 이용을 유도함으로써 ( 주변 교통량을 감축한 ) 것이 대표적인 사례이다. 또한 교통 혼잡을 유발하는 시설의 소유자에게 교통 유발 부담금을 부과하는 제도도 시행하고 있다. 그러나 이와 같은 방법만으로는 그 효과가 제한적이라는 평가가 대부분이다. 유입 인구의 증가로 인해 발생하는 교통 정체를 막는 데는 한계가 있다는 것이다. 따라서 보다 전방위적으로 여러 정책을 시행함으로써 도심 교통 문제 해결에 나설 필요가 있다. 문제 해결을 위한 실질적인 노력을 하는 시설의 소유자에게 여러 혜택을 주고 도심의 도로망을 정비하는 등의 여러 방안을 병행한다면 도심의 교통 환경을 점차 개선해 나갈 수 있을 것이다.",
+		"audioUrl": null,
+		"options": [
+			"교통 영향 평가는 도심에 건축물을 짓고 난 후에 시행한다.",
+			"교통 영향 평가는 도심에 유입되는 인구를 늘리기 위해 실시한다.",
+			"교통 혼잡 해결을 위해 노력하는 건축물의 소유자는 혜택을 받고 있다.",
+			"교통 혼잡을 일으키는 시설의 소유자는 그에 따른 부담금을 내야 한다."
+		],
+		"correctAnswer": 4,
+		"isAiAnswer": false,
+		"explanation": "Đoạn văn nêu rõ chính sách: '교통 혼잡을 유발하는 시설의 소유자에게 교통 유발 부담금을 부과하는 제도도 시행하고 있다' (chế độ thu phụ phí gây ùn tắc giao thông áp đặt lên chủ sở hữu các cơ sở gây ra ùn tắc giao thông). Điều này khẳng định chủ các cơ sở gây ách tắc giao thông phải nộp khoản tiền phụ phí tương ứng (교통 혼잡을 일으키는 시설의 소유자는 그에 따른 부담금을 내야 한다) -> Đáp án ④ là chuẩn xác tuyệt đối.",
+		"transcript": [],
+		"grammar": [
+			{"point": "-에 따른", "meaning": "Tương ứng theo...", "example": "그에 따른 부담금을 내야 한다."}
+		],
+		"vocabulary": {
+			"nouns": [{"korean": "교통 유발 부담금", "vietnamese": "Phí gánh nặng gây ùn tắc giao thông"}, {"korean": "시설 소유자", "vietnamese": "Chủ sở hữu cơ sở hạ tầng/tòa nhà"}],
+			"verbs": [{"korean": "부과하다", "vietnamese": "Đánh phí, thu phí"}],
+			"adjectives": [],
+			"adverbs": []
+		}
+	}
+]

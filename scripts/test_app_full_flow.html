@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Test Full App Flow</title>
+</head>
+<body>
+<div id="test-results">STARTING</div>
+<iframe id="app-frame" src="../index.html" style="width:1000px; height:800px;"></iframe>
+
+<script>
+const results = [];
+function log(msg, pass=true) {
+    results.push({ msg, pass });
+    console.log((pass ? "✓ PASS: " : "✗ FAIL: ") + msg);
+}
+
+window.onload = () => {
+    setTimeout(async () => {
+        try {
+            const frame = document.getElementById("app-frame");
+            const win = frame.contentWindow;
+            const doc = frame.contentDocument;
+            const app = win.app;
+
+            if (!app) {
+                log("app instance initialized", false);
+                return;
+            }
+            log("app instance initialized", true);
+
+            // 1. Verify window.EXAM_DATA
+            if (!win.EXAM_DATA || !win.EXAM_DATA.questions || win.EXAM_DATA.questions.length !== 1104) {
+                log(`EXAM_DATA questions count is 1104 (got ${win.EXAM_DATA?.questions?.length})`, false);
+            } else {
+                log("EXAM_DATA contains exactly 1,104 questions", true);
+            }
+
+            // 2. Verify all 10 exams are present
+            const expectedExams = ['hot_01', 'hot_02', 'hot_03', 'hot_04', 'hot_05', 'tm_01', 'tm_02', 'tm_03', 'tm_04', 'tm_05'];
+            for (let exId of expectedExams) {
+                const qs = win.EXAM_DATA.questions.filter(q => q.examId === exId);
+                const l = qs.filter(q => q.section === "listening").length;
+                const r = qs.filter(q => q.section === "reading").length;
+                if (l === 50 && r === 50) {
+                    log(`Exam ${exId} has 50 listening and 50 reading questions (total 100)`, true);
+                } else {
+                    log(`Exam ${exId} count mismatch: L=${l}, R=${r}`, false);
+                }
+            }
+
+            // 3. Test starting a Listening section (hot_01 listening)
+            const cat = app.examData.categories.find(c => c.id === "hot_topik");
+            const exHot01 = cat.exams.find(e => e.id === "hot_01");
+            app.startExamFromItem(cat, exHot01, "listening");
+
+            if (app.activeExamQuestions.length === 50 && app.activeExamSection === "listening") {
+                log("Started hot_01 Listening section successfully with 50 questions", true);
+            } else {
+                log(`Failed to start hot_01 listening section (got ${app.activeExamQuestions.length})`, false);
+            }
+
+            // 4. Verify Subtitles are HIDDEN before submitting answer
+            const passageDisplayBefore = app.examEls.qPassage.style.display;
+            const solutionDisplayBefore = app.examEls.solutionPanel.style.display;
+            if (passageDisplayBefore === "none" && solutionDisplayBefore === "none") {
+                log("Subtitles and solution panel are HIDDEN before answer submission", true);
+            } else {
+                log(`Subtitles visible before submission: passage=${passageDisplayBefore}, solution=${solutionDisplayBefore}`, false);
+            }
+
+            // 5. Select an option and submit
+            const firstOptBtn = app.examEls.qOptionsList.querySelector(".option-btn");
+            if (firstOptBtn) {
+                firstOptBtn.click();
+                app.submitExamAnswer();
+
+                // 6. Verify Subtitles are now SHOWN after submit
+                const passageDisplayAfter = app.examEls.qPassage.style.display;
+                const solutionDisplayAfter = app.examEls.solutionPanel.style.display;
+                if (passageDisplayAfter === "block" && solutionDisplayAfter === "flex") {
+                    log("Subtitles and solution panel are DISPLAYED after answer submission", true);
+                } else {
+                    log(`Subtitles not shown after submission: passage=${passageDisplayAfter}, solution=${solutionDisplayAfter}`, false);
+                }
+            } else {
+                log("Option buttons not found for question 1", false);
+            }
+
+            // 7. Verify Exit without saving in-progress answers
+            app.examEls.btnPlayerBack.click();
+            const savedAns = win.learningStorage.getExamAnswer("hot01_l_01");
+            if (savedAns === null) {
+                log("No in-progress answers saved to storage on exit", true);
+            } else {
+                log("In-progress answers incorrectly persisted", false);
+            }
+
+            // 8. Test recordExamCompletion and persistence of final score
+            const dummyCompletion = {
+                examId: "hot_01",
+                examTitle: "HOT TOPIK ĐỎ ĐỀ 01",
+                section: "listening",
+                correctCount: 45,
+                wrongCount: 5,
+                total: 50,
+                percent: 90,
+                timeSpent: 1800
+            };
+            win.learningStorage.recordExamCompletion(dummyCompletion);
+            const savedScore = win.learningStorage.getExamScore("hot_01", "listening");
+            if (savedScore && savedScore.correctCount === 45 && savedScore.wrongCount === 5 && savedScore.percent === 90) {
+                log("Final completion score correctly persisted in storage (45/50, 90%)", true);
+            } else {
+                log("Failed to persist final completion score", false);
+            }
+
+            // Final output
+            const allPassed = results.every(r => r.pass);
+            document.getElementById("test-results").textContent = "TESTS_DONE\n" + JSON.stringify({ allPassed, results }, null, 2);
+        } catch (err) {
+            document.getElementById("test-results").textContent = "ERR: " + err.message + "\n" + err.stack;
+        }
+    }, 2000);
+};
+</script>
+</body>
+</html>

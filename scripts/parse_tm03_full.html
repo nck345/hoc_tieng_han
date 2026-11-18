@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"></head>
+<body>
+<pre id="output">STARTING</pre>
+<script>
+function clean(s) {
+    if (!s) return "";
+    if (typeof s !== "string") s = String(s);
+    return s.replace(/\s+/g, ' ').trim();
+}
+
+function normalizeCircled(txt) {
+    if (!txt) return "";
+    return txt.replace(/㉦/g, '③')
+              .replace(/㉣/g, '②')
+              .replace(/㉨/g, '④')
+              .replace(/㉭/g, '③')
+              .replace(/㉠/g, '①')
+              .replace(/㉡/g, '②')
+              .replace(/㉢/g, '③')
+              .replace(/㉣/g, '④')
+              .replace(/\(0\b/g, '①')
+              .replace(/\(기\b/g, '①')
+              .replace(/\(과\b/g, '④')
+              .replace(/\(쇠\b/g, '④')
+              .replace(/@/g, '②');
+}
+
+function parseAnswerNumber(txt) {
+    if (!txt) return 1;
+    const norm = normalizeCircled(txt);
+    if (norm.includes('①') || norm.includes('❶')) return 1;
+    if (norm.includes('②') || norm.includes('❷')) return 2;
+    if (norm.includes('③') || norm.includes('❸')) return 3;
+    if (norm.includes('④') || norm.includes('❹')) return 4;
+    const m = norm.match(/answer\s+is\s*\(?([1-4])\)?/i);
+    if (m) return parseInt(m[1]);
+    return 1;
+}
+
+function extractOptionsFromText(txt) {
+    const norm = normalizeCircled(txt);
+    const regex = /([①②③④❶❷❸❹])\s*([\s\S]*?)(?=[①②③④❶❷❸❹]|$)/g;
+    const items = [];
+    let m;
+    while ((m = regex.exec(norm)) !== null) {
+        items.push(clean(m[2]));
+        if (items.length === 4) break;
+    }
+    return items;
+}
+
+async function run() {
+    try {
+        const respAns = await fetch("tm03_ans_full.txt");
+        const ansRaw = await respAns.text();
+        const respDe = await fetch("tm03_de_full.txt");
+        const deRaw = await respDe.text();
+        
+        const ansPages = ansRaw.split(/=== PAGE \d+ ===/).map(p => p.trim()).filter(Boolean);
+        const dePages = deRaw.split(/=== PAGE \d+ ===/).map(p => p.trim()).filter(Boolean);
+        
+        // Combine text for searching
+        const listeningAnsText = ansPages.slice(3, 15).join('\n\n');
+        const readingAnsText = ansPages.slice(15).join('\n\n');
+        
+        const listeningDeText = dePages.slice(2, 15).join('\n\n');
+        const readingDeText = dePages.slice(20).join('\n\n');
+        
+        const listeningQuestions = [];
+        const readingQuestions = [];
+        
+        // 1. Parse 50 Listening Questions
+        for (let q = 1; q <= 50; q++) {
+            const nextQ = q + 1;
+            const numStr = q < 10 ? "0" + q : "" + q;
+            
+            // Extract from AnsText: passage & explanation
+            const qAnsRegex = new RegExp("(?:^|\\n)\\s*" + q + "\\.\\s*([\\s\\S]*?)(?=(?:\\n\\s*" + nextQ + "\\.\\s*|===|\\[\\d+~|$))");
+            const qAnsMatch = listeningAnsText.match(qAnsRegex);
+            const qAnsBlock = qAnsMatch ? qAnsMatch[1] : "";
+            
+            // Extract Korean dialog
+            let dialog = "";
+            const diaM = qAnsBlock.match(/((?:(?:여자|남자)\s*:?[\s\S]*?)(?=(?:[WM]\s+[A-Z]|\bSince\b|\bThe\b|\bThe answer|\bAccording|\n\s*\d+\.|$)))/);
+            if (diaM) {
+                dialog = clean(diaM[1]);
+            }
+            
+            // Extract explanation and answer
+            const ansNum = parseAnswerNumber(qAnsBlock);
+            let expl = "";
+            const explM = qAnsBlock.match(/(?:The\s+answer|Since|According|In\s+this|The\s+man|The\s+woman)[\s\S]*/i);
+            if (explM) expl = clean(explM[0]);
+            
+            // Extract options from DeText
+            let options = [];
+            if (q === 1) {
+                options = [
+                    "[Tranh 1] Người nam nhìn vào gương thử áo, người nữ đứng cạnh tư vấn",
+                    "[Tranh 2] Người phụ nữ đang thanh toán tiền áo",
+                    "[Tranh 3] Người nam đang chọn quần áo trên giá treo",
+                    "[Tranh 4] Người phụ nữ đang là ủi quần áo"
+                ];
+            } else if (q === 2) {
+                options = [
+                    "[Tranh 1] Người nam đang đi xe đạp ngoài đường",
+                    "[Tranh 2] Người nam ngã xe đạp bị thương",
+                    "[Tranh 3] Người nam nằm trên giường bệnh sau phẫu thuật, nữ y tá hỏi thăm",
+                    "[Tranh 4] Người nam đang làm thủ tục xuất viện"
+                ];
+            } else if (q === 3) {
+                options = [
+                    "[Biểu đồ 1] Việc làm chiếm tỷ lệ cao nhất (48%), tiếp theo là nhà ở (32%)",
+                    "[Biểu đồ 2] Giáo dục con cái chiếm tỷ lệ cao nhất",
+                    "[Biểu đồ 3] Nhà ở chiếm 48%, việc làm 32%",
+                    "[Biểu đồ 4] Tỷ lệ chuyển vì việc làm và nhà ở ngang nhau"
+                ];
+            } else {
+                const qDeRegex = new RegExp("(?:^|\\n)\\s*" + q + "\\.\\s*([\\s\\S]*?)(?=(?:\\n\\s*" + nextQ + "\\.\\s*|===|\\[\\d+~|$))");
+                const qDeMatch = listeningDeText.match(qDeRegex);
+                if (qDeMatch) {
+                    options = extractOptionsFromText(qDeMatch[1]);
+                }
+            }
+            if (options.length < 4) {
+                options = ["①", "②", "③", "④"];
+            }
+            
+            // Speakers transcript
+            const trans = [];
+            const spkRegex = /(여자|남자)\s*:?\s*([^여자남자\n\r]+)/g;
+            let sm;
+            while ((sm = spkRegex.exec(dialog)) !== null) {
+                trans.push({ speaker: sm[1], text: clean(sm[2]) });
+            }
+            
+            listeningQuestions.push({
+                id: "tm03_l_" + numStr,
+                examId: "tm_03",
+                examCategory: "topik_master",
+                section: "listening",
+                questionNumber: q,
+                instruction: "※ 다음을 듣고 물음에 답하십시오.",
+                passage: dialog,
+                audioUrl: "de/TOPIK MASTER/TOPIK MASTER_ĐỀ 03/audio/q" + numStr + ".mp3",
+                options: options,
+                correctAnswer: ansNum,
+                explanation: expl,
+                transcript: trans.length > 0 ? trans : [{ speaker: "대화", text: dialog }],
+                vocabulary: []
+            });
+        }
+        
+        // 2. Parse 50 Reading Questions
+        for (let q = 1; q <= 50; q++) {
+            const nextQ = q + 1;
+            const numStr = q < 10 ? "0" + q : "" + q;
+            
+            const qDeRegex = new RegExp("(?:^|\\n)\\s*" + q + "\\.\\s*([\\s\\S]*?)(?=(?:\\n\\s*" + nextQ + "\\.\\s*|===|\\[\\d+~|$))");
+            const qDeMatch = readingDeText.match(qDeRegex);
+            const qDeBlock = qDeMatch ? qDeMatch[1] : "";
+            
+            const qAnsRegex = new RegExp("(?:^|\\n)\\s*" + q + "\\.\\s*([\\s\\S]*?)(?=(?:\\n\\s*" + nextQ + "\\.\\s*|===|\\[\\d+~|$))");
+            const qAnsMatch = readingAnsText.match(qAnsRegex);
+            const qAnsBlock = qAnsMatch ? qAnsMatch[1] : "";
+            
+            const ansNum = parseAnswerNumber(qAnsBlock || qDeBlock);
+            const options = extractOptionsFromText(qDeBlock);
+            
+            let passage = "";
+            const normDe = normalizeCircled(qDeBlock);
+            const optIdx = normDe.search(/[①②③④❶❷❸❹]/);
+            if (optIdx > 0) {
+                passage = clean(normDe.slice(0, optIdx));
+            } else {
+                passage = clean(normDe);
+            }
+            
+            readingQuestions.push({
+                id: "tm03_r_" + numStr,
+                examId: "tm_03",
+                examCategory: "topik_master",
+                section: "reading",
+                questionNumber: q,
+                instruction: "※ 다음을 읽고 물음에 답하십시오.",
+                passage: passage,
+                options: options.length === 4 ? options : ["①", "②", "③", "④"],
+                correctAnswer: ansNum,
+                explanation: clean(qAnsBlock),
+                grammar: [],
+                vocabulary: []
+            });
+        }
+        
+        const finalData = {
+            listening: listeningQuestions,
+            reading: readingQuestions
+        };
+        
+        console.error("TOTAL_TM03: L=" + listeningQuestions.length + " R=" + readingQuestions.length);
+        document.getElementById("output").textContent = JSON.stringify(finalData);
+    } catch(err) {
+        document.getElementById("output").textContent = "ERR: " + err.message;
+    }
+}
+run();
+</script>
+</body>
+</html>

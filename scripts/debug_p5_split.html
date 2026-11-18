@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"></head>
+<body>
+<pre id="output">STARTING</pre>
+<script>
+function clean(s) {
+    if (!s) return "";
+    return s.replace(/\s+/g, ' ').trim();
+}
+
+async function run() {
+    const respDe = await fetch("tm03_de_full.txt");
+    const deRaw = await respDe.text();
+    const pages = deRaw.split(/=== PAGE \d+ ===/);
+    const p5 = pages[5];
+    
+    const bullet = /(?:^|\s)(?:[①②③④❶❷❸❹㉠㉡㉢㉣㉤㉥㉦㉧㉨㉩㉭@]|\(\s*[0-9가-힣A-Za-z\.]+\s*\)?|[1-4]\s*[\)\.]|0\s+|[전결쇠]\))\s*/g;
+    
+    const parts = p5.split(bullet);
+    const log = [];
+    parts.forEach((p, idx) => {
+        let cp = clean(p);
+        log.push(`Part ${idx}: cp="${cp}"`);
+    });
+    
+    document.getElementById("output").textContent = log.join('\n');
+}
+window.onload = run;
+</script>
+</body>
+</html>

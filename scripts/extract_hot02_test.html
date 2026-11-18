@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="lib/pdfjs/pdf.min.js"></script>
+</head>
+<body>
+<pre id="output">STARTING</pre>
+<script>
+pdfjsLib.GlobalWorkerOptions.workerSrc = "lib/pdfjs/pdf.worker.min.js";
+
+async function run() {
+    try {
+        const loadingTask = pdfjsLib.getDocument("file:///F:/github/hoc_tieng_han/de/Hot topik/HOT TOPIK ĐỎ 2020 ĐỀ 02/HOT TOPIK ĐỎ 2020 ĐỀ 02_Đáp án-Transcripts.pdf");
+        const pdf = await loadingTask.promise;
+        console.error("PDF_PAGES: " + pdf.numPages);
+        let sample = "";
+        for (let i = 1; i <= Math.min(5, pdf.numPages); i++) {
+            const page = await pdf.getPage(i);
+            const content = await page.getTextContent();
+            const pageText = content.items.map(it => it.str).join(" ");
+            sample += "=== PAGE " + i + " ===\n" + pageText + "\n";
+        }
+        console.error("SAMPLE_START\n" + sample + "\nSAMPLE_END");
+        document.getElementById("output").textContent = sample;
+    } catch(e) {
+        console.error("ERR: " + e.message);
+        document.getElementById("output").textContent = "ERR: " + e.message;
+    }
+}
+run();
+</script>
+</body>
+</html>

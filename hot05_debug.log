@@ -1,0 +1,5 @@
+[19532:18020:1112/190336.389:WARNING:chrome\browser\extensions\external_registry_loader_win.cc:283] Error observing HKLM: 5
+[19532:18020:1112/190336.496:INFO:CONSOLE:9] "LOG: Fetching hot05.mp3...", source: file:///F:/github/hoc_tieng_han/scripts/detect_hot05_gaps.html (9)
+[19532:18020:1112/190336.657:INFO:CONSOLE:6359] "[ProtocolLaunch] handler constructed; wiring port events.", source: chrome-extension://ndcpkimcihhghdcddljkfmmjccdmcmof/background.rollup.js (6359)
+[19532:18020:1112/190336.829:WARNING:components\signin\internal\identity_manager\account_fetcher_service.cc:268] Edge does not support fetching account capabilities
+[19532:18020:1112/190336.829:WARNING:components\signin\internal\identity_manager\account_fetcher_service.cc:230] Should not execute: Tests depending on this function may fail

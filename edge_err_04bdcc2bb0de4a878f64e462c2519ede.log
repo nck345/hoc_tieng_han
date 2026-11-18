@@ -1,0 +1,5 @@
+[18204:15948:1112/185213.111:WARNING:chrome\browser\extensions\external_registry_loader_win.cc:283] Error observing HKLM: 5
+[18204:15948:1112/185213.493:INFO:CONSOLE:6359] "[ProtocolLaunch] handler constructed; wiring port events.", source: chrome-extension://ndcpkimcihhghdcddljkfmmjccdmcmof/background.rollup.js (6359)
+[18204:15948:1112/185213.738:WARNING:components\signin\internal\identity_manager\account_fetcher_service.cc:268] Edge does not support fetching account capabilities
+[18204:15948:1112/185213.739:WARNING:components\signin\internal\identity_manager\account_fetcher_service.cc:230] Should not execute: Tests depending on this function may fail
+[18204:15948:1112/185213.875:ERROR:chrome\browser\task_manager\providers\fallback_task_provider.cc:126] Every renderer should have at least one task provided by a primary task provider. If a "Renderer" fallback task is shown, it is a bug. If you have repro steps, please file a new bug and tag it as a dependency of crbug.com/40528867.

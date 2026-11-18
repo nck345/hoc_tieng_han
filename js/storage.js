@@ -6,7 +6,13 @@ class LearningStorage{
 	load(){
 		try{
 			const raw=localStorage.getItem(STORAGE_KEY);
-			if(raw)return JSON.parse(raw);
+			if(raw){
+				const d=JSON.parse(raw);
+				if(d.examAnswers)delete d.examAnswers;
+				if(!d.examScores)d.examScores={};
+				if(!d.examHistory)d.examHistory=[];
+				return d;
+			}
 		}catch(e){}
 		return{
 			completedUnits:[],
@@ -18,7 +24,8 @@ class LearningStorage{
 			birdCollection:[
 				{id:"bird-happy",name:"Chim Vui Vẻ",desc:"Chú chim sẻ may mắn khởi đầu hành trình học tiếng Hàn.",icon:"assets/birds/bird-happy.svg",unlockedAt:new Date().toISOString(),reason:"Gia nhập ứng dụng"}
 			],
-			examAnswers:{},
+			examScores:{},
+			examHistory:[],
 			packScores:{}
 		};
 	}
@@ -132,18 +139,39 @@ class LearningStorage{
 		if(!this.data.birdCollection)this.data.birdCollection=[];
 		return this.data.birdCollection;
 	}
-	recordExamAnswer(qId,userAns,isCorrect){
-		if(!this.data.examAnswers)this.data.examAnswers={};
-		this.data.examAnswers[qId]={userAnswer:userAns,isCorrect,time:Date.now()};
+	recordExamCompletion(result){
+		if(!this.data.examScores)this.data.examScores={};
+		const key=(result.examId||"exam")+"_"+(result.section||"all");
+		this.data.examScores[key]={
+			examId:result.examId,
+			examTitle:result.examTitle,
+			section:result.section,
+			correctCount:result.correctCount,
+			wrongCount:result.wrongCount,
+			total:result.total,
+			percent:result.percent,
+			timeSpent:result.timeSpent,
+			completedAt:result.completedAt||new Date().toISOString()
+		};
+		if(!this.data.examHistory)this.data.examHistory=[];
+		this.data.examHistory.unshift(result);
+		if(this.data.examHistory.length>50)this.data.examHistory.pop();
 		this.save();
 	}
+	getExamScore(examId,section="all"){
+		if(!this.data.examScores)return null;
+		return this.data.examScores[examId+"_"+section]||null;
+	}
+	recordExamAnswer(qId,userAns,isCorrect){
+		// Không lưu tiến trình làm bài dở dang vào localStorage
+	}
 	getExamAnswer(qId){
-		if(!this.data.examAnswers)return null;
-		return this.data.examAnswers[qId]||null;
+		// Không khôi phục tiến trình làm bài dở dang khi thoát ra
+		return null;
 	}
 	recordPackResult(packId,score,total){
 		if(!this.data.packScores)this.data.packScores={};
-		this.data.packScores[packId]={score,total,completed:true,time:Date.now()};
+		this.data.packScores[packId]={score,wrong:total-score,total,completed:true,time:Date.now()};
 		this.save();
 	}
 }

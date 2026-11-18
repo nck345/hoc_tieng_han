@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html><head></head><body><pre id="res"></pre>
+<script>
+async function test() {
+    const list = ['q01.mp3', 'q10.mp3', 'q25.mp3', 'q50.mp3'];
+    const results = [];
+    const ctx = new AudioContext();
+    for (let f of list) {
+        try {
+            const resp = await fetch('../de/TOPIK%20MASTER/TOPIK%20MASTER_%C4%90%E1%BB%80%2001/audio/' + f);
+            const ab = await resp.arrayBuffer();
+            const buf = await ctx.decodeAudioData(ab);
+            results.push(f + ': OK (' + buf.duration.toFixed(1) + 's)');
+        } catch(e) {
+            results.push(f + ': ERR ' + e.message);
+        }
+    }
+    document.getElementById('res').textContent = results.join(' | ');
+}
+test();
+</script></body></html>

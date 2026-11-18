@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"></head>
+<body>
+<pre id="output">STARTING</pre>
+<script>
+function clean(s) {
+    if (!s) return "";
+    return s.replace(/\s+/g, ' ').trim();
+}
+
+const BULLET_REGEX = /(?:^|\s)(?:[①②③④❶❷❸❹㉠㉡㉢㉣㉤㉥㉦㉧㉨㉩㉭@]|\([0-9가-힣A-Za-z\.]+\)|[1-4]\s*[\)\.]|0\s+|[전결쇠]\))\s*/;
+
+function extractPageOptions(pageText, expectedCount) {
+    if (!pageText) return [];
+    
+    // Strip header lines, numbers, banners
+    let t = pageText;
+    t = t.replace(/^\s*(?:\d+\.\s*)+\s*$/gm, '');
+    t = t.replace(/TOPIK\s*MASTER.*/gi, '');
+    t = t.replace(/-\s*실전\s*모의고사.*/gi, '');
+    t = t.replace(/\[\d+~\d+\][^\n\r]*/g, '');
+    t = t.replace(/※[^\n\r]*/g, '');
+    
+    // Split by bullets
+    const parts = t.split(BULLET_REGEX);
+    let sents = [];
+    for (let p of parts) {
+        let cp = clean(p);
+        if (!cp) continue;
+        
+        // If an item contains multiple sentences ending with 다, 요, 죠, 까, split them
+        const subs = cp.split(/(?<=[다요죠까][\.\,])\s+/);
+        for (let s of subs) {
+            let st = clean(s);
+            st = st.replace(/^[①②③④❶❷❸❹㉠㉡㉢㉣㉤㉥㉦㉧㉨㉩㉭@\(\)0-9가-힣a-zA-Z\.\,\s]+(?<=[①②③④❶❷❸❹㉠㉡㉢㉣㉤㉥㉦㉧㉨㉩㉭@\.\)])\s*/, '');
+            st = st.replace(/^[\(\[]?[0-9가-힣A-Za-z]+[\)\]\.]\s*/, '');
+            st = clean(st);
+            if (st.length > 2 && !st.match(/^(?:\d+\.|\※|\[\d|다음을|남자의|들은|여자가|이 글의|제\d회|문제집|\d+교시)/)) {
+                sents.push(st);
+            }
+        }
+    }
+    
+    return sents;
+}
+
+async function run() {
+    try {
+        const respDe = await fetch("tm03_de_full.txt");
+        const deRaw = await respDe.text();
+        const pages = deRaw.split(/=== PAGE \d+ ===/);
+        
+        // Test listening pages
+        const lPagesMap = [
+            { qNums: [4, 5], p: 4 },
+            { qNums: [6, 7, 8, 9, 10], p: 5 },
+            { qNums: [11, 12, 13, 14, 15], p: 6 },
+            { qNums: [16, 17, 18, 19, 20], p: 7 },
+            { qNums: [21, 22, 23, 24], p: 8 },
+            { qNums: [25, 26, 27, 28], p: 9 },
+            { qNums: [29, 30, 31, 32], p: 10 },
+            { qNums: [33, 34, 35, 36], p: 11 },
+            { qNums: [37, 38, 39, 40], p: 12 },
+            { qNums: [41, 42, 43, 44], p: 13 },
+            { qNums: [45, 46, 47, 48], p: 14 },
+            { qNums: [49, 50], p: 15 }
+        ];
+        
+        const results = [];
+        let totalListeningExtracted = 0;
+        let expectedListening = 47;
+        
+        lPagesMap.forEach(item => {
+            const expCount = item.qNums.length * 4;
+            const opts = extractPageOptions(pages[item.p], expCount);
+            const status = opts.length === expCount ? "OK" : `MISMATCH (got ${opts.length}, expected ${expCount})`;
+            results.push(`P${item.p} (Q${item.qNums[0]}..Q${item.qNums[item.qNums.length-1]}): ${status}`);
+            if (opts.length === expCount) totalListeningExtracted += item.qNums.length;
+        });
+        
+        // Test reading pages
+        const rPagesMap = [
+            { qNums: [1, 2, 3, 4], p: 21 },
+            { qNums: [5, 6, 7, 8], p: 22 },
+            { qNums: [9, 10], p: 23 },
+            { qNums: [11, 12], p: 24 },
+            { qNums: [13, 14, 15], p: 25 },
+            { qNums: [16, 17, 18], p: 26 },
+            { qNums: [19, 20], p: 27 },
+            { qNums: [21, 22], p: 28 },
+            { qNums: [23, 24, 25], p: 29 },
+            { qNums: [26, 27], p: 30 },
+            { qNums: [28, 29], p: 31 },
+            { qNums: [30, 31], p: 32 },
+            { qNums: [32, 33, 34], p: 33 },
+            { qNums: [35, 36], p: 34 },
+            { qNums: [37, 38], p: 35 },
+            { qNums: [39, 40, 41], p: 36 },
+            { qNums: [42, 43], p: 37 },
+            { qNums: [44, 45], p: 38 },
+            { qNums: [46, 47], p: 39 },
+            { qNums: [48, 49, 50], p: 40 }
+        ];
+        
+        let totalReadingExtracted = 0;
+        let expectedReading = 50;
+        
+        rPagesMap.forEach(item => {
+            const expCount = item.qNums.length * 4;
+            const opts = extractPageOptions(pages[item.p], expCount);
+            const status = opts.length === expCount ? "OK" : `MISMATCH (got ${opts.length}, expected ${expCount})`;
+            results.push(`P${item.p} (Q${item.qNums[0]}..Q${item.qNums[item.qNums.length-1]}): ${status}`);
+            if (opts.length === expCount) totalReadingExtracted += item.qNums.length;
+        });
+        
+        const summary = [
+            `TM03 PAGE EXTRACTION TEST:`,
+            `Listening Success: ${totalListeningExtracted} / ${expectedListening}`,
+            `Reading Success: ${totalReadingExtracted} / ${expectedReading}`,
+            ``,
+            ...results
+        ].join('\n');
+        
+        document.getElementById("output").textContent = summary;
+    } catch(e) {
+        document.getElementById("output").textContent = "ERR: " + e.message;
+    }
+}
+window.onload = run;
+</script>
+</body>
+</html>

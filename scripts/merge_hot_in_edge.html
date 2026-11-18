@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"></head>
+<body>
+<pre id="output">STARTING</pre>
+<script>
+async function run() {
+    try {
+        // Fetch current exam_data.js
+        const respExam = await fetch("../js/exam_data.js");
+        const examJs = await respExam.text();
+        const jsonStart = examJs.indexOf('{');
+        const jsonEnd = examJs.lastIndexOf('}');
+        const examData = JSON.parse(examJs.slice(jsonStart, jsonEnd + 1));
+        
+        // Fetch hot05_master_questions.json
+        const respMaster = await fetch("hot05_master_questions.json");
+        const master = await respMaster.json();
+        
+        function getListeningType(num) {
+            if (num <= 3) return { id: "L_TYPE_1", name: "Nghe: Chọn tranh hoặc biểu đồ thích hợp" };
+            if (num <= 8) return { id: "L_TYPE_2", name: "Nghe: Chọn câu tiếp nối phù hợp" };
+            if (num <= 12) return { id: "L_TYPE_3", name: "Nghe: Chọn hành động tiếp theo của người phụ nữ" };
+            if (num <= 16) return { id: "L_TYPE_4", name: "Nghe: Chọn nội dung trùng khớp" };
+            if (num <= 20) return { id: "L_TYPE_5", name: "Nghe: Chọn suy nghĩ trọng tâm của nhân vật" };
+            return { id: "L_TYPE_6", name: "Nghe: Trả lời câu hỏi sau khi nghe đoạn hội thoại/bài nói" };
+        }
+
+        function getReadingType(num) {
+            if (num <= 2) return { id: "R_TYPE_1", name: "Đọc: Điền ngữ pháp thích hợp vào chỗ trống" };
+            if (num <= 4) return { id: "R_TYPE_2", name: "Đọc: Chọn câu có ý nghĩa tương đương" };
+            if (num <= 8) return { id: "R_TYPE_3", name: "Đọc: Xác định chủ đề biển báo/quảng cáo" };
+            if (num <= 12) return { id: "R_TYPE_4", name: "Đọc: Chọn nội dung phù hợp với thông tin/biểu đồ" };
+            if (num <= 15) return { id: "R_TYPE_5", name: "Đọc: Sắp xếp các câu theo thứ tự đúng" };
+            if (num <= 18) return { id: "R_TYPE_6", name: "Đọc: Điền câu/từ thích hợp vào chỗ trống đoạn văn" };
+            if (num <= 24) return { id: "R_TYPE_7", name: "Đọc: Đọc hiểu văn bản và trả lời câu hỏi" };
+            if (num <= 27) return { id: "R_TYPE_8", name: "Đọc: Giải thích tiêu đề báo chí" };
+            if (num <= 31) return { id: "R_TYPE_9", name: "Đọc: Điền nội dung vào chỗ trống bài văn" };
+            if (num <= 34) return { id: "R_TYPE_10", name: "Đọc: Chọn nội dung giống với đoạn văn" };
+            if (num <= 38) return { id: "R_TYPE_11", name: "Đọc: Chọn chủ đề trọng tâm của đoạn văn" };
+            if (num <= 41) return { id: "R_TYPE_12", name: "Đọc: Chọn vị trí thích hợp cho câu mẫu <보기>" };
+            return { id: "R_TYPE_13", name: "Đọc: Đọc hiểu văn bản dài nâng cao" };
+        }
+
+        function buildQuestionsForExam(examId, examName) {
+            const list = [];
+            const prefix = examId.replace("_", "");
+            
+            // 50 Listening Questions
+            master.listening.forEach(q => {
+                const num = q.questionNumber;
+                const numStr = String(num).padStart(2, '0');
+                const t = getListeningType(num);
+                list.push({
+                    id: `${prefix}_l_${numStr}`,
+                    examCategory: "hot_topik",
+                    examId: examId,
+                    examTitle: `${examName} (Nghe)`,
+                    section: "listening",
+                    questionNumber: num,
+                    typeId: t.id,
+                    typeName: t.name,
+                    instruction: q.instruction,
+                    passage: q.passage,
+                    audioUrl: q.audioUrl,
+                    options: q.options,
+                    correctAnswer: q.correctAnswer,
+                    isAiAnswer: false,
+                    explanation: q.explanation,
+                    transcript: q.transcript || [],
+                    vocabulary: q.vocabulary || []
+                });
+            });
+            
+            // 50 Reading Questions
+            master.reading.forEach(q => {
+                const num = q.questionNumber;
+                const numStr = String(num).padStart(2, '0');
+                const t = getReadingType(num);
+                list.push({
+                    id: `${prefix}_r_${numStr}`,
+                    examCategory: "hot_topik",
+                    examId: examId,
+                    examTitle: `${examName} (Đọc)`,
+                    section: "reading",
+                    questionNumber: num,
+                    typeId: t.id,
+                    typeName: t.name,
+                    instruction: q.instruction,
+                    passage: q.passage,
+                    audioUrl: null,
+                    options: q.options,
+                    correctAnswer: q.correctAnswer,
+                    isAiAnswer: false,
+                    explanation: q.explanation,
+                    grammar: q.grammar || [],
+                    vocabulary: q.vocabulary || []
+                });
+            });
+            
+            return list;
+        }
+
+        const hot05Questions = buildQuestionsForExam("hot_05", "HOT TOPIK ĐỎ ĐỀ 05");
+        const hot01Questions = buildQuestionsForExam("hot_01", "HOT TOPIK ĐỎ ĐỀ 01");
+
+        // Remove old hot_topik questions from examData
+        const filtered = examData.questions.filter(q => q.examCategory !== "hot_topik" && !q.id.startsWith("hot"));
+        console.error(`Kept ${filtered.length} non-hot questions`);
+
+        // Append new authentic questions
+        hot05Questions.forEach(q => filtered.push(q));
+        hot01Questions.forEach(q => filtered.push(q));
+
+        examData.questions = filtered;
+
+        // Also ensure questionCount in categories
+        const hotCat = examData.categories.find(c => c.id === "hot_topik");
+        if (hotCat && hotCat.exams) {
+            hotCat.exams.forEach(e => {
+                if (e.id === "hot_05" || e.id === "hot_01") {
+                    e.questionCount = 100;
+                }
+            });
+        }
+
+        const outStr = "window.EXAM_DATA = " + JSON.stringify(examData, null, 4) + ";\n";
+        document.getElementById("output").textContent = "DONE";
+        console.error("MERGE_JSON_START" + JSON.stringify(examData) + "MERGE_JSON_END");
+        console.error(`MERGED_SUCCESS: Total questions=${examData.questions.length}`);
+    } catch(e) {
+        console.error("MERGE_ERR: " + e.message + " " + e.stack);
+        document.getElementById("output").textContent = "ERR: " + e.message;
+    }
+}
+run();
+</script>
+</body>
+</html>

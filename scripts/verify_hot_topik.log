@@ -1,0 +1,24 @@
+[40488:3300:1112/192906.399:WARNING:chrome\browser\extensions\external_registry_loader_win.cc:283] Error observing HKLM: 5
+[40488:3300:1112/192906.674:INFO:CONSOLE:6359] "[ProtocolLaunch] handler constructed; wiring port events.", source: chrome-extension://ndcpkimcihhghdcddljkfmmjccdmcmof/background.rollup.js (6359)
+[40488:3300:1112/192906.863:WARNING:components\signin\internal\identity_manager\account_fetcher_service.cc:268] Edge does not support fetching account capabilities
+[40488:3300:1112/192906.863:WARNING:components\signin\internal\identity_manager\account_fetcher_service.cc:230] Should not execute: Tests depending on this function may fail
+[40488:3300:1112/192908.798:INFO:CONSOLE:124] "VERIFY_SUMMARY:
+Test 1 - Category found: PASS (Hot Topik)
+Test 2 - Questions count hot_05: Total=100 L=50 R=50 PASS
+Test 2b - Questions count hot_01: Total=100 L=50 R=50 PASS
+Test 3 - Authentic Hot Topik Listening Q1 (Kim Ji-min): PASS
+Test 3b - Audio path: PASS (de/Hot topik/HOT TOPIK ĐỎ 2020 ĐỀ 05/audio/q01.mp3)
+Test 3c - Correct Answer Q1: PASS (ans=2)
+Test 3d - Authentic Hot Topik Listening Q29 (soccer coach): PASS
+Test 4 - Authentic Hot Topik Reading Q1 (-고자): PASS
+Test 4b - Authentic Hot Topik Reading Q42 (Soonam): PASS
+Test 5 - Folder detail title: PASS
+Test 6 - Part buttons rendered: PASS
+Test 7 - Active player displayed: PASS
+Test 7b - Questions loaded in active exam: PASS (50 questions)
+Test 8 - Solution & subtitles hidden before answer: PASS
+Test 9 - Solution & subtitles revealed after submission: PASS
+Test 10 - Exited back to folder: PASS
+Test 10b - Re-entry starts at Question 1 (index=0): PASS
+Test 11 - Final score stored in storage: PASS (correct=12/50)
+Test 12 - Result modal displayed with score: PASS", source: file:///F:/github/hoc_tieng_han/scripts/test_verify_hot_topik.html (124)
