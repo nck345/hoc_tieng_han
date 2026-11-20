@@ -135,10 +135,18 @@
 			playerTypeBadge:document.getElementById("exam-player-type-badge"),
 			playerProgressBadge:document.getElementById("exam-player-progress-badge"),
 			playerTimer:document.getElementById("exam-player-timer"),
+			playerTimerVal:document.getElementById("exam-player-timer-val"),
 			qInstruction:document.getElementById("exam-q-instruction"),
 			qAudioBox:document.getElementById("exam-q-audio-box"),
 			btnAudioPlay:document.getElementById("btn-exam-audio-play"),
 			audioStatus:document.getElementById("exam-audio-status"),
+			audioSubtext:document.getElementById("exam-audio-subtext"),
+			audioSeekBar:document.getElementById("exam-audio-seek-bar"),
+			audioTimeText:document.getElementById("exam-audio-time-text"),
+			btnSeekB10:document.getElementById("btn-exam-seek-b10"),
+			btnSeekB5:document.getElementById("btn-exam-seek-b5"),
+			btnSeekF5:document.getElementById("btn-exam-seek-f5"),
+			btnSeekF10:document.getElementById("btn-exam-seek-f10"),
 			btnSpeed1:document.getElementById("btn-exam-speed-1"),
 			btnSpeedSlow:document.getElementById("btn-exam-speed-slow"),
 			qPassage:document.getElementById("exam-q-passage"),
@@ -259,12 +267,18 @@
 			this.switchView("units");
 		});
 		this.examEls.subnavFolders.addEventListener("click",()=>{
+			this.audio.stopAll();
+			this.stopExamTimer();
+			this.examEls.activePlayer.style.display="none";
 			this.examSubnav="folders";
 			this.examEls.subnavFolders.classList.add("active");
 			this.examEls.subnavPacks.classList.remove("active");
 			this.renderExamView();
 		});
 		this.examEls.subnavPacks.addEventListener("click",()=>{
+			this.audio.stopAll();
+			this.stopExamTimer();
+			this.examEls.activePlayer.style.display="none";
 			this.examSubnav="packs";
 			this.examEls.subnavPacks.classList.add("active");
 			this.examEls.subnavFolders.classList.remove("active");
@@ -302,12 +316,36 @@
 			this.examAudioSpeed=1.0;
 			this.examEls.btnSpeed1.classList.add("active");
 			this.examEls.btnSpeedSlow.classList.remove("active");
+			if(this.audio.currentAudioEl)this.audio.currentAudioEl.playbackRate=1.0;
 		});
 		this.examEls.btnSpeedSlow.addEventListener("click",()=>{
 			this.examAudioSpeed=0.8;
 			this.examEls.btnSpeedSlow.classList.add("active");
 			this.examEls.btnSpeed1.classList.remove("active");
+			if(this.audio.currentAudioEl)this.audio.currentAudioEl.playbackRate=0.8;
 		});
+		if(this.examEls.btnSeekB10){
+			this.examEls.btnSeekB10.addEventListener("click",()=>this.audio.seekAudio(-10));
+		}
+		if(this.examEls.btnSeekB5){
+			this.examEls.btnSeekB5.addEventListener("click",()=>this.audio.seekAudio(-5));
+		}
+		if(this.examEls.btnSeekF5){
+			this.examEls.btnSeekF5.addEventListener("click",()=>this.audio.seekAudio(5));
+		}
+		if(this.examEls.btnSeekF10){
+			this.examEls.btnSeekF10.addEventListener("click",()=>this.audio.seekAudio(10));
+		}
+		if(this.examEls.audioSeekBar){
+			this.examEls.audioSeekBar.addEventListener("input",e=>{
+				const val=parseFloat(e.target.value);
+				this.audio.setAudioPercent(val);
+			});
+		}
+		this.bindVoiceInput(document.getElementById("btn-voice-search"),document.getElementById("search-units"));
+		this.bindVoiceInput(document.getElementById("btn-voice-scramble"),this.studyEls.scrambleInput);
+		this.bindVoiceInput(document.getElementById("btn-voice-sentence"),this.studyEls.sentenceInput);
+		this.bindVoiceInput(document.getElementById("btn-voice-quiz"),document.getElementById("quiz-korean-input"));
 		this.examEls.btnAudioPlay.addEventListener("click",()=>this.playExamQuestionAudio());
 		this.examEls.btnSubmitAns.addEventListener("click",()=>this.submitExamAnswer());
 		this.examEls.btnPrevQ.addEventListener("click",()=>this.prevExamQuestion());
@@ -775,8 +813,29 @@
 			}
 		},1000);
 	}
+	bindVoiceInput(btnEl,inputEl){
+		if(!btnEl||!inputEl)return;
+		btnEl.addEventListener("click",()=>{
+			if(btnEl.classList.contains("listening")){
+				if(this.audio.currentVoiceRecognizer){
+					this.audio.currentVoiceRecognizer.stop();
+				}
+				btnEl.classList.remove("listening");
+				return;
+			}
+			btnEl.classList.add("listening");
+			this.audio.startVoiceInput(
+				inputEl,
+				()=>btnEl.classList.add("listening"),
+				()=>btnEl.classList.remove("listening"),
+				err=>{
+					btnEl.classList.remove("listening");
+					console.warn(err);
+				}
+			);
+		});
+	}
 	renderExamView(){
-		if(this.examEls.activePlayer.style.display==="flex"||this.examEls.activePlayer.style.display==="block")return;
 		if(this.examSubnav==="folders"){
 			this.examEls.packsContainer.style.display="none";
 			if(this.currentExamCategory){
@@ -972,7 +1031,7 @@
 		let secLabel = "";
 
 		if(section === "listening"){
-			secLabel = " - Pháº§n Nghe (ë“£ê¸°)";
+			secLabel = " - Phần Nghe (듣기)";
 			// 1. Direct questions for this specific exam
 			qList = (this.examData.questions || []).filter(q => q.examId === ex.id && q.section === "listening");
 			// 2. Category questions for listening
@@ -1016,7 +1075,7 @@
 			}
 			qList = qList.slice(0, 50);
 		}else if(section === "writing"){
-			secLabel = " - Pháº§n Viáº¿t (ì“°ê¸°)";
+			secLabel = " - Phần Viết (쓰기)";
 			qList = (this.examData.questions || []).filter(q => (q.examId === ex.id || q.examCategory === cat.id) && q.section === "writing");
 			if(qList.length === 0){
 				qList = (this.examData.questions || []).filter(q => q.section === "writing");
@@ -1036,7 +1095,8 @@
 		// Map questions to current exam session with unique IDs
 		this.activeExamQuestions = qList.map((q, idx) => ({
 			...q,
-						id: ex.id + "_" + section + "_" + (idx + 1),
+						id: ex.id + "_" + section + "_" + (q.questionNumber || (idx + 1)),
+			questionNumber: q.questionNumber || (idx + 1),
 			examId: ex.id,
 			examTitle: ex.name,
 			audioUrl: q.audioUrl || (q.section === "listening" && ex.audioFile ? ex.audioFile : null)
@@ -1062,12 +1122,14 @@
 	startExamTimer(){
 		this.stopExamTimer();
 		this.examTimerSeconds=0;
-		this.examEls.playerTimer.textContent="â±ï¸ 00:00";
+		if(this.examEls.playerTimerVal)this.examEls.playerTimerVal.textContent="00:00";
+		else this.examEls.playerTimer.textContent="⏱ 00:00";
 		this.examTimerInterval=setInterval(()=>{
 			++this.examTimerSeconds;
 			const m=String(Math.floor(this.examTimerSeconds/60)).padStart(2,"0");
 			const s=String(this.examTimerSeconds%60).padStart(2,"0");
-			this.examEls.playerTimer.textContent="â±ï¸ " + m + ":" + s;
+			if(this.examEls.playerTimerVal)this.examEls.playerTimerVal.textContent=m+":"+s;
+			else this.examEls.playerTimer.textContent="⏱ "+m+":"+s;
 		},1000);
 	}
 	stopExamTimer(){
@@ -1078,6 +1140,12 @@
 	}
 	renderActiveExamQuestion(){
 		this.audio.stopAll();
+		if(this.examEls.btnAudioPlay){
+			this.examEls.btnAudioPlay.textContent="🔊";
+			this.examEls.btnAudioPlay.classList.remove("playing");
+		}
+		if(this.examEls.audioSeekBar)this.examEls.audioSeekBar.value=0;
+		if(this.examEls.audioTimeText)this.examEls.audioTimeText.textContent="00:00 / 00:00";
 		const q = this.activeExamQuestions[this.activeExamQuestionIndex];
 		const total = this.activeExamQuestions.length;
 		const secIcon = q.section === 'listening' ? '🎧' : (q.section === 'writing' ? '✍️' : '📖');
@@ -1107,10 +1175,16 @@
 			const opt = options[i];
 			const optIndex = (typeof opt === "object" && opt && opt.index !== undefined) ? opt.index : (i + 1);
 			const optText = (typeof opt === "object" && opt && opt.text !== undefined) ? opt.text : (typeof opt === "string" ? opt : String(opt || ""));
+			const optImage = (typeof opt === "object" && opt && opt.image) ? opt.image : null;
 			const btn = document.createElement("button");
 			btn.className = "option-btn";
 			btn.dataset.index = optIndex;
-			btn.innerHTML = '<span class="option-num">' + optIndex + '</span> <span>' + optText + '</span>';
+			if(optImage){
+				btn.classList.add("has-image");
+				btn.innerHTML = '<span class="option-num">' + optIndex + '</span> <div class="option-image-wrap"><img src="' + optImage + '" alt="Lựa chọn ' + optIndex + '" class="option-image"> <span>' + optText + '</span></div>';
+			}else{
+				btn.innerHTML = '<span class="option-num">' + optIndex + '</span> <span>' + optText + '</span>';
+			}
 			btn.addEventListener("click", () => {
 				if(this.examEls.solutionPanel.style.display === "flex") return;
 				this.examEls.qOptionsList.querySelectorAll(".option-btn").forEach(b => b.classList.remove("selected"));
@@ -1143,32 +1217,66 @@
 	playExamQuestionAudio(){
 		const q=this.activeExamQuestions[this.activeExamQuestionIndex];
 		if(!q)return;
-		if(this.examEls.btnAudioPlay.classList.contains("playing")){
-			this.audio.stopAll();
-			this.examEls.btnAudioPlay.classList.remove("playing");
+		if(this.audio.currentAudioEl){
+			this.audio.togglePlayPause(
+				()=>{
+					this.examEls.btnAudioPlay.classList.add("playing");
+					this.examEls.btnAudioPlay.textContent="⏸";
+				},
+				()=>{
+					this.examEls.btnAudioPlay.classList.remove("playing");
+					this.examEls.btnAudioPlay.textContent="🔊";
+				}
+			);
 			return;
 		}
 		this.examEls.btnAudioPlay.classList.add("playing");
+		this.examEls.btnAudioPlay.textContent="⏸";
 		let scriptText="";
 		if(q.transcript&&q.transcript.length>0){
 			scriptText=q.transcript.map(t=>t.text).join(". ");
 		}else{
 			scriptText=q.passage||q.instruction||"";
 		}
+		const onTimeUpdate=(cur,dur)=>{
+			if(!this.examEls.audioSeekBar||!this.examEls.audioTimeText)return;
+			const cM=String(Math.floor(cur/60)).padStart(2,"0");
+			const cS=String(Math.floor(cur%60)).padStart(2,"0");
+			const dM=String(Math.floor(dur/60)).padStart(2,"0");
+			const dS=String(Math.floor(dur%60)).padStart(2,"0");
+			this.examEls.audioTimeText.textContent=`${cM}:${cS} / ${dM}:${dS}`;
+			if(dur>0){
+				this.examEls.audioSeekBar.value=(cur/dur)*100;
+			}
+		};
 		if(q.audioUrl){
 			this.audio.playAudioFile(
 				q.audioUrl,
 				this.examAudioSpeed,
-				()=>this.examEls.btnAudioPlay.classList.add("playing"),
-				()=>this.examEls.btnAudioPlay.classList.remove("playing"),
-				scriptText
+				()=>{
+					this.examEls.btnAudioPlay.classList.add("playing");
+					this.examEls.btnAudioPlay.textContent="⏸";
+				},
+				()=>{
+					this.examEls.btnAudioPlay.classList.remove("playing");
+					this.examEls.btnAudioPlay.textContent="🔊";
+					if(this.examEls.audioSeekBar)this.examEls.audioSeekBar.value=0;
+				},
+				scriptText,
+				onTimeUpdate
 			);
 		}else{
 			this.audio.speakKorean(
 				scriptText,
 				this.examAudioSpeed,
-				()=>this.examEls.btnAudioPlay.classList.add("playing"),
-				()=>this.examEls.btnAudioPlay.classList.remove("playing")
+				()=>{
+					this.examEls.btnAudioPlay.classList.add("playing");
+					this.examEls.btnAudioPlay.textContent="⏸";
+				},
+				()=>{
+					this.examEls.btnAudioPlay.classList.remove("playing");
+					this.examEls.btnAudioPlay.textContent="🔊";
+				}
 			);
 		}
 	}

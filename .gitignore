@@ -15,6 +15,7 @@ __pycache__/
 *.jpg
 *.jpeg
 *.png
+!assets/exam_images/**
 *.wma
 
 # Ignored document directories

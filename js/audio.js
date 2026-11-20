@@ -7,6 +7,8 @@ class AudioManager{
 		this.currentAudioUrl=null;
 		this.isRecording=false;
 		this.currentAudioEl=null;
+		this.persistentStream=null;
+		this.currentVoiceRecognizer=null;
 		this.initVoices();
 	}
 	initVoices(){
@@ -33,7 +35,7 @@ class AudioManager{
 		}
 		this.synth.speak(utter);
 	}
-	playAudioFile(url,speed=1.0,onStart,onEnd,fallbackText){
+	playAudioFile(url,speed=1.0,onStart,onEnd,fallbackText,onTimeUpdate){
 		this.stopAll();
 		if(!url){
 			if(fallbackText)return this.speakKorean(fallbackText,speed,onStart,onEnd);
@@ -44,6 +46,10 @@ class AudioManager{
 		this.currentAudioEl=audio;
 		audio.playbackRate=speed;
 		if(onStart)audio.onplay=onStart;
+		if(onTimeUpdate){
+			audio.ontimeupdate=()=>onTimeUpdate(audio.currentTime,audio.duration||0);
+			audio.onloadedmetadata=()=>onTimeUpdate(audio.currentTime,audio.duration||0);
+		}
 		audio.onended=()=>{
 			this.currentAudioEl=null;
 			if(onEnd)onEnd();
@@ -59,6 +65,36 @@ class AudioManager{
 			else if(onEnd)onEnd();
 		});
 		return audio;
+	}
+	seekAudio(seconds){
+		if(this.currentAudioEl){
+			let t=this.currentAudioEl.currentTime+seconds;
+			if(t<0)t=0;
+			if(this.currentAudioEl.duration&&t>this.currentAudioEl.duration)t=this.currentAudioEl.duration;
+			this.currentAudioEl.currentTime=t;
+			return this.currentAudioEl.currentTime;
+		}
+		return 0;
+	}
+	setAudioPercent(percent){
+		if(this.currentAudioEl&&this.currentAudioEl.duration){
+			const t=(percent/100)*this.currentAudioEl.duration;
+			this.currentAudioEl.currentTime=t;
+			return t;
+		}
+		return 0;
+	}
+	togglePlayPause(onPlay,onPause){
+		if(!this.currentAudioEl)return false;
+		if(this.currentAudioEl.paused){
+			this.currentAudioEl.play();
+			if(onPlay)onPlay();
+			return true;
+		}else{
+			this.currentAudioEl.pause();
+			if(onPause)onPause();
+			return false;
+		}
 	}
 	playLine(audioUrl,koreanText,speed=1.0,onStart,onEnd){
 		if(audioUrl){
@@ -83,9 +119,11 @@ class AudioManager{
 				URL.revokeObjectURL(this.currentAudioUrl);
 				this.currentAudioUrl=null;
 			}
-			const stream=await navigator.mediaDevices.getUserMedia({audio:true});
+			if(!this.persistentStream||!this.persistentStream.active){
+				this.persistentStream=await navigator.mediaDevices.getUserMedia({audio:true});
+			}
 			this.recordedChunks=[];
-			this.mediaRecorder=new MediaRecorder(stream);
+			this.mediaRecorder=new MediaRecorder(this.persistentStream);
 			this.mediaRecorder.ondataavailable=e=>{
 				if(e.data.size>0)this.recordedChunks.push(e.data);
 			};
@@ -106,15 +144,49 @@ class AudioManager{
 			}
 			this.mediaRecorder.onstop=()=>{
 				const blob=new Blob(this.recordedChunks,{type:'audio/webm'});
-				if(this.mediaRecorder.stream){
-					this.mediaRecorder.stream.getTracks().forEach(t=>t.stop());
-				}
 				this.currentAudioUrl=URL.createObjectURL(blob);
 				this.isRecording=false;
 				resolve({audioUrl:this.currentAudioUrl,blob});
 			};
 			this.mediaRecorder.stop();
 		});
+	}
+	startVoiceInput(targetInput,onStart,onEnd,onError){
+		const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;
+		if(!SpeechRecognition){
+			if(onError)onError(new Error("Trình duyệt không hỗ trợ Web Speech API"));
+			return null;
+		}
+		if(this.currentVoiceRecognizer){
+			try{this.currentVoiceRecognizer.stop();}catch(e){}
+			this.currentVoiceRecognizer=null;
+		}
+		const recognizer=new SpeechRecognition();
+		recognizer.lang='ko-KR';
+		recognizer.interimResults=false;
+		recognizer.maxAlternatives=1;
+		recognizer.onstart=()=>{if(onStart)onStart();};
+		recognizer.onresult=event=>{
+			const transcript=event.results[0][0].transcript.trim();
+			if(transcript&&targetInput){
+				const cur=targetInput.value?targetInput.value.trim():"";
+				targetInput.value=cur?(cur+" "+transcript):transcript;
+				targetInput.dispatchEvent(new Event("input",{bubbles:true}));
+			}
+		};
+		recognizer.onerror=event=>{if(onError)onError(event);};
+		recognizer.onend=()=>{
+			this.currentVoiceRecognizer=null;
+			if(onEnd)onEnd();
+		};
+		try{
+			recognizer.start();
+			this.currentVoiceRecognizer=recognizer;
+			return recognizer;
+		}catch(e){
+			if(onError)onError(e);
+			return null;
+		}
 	}
 	playAudioUrl(url,onEnd){
 		if(!url)return;
@@ -156,6 +228,61 @@ class AudioManager{
 			return recognizer;
 		}catch(e){
 			if(onError)onError(e);
+			return null;
+		}
+	}
+	startVoiceInput(targetInput,onStart,onEnd,onError){
+		const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;
+		if(!SpeechRecognition){
+			if(onError)onError(new Error("Trình duyệt chưa hỗ trợ Web Speech API."));
+			return null;
+		}
+		if(this.currentVoiceRecognizer){
+			try{this.currentVoiceRecognizer.stop();}catch(e){}
+			this.currentVoiceRecognizer=null;
+		}
+		const recognizer=new SpeechRecognition();
+		recognizer.lang='ko-KR';
+		recognizer.interimResults=true;
+		recognizer.continuous=false;
+		this.currentVoiceRecognizer=recognizer;
+		let finalTranscript="";
+		recognizer.onstart=()=>{
+			if(onStart)onStart();
+		};
+		recognizer.onresult=e=>{
+			let interim="";
+			for(let i=e.resultIndex;i<e.results.length;++i){
+				const res=e.results[i];
+				if(res.isFinal)finalTranscript+=res[0].transcript;
+				else interim+=res[0].transcript;
+			}
+			if(targetInput){
+				if(targetInput.tagName==="INPUT"||targetInput.tagName==="TEXTAREA"){
+					const existing=targetInput.getAttribute("data-pre-voice")||"";
+					targetInput.value=existing+(existing?" ":"")+(finalTranscript||interim);
+					targetInput.dispatchEvent(new Event("input",{bubbles:true}));
+				}
+			}
+		};
+		recognizer.onerror=e=>{
+			if(onError)onError(e);
+			if(onEnd)onEnd();
+			this.currentVoiceRecognizer=null;
+		};
+		recognizer.onend=()=>{
+			if(targetInput)targetInput.removeAttribute("data-pre-voice");
+			if(onEnd)onEnd();
+			this.currentVoiceRecognizer=null;
+		};
+		try{
+			if(targetInput)targetInput.setAttribute("data-pre-voice",targetInput.value||"");
+			recognizer.start();
+			return recognizer;
+		}catch(e){
+			if(onError)onError(e);
+			if(onEnd)onEnd();
+			this.currentVoiceRecognizer=null;
 			return null;
 		}
 	}

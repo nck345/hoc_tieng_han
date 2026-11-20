@@ -110,6 +110,7 @@
 						<div class="search-box">
 							<span class="search-icon">🔍</span>
 							<input type="text" id="search-units" placeholder="Tìm kiếm bài học (ví dụ: 가족, gia đình, Day 1)...">
+							<button class="btn-voice-input" id="btn-voice-search" type="button" title="Tìm kiếm bằng giọng nói tiếng Hàn">🎙️</button>
 						</div>
 						<div class="filter-pills" id="status-pills">
 							<button class="filter-pill active" data-status="all">Tất cả</button>
@@ -180,8 +181,9 @@
 								<strong>Nghĩa tiếng Việt:</strong> <span id="study-scramble-translation" style="color:#93c5fd;">...</span>
 							</div>
 						</div>
-						<div class="sentence-input-wrap">
-							<input type="text" class="sentence-textarea" style="min-height:auto;padding:12px;" id="study-scramble-input" placeholder="Gõ hoàn thiện cả câu tiếng Hàn vào đây...">
+						<div class="sentence-input-wrap" style="display:flex;gap:8px;align-items:center;">
+							<input type="text" class="sentence-textarea" style="min-height:auto;padding:12px;flex:1;" id="study-scramble-input" placeholder="Gõ hoàn thiện cả câu tiếng Hàn vào đây...">
+							<button class="btn-voice-input" id="btn-voice-scramble" type="button" title="Nói tiếng Hàn để điền câu">🎙️</button>
 						</div>
 						<div style="display:flex;gap:10px;">
 							<button class="mode-btn" id="btn-check-scramble" style="background:var(--secondary);">Kiểm tra câu hoàn thiện</button>
@@ -198,8 +200,9 @@
 						<div class="ordered-words-container" style="border-left-color:var(--warning);">
 							<strong>Từ gợi ý đặt câu:</strong> <span id="study-hint-words">Gợi ý</span>
 						</div>
-						<div class="sentence-input-wrap">
+						<div class="sentence-input-wrap" style="position:relative;">
 							<textarea class="sentence-textarea" id="study-sentence-input" placeholder="Nhập câu tiếng Hàn bạn tự đặt..."></textarea>
+							<button class="btn-voice-input" id="btn-voice-sentence" type="button" title="Nói tiếng Hàn để đặt câu" style="position:absolute;bottom:10px;right:10px;">🎙️</button>
 						</div>
 						<button class="btn-check-grammar" id="btn-check-grammar">Kiểm tra ngữ pháp & Xem câu mẫu</button>
 						<div class="grammar-feedback-box" id="study-grammar-feedback"></div>
@@ -251,22 +254,32 @@
 							<span id="exam-player-progress-badge" style="font-size:13px;font-weight:700;color:var(--text-secondary);">Câu 1/10</span>
 						</div>
 						<div style="display:flex;align-items:center;gap:8px;">
-							<span id="exam-player-timer" style="font-size:13px;font-weight:700;color:var(--warning);">⏱️ 00:00</span>
+							<span id="exam-player-timer" style="font-size:13px;font-weight:700;color:var(--warning);display:inline-flex;align-items:center;gap:4px;"><span class="timer-icon">⏱</span> <span id="exam-player-timer-val">00:00</span></span>
 						</div>
 					</div>
 					<div class="question-instruction" id="exam-q-instruction">Hướng dẫn câu hỏi</div>
 					<!-- AUDIO PLAYER FOR LISTENING -->
-					<div id="exam-q-audio-box" style="display:none;background:var(--surface-card);padding:14px;border-radius:var(--radius-md);border:1px solid var(--border);align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
-						<div style="display:flex;align-items:center;gap:10px;">
-							<button class="btn-audio" id="btn-exam-audio-play" title="Phát audio câu hỏi">🔊</button>
-							<div>
-								<div style="font-size:13px;font-weight:700;" id="exam-audio-status">Audio câu hỏi (Bản tách riêng)</div>
-								<div style="font-size:11px;color:var(--text-muted);">Nghe để chọn phương án chính xác</div>
+					<div id="exam-q-audio-box" style="display:none;background:var(--surface-card);padding:14px;border-radius:var(--radius-md);border:1px solid var(--border);flex-direction:column;gap:10px;">
+						<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+							<div style="display:flex;align-items:center;gap:10px;">
+								<button class="btn-audio" id="btn-exam-audio-play" title="Phát / Tạm dừng audio">🔊</button>
+								<div>
+									<div style="font-size:13px;font-weight:700;" id="exam-audio-status">Audio câu hỏi</div>
+									<div style="font-size:11px;color:var(--text-muted);" id="exam-audio-subtext">Nghe và sử dụng thanh tua để tua nhanh/chậm</div>
+								</div>
+							</div>
+							<div style="display:flex;align-items:center;gap:6px;">
+								<button class="btn-seek-step" id="btn-exam-seek-b10" title="Tua lùi 10 giây">-10s</button>
+								<button class="btn-seek-step" id="btn-exam-seek-b5" title="Tua lùi 5 giây">-5s</button>
+								<button class="btn-seek-step" id="btn-exam-seek-f5" title="Tua tiến 5 giây">+5s</button>
+								<button class="btn-seek-step" id="btn-exam-seek-f10" title="Tua tiến 10 giây">+10s</button>
+								<button class="btn-speed active" id="btn-exam-speed-1" title="Tốc độ bình thường">1.0x</button>
+								<button class="btn-speed" id="btn-exam-speed-slow" title="Tốc độ chậm">0.8x</button>
 							</div>
 						</div>
-						<div style="display:flex;align-items:center;gap:8px;">
-							<button class="btn-speed active" id="btn-exam-speed-1">1.0x</button>
-							<button class="btn-speed" id="btn-exam-speed-slow">0.8x Chậm</button>
+						<div style="display:flex;align-items:center;gap:10px;width:100%;">
+							<input type="range" class="audio-seek-slider" id="exam-audio-seek-bar" min="0" max="100" value="0" step="0.1" style="flex:1;">
+							<span class="audio-time-display" id="exam-audio-time-text" style="font-size:12px;font-weight:700;color:var(--text-secondary);min-width:90px;text-align:right;">00:00 / 00:00</span>
 						</div>
 					</div>
 					<div class="question-passage" id="exam-q-passage">Nội dung câu hỏi / Ngữ cảnh</div>
@@ -422,7 +435,10 @@
 				</div>
 				<div>
 					<label for="quiz-korean-input" style="font-size:12px;font-weight:700;color:var(--text-secondary);display:block;margin-bottom:6px;">Nhập từ tiếng Hàn tương ứng:</label>
-					<input type="text" class="quiz-input-field" id="quiz-korean-input" placeholder="Gõ tiếng Hàn vào đây..." autocomplete="off">
+					<div style="display:flex;gap:8px;align-items:center;">
+						<input type="text" class="quiz-input-field" id="quiz-korean-input" placeholder="Gõ tiếng Hàn vào đây..." autocomplete="off" style="flex:1;">
+						<button class="btn-voice-input" id="btn-voice-quiz" type="button" title="Nói tiếng Hàn để điền từ">🎙️</button>
+					</div>
 				</div>
 				<div class="quiz-recording-bar">
 					<button class="btn-mic" id="btn-quiz-mic" title="Bắt đầu / Dừng ghi âm phát âm">🎤</button>
